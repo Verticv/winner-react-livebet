@@ -34,10 +34,7 @@ export default function SingleView() {
                 <UpcomingMatches />
             </div>
             <div className="group-46">
-                <div className="row">
-                    <p className="text-97">2</p>
-                    <p className="text-98">0</p>
-                </div>
+                <div className="row" />  
                 <div className="group-47">
                     <img
                         className="layer-36"
@@ -52,3 +49,4 @@ export default function SingleView() {
         </div>
     );
 }
+
