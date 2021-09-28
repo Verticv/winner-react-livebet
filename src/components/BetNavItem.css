@@ -94,6 +94,7 @@ html {
 }
 html {
   font-size: 16px;
+
 }
 /* body {
 
@@ -104,7 +105,7 @@ html {
   margin: 0 auto;
   min-height: 1080px;
   position: relative;
-  width: 1912px;
+  width: 100%;
   background: #000000;
   overflow-x: hidden;
 }
@@ -2176,6 +2177,7 @@ html {
   left: 0;
   position: absolute;
   top: 0;
+  height: 100%;
 }
 .text-61 {
   left: 32px;
@@ -2214,6 +2216,7 @@ html {
   left: 81px;
   position: absolute;
   top: 0;
+  height: 100%;
 }
 .col-14 {
   height: 145px;
