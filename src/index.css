@@ -1,0 +1,65 @@
+/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Digital-7';
+    src:url('./fonts/digital-7.mono.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+  font-family: 'SpoqaHanSansNeo';
+  src:url('./fonts/SpoqaHanSansNeo-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SpoqaHanSansNeoBold';
+  src:url('./fonts/SpoqaHanSansNeo-Bold.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SpoqaHanSansNeoMedium';
+  src:url('./fonts/SpoqaHanSansNeo-Medium.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'RobotoMedium';
+  src:url('./fonts/Roboto-Medium.ttf');
+  font-weight: medium;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RobotoBold';
+  src:url('./fonts/Roboto-Bold.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@layer utilities {
+    @variants responsive {
+        .text-shadow {
+          text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+        }
+        .text-shadow-md {
+          text-shadow: 4px 4px 8px black;
+        }
+        .text-shadow-lg {
+          text-shadow: 15px 15px 30px black;
+        }
+        .text-shadow-none {
+          text-shadow: none;
+        }
+    } 
+}
