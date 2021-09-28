@@ -7,6 +7,9 @@ export default function LiveUpcomingMatchesCount() {
                 height: "40px",
                 width: "681px",
                 position: "relative",
+                marginTop: "10px",
+                marginBottom: '10px'
+
             }}
         >
             <div className="bg-holder-30">
