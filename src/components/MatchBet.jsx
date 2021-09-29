@@ -71,14 +71,9 @@ export default function MatchDetail({ bet }) {
                     onClick={handleToggleIsShowing}
                     className={classes.expandButton}
                 >
-                    <div
-                        className={
-                            "bg-holder-56 " +
-                            `${isShowing ? "" : classes.rotate180}`
-                        }
-                    >
+                    <div className="bg-holder-56">
                         <img
-                            className="ico-28"
+                            className={"ico-28 " + `${isShowing ? "" : classes.rotate180 }`}
                             src={require("../imagesHold/ico_21.png").default}
                             alt=""
                             width="16"
