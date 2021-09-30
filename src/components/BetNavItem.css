@@ -3729,12 +3729,12 @@ html {
   top: 10px;
 }
 .col-12 {
-  height: 386px;
+  height: 950px;
   left: 0;
   position: absolute;
   top: 23px;
   width: 844px;
-  background: url(../imagesHold/bg_144.png) no-repeat center;
+  background: url(../imagesHold/bg_144.png)  center;
 }
 .group-50 {
   height: 28px;
