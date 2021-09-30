@@ -1,6 +1,8 @@
 import clsx from "clsx";
 import jss from "jss";
 import React, { useState } from "react";
+import useStore from "store/useStore";
+
 import CoefficientWithUpdate from "./CoefficientWithUpdate";
 
 export default function LiveMatchCoefficient({
@@ -10,10 +12,13 @@ export default function LiveMatchCoefficient({
     team2,
     team2WinKof,
     parentClasses,
-    parentSelected
+    parentSelected,
+    matchCard
 }) {
     const selections = { team1: 3, team2: 1, draw: 2, none: 0 };
     const [selectedOutcome, setSelectedOutcome] = useState(selections.none);
+    const addBetSlipBet = useStore(s =>s.addBetSlipBet)
+
     const styles = {
         redNeonBorder: `
             height: 32px;
@@ -158,12 +163,18 @@ export default function LiveMatchCoefficient({
     function handleSetSelectedOutcome(outcome) {
         setSelectedOutcome(outcome);
     }
+    const handlePlusButton = (event) => {
+        event.stopPropagation();
+        addBetSlipBet(matchCard);
+    };
     return (
         <div className="btn-4">
             <button
                 onClick={(event) => {
                     event.stopPropagation();
                     handleSetSelectedOutcome(selections.team1);
+                    addBetSlipBet(matchCard);
+
                 }}
                 className={clsx(
                     classes.leftContainer,
@@ -171,6 +182,7 @@ export default function LiveMatchCoefficient({
                         parentClasses.leftContainerHover
                 )}
             >
+                
                 <p className={classes.textLeft}>{team1}</p>
                 <CoefficientWithUpdate
                     selected={selectedOutcome === selections.team1}
@@ -186,6 +198,8 @@ export default function LiveMatchCoefficient({
                     onClick={(event) => {
                         event.stopPropagation();
                         handleSetSelectedOutcome(selections.draw);
+                        addBetSlipBet(matchCard);
+
                     }}
                 >
                     <img
@@ -208,6 +222,8 @@ export default function LiveMatchCoefficient({
                     onClick={(event) => {
                         event.stopPropagation();
                         handleSetSelectedOutcome(selections.team2);
+                        addBetSlipBet(matchCard);
+
                     }}
                 >
                     <CoefficientWithUpdate

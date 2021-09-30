@@ -73,7 +73,7 @@ export default function MatchDetail({ bet }) {
                 >
                     <div className="bg-holder-56">
                         <img
-                            className={"ico-28 " + `${isShowing ? "" : classes.rotate180 }`}
+                            className={`ico-28 ${isShowing ? "" : classes.rotate180 }`}
                             src={require("../imagesHold/ico_21.png").default}
                             alt=""
                             width="16"

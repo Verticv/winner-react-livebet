@@ -43,7 +43,8 @@ export default function LiveMatchCard({ matchCard }) {
                         : require("../imagesHold/bg_201.jpg").default
                 }) no-repeat;
           `,
-        leftContainerHover: {},
+        leftContainerHover: {
+        },
         centerContainerHover: {},
         rightContainerHover: {},
         container: {
@@ -188,6 +189,7 @@ export default function LiveMatchCard({ matchCard }) {
                     tieKof={tieKof}
                     parentClasses={classes}
                     parentSelected={selected}
+                    matchCard={matchCard}
                 />
             </div>
             <LiveMatchCardButton matchCard={matchCard} />
