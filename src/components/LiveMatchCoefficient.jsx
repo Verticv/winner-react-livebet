@@ -163,10 +163,7 @@ export default function LiveMatchCoefficient({
     function handleSetSelectedOutcome(outcome) {
         setSelectedOutcome(outcome);
     }
-    const handlePlusButton = (event) => {
-        event.stopPropagation();
-        addBetSlipBet(matchCard);
-    };
+    
     return (
         <div className="btn-4">
             <button
