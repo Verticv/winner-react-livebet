@@ -88,7 +88,7 @@ export default function LeagueSelectPopup(props) {
                 >
                     <div className="main-live-league-bg-holder">
                         <div className="main-live-league-bg-holder-2">
-                            <p className="main-live-league-text">리그선택</p>
+                            <p className="main-live-league-text">리그선택 </p>
                             {/* <div className="main-live-league-line"></div>
                             <div className="main-live-league-line-2"></div>
                             <div className="main-live-league-line-3"></div>
@@ -101,7 +101,14 @@ export default function LeagueSelectPopup(props) {
                                 width="14"
                                 height="14"
                             /> */}
+                           
+                           <button style={{borderLeft: '1px solid black'}} onClick={() => changeView(viewTypes.chronological)}>
+                                <img src={
+                                    require("../../imagesHold/ico.png").default
+                                }  alt="fffff" style={{width: '14px', height: '14px', margin: '13px' }}/>
+                            </button>        
                         </div>
+                        
                     </div>
                     <div className="main-live-league-bg-holder-3">
                         <div className="main-live-league-col">
