@@ -1,7 +1,7 @@
 import React from "react";
 import LiveMatchCardExpandedContainer from "./LiveMatchCardExpandedContainer";
 import LiveMatchCardsMultiView from "./LiveMatchCardsMultiView";
-import "./MultiView.css";
+// import "./MultiView.css";
 
 export default function MultiView() {
     return (

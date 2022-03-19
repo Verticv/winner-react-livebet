@@ -3,10 +3,7 @@ import "./App.css";
 
 import BetPage from "pages/BetPage";
 
-
 function App() {
-
-
     return (
         <>
             <BetPage />
