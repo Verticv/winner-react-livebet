@@ -6,6 +6,7 @@ import useStore from "store/useStore";
 // const bg = require("../../../imagesHold/NavItemBackground.png").default;
 
 export default function BetNavListItem({
+    isLastElement,
     id,
     icon,
     text,
@@ -15,6 +16,7 @@ export default function BetNavListItem({
 }) {
     const selectedNav = useStore(state => state.selectedNav)
     const active = selectedNav === id;
+    const lastElementClasses = isLastElement ? 'english' : ''
     // const styles = {
     //     holder: `
     //         left: 50%;
@@ -86,13 +88,15 @@ export default function BetNavListItem({
             onClick={handleSetNavElementActive}
             // className={clsx(classes.holder, classes.hoverBackground)}
             >   
-            {active && <div className="fade" />}
+            <div className="fade" />
             <div className="navbar-button-border"> {/* give this div white background! */}
                 <div className="navbar-button-inner">
                     <div className="navbar-button-content">
                         <img src={icon} alt="" />
-                        <p>{text}</p>
-                        <div>{number}</div>
+                        <p className={lastElementClasses}>{text}</p>
+                        <div className={lastElementClasses}>
+                            <span>{number}</span>
+                        </div>
                     </div>
                 </div>
             </div>

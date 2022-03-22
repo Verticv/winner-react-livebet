@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import useStore from "store/useStore";
 import BetNavListItem from "./partial/BetNavListItem";
+// import SelectLayoutButtons from "components/SelectLayoutButtons";
 // import NumberOfLiveMatches from "../NumberOfLiveMatches";
-import './BetNav.scss'
+import "./BetNav.scss";
 
 export default function BetNav() {
     const number = 80;
@@ -77,29 +78,36 @@ export default function BetNav() {
             text: "UFC",
             number,
             marginLeft: "428px",
-        }
+        },
     ];
     const [navListItems] = useState(navListItemsDefinition);
     const changeSelectedNav = useStore((state) => state.changeSelectedNav);
 
     return (
         <div className="navbar-wrapper">
-            {navListItems.map((item) => {
-                return (
-                    <BetNavListItem
-                        key={item.id}
-                        id={item.id}
-                        icon={item.icon}
-                        active={item.active}
-                        number={item.number}
-                        text={item.text}
-                        marginLeft={item.marginLeft}
-                        handleSetNavElementActive={() =>
-                            changeSelectedNav(item.id)
-                        }
-                    />
-                );
-            })}
+            <div className="navbar-list-wrapper">
+                {navListItems.map((item, index) => {
+                    return (
+                        <BetNavListItem
+                            isLastElement={index === navListItems.length - 1}
+                            key={item.id}
+                            id={item.id}
+                            icon={item.icon}
+                            active={item.active}
+                            number={item.number}
+                            text={item.text}
+                            marginLeft={item.marginLeft}
+                            handleSetNavElementActive={() =>
+                                changeSelectedNav(item.id)
+                            }
+                        />
+                    );
+                })}
+                <div className="navbar-bottom-fade"></div>
+            </div>
+            {/* <SelectLayoutButtons /> */}
+            {/* <div style={{width: '149px', height: '50px', background: 'red', marginLeft: '315px'}}></div> */}
+            {/* <div style={{width: '360px', height: '50px', background: 'blue'}}></div> */}
             {/* <NumberOfLiveMatches/> */}
         </div>
     );
