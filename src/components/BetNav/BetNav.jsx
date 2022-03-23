@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import useStore from "store/useStore";
 import BetNavListItem from "./partial/BetNavListItem";
-// import NumberOfLiveMatches from "../NumberOfLiveMatches";
-import './BetNav.scss'
+import SelectLayoutButtons from "components/BetNav/partial/SelectLayoutButtons/SelectLayoutButtons";
+import ViewSelectButtons from "components/ViewSelectButtons";
+import NumberOfLiveMatches from "../NumberOfLiveMatches";
+
+import "./BetNav.scss";
 
 export default function BetNav() {
     const number = 80;
@@ -77,29 +80,43 @@ export default function BetNav() {
             text: "UFC",
             number,
             marginLeft: "428px",
-        }
+        },
     ];
     const [navListItems] = useState(navListItemsDefinition);
     const changeSelectedNav = useStore((state) => state.changeSelectedNav);
 
     return (
-        <div className="navbar-wrapper">
-            {navListItems.map((item) => {
-                return (
-                    <BetNavListItem
-                        key={item.id}
-                        id={item.id}
-                        icon={item.icon}
-                        active={item.active}
-                        number={item.number}
-                        text={item.text}
-                        marginLeft={item.marginLeft}
-                        handleSetNavElementActive={() =>
-                            changeSelectedNav(item.id)
-                        }
-                    />
-                );
-            })}
+        <div style={{width: '1560px'}} className="navbar-wrapper">
+            <div style={{width: '100%', display: 'flex'}}>
+                <div className="navbar-list-wrapper">
+                    {navListItems.map((item, index) => {
+                        return (
+                            <BetNavListItem
+                                isLastElement={index === navListItems.length - 1}
+                                key={item.id}
+                                id={item.id}
+                                icon={item.icon}
+                                active={item.active}
+                                number={item.number}
+                                text={item.text}
+                                marginLeft={item.marginLeft}
+                                handleSetNavElementActive={() =>
+                                    changeSelectedNav(item.id)
+                                }
+                            />
+                        );
+                    })}
+                </div>
+                <div className="select-layout-wrapper">
+                    <SelectLayoutButtons />
+                </div>
+            </div>
+            <div style={{width: '100%', display: 'flex', height: '46px', justifyContent: 'space-between'}}>
+                <NumberOfLiveMatches/>
+                <ViewSelectButtons />
+            </div>
+            {/* <div style={{width: '149px', height: '50px', background: 'red', marginLeft: '315px'}}></div> */}
+            {/* <div style={{width: '360px', height: '50px', background: 'blue'}}></div> */}
             {/* <NumberOfLiveMatches/> */}
         </div>
     );

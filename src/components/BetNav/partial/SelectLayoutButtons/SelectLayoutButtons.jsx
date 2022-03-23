@@ -9,7 +9,8 @@ export default function SelectLayoutButtons() {
     const layoutButtons = [
         {
             id: 0,
-            image: require("../imagesHold/single_layout_icon.png").default,
+            image: require("../../../../imagesHold/single_layout_icon.png")
+                .default,
             text: "싱글뷰",
             offset: "0px",
             active: singleOrMulti === singleOrMultiOptions.single,
@@ -17,7 +18,8 @@ export default function SelectLayoutButtons() {
         },
         {
             id: 1,
-            image: require("../imagesHold/multi_layout_icon.png").default,
+            image: require("../../../../imagesHold/multi_layout_icon.png")
+                .default,
             text: "멀티뷰",
             offset: "72px",
             active: singleOrMulti === singleOrMultiOptions.multi,
@@ -26,26 +28,22 @@ export default function SelectLayoutButtons() {
     ];
 
     const handleSetLayoutActive = (som) => {
-        changeSingleOrMulti(som)
+        changeSingleOrMulti(som);
     };
 
-    return (
-        <>
-            {layoutButtons.map((layoutButton) => {
-                const { image, text, offset, active, id } = layoutButton;
-                return (
-                    <SelectLayoutButton
-                        key={id}
-                        image={image}
-                        active={active}
-                        text={text}
-                        offset={offset}
-                        handleSetLayoutActive={() =>
-                            handleSetLayoutActive(layoutButton.type)
-                        }
-                    />
-                );
-            })}
-        </>
-    );
+    return layoutButtons.map((layoutButton) => {
+        const { image, text, offset, active, id } = layoutButton;
+        return (
+            <SelectLayoutButton
+                key={id}
+                image={image}
+                active={active}
+                text={text}
+                offset={offset}
+                handleSetLayoutActive={() =>
+                    handleSetLayoutActive(layoutButton.type)
+                }
+            />
+        );
+    });
 }

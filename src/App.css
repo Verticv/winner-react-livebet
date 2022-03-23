@@ -37,3 +37,9 @@
     transform: rotate(360deg);
   }
 } */
+
+html {
+  width: 1920px;
+  background-color: black;
+  overflow: scroll;
+}
