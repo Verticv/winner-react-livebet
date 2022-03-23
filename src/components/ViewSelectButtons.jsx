@@ -25,7 +25,7 @@ export default function ViewSelectButtons() {
         },
     ];
     return (
-        <div style={{ display: "flex", justifyContent:'space-between' }} className="row-32">
+        <div className="view-select-button">
             {views.map((view) => {
                 return (
                     <ViewSelectButton
