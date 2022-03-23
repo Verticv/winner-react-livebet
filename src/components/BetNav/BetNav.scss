@@ -28,6 +28,9 @@
         color: black;
 
         .button-content-wrapper {
+          img {
+            filter: invert(1);
+          }
           .number {
             color: #c8b273;
 
@@ -48,6 +51,9 @@
   .layout-button-content {
     color: black;
     background: linear-gradient(to top, #a99365, #baa375);
+    img {
+      filter: brightness(0);
+    }
   }
 
   .fade {
@@ -275,6 +281,9 @@
       &.active,
       &:hover {
         background: url('../../imagesHold/fade.png') no-repeat, linear-gradient(to top, #5f4821, #55411e 50%, #49381b);
+        img {
+          filter: brightness(4);
+        }
       }
     }
   }
