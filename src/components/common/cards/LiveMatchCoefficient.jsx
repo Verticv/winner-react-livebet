@@ -3,7 +3,7 @@ import jss from "jss";
 import React, { useState } from "react";
 import useStore from "store/useStore";
 
-import CoefficientWithUpdate from "./CoefficientWithUpdate";
+import CoefficientWithUpdate from "../../CoefficientWithUpdate";
 
 export default function LiveMatchCoefficient({
     team1,
@@ -84,12 +84,12 @@ export default function LiveMatchCoefficient({
             background:
                 selectedOutcome === selections.team2
                     ? `url(${
-                          require("../imagesHold/right_select_bet.png").default
+                          require("../../../imagesHold/right_select_bet.png").default
                       }) no-repeat`
                     : parentSelected
-                    ? `url(${require("../imagesHold/bg_250.png").default})`
+                    ? `url(${require("../../../imagesHold/bg_250.png").default})`
                     : `url(${
-                          require("../imagesHold/bg_208.png").default
+                          require("../../../imagesHold/bg_208.png").default
                       }) no-repeat`,
             paddingLeft: "12px",
             display: "flex",
@@ -98,7 +98,7 @@ export default function LiveMatchCoefficient({
             paddingRight: "12px",
             "&:hover": {
                 background: `url(${
-                    require("../imagesHold/right_select_bet.png").default
+                    require("../../../imagesHold/right_select_bet.png").default
                 }) no-repeat !important`,
             },
         },
@@ -110,11 +110,11 @@ export default function LiveMatchCoefficient({
             width: "283px",
             background:
                 selectedOutcome === selections.team1
-                    ? `url(${require("../imagesHold/bg_205.png").default})`
+                    ? `url(${require("../../../imagesHold/bg_205.png").default})`
                     : parentSelected
-                    ? `url(${require("../imagesHold/bg_227.png").default})`
+                    ? `url(${require("../../../imagesHold/bg_227.png").default})`
                     : `url(${
-                          require("../imagesHold/bg_214.png").default
+                          require("../../../imagesHold/bg_214.png").default
                       }) no-repeat`,
             zIndex: selectedOutcome === selections.team1 ? 1 : 2,
             display: "flex",
@@ -123,7 +123,7 @@ export default function LiveMatchCoefficient({
             paddingRight: "12px",
             "&:hover": {
                 background: `url(${
-                    require("../imagesHold/bg_205.png").default
+                    require("../../../imagesHold/bg_205.png").default
                 }) !important`,
             },
         },
@@ -139,20 +139,20 @@ export default function LiveMatchCoefficient({
             background:
                 selectedOutcome === selections.draw
                     ? `url(${
-                          require("../imagesHold/center_selected_trapezoid.png")
+                          require("../../../imagesHold/center_selected_trapezoid.png")
                               .default
                       })`
                     : parentSelected
                     ? `url(${
-                          require("../imagesHold/bg_228.png").default
+                          require("../../../imagesHold/bg_228.png").default
                       }) no-repeat center`
                     : `url(${
-                          require("../imagesHold/bg_207.png").default
+                          require("../../../imagesHold/bg_207.png").default
                       }) no-repeat`,
             zIndex: selectedOutcome === selections.draw ? 0 : 1,
             "&:hover": {
                 background: `url(${
-                    require("../imagesHold/center_selected_trapezoid.png")
+                    require("../../../imagesHold/center_selected_trapezoid.png")
                         .default
                 }) !important`,
                 zIndex: 0,
@@ -201,7 +201,7 @@ export default function LiveMatchCoefficient({
                 >
                     <img
                         className="line-11"
-                        src={require("../imagesHold/line_31.png").default}
+                        src={require("../../../imagesHold/line_31.png").default}
                         alt=""
                         width="11"
                         height="32"
@@ -230,7 +230,7 @@ export default function LiveMatchCoefficient({
                 </button>
                 <img
                     className="line-12"
-                    src={require("../imagesHold/line_32.png").default}
+                    src={require("../../../imagesHold/line_32.png").default}
                     alt=""
                     width="11"
                     height="32"

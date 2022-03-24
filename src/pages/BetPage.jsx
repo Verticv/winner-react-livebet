@@ -1,13 +1,13 @@
 import BetNav from "components/BetNav/BetNav";
 // import BetSlip from "components/BetSlip";
-// import MultiView from "components/MultiView";
+import MultiView from "components/MultiView";
 // import LeagueSelectPopup from "components/popups/LeagueSelectPopup";
 // import SelectLayoutButtons from "components/SelectLayoutButtons";
-// import SingleView from "components/SingleView";
+import SingleView from "components/SingleView";
 // import ViewSelectButtons from "components/ViewSelectButtons";
-// import { singleOrMultiOptions } from "helpers/constants";
+import { singleOrMultiOptions } from "helpers/constants";
 import React from "react";
-// import useStore from "store/useStore";
+import useStore from "store/useStore";
 
 // import football from "../imagesDump/bet/icon-ufc.png").default};
 // import favorites from "../imagesDump/bet/icon-ufc.png").default};
@@ -18,9 +18,9 @@ import React from "react";
 // import "../components/BetNavItem.css";
 
 export default function BetPage() {
-    // const singleOrMulti = useStore((state) => state.singleOrMulti);
-    // const isSingleView = singleOrMulti === singleOrMultiOptions.single;
-    // const isMultiView = singleOrMulti === singleOrMultiOptions.multi;
+    const singleOrMulti = useStore((state) => state.singleOrMulti);
+    const isSingleView = singleOrMulti === singleOrMultiOptions.single;
+    const isMultiView = singleOrMulti === singleOrMultiOptions.multi;
     return (
         <div>
             {/* <LeagueSelectPopup /> */}
@@ -38,8 +38,8 @@ export default function BetPage() {
                         <ViewSelectButtons />
                     </div> */}
                 </div>
-                {/* {isSingleView && <SingleView />}
-                {isMultiView && <MultiView />} */}
+                {isSingleView && <SingleView />}
+                {isMultiView && <MultiView />}
             </div>
             {/* <BetSlip /> */}
         </div>

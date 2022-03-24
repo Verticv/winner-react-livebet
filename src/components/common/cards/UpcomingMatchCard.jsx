@@ -1,7 +1,7 @@
 import jss from "jss";
 import React from "react";
 import useStore from "store/useStore";
-import MatchFavoriteButton from "./MatchFavoriteButton";
+import MatchFavoriteButton from "./SideButton/MatchFavoriteButton";
 
 export default function UpcomingMatchCard({ upcomingMatchCard }) {
     const changeSelectedCardId = useStore(
@@ -19,10 +19,10 @@ export default function UpcomingMatchCard({ upcomingMatchCard }) {
             position: "relative",
             width: "681px",
             background: selected
-                ? `url(${require("../imagesHold/upcoming_card_selected.png").default})`
-                : `url(${require("../imagesHold/upcoming_card.png").default})`,
+                ? `url(${require("../../../imagesHold/upcoming_card_selected.png").default})`
+                : `url(${require("../../../imagesHold/upcoming_card.png").default})`,
             "&:hover": {
-                background: `url(${require("../imagesHold/upcoming_card_selected.png").default})`,
+                background: `url(${require("../../../imagesHold/upcoming_card_selected.png").default})`,
             },
         },
     };
@@ -32,14 +32,14 @@ export default function UpcomingMatchCard({ upcomingMatchCard }) {
             <div className="f-5">
                 <img
                     className="layer-24"
-                    src={require("../imagesHold/image_80.png").default}
+                    src={require("../../../imagesHold/image_80.png").default}
                     alt=""
                     width="18"
                     height="18"
                 />
                 <img
                     className="layer-25"
-                    src={require("../imagesHold/image_105.png").default}
+                    src={require("../../../imagesHold/image_105.png").default}
                     alt=""
                     width="30"
                     height="19"
@@ -54,7 +54,7 @@ export default function UpcomingMatchCard({ upcomingMatchCard }) {
                             <img
                                 className="layer-27"
                                 src={
-                                    require("../imagesHold/image_66.png")
+                                    require("../../../imagesHold/image_66.png")
                                         .default
                                 }
                                 alt=""
@@ -72,7 +72,7 @@ export default function UpcomingMatchCard({ upcomingMatchCard }) {
                             <img
                                 className="layer-28"
                                 src={
-                                    require("../imagesHold/image_110.png")
+                                    require("../../../imagesHold/image_110.png")
                                         .default
                                 }
                                 alt=""
@@ -83,7 +83,7 @@ export default function UpcomingMatchCard({ upcomingMatchCard }) {
                         <div className="bg-holder-34">
                             <img
                                 className="a-5"
-                                src={require("../imagesHold/a.png").default}
+                                src={require("../../../imagesHold/a.png").default}
                                 alt="a"
                                 width="8"
                                 height="9"
@@ -111,7 +111,7 @@ export default function UpcomingMatchCard({ upcomingMatchCard }) {
                 <div className="line-19"></div>
                 <img
                     className="btn-6"
-                    src={require("../imagesHold/btn_2.png").default}
+                    src={require("../../../imagesHold/btn_2.png").default}
                     alt=""
                     width="43"
                     height="110"

@@ -1,8 +1,8 @@
 import React from "react";
-import LiveMatchCards from "./LiveMatchCards";
-import LiveUpcomingMatchesCount from "./LiveUpcomingMatchesCount";
-import MatchBets from "./MatchBets";
-import UpcomingMatches from "./UpcomingMatches";
+import LiveMatchCards from "./common/cards/LiveMatchCards";
+// import LiveUpcomingMatchesCount from "./LiveUpcomingMatchesCount";
+// import MatchBets from "./MatchBets";
+// import UpcomingMatches from "./UpcomingMatches";
 
 export default function SingleView() {
     return (
@@ -10,12 +10,13 @@ export default function SingleView() {
             className="hide-scrollbar-bet-page"
             style={{
                 height: "954px",
-                left: "0",
-                position: "absolute",
-                top: "126px",
+                // left: "0",
+                // position: "absolute",
+                // top: "126px",
                 width: "1550px",
                 overflowY: "scroll",
                 overflowX: "hidden",
+                // background: 'green'
             }}
         >
             <div
@@ -23,17 +24,17 @@ export default function SingleView() {
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "flex-start",
-                    left: "0",
-                    position: "absolute",
-                    top: "0",
+                    // left: "0",
+                    // position: "absolute",
+                    // top: "0",
                     width: "681px",
                 }}
             >
                 <LiveMatchCards />
-                <LiveUpcomingMatchesCount />
-                <UpcomingMatches />
+                {/* <LiveUpcomingMatchesCount />
+                <UpcomingMatches /> */}
             </div>
-            <div className="group-46">
+            {/* <div className="group-46">
                 <div className="row" />  
                 <div className="group-47">
                     <img
@@ -45,7 +46,7 @@ export default function SingleView() {
                     />
                 </div>
                 <MatchBets />
-            </div>
+            </div> */}
         </div>
     );
 }
