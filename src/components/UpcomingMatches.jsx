@@ -2,7 +2,7 @@ import { matchTypes, navOptions } from "helpers/constants";
 import getRandomNumberInInterval from "helpers/getRandomNumberInInterval";
 import React from "react";
 import useStore from "store/useStore";
-import UpcomingMatchCard from "./UpcomingMatchCard";
+import UpcomingMatchCard from "./common/cards/UpcomingMatchCard";
 
 export default function UpcomingMatches() {
         const favoriteMatches = useStore((state) => state.favoriteMatches);

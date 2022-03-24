@@ -1,0 +1,173 @@
+@import 'variables.scss';
+
+@mixin active-side-button {
+  background: linear-gradient(to bottom, #e3a99e, #db8182 50%, #c55758);
+
+  .side-button-wrapper {
+    background-color: #e65757;
+    text-shadow: 0.4px 0.4px 4.6px rgb(255 237 154 / 90%), -0.4px -0.4px 9.6px rgb(255 237 154 / 90%), 0.4px -0.4px 9.6px rgb(255 237 154 / 90%), -0.4px 0.4px 9.6px rgb(255 237 154 / 90%);
+
+    .plus {}
+
+    .number {}
+  }
+
+  .line {
+    background: linear-gradient(to right, #ca9289, #f1b1a6);
+  }
+}
+
+
+.side-button {
+  position: relative;
+  width: 43px;
+  height: 145px;
+  padding: 1px;
+  background: linear-gradient(to bottom, #9b6763, #8e4a4d 50%, #83393a);
+
+  .side-button-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: #9b2f30;
+    font-family: Roboto;
+    color: white;
+
+    .plus {
+      font-size: 36px;
+      line-height: 37px;
+      margin-top: -5px;
+    }
+
+    .number {
+      font-size: 18px;
+      line-height: 20px;
+      margin-top: -3px;
+    }
+    .text {
+      margin-top: 25px;
+    }
+  }
+
+  .line {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to right, #885352, #cd8a86);
+  }
+
+  &.active,
+  &:hover {
+    @include active-side-button;
+  }
+
+  &.blue-card {
+    width: 43px;
+    height: 110px;
+    background: url('../../../../imagesHold/cards/live_card_blue.png');
+    background-repeat: round;
+
+    .side-button-wrapper {
+      background-color: initial;
+    }
+
+    .line {
+      display: none;
+    }
+
+    &.active,
+    &:hover {
+      background: url('../../../../imagesHold/cards/live_card_blue_active.png');
+      background-repeat: round;
+    }
+  }
+}
+
+.favorite-card {
+  .side-button-wrapper {
+    justify-content: flex-start;
+
+    .up-arrow-wrapper {
+      position: relative;
+      width: 100%;
+      height: 37px;
+
+      .up-arrow {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .arrow-line1 {
+        position: absolute;
+        bottom: -1px;
+        left: -1px;
+        width: calc(100% + 2px);
+        height: 1px;
+        background-color: #6f2f2d;
+      }
+
+      .arrow-line2 {
+        position: absolute;
+        bottom: -2px;
+        left: -1px;
+        width: calc(100% + 2px);
+        height: 1px;
+        background: linear-gradient(to right, #cd8a86, #b37271 50%, #9c5d5e);
+      }
+    }
+
+    .plus {
+      margin-top: 22px;
+    }
+  }
+
+  &.active,
+  &:hover {
+    .side-button-wrapper {
+      .up-arrow-wrapper {
+        .arrow-line1 {
+          background-color: #c77f7e;
+        }
+
+        .arrow-line2 {
+          background: linear-gradient(to right, #ffcbc8, #ffb2b0 50%, #ff9998);
+        }
+      }
+    }
+
+    &.blue-card {
+      .side-button-wrapper {
+        .up-arrow-wrapper {
+          .arrow-line1 {
+            background-color: #457f96;
+          }
+
+          .arrow-line2 {
+            background: linear-gradient(to right, #6bbbd8, #68aedb 50%, #5d95c9);
+          }
+        }
+      }
+    }
+  }
+
+  &.blue-card {
+    .side-button-wrapper {
+      .up-arrow-wrapper {
+        .arrow-line1 {
+          background-color: #284d67;
+        }
+
+        .arrow-line2 {
+          background: linear-gradient(to right, #4e96c1, #4285bb 50%, #42698a);
+        }
+      }
+    }
+  }
+}
