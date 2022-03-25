@@ -4,7 +4,12 @@ import React from "react";
 import useStore from "store/useStore";
 // import LiveMatchCardButton from "./SideButton/LiveMatchCardButton";
 // import LiveMatchCoefficient from "./LiveMatchCoefficient";
-import MatchFavoriteButton from "./SideButton/MatchFavoriteButton";
+// import FavoriteButton from "./CardSideButtons/FavoriteButton";
+import MatchButton from "./CardSideButtons/MatchButton";
+import CardHeader from "./CardHeader/CardHeader"
+import CardBody from "./CardBody/CardBody"
+import CardFooter from "./CardFooter/CardFooter"
+
 
 export default function LiveMatchCard({ matchCard }) {
     const {
@@ -31,59 +36,61 @@ export default function LiveMatchCard({ matchCard }) {
         (state) => state.changePlayingMatchId
     );
     const selected = selectedCardId === matchCard.id;
-    const styles = {
-        inlay: `
-                height: 105px;
-                left: 0;
-                position: absolute;
-                top: 40px;
-                width: 681px;
-                background: url(${
-                    selected
-                        ? require("../../../imagesHold/selected_inlay.png").default
-                        : require("../../../imagesHold/bg_201.jpg").default
-                }) no-repeat;
-          `,
-        leftContainerHover: {
-        },
-        centerContainerHover: {},
-        rightContainerHover: {},
-        container: {
-            height: "145px",
-            position: "relative",
-            width: "681px",
-            marginBottom: "9px",
-            background: selected
-                ? "linear-gradient(270deg, #5f262d 0, #9b2f30 100%)"
-                : "linear-gradient(90deg, #262330 -5.365545%, #4d1e22 94.63445%)",
-            "&:hover": {
-                background: "linear-gradient(270deg, #5f262d 0, #9b2f30 100%)",
-            },
-            "&:hover $inlay": {
-                background: `url(${
-                    require("../../../imagesHold/selected_inlay.png").default
-                })`,
-            },
-            "&:hover $leftContainerHover": {
-                background: `url(${
-                    require("../../../imagesHold/bg_227.png").default
-                })`,
-                zIndex: 1,
-            },
-            "&:hover $rightContainerHover": {
-                background: `url(${
-                    require("../../../imagesHold/bg_250.png").default
-                })`,
-                zIndex: 1,
-            },
-            "&:hover $centerContainerHover": {
-                background: `url(${
-                    require("../../../imagesHold/bg_228.png").default
-                }) no-repeat center`,
-            },
-        },
-    };
-    const { classes } = jss.createStyleSheet(styles).attach();
+    // const styles = {
+    //     inlay: `
+    //             height: 105px;
+    //             left: 0;
+    //             position: absolute;
+    //             top: 40px;
+    //             width: 681px;
+    //             background: url(${
+    //                 selected
+    //                     ? require("../../../imagesHold/selected_inlay.png").default
+    //                     : require("../../../imagesHold/bg_201.jpg").default
+    //             }) no-repeat;
+    //       `,
+    //     leftContainerHover: {
+    //     },
+    //     centerContainerHover: {},
+    //     rightContainerHover: {},
+    //     container: {
+    //         height: "145px",
+    //         position: "relative",
+    //         width: "681px",
+    //         marginBottom: "9px",
+    //         background: selected
+    //             ? "linear-gradient(270deg, #5f262d 0, #9b2f30 100%)"
+    //             : "linear-gradient(90deg, #262330 -5.365545%, #4d1e22 94.63445%)",
+    //         "&:hover": {
+    //             background: "linear-gradient(270deg, #5f262d 0, #9b2f30 100%)",
+    //         },
+    //         "&:hover $inlay": {
+    //             background: `url(${
+    //                 require("../../../imagesHold/selected_inlay.png").default
+    //             })`,
+    //         },
+    //         "&:hover $leftContainerHover": {
+    //             background: `url(${
+    //                 require("../../../imagesHold/bg_227.png").default
+    //             })`,
+    //             zIndex: 1,
+    //         },
+    //         "&:hover $rightContainerHover": {
+    //             background: `url(${
+    //                 require("../../../imagesHold/bg_250.png").default
+    //             })`,
+    //             zIndex: 1,
+    //         },
+    //         "&:hover $centerContainerHover": {
+    //             background: `url(${
+    //                 require("../../../imagesHold/bg_228.png").default
+    //             }) no-repeat center`,
+    //         },
+    //     },
+    // };
+    // const { classes } = jss.createStyleSheet(styles).attach();
+
+
     const handleContainerClick = () => {
         changeSelectedCardId(id);
     };
@@ -96,9 +103,13 @@ export default function LiveMatchCard({ matchCard }) {
             style={{background: '', display: 'flex'}}
             // className={classes.container}
         >
-            <div style={{width: '638px', height: '145px'}} className="card-content"></div>
-            {/* <LiveMatchCardButton isSelected={selected} matchCard={matchCard} /> */}
-            <MatchFavoriteButton isSelected={selected} matchCard={matchCard} />
+            <div style={{width: '638px', height: '145px'}} className="card-content">
+                <CardHeader />
+                <CardBody />
+                <CardFooter />
+            </div>
+            <MatchButton isSelected={selected} matchCard={matchCard} />
+            {/* <FavoriteButton isSelected={selected} matchCard={matchCard} /> */}
         </div>
     )
 
