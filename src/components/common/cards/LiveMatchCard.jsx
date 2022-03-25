@@ -100,8 +100,7 @@ export default function LiveMatchCard({ matchCard }) {
             role="button"
             onClick={handleContainerClick}
             key={id + "live-match-card"}
-            style={{background: '', display: 'flex'}}
-            // className={classes.container}
+            style={{background: '', display: 'flex', marginBottom: '10px'}}
         >
             <div style={{width: '638px', height: '145px'}} className="card-content">
                 <CardHeader />

@@ -24,6 +24,7 @@
   height: 145px;
   padding: 1px;
   background: linear-gradient(to bottom, #9b6763, #8e4a4d 50%, #83393a);
+  // box-shadow: -5px 1px 16px 0px rgb(8 8 8 / 74%);
 
   .side-button-wrapper {
     display: flex;
@@ -58,6 +59,16 @@
     top: 0;
     left: 0;
     background: linear-gradient(to right, #885352, #cd8a86);
+  }
+
+  .left-shadow {
+    position: absolute;
+    top: 0;
+    left: -31px;
+    height: 100%;
+    width: 31px;
+    // background: url('../../../../imagesHold/cards/side-button-shadow.png') no-repeat
+    background: linear-gradient(to left, rgb(0 0 0 / 35%), rgb(0 0 0 / 28%) 20%, rgb(0 0 0 / 15%) 40%, rgba(0, 0, 0, 0));
   }
 
   &.active,
