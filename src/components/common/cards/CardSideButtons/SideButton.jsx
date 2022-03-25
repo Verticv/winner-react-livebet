@@ -61,6 +61,7 @@ export default function SideButton({
                 )}
             </div>
             <div className="line"></div>
+            <div className="left-shadow"></div>
         </button>
     );
 }
