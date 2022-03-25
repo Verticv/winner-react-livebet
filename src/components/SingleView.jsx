@@ -16,7 +16,7 @@ export default function SingleView() {
                 width: "1550px",
                 overflowY: "scroll",
                 overflowX: "hidden",
-                background: '#adcfad'
+                background: 'black'
             }}
         >
             <div
