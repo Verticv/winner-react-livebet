@@ -3,7 +3,7 @@ import useStore from "store/useStore";
 
 import SideButton from "./SideButton"
 
-export default function MatchButton({ matchCard, isSelected }) {
+export default function MatchButton({ matchCard, isSelected, isFavoriteCard, isRed }) {
     const addBetSlipBet = useStore((s) => s.addBetSlipBet);
 
     const handlePlusButton = (event) => {
@@ -11,5 +11,5 @@ export default function MatchButton({ matchCard, isSelected }) {
         addBetSlipBet(matchCard);
     };
 
-    return <SideButton onClick={handlePlusButton} isSelected={isSelected} />;
+    return <SideButton redCard={isRed} isFavoriteCard={isFavoriteCard} onClick={handlePlusButton} isSelected={isSelected} />;
 }

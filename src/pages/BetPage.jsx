@@ -3,7 +3,7 @@ import BetNav from "components/BetNav/BetNav";
 import MultiView from "components/MultiView";
 // import LeagueSelectPopup from "components/popups/LeagueSelectPopup";
 // import SelectLayoutButtons from "components/SelectLayoutButtons";
-import SingleView from "components/SingleView";
+import SingleView from "components/SingleView/SingleView";
 // import ViewSelectButtons from "components/ViewSelectButtons";
 import { singleOrMultiOptions } from "helpers/constants";
 import React from "react";

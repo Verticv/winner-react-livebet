@@ -1,6 +1,13 @@
 @import 'variables.scss';
 
-@mixin active-footer {}
+@mixin active-footer {
+  // .left {
+  //     background: linear-gradient(to right, #9b2f30, #9b2f30 25%, #9a2f30 50%, #872d2f 63%, #722a2e 75%, #5d282e);
+  //   }
+  // .right {
+  //   background: linear-gradient(to left, #9b2f30, #9b2f30 25%, #9a2f30 50%, #872d2f 63%, #722a2e 75%, #5d282e);
+  // }
+}
 
 .card-footer-wrapper {
   display: flex;
@@ -94,6 +101,9 @@
       height: 54px;
       margin-right: 2px;
     }
+    &:hover {
+      background: linear-gradient(to right, #9b2f30, #9b2f30 25%, #9a2f30 50%, #872d2f 63%, #722a2e 75%, #5d282e);
+    }
   }
   .right {
     height: 32px;
@@ -130,6 +140,9 @@
         }
       }
     }
+    &:hover {
+      background: linear-gradient(to left, #9b2f30, #9b2f30 25%, #9a2f30 50%, #872d2f 63%, #722a2e 75%, #5d282e);
+    }
   }
 
   .middle {
@@ -151,6 +164,9 @@
       clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
       font-family: Roboto;
       font-size: 14px;
+      &:hover {
+        background-color: #9b2f30;
+      }
     }
   }
 
