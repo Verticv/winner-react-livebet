@@ -1,7 +1,7 @@
 import jss from "jss";
 import React from "react";
 import useStore from "store/useStore";
-import MatchFavoriteButton from "./SideButton/MatchFavoriteButton";
+import MatchFavoriteButton from "./CardSideButtons/FavoriteButton";
 
 export default function UpcomingMatchCard({ upcomingMatchCard }) {
     const changeSelectedCardId = useStore(

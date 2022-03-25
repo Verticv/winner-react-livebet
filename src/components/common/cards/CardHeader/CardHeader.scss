@@ -1,0 +1,118 @@
+@import 'variables.scss';
+
+@mixin active-header {
+  background: linear-gradient(to right, #9b2f30, #8f2d2f 25%, #802b2e 50%, #6e292e 75%, #61272d);
+
+  .line {
+    background: linear-gradient(to right, #cd6e6c, #cd6e6c 25%, #bd5e57 50%, #883f3e 75%, #572227);
+  }
+
+  &.blue {
+    background: linear-gradient(to right, #2e77ab, #2d6f9f 25%, #2b648f 50%, #29587d 75%, #284e6f);
+
+    .line {
+      background: linear-gradient(to right, #6bacd5, #63a1cf 25%, #568fc4 50%, #3c6e9a 75%, #255171);
+    }
+  }
+}
+
+.card-header-wrapper {
+  position: relative;
+  background-color: #76b2ff;
+  height: 40px;
+  padding: 2px 0;
+  background: linear-gradient(to right, #29232f, #33212b 25%, #3d2028 50%, #481f24 75%, #4d1e22);
+
+  .line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, #3b2028, #8d5350 25%, #9e6668 50%, #96504b 75%, #4d1e22);
+  }
+
+  .bottom-line {
+    top: unset;
+    bottom: 0;
+  }
+
+  &.active,
+  &:hover {
+    @include active-header;
+  }
+
+  .card-header-content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    .left {
+      display: flex;
+      width: 50%;
+      height: 100%;
+      align-items: center;
+
+      .ball {
+        margin-left: 10px;
+        margin-right: 14px;
+      }
+
+      .text {
+        color: #c8b273;
+        font-size: 15px;
+        letter-spacing: 0;
+        margin-left: 11px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        font-family: NotoSansCJKkr-Regular;
+      }
+    }
+
+    .right {
+      display: flex;
+      width: 50%;
+      height: 100%;
+      align-items: center;
+      justify-content: flex-end;
+
+      .yellow-box {
+        height: 18px;
+        width: 18px;
+        border-radius: 3px;
+        background: #e9ca4e;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+
+      .red-box {
+        height: 18px;
+        width: 18px;
+        border-radius: 3px;
+        background: #b92025;
+        margin-right: 11px;
+      }
+
+      .ball {
+        margin-left: 9px;
+        margin-right: 15px;
+      }
+    }
+  }
+
+  &.blue {
+    background: linear-gradient(to right, #222845, #222e4a 25%, #213551 50%, #213c58 75%, #20415d);
+
+    .line {
+      background: linear-gradient(to right, #223e5c, #4b6d9a 25%, #658ba8 50%, #4a73a0 75%, #224b68);
+    }
+
+    .card-header-content {
+      .left {
+        .text {
+          color: white;
+        }
+      }
+    }
+  }
+}
