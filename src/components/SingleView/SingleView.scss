@@ -1,0 +1,11 @@
+@import 'variables.scss';
+
+.hide-scrollbar-bet-page {
+  display: flex;
+  .match-img {
+    margin: 0 8px;
+    width: 863px;
+    height: 518px;
+    background: url("../../imagesHold/pic1.png") no-repeat;
+  }
+}

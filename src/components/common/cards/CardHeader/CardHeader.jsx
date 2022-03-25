@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import ball from "../../../../imagesHold/image_70.png";
 import spain from "../../../../imagesHold/image_61.png";
@@ -12,8 +12,10 @@ export default function CardHeader({
     isRed = true,
     league = "라리가",
     withMatchResults = true,
+    isActive,
+    setIsActive
 }) {
-    const [isActive, setIsActive] = useState(false);
+    
 
     const mouseEnterHandler = () => setIsActive(true);
     const mouseLeaveHandler = () => setIsActive(false);
@@ -22,7 +24,7 @@ export default function CardHeader({
         <div
             onMouseEnter={mouseEnterHandler}
             onMouseLeave={mouseLeaveHandler}
-            className={`card-header-wrapper ${isSelected ? "active" : ""} ${
+            className={`card-header-wrapper ${isSelected || isActive ? "active" : ""} ${
                 isRed ? "" : "blue"
             }`}
         >
@@ -39,7 +41,7 @@ export default function CardHeader({
                     <img src={spain} alt="" width="29" height="18" />
                     <p className="text">{league}</p>
                 </div>
-                {withMatchResults && (
+                {isRed && (
                     <div className="right">
                         <img src={corner} alt="" width="18" height="18" />
                         <div className="yellow-box"></div>

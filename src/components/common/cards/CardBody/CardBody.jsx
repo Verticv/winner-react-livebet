@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import useStore from "store/useStore";
 
 import goldStar from "../../../../imagesHold/cards/gold-star.png";
@@ -21,11 +21,9 @@ export default function CardBody({
     withMatchResults = true,
     team1 = "fc바로셀로나",
     team2 = "레알마드리드",
+    isActive,
+    setIsActive,
 }) {
-    const [isActive, setIsActive] = useState(false);
-
-    console.log("isActive", isActive);
-
     const mouseEnterHandler = () => setIsActive(true);
     const mouseLeaveHandler = () => setIsActive(false);
 
@@ -39,9 +37,9 @@ export default function CardBody({
         <div
             onMouseEnter={mouseEnterHandler}
             onMouseLeave={mouseLeaveHandler}
-            className={`card-body-wrapper ${isSelected ? "active" : ""} ${
-                isRed ? "" : "blue"
-            }`}
+            className={`card-body-wrapper ${
+                isSelected || isActive ? "active" : ""
+            } ${isRed ? "" : "blue"}`}
         >
             <div className="left">
                 <div className="star">
@@ -102,7 +100,7 @@ export default function CardBody({
                             changePlayingMatchId(id);
                         }}
                     >
-                        <img
+                        { isRed ? (<img
                             className="ico-19"
                             src={
                                 playingMatchId === id
@@ -112,20 +110,23 @@ export default function CardBody({
                             alt=""
                             width="33"
                             height="33"
-                        />
+                        />) : (<div className="date">02-06 21:00</div>) }
+                        
                     </button>
                 </div>
             </div>
-            <div className="right">
-                <p className="line">
-                    {team1stats}
-                    <span>{team1Goals}</span>
-                </p>
-                <p className="line">
-                    {team2stats}
-                    <span className="gold">{team2Goals}</span>
-                </p>
-            </div>
+            {isRed && (
+                <div className="right">
+                    <p className="line">
+                        {team1stats}
+                        <span>{team1Goals}</span>
+                    </p>
+                    <p className="line">
+                        {team2stats}
+                        <span className="gold">{team2Goals}</span>
+                    </p>
+                </div>
+            )}
         </div>
     );
 }

@@ -8,8 +8,9 @@ export default function LiveUpcomingMatchesCount() {
                 width: "681px",
                 position: "relative",
                 marginTop: "10px",
-                marginBottom: '10px'
-
+                marginBottom: '10px',
+                backgroundColor: '#0c0c0c',
+                color: 'white'
             }}
         >
             <div className="bg-holder-30">

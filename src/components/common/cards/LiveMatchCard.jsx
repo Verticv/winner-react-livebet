@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
-import jss from "jss";
-import React from "react";
+import React, { useState } from "react";
 import useStore from "store/useStore";
 // import LiveMatchCardButton from "./SideButton/LiveMatchCardButton";
 // import LiveMatchCoefficient from "./LiveMatchCoefficient";
@@ -11,7 +10,7 @@ import CardBody from "./CardBody/CardBody"
 import CardFooter from "./CardFooter/CardFooter"
 
 
-export default function LiveMatchCard({ matchCard }) {
+export default function LiveMatchCard({ matchCard, isRed = true, isFavoriteCard = false }) {
     const {
         id,
         league,
@@ -26,6 +25,8 @@ export default function LiveMatchCard({ matchCard }) {
         team1Goals,
         team2Goals,
     } = matchCard;
+
+    const [isActive, setIsActive] = useState(false);
 
     const selectedCardId = useStore((state) => state.selectedCardId);
     const changeSelectedCardId = useStore(
@@ -102,12 +103,12 @@ export default function LiveMatchCard({ matchCard }) {
             key={id + "live-match-card"}
             style={{background: '', display: 'flex', marginBottom: '10px'}}
         >
-            <div style={{width: '638px', height: '145px'}} className="card-content">
-                <CardHeader />
-                <CardBody />
-                <CardFooter />
+            <div style={{width: '638px', height: isRed ? '145px' : '110px'}} className="card-content">
+                <CardHeader isRed={isRed} isActive={isActive} setIsActive={setIsActive} />
+                <CardBody isRed={isRed} isActive={isActive} setIsActive={setIsActive} />
+                {isRed && <CardFooter />}
             </div>
-            <MatchButton isSelected={selected} matchCard={matchCard} />
+            <MatchButton isRed={isRed} isFavoriteCard={isFavoriteCard} isSelected={selected} matchCard={matchCard} />
             {/* <FavoriteButton isSelected={selected} matchCard={matchCard} /> */}
         </div>
     )
