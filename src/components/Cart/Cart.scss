@@ -50,5 +50,165 @@
         }
       }
     }
+
+    .my-bets-wrapper {
+      margin-bottom: 1px;
+      height: 40px;
+      width: 360px;
+      background: linear-gradient(to bottom, #303039 0, #303038 50%, #2d2d35 100%);
+
+      .bets-content {
+        height: 40px;
+
+        .line {
+          height: 1px;
+          background: linear-gradient(90deg, rgba(255, 255, 255, 0.0) 0, rgba(255, 255, 255, 0.28) 49.87793%, rgba(255, 255, 255, 0.28) 50%, rgba(255, 255, 255, 0.0) 100%), rgba(44, 44, 52, 0.4);
+        }
+
+        .content {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          margin-left: 10px;
+          justify-content: space-between;
+
+          >div {
+            display: flex;
+            align-items: center;
+          }
+
+          .refresh {
+            button {
+              background: url('../../imagesHold/checks-button.png');
+              background-repeat: round;
+              color: black;
+              width: 65px;
+              height: 32px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-right: 10px;
+              p {
+                margin-right: 4px;
+              }
+            }
+          }
+
+          .text {
+            margin: 0 10px;
+            font-family: RobotoMedium, sans-serif;
+            font-size: 14px;
+            color: white;
+          }
+        }
+      }
+    }
+
+    .id-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 35px;
+      margin-bottom: 1px;
+      padding: 0 9px;
+      background: linear-gradient(to right, #2a2a34 0, #212129 50%, #1a1a20 100%);
+      .left {
+        font-size: 14px;
+        span {
+          color: #e9ca4e;
+        }
+      }
+      .right {
+        font-family: Roboto, sans-serif;
+        font-size: 12px;
+        color: #909090;
+      }
+    }
+
+    .my-bet-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 9px;
+      height: 60px;
+      margin-bottom: 1px;
+      font-size: 14px;
+      background: url('../../imagesHold/mybet-card.png');
+      background-repeat: round;
+      .title {
+        margin-bottom: 3px;
+        span {
+          color: #c49f58;
+        }
+      }
+      .result {
+        color: #e5b877;
+        span {
+          display: inline-block;
+          margin-left: 4px;
+          color: #4195c1;
+        }
+      }
+    }
+
+    // TODO: this should removed
+    .amount-details {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 36px;
+      width: 360px;
+      background: linear-gradient(to right, #1a1a20, #18181b 50%, #161616);
+      // margin-bottom: 1px;
+      padding: 0 10px 0 8px;
+      .text {
+        color: #909090;
+        font-family: NotoSansCJKkr-Regular;
+        font-size: 14px;
+        margin-top: 4px;
+      }
+      .number {
+        color: #e5b877;
+        font-size: 16px;
+        font-family: Roboto-Regular;
+        display: flex;
+        p {
+          color: wheat;
+          margin-right: 10px;
+        }
+      }
+      .line {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin: 0 10px 0 8px;
+        height: 1px;
+        width: calc(100% - 18px);
+        background: linear-gradient(to right, #35353a, #1d1d1d);
+      }
+    }
+
+    .see-all-button {
+      height: 77px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to right, #1a1a20, #18181b 50%, #161616);
+
+      button {
+        width: 340px;
+        height: 58px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: url('../../imagesHold/see-all-button.png');
+        background-repeat: round;
+        p {
+          margin-left: 11px;
+          color: black;
+        }
+      }
+    }
   }
 }

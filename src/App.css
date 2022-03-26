@@ -42,6 +42,7 @@ html {
   width: 1920px;
   background-color: black;
   overflow: scroll;
+  font-family: NotoSansCJKkr-Regular;
 }
 
 .hide-scrollbar::-webkit-scrollbar {
