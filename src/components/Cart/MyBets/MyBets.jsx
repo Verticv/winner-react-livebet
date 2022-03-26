@@ -1,6 +1,7 @@
 import React from "react";
 import BetId from "./BetId";
 import BetSlipMyBets from "./BetSlipMyBets";
+import "./MyBets.scss"
 
 export default function MyBets() {
     return (
@@ -26,7 +27,7 @@ export default function MyBets() {
                     <div className="row-36">
                         <img
                             className="ico-33"
-                            src={require("../imagesHold/ico_6.png").default}
+                            src={require("../../../imagesHold/ico_6.png").default}
                             alt=""
                             width="24"
                             height="14"
@@ -44,7 +45,7 @@ export default function MyBets() {
                                         <img
                                             className="ico-34"
                                             src={
-                                                require("../imagesHold/ico_5.png")
+                                                require("../../../imagesHold/ico_5.png")
                                                     .default
                                             }
                                             alt=""
@@ -90,7 +91,7 @@ export default function MyBets() {
                     <div className="col-11">
                         <img
                             className="bg-58"
-                            src={require("../imagesHold/bg_81.png").default}
+                            src={require("../../../imagesHold/bg_81.png").default}
                             alt=""
                             width="311"
                             height="1"
@@ -98,7 +99,7 @@ export default function MyBets() {
                         <div className="group-89">
                             <img
                                 className="ico-35"
-                                src={require("../imagesHold/ico_4.png").default}
+                                src={require("../../../imagesHold/ico_4.png").default}
                                 alt=""
                                 width="15"
                                 height="14"

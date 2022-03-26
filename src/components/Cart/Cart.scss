@@ -1,0 +1,54 @@
+@import 'variables.scss';
+
+.cart {
+  // margin-top: 30px; // temp
+  overflow: scroll;
+  color: white; // temp
+  width: 360px;
+  height: 1080px; // temp
+  .cart-wrapper {
+    // position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .cart-header-wrapper {
+      margin-bottom: 1px;
+      height: 40px;
+      width: 360px;
+      background: linear-gradient(to bottom, #303039 0, #303038 50%, #2d2d35 100%);
+
+      .cart-header-content {
+        height: 40px;
+
+        .line {
+          height: 1px;
+          background: linear-gradient(90deg, rgba(255, 255, 255, 0.0) 0, rgba(255, 255, 255, 0.28) 49.87793%, rgba(255, 255, 255, 0.28) 50%, rgba(255, 255, 255, 0.0) 100%), rgba(44, 44, 52, 0.4);
+        }
+
+        .content {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          margin-left: 10px;
+
+          .text {
+            margin: 0 10px;
+            font-family: RobotoMedium, sans-serif;
+            font-size: 14px;
+            text-transform: uppercase;
+          }
+          .circle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 19px;
+            width: 19px;
+            border-radius: 50%;
+            background: #9b2f30;
+          }
+        }
+      }
+    }
+  }
+}

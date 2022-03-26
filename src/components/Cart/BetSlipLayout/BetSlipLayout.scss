@@ -1,0 +1,43 @@
+@import 'variables.scss';
+
+@mixin active-button {
+  &:hover,
+  &.active {
+    background: url('../../../imagesHold/cart-layout-button.png');
+    background-repeat: round;
+    P {
+      color: #e5b877;
+    }
+  }
+}
+
+.cart-select-layout {
+  display: flex;
+  height: 40px;
+  width: 360px;
+  margin-bottom: 1px;
+
+  button {
+    P {
+      color: #909090;
+      font-size: 14px;
+      font-family: NotoSansCJKkr-Regular;
+    }
+  }
+
+  
+  .select-layout-first-button {
+    width: 180px;
+    background: #1d1e22;
+    border-right: 1px solid #000;
+    @include active-button;
+  }
+  
+  .select-layout-second-button {
+    width: 180px;
+    background: #1d1e22;
+    @include active-button;
+  }
+
+
+}

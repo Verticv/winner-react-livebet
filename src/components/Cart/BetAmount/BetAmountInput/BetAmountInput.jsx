@@ -53,7 +53,7 @@ export default function BetAmountInput() {
                             >
                                 <img
                                     src={
-                                        require("../imagesHold/icon.png")
+                                        require("../../../../imagesHold/icon.png")
                                             .default
                                     }
                                     alt=""
@@ -87,7 +87,7 @@ export default function BetAmountInput() {
                                 <img
                                     className="bg-27"
                                     src={
-                                        require("../imagesHold/bg_17.png")
+                                        require("../../../../imagesHold/bg_17.png")
                                             .default
                                     }
                                     alt=""
@@ -106,7 +106,7 @@ export default function BetAmountInput() {
                                 <img
                                     className="bg-29"
                                     src={
-                                        require("../imagesHold/bg_17.png")
+                                        require("../../../../imagesHold/bg_17.png")
                                             .default
                                     }
                                     alt=""
@@ -125,7 +125,7 @@ export default function BetAmountInput() {
                                 <img
                                     className="bg-31"
                                     src={
-                                        require("../imagesHold/bg_17.png")
+                                        require("../../../../imagesHold/bg_17.png")
                                             .default
                                     }
                                     alt=""
@@ -146,7 +146,7 @@ export default function BetAmountInput() {
                                 <img
                                     className="bg-33"
                                     src={
-                                        require("../imagesHold/bg_17.png")
+                                        require("../../../../imagesHold/bg_17.png")
                                             .default
                                     }
                                     alt=""
@@ -165,7 +165,7 @@ export default function BetAmountInput() {
                                 <img
                                     className="bg-35"
                                     src={
-                                        require("../imagesHold/bg_17.png")
+                                        require("../../../../imagesHold/bg_17.png")
                                             .default
                                     }
                                     alt=""
@@ -194,7 +194,7 @@ export default function BetAmountInput() {
                                     <img
                                         className="bg-37"
                                         src={
-                                            require("../imagesHold/bg_38.png")
+                                            require("../../../../imagesHold/bg_38.png")
                                                 .default
                                         }
                                         alt=""
@@ -231,7 +231,7 @@ export default function BetAmountInput() {
                     <div className="col">
                         <img
                             className="bg-39"
-                            src={require("../imagesHold/bg_6.png").default}
+                            src={require("../../../../imagesHold/bg_6.png").default}
                             alt=""
                             width="144"
                             height="1"
@@ -239,7 +239,7 @@ export default function BetAmountInput() {
                         <div className="group-78">
                             <img
                                 className="ico-31"
-                                src={require("../imagesHold/ico.png").default}
+                                src={require("../../../../imagesHold/ico.png").default}
                                 alt=""
                                 width="14"
                                 height="14"
@@ -261,7 +261,7 @@ export default function BetAmountInput() {
                     <div className="col-2">
                         <img
                             className="bg-42"
-                            src={require("../imagesHold/bg_12.png").default}
+                            src={require("../../../../imagesHold/bg_12.png").default}
                             alt=""
                             width="150"
                             height="1"
@@ -269,7 +269,7 @@ export default function BetAmountInput() {
                         <div className="group-79">
                             <img
                                 className="ico-32"
-                                src={require("../imagesHold/ico_2.png").default}
+                                src={require("../../../../imagesHold/ico_2.png").default}
                                 alt=""
                                 width="16"
                                 height="16"

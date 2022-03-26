@@ -8,7 +8,7 @@ import "./SingleView.scss";
 export default function SingleView() {
     return (
         <div
-            className="hide-scrollbar-bet-page"
+            className="match-img-wrapper hide-scrollbar"
             style={{
                 height: "954px",
                 // left: "0",
