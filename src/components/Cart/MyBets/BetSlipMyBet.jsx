@@ -13,28 +13,28 @@ export default function BetSlipMyBet() {
                 <div className="line-49"></div>
                 <img
                     className="bg-46"
-                    src={require("../imagesHold/bg_90.png").default}
+                    src={require("../../../imagesHold/bg_90.png").default}
                     alt=""
                     width="185"
                     height="1"
                 />
                 <img
                     className="bg-47"
-                    src={require("../imagesHold/bg_91.png").default}
+                    src={require("../../../imagesHold/bg_91.png").default}
                     alt=""
                     width="1"
                     height="51"
                 />
                 <img
                     className="bg-48"
-                    src={require("../imagesHold/bg_92.png").default}
+                    src={require("../../../imagesHold/bg_92.png").default}
                     alt=""
                     width="360"
                     height="28"
                 />
                 <img
                     className="bg-49"
-                    src={require("../imagesHold/bg_59.png").default}
+                    src={require("../../../imagesHold/bg_59.png").default}
                     alt=""
                     width="360"
                     height="12"

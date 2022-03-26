@@ -37,60 +37,6 @@ export default function LiveMatchCard({ matchCard, isRed = true, isFavoriteCard 
         (state) => state.changePlayingMatchId
     );
     const selected = selectedCardId === matchCard.id;
-    // const styles = {
-    //     inlay: `
-    //             height: 105px;
-    //             left: 0;
-    //             position: absolute;
-    //             top: 40px;
-    //             width: 681px;
-    //             background: url(${
-    //                 selected
-    //                     ? require("../../../imagesHold/selected_inlay.png").default
-    //                     : require("../../../imagesHold/bg_201.jpg").default
-    //             }) no-repeat;
-    //       `,
-    //     leftContainerHover: {
-    //     },
-    //     centerContainerHover: {},
-    //     rightContainerHover: {},
-    //     container: {
-    //         height: "145px",
-    //         position: "relative",
-    //         width: "681px",
-    //         marginBottom: "9px",
-    //         background: selected
-    //             ? "linear-gradient(270deg, #5f262d 0, #9b2f30 100%)"
-    //             : "linear-gradient(90deg, #262330 -5.365545%, #4d1e22 94.63445%)",
-    //         "&:hover": {
-    //             background: "linear-gradient(270deg, #5f262d 0, #9b2f30 100%)",
-    //         },
-    //         "&:hover $inlay": {
-    //             background: `url(${
-    //                 require("../../../imagesHold/selected_inlay.png").default
-    //             })`,
-    //         },
-    //         "&:hover $leftContainerHover": {
-    //             background: `url(${
-    //                 require("../../../imagesHold/bg_227.png").default
-    //             })`,
-    //             zIndex: 1,
-    //         },
-    //         "&:hover $rightContainerHover": {
-    //             background: `url(${
-    //                 require("../../../imagesHold/bg_250.png").default
-    //             })`,
-    //             zIndex: 1,
-    //         },
-    //         "&:hover $centerContainerHover": {
-    //             background: `url(${
-    //                 require("../../../imagesHold/bg_228.png").default
-    //             }) no-repeat center`,
-    //         },
-    //     },
-    // };
-    // const { classes } = jss.createStyleSheet(styles).attach();
-
 
     const handleContainerClick = () => {
         changeSelectedCardId(id);
@@ -104,8 +50,8 @@ export default function LiveMatchCard({ matchCard, isRed = true, isFavoriteCard 
             style={{background: '', display: 'flex', marginBottom: '10px'}}
         >
             <div style={{width: '638px', height: isRed ? '145px' : '110px'}} className="card-content">
-                <CardHeader isRed={isRed} isActive={isActive} setIsActive={setIsActive} />
-                <CardBody isRed={isRed} isActive={isActive} setIsActive={setIsActive} />
+                <CardHeader isRed={isRed} isActive={isActive || selected} setIsActive={setIsActive} />
+                <CardBody isRed={isRed} isActive={isActive || selected} setIsActive={setIsActive} />
                 {isRed && <CardFooter />}
             </div>
             <MatchButton isRed={isRed} isFavoriteCard={isFavoriteCard} isSelected={selected} matchCard={matchCard} />

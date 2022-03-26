@@ -1,7 +1,7 @@
 import BetNav from "components/BetNav/BetNav";
-// import BetSlip from "components/BetSlip";
+import BetSlip from "components/Cart/BetSlip";
 import MultiView from "components/MultiView";
-// import LeagueSelectPopup from "components/popups/LeagueSelectPopup";
+import LeagueSelectPopup from "components/popups/LeagueSelectPopup";
 // import SelectLayoutButtons from "components/SelectLayoutButtons";
 import SingleView from "components/SingleView/SingleView";
 // import ViewSelectButtons from "components/ViewSelectButtons";
@@ -22,14 +22,12 @@ export default function BetPage() {
     const isSingleView = singleOrMulti === singleOrMultiOptions.single;
     const isMultiView = singleOrMulti === singleOrMultiOptions.multi;
     return (
-        <div>
-            {/* <LeagueSelectPopup /> */}
-            <div>
-                <div
-                >
+        <div style={{display: 'flex'}} className="bet-page-wrapper">
+            <LeagueSelectPopup />
+            <div className="bet-page-nav">
+                <div>
                     <div>
-                            <BetNav />
-                            {/* <div style={{width: '1044px', height: '80px', background: 'blue'}}></div> */}
+                        <BetNav />
                     </div>
                     {/* <div className="btn">
                         <div className="row-28">
@@ -41,7 +39,9 @@ export default function BetPage() {
                 {isSingleView && <SingleView />}
                 {isMultiView && <MultiView />}
             </div>
-            {/* <BetSlip /> */}
+            <div className="bet-page-cart">
+                <BetSlip />
+            </div>
         </div>
     );
 }

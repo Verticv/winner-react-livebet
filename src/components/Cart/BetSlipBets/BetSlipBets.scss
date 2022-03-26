@@ -1,0 +1,48 @@
+@import 'variables.scss';
+
+.cart-cards-wrapper {
+  width: 360px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  .cart-card-wrapper {
+    padding: 7px 0 0 11px;
+    position: relative;
+    height: 81px;
+    margin-bottom: 1px;
+    font-family: NotoSansCJKkr-Regular;
+    font-size: 14px;
+    color: white;
+    background: url('../../../imagesHold/cart-card-bg.png');
+    background-repeat: round;
+    .close {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+    .title {
+      margin-top: 1px;
+    }
+    .content {
+      margin-top: 2px;
+    }
+    .number {
+      display: flex;
+      align-items: center;
+      margin-top: 2px;
+      .strikethrough {
+        display: inline-block;
+        margin-right: 10px;
+        color: #909090;
+        text-decoration: line-through;
+      }
+    }
+    .gold {
+      color: #c49f58;
+    }
+    .blue {
+      color: #4195c1;
+      margin-right: 9px;
+    }
+  }
+}
