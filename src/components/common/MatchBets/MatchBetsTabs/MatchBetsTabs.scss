@@ -1,0 +1,40 @@
+@import 'variables.scss';
+
+.taps-wrapper {
+  margin-top: 10px;
+  .taps-button {
+    height: 40px;
+    padding: 1px;
+    font-size: 14px;
+    color: white;
+    margin-right: 1px;
+    // background: url('../../../../imagesHold/taps-gray.png');
+    // background-repeat: round;
+    background: linear-gradient(to top, #4d4d5b 0, #42424d 50%, #34343e 100%);
+
+    // &.active,
+    // &:hover {
+    //   color: black;
+    //   background: url('../../../../imagesHold/taps-gold.png');
+    //   background-repeat: round;
+    // }
+    .taps-button-content {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 19px;
+      background: linear-gradient(to top, #27272e 0, #2d2d35 50%, #33333c 100%);
+    }
+
+    &.active,
+    &:hover {
+      color: black;
+      background: linear-gradient(to top, #fdfcc1 0, #dacead 50%, #c6b389 100%);
+      .taps-button-content {
+        background: linear-gradient(to top, #ddc482 0, #bba476 50%, #c6b389 100%);
+      }
+    }
+  }
+}

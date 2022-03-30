@@ -5,26 +5,16 @@ import useStore from "store/useStore";
 // import LiveMatchCoefficient from "./LiveMatchCoefficient";
 // import FavoriteButton from "./CardSideButtons/FavoriteButton";
 import MatchButton from "./CardSideButtons/MatchButton";
-import CardHeader from "./CardHeader/CardHeader"
-import CardBody from "./CardBody/CardBody"
-import CardFooter from "./CardFooter/CardFooter"
+import CardHeader from "./CardHeader/CardHeader";
+import CardBody from "./CardBody/CardBody";
+import CardFooter from "./CardFooter/CardFooter";
 
-
-export default function LiveMatchCard({ matchCard, isRed = true, isFavoriteCard = false }) {
-    const {
-        id,
-        league,
-        team1,
-        team2,
-        currentTime,
-        tieKof,
-        team1WinKof,
-        team2WinKof,
-        team1stats,
-        team2stats,
-        team1Goals,
-        team2Goals,
-    } = matchCard;
+export default function LiveMatchCard({
+    matchCard,
+    isRed = true,
+    isFavoriteCard = false,
+}) {
+    const { id } = matchCard;
 
     const [isActive, setIsActive] = useState(false);
 
@@ -32,10 +22,7 @@ export default function LiveMatchCard({ matchCard, isRed = true, isFavoriteCard 
     const changeSelectedCardId = useStore(
         (state) => state.changeSelectedCardId
     );
-    const playingMatchId = useStore((state) => state.playingMatchId);
-    const changePlayingMatchId = useStore(
-        (state) => state.changePlayingMatchId
-    );
+    
     const selected = selectedCardId === matchCard.id;
 
     const handleContainerClick = () => {
@@ -47,19 +34,34 @@ export default function LiveMatchCard({ matchCard, isRed = true, isFavoriteCard 
             role="button"
             onClick={handleContainerClick}
             key={id + "live-match-card"}
-            style={{background: '', display: 'flex', marginBottom: '10px'}}
+            style={{ background: "", display: "flex", marginBottom: "10px" }}
         >
-            <div style={{width: '638px', height: isRed ? '145px' : '110px'}} className="card-content">
-                <CardHeader isRed={isRed} isActive={isActive || selected} setIsActive={setIsActive} />
-                <CardBody isRed={isRed} isActive={isActive || selected} setIsActive={setIsActive} />
+            <div
+                style={{ width: "638px", height: isRed ? "145px" : "110px" }}
+                className="card-content"
+            >
+                <CardHeader
+                    isRed={isRed}
+                    isActive={isActive || selected}
+                    setIsActive={setIsActive}
+                />
+                <CardBody
+                    {...matchCard}
+                    isRed={isRed}
+                    isActive={isActive || selected}
+                    setIsActive={setIsActive}
+                />
                 {isRed && <CardFooter />}
             </div>
-            <MatchButton isRed={isRed} isFavoriteCard={isFavoriteCard} isSelected={selected} matchCard={matchCard} />
+            <MatchButton
+                isRed={isRed}
+                isFavoriteCard={isFavoriteCard}
+                isSelected={selected}
+                matchCard={matchCard}
+            />
             {/* <FavoriteButton isSelected={selected} matchCard={matchCard} /> */}
         </div>
-    )
-
-    
+    );
 
     // return (
     //     <div

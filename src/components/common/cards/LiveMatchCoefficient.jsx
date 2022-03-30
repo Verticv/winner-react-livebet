@@ -3,7 +3,7 @@ import jss from "jss";
 import React, { useState } from "react";
 import useStore from "store/useStore";
 
-import CoefficientWithUpdate from "../../CoefficientWithUpdate";
+import CoefficientWithUpdate from "../MatchBets/CoefficientWithUpdate/CoefficientWithUpdate";
 
 export default function LiveMatchCoefficient({
     team1,

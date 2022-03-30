@@ -3,6 +3,7 @@ import LiveMatchCards from "../common/cards/LiveMatchCards";
 // import LiveUpcomingMatchesCount from "../LiveUpcomingMatchesCount";
 // import MatchBets from "./MatchBets";
 import UpcomingMatches from "../UpcomingMatches";
+import MatchBets from "../common/MatchBets/MatchBets";
 import "./SingleView.scss";
 
 export default function SingleView() {
@@ -36,7 +37,12 @@ export default function SingleView() {
                 <div style={{height: "40px", width: '100%', backgroundColor: '#0c0c0c'}}></div>
                 <UpcomingMatches />
             </div>
-            <div className="match-img" />
+            <div>
+                <div className="match-img" />
+                <div className="match-bets-wrapper">
+                    <MatchBets />
+                </div>
+            </div>
         </div>
     );
 }

@@ -1,6 +1,4 @@
-import clsx from "clsx";
 import getRandomNumberInInterval from "helpers/getRandomNumberInInterval";
-import jss from "jss";
 import React, { useEffect, useState } from "react";
 
 export default function CoefficientWithUpdate(props) {
@@ -49,29 +47,29 @@ export default function CoefficientWithUpdate(props) {
         middle: "middle",
     };
     const display = getDisplayValue(coefficient.previous, coefficient.current);
-    const styles = {
-        redNeonBorder: `
-            border: 1px solid #ffbc93; /*stroke*/
-            border-radius: 3.88px/3.81px;
-            background: #7c2323;
-            background-clip: padding-box; /*Will not allow bg color to leak outside borders*/
-            box-shadow: 0 0 10.92px 1.08px #ff4c23; /*outer glow*/
-    `,
-        blueNeonBorder: `
-                border: 1px solid #93d0ff; /*stroke*/
-                border-radius: 3.88px/3.81px;
-                background: #293868;
-                background-clip: padding-box; /*Will not allow bg color to leak outside borders*/
-                box-shadow: 0 0 10.92px 1.08px #236bff; /*outer glow*/
-         `,
-    };
-    const { classes } = jss.createStyleSheet(styles).attach();
+    // const styles = {
+    //     redNeonBorder: `
+    //         border: 1px solid #ffbc93; /*stroke*/
+    //         border-radius: 3.88px/3.81px;
+    //         background: #7c2323;
+    //         background-clip: padding-box; /*Will not allow bg color to leak outside borders*/
+    //         box-shadow: 0 0 10.92px 1.08px #ff4c23; /*outer glow*/
+    // `,
+    //     blueNeonBorder: `
+    //             border: 1px solid #93d0ff; /*stroke*/
+    //             border-radius: 3.88px/3.81px;
+    //             background: #293868;
+    //             background-clip: padding-box; /*Will not allow bg color to leak outside borders*/
+    //             box-shadow: 0 0 10.92px 1.08px #236bff; /*outer glow*/
+    //      `,
+    // };
+    // const { classes } = jss.createStyleSheet(styles).attach();
     return (
         <div
-            className={clsx(
-                display === displayOptions.up && classes.redNeonBorder,
-                display === displayOptions.down && classes.blueNeonBorder
-            )}
+            // className={clsx(
+            //     display === displayOptions.up && classes.redNeonBorder,
+            //     display === displayOptions.down && classes.blueNeonBorder
+            // )}
             style={{
                 display: "flex",
                 justifyContent: "center",
@@ -95,7 +93,7 @@ export default function CoefficientWithUpdate(props) {
                         position: "absolute",
                         top: "-6px",
                     }}
-                    src={require("../imagesHold/up_arrow.png").default}
+                    src={require("../../../../imagesHold/up_arrow.png").default}
                     alt=""
                 />
             )}
@@ -105,7 +103,7 @@ export default function CoefficientWithUpdate(props) {
                         position: "absolute",
                         top: "22px",
                     }}
-                    src={require("../imagesHold/down_arrow.png").default}
+                    src={require("../../../../imagesHold/down_arrow.png").default}
                     alt=""
                 />
             )}
