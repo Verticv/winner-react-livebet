@@ -59,7 +59,7 @@ export default function CardBody({
                         <div className="bg-holder-26">
                             <p className="h-3">h</p>
                         </div>
-                        <p className="text-54">{team1}</p>
+                        <p style={{fontSize: '14px', whiteSpace: 'nowrap'}} className="text-54">{team1}</p>
                     </div>
                     <div className="team-2">
                         <div className="shirt">
@@ -87,7 +87,7 @@ export default function CardBody({
                                 title="a"
                             />
                         </div> */}
-                        <p className="text-55">{team2}</p>
+                        <p style={{fontSize: '14px', whiteSpace: 'nowrap'}} className="text-55">{team2}</p>
                     </div>
                 </div>
             </div>

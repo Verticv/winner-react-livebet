@@ -1,0 +1,215 @@
+@import 'variables.scss';
+
+.match-details-wrapper {
+
+  .match-details-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 54px;
+    .left {
+      display: flex;
+      align-items: center;
+      .square {
+        width: 4px;
+        height: 4px;
+        background-color: white;
+        margin-right: 10px;
+      }
+      .text {
+        color: #d1cecf;
+        font-size: 14px;
+      }
+    }
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 3px;
+      background-color: rgb(255, 255, 255);
+      opacity: 0.2;
+      .rotate {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .match-details-content {
+    display: flex;
+    flex-wrap: wrap;
+    .result-row {
+      display: flex;
+      width: 100%;
+      height: 36px;
+    }
+    .match-results-wrapper {
+      display: flex;
+      width: 100%;
+      height: 35px;
+      background-color: rgb(255, 255, 255, 0.102);
+      // background: url("./testing.png");
+      // background-repeat: round;
+      color: #d1cecf;
+     
+      .left {
+        height: 35px;
+        width: 355px;
+        display: flex;
+        justify-content: space-between;
+        clip-path: polygon(0 0, 96.4% 0, 99.3% 100%, 0% 100%);
+        align-items: center;
+        .text {
+          margin-left: 13px;
+          font-size: 14px;
+          font-family: NotoSansCJKkr-Regular;
+        }
+        .number {
+          font-family: Roboto;
+          font-size: 14px;
+          padding-right: 21px;
+          &.red-arrow {
+            position: relative;
+            .number-value {
+              position: absolute;
+              top: 17px;
+              left: 22px;
+            }
+          }
+        }
+        .red-arrow {
+          background: url("../../../../imagesHold/cards/red-up-arrow.png");
+          background-repeat: round;
+          width: 71px;
+          height: 54px;
+          margin-right: 2px;
+        }
+        &:hover {
+          background: linear-gradient(to right, #9b2f30, #9b2f30 25%, #9a2f30 50%, #872d2f 63%, #722a2e 75%, #5d282e);
+        }
+      }
+
+      .right {
+        height: 35px;
+        width: 343px;
+        // margin-left: -13px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        clip-path: polygon(3% 0%, 100% 0, 100% 100%, 0% 100%);
+        margin-left: -14px;
+        .text {
+          margin-right: 15px;
+          font-size: 14px;
+          font-family: NotoSansCJKkr-Regular;
+        }
+        .blue-arrow {
+          background: url("../../../../imagesHold/cards/blue-down-arrow.png");
+          background-repeat: round;
+          width: 71px;
+          height: 54px;
+          margin-right: 2px;
+        }
+        .number {
+          font-family: Roboto;
+          font-size: 14px;
+          margin-left: 7px;
+          padding-left: 15px;
+          &.blue-arrow {
+            position: relative;
+            margin-left: 1px;
+            .number-value {
+              position: absolute;
+              top: 17px;
+              left: 26px;
+            }
+          }
+        }
+        &:hover {
+          background: linear-gradient(to left, #9b2f30, #9b2f30 25%, #9a2f30 50%, #872d2f 63%, #722a2e 75%, #5d282e);
+        }
+      }
+    
+      .middle {
+        position: relative;
+        width: 172px;
+        height: 35px;
+        padding: 0 1px;
+        margin-left: -13px;
+        // margin-left: -14px;
+        // background: linear-gradient(to top, #494949, #3e3c3c 50%, #191919);
+        // background-color: rgb(255, 255, 255, 0.102);
+        clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%);
+        z-index: 2;
+        .left {
+          // background-color: #666666;
+          background: linear-gradient(to top, rgb(255 255 255 / 22%), rgb(255 255 255 / 9%) 50%, rgba(255, 255, 255, 0));
+          width: 1px;
+          height: 40px;
+          position: absolute;
+          left: 5.6px;
+          top: -1px;
+          transform: rotate(-16.5deg);
+          z-index: 10;
+        }
+        
+        // .line {
+        //   background-image: -moz-linear-gradient( 120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 0%, rgb(255,255,255) 50%, rgba(255,255,255,0.99) 50%, rgba(255,255,255,0) 100%);
+        //   background-image: -webkit-linear-gradient( 120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 0%, rgb(255,255,255) 50%, rgba(255,255,255,0.99) 50%, rgba(255,255,255,0) 100%);
+        //   background-image: -ms-linear-gradient( 120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 0%, rgb(255,255,255) 50%, rgba(255,255,255,0.99) 50%, rgba(255,255,255,0) 100%);
+        //   opacity: 0.251;
+        //   position: absolute;
+        //   left: 1198px;
+        //   top: 749px;
+        //   width: 11px;
+        //   height: 35px;
+        //   z-index: 452;
+        // }
+        
+
+        .right {
+          // background: linear-gradient(to top, #494949, #3e3c3c 50%, #191919);
+          background: linear-gradient(to top, rgb(255 255 255 / 22%), rgb(255 255 255 / 9%) 50%, rgba(255, 255, 255, 0));
+          width: 1px;
+          height: 40px;
+          position: absolute;
+          right: 8.6px;
+          top: -1px;
+          transform: rotate(16.5deg);
+          z-index: 10;
+        }
+        .middle-content {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 166.5px;
+          height: 35px;
+          padding-left: 0;
+          // background-color: #1b1b1b;
+          // background-color: rgb(255, 255, 255, 0.102);
+          // color: #d1cecf;
+          clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%);
+          font-family: Roboto;
+          font-size: 14px;
+          &:hover {
+            background-color: #9b2f30;
+          }
+        }
+      }
+    
+    
+      // &.active,
+      // &:hover {
+      //   @include active-footer;
+      // }
+    
+      // &.blue {}
+    }
+  }
+}
+
+
+
+
+

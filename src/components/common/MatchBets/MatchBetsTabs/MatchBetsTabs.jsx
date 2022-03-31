@@ -1,20 +1,22 @@
-import { betTypes } from "helpers/constants";
-import jss from "jss";
 import React, { useState } from "react";
+
+import { betTypes } from "helpers/constants";
 import MatchBetTab from "./MatchBetTab";
 
+import "./MatchBetsTabs.scss";
+
 export default function MatchBetsTabs({ handleChangeSelectedTab }) {
-    const styles = {
-        tabContainer: `
-            height: 40px;
-            left: 0;
-            position: absolute;
-            top: 528px;
-            width: 859px;
-            display: flex;
-                            `,
-    };
-    const { classes } = jss.createStyleSheet(styles).attach();
+    // const styles = {
+    //     tabContainer: `
+    //         height: 40px;
+    //         left: 0;
+    //         position: absolute;
+    //         top: 528px;
+    //         width: 859px;
+    //         display: flex;
+    //                         `,
+    // };
+    // const { classes } = jss.createStyleSheet(styles).attach();
 
     const tabs = [
         { id: 0, name: "전체", selected: true, betIdentifier: "all" },
@@ -56,7 +58,7 @@ export default function MatchBetsTabs({ handleChangeSelectedTab }) {
     };
 
     return (
-        <div className={classes.tabContainer}>
+        <div className="taps-wrapper">
             {stateTabs.map((tab) => {
                 return (
                     <MatchBetTab
