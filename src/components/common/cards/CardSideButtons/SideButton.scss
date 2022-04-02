@@ -89,6 +89,12 @@
       }
     }
 
+    &.favorite-card {
+      .text {
+        margin-top: 25px;
+      }
+    }
+
     .line {
       display: none;
     }

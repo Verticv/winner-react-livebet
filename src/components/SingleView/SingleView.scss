@@ -12,3 +12,46 @@
     margin: 0 8px;
   }
 }
+
+.matches-count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 40px;
+  width: 100%;
+  margin-bottom: 10px;
+  padding-right: 76px;
+  background: url("../../imagesHold/matches-count.png");
+  background-repeat: round;
+  .left, .right {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    color: #afb3be;
+    .number {
+      width: 20px;
+      height: 18px;
+      border-radius: 3px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      font-family: Roboto, sans-serif;
+    }
+  }
+  .left {
+    margin-right: 18px;
+    .number {
+      background-color: #932d2e;
+      margin-left: 11px;
+    }
+  }
+  .right {
+
+    .number {
+      background-color: #225f8b;
+      margin-right: 11px;
+    }
+  }
+}

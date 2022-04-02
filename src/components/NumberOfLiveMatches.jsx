@@ -1,6 +1,9 @@
 import React from 'react'
 
-export default function NumberOfLiveMatches() {
+import MultiViewSelectButtons from "./MultiViewSelectButtons/MultiViewSelectButtons"
+
+export default function NumberOfLiveMatches({isMultiView}) {
+    
     return (
         <div className="live-matches-number">
             <div className="red-icon"></div>
@@ -12,6 +15,11 @@ export default function NumberOfLiveMatches() {
                     <p className="number">80</p>
                 </div>
             </div>
+            {isMultiView && (
+                <div className='multi-view-buttons-wrapper'>
+                    <MultiViewSelectButtons />
+                </div>
+            )}
         </div>
     );
 }
