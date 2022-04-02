@@ -6,11 +6,14 @@ import LiveMatchCard from "./LiveMatchCard";
 
 import "./Cards.scss";
 
-export default function LiveMatchCards() {
+export default function LiveMatchCards({tempFavorite = false}) {
     /**
      * Returns a random number between min (inclusive) and max (exclusive)
      */
     const favoriteMatches = useStore((state) => state.favoriteMatches);
+
+    console.log('favoriteMatches', favoriteMatches)
+
     const selectedNav = useStore((state) => state.selectedNav);
     const matchCards = [
         {
@@ -89,6 +92,22 @@ export default function LiveMatchCards() {
             type:matchTypes.live
         },
     ];
+
+    if (tempFavorite) {
+        return (
+            favoriteMatches.filter(favoriteMatch => favoriteMatch.type === matchTypes.live).map((matchCard) => {
+                return (
+                    <LiveMatchCard
+                        key={matchCard.id}
+                        matchCard={matchCard}
+                        isFavoriteCard={true}
+                        isRed={false}
+                    />
+                );
+            })
+        )
+    }
+
     return (
         <>
             {selectedNav === navOptions.favorites
@@ -97,6 +116,7 @@ export default function LiveMatchCards() {
                           <LiveMatchCard
                               key={matchCard.id}
                               matchCard={matchCard}
+                              isFavoriteCard={true}
                           />
                       );
                   })

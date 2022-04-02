@@ -1,6 +1,6 @@
 import BetNav from "components/BetNav/BetNav";
 import BetSlip from "components/Cart/BetSlip";
-import MultiView from "components/MultiView";
+import MultiView from "components/MultiView/MultiView";
 import LeagueSelectPopup from "components/popups/LeagueSelectPopup";
 // import SelectLayoutButtons from "components/SelectLayoutButtons";
 import SingleView from "components/SingleView/SingleView";

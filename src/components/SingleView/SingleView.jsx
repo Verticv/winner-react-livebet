@@ -1,12 +1,16 @@
 import React from "react";
 import LiveMatchCards from "../common/cards/LiveMatchCards";
-// import LiveUpcomingMatchesCount from "../LiveUpcomingMatchesCount";
+import LiveUpcomingMatchesCount from "../LiveUpcomingMatchesCount";
 // import MatchBets from "./MatchBets";
+import useStore from "store/useStore";
 import UpcomingMatches from "../UpcomingMatches";
 import MatchBets from "../common/MatchBets/MatchBets";
 import "./SingleView.scss";
 
+
 export default function SingleView() {
+    const selectedNav = useStore((state) => state.selectedNav);
+    console.log('selectedNavselectedNav', selectedNav)
     return (
         <div
             className="match-img-wrapper hide-scrollbar"
@@ -33,9 +37,13 @@ export default function SingleView() {
                 }}
             >
                 <div><LiveMatchCards /></div>
-                {/* <LiveUpcomingMatchesCount /> */}
-                <div style={{height: "40px", width: '100%', backgroundColor: '#0c0c0c'}}></div>
+
+                
+                <LiveUpcomingMatchesCount />
+                {selectedNav === 0 && <div><LiveMatchCards tempFavorite /></div>}
+                {/* <div style={{height: "40px", width: '100%', backgroundColor: '#0c0c0c'}}></div> */}
                 <UpcomingMatches />
+
             </div>
             <div>
                 <div className="match-img" />

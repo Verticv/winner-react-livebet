@@ -252,39 +252,17 @@
         }
       }
     }
+    .multi-view-buttons-wrapper {
+      margin-left: 9px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
   }
 
   .view-select-button {
     margin-right: 10px;
     display: flex;
     align-items: center;
-
-    button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      background: linear-gradient(to top, #282828, #1c1c1c 50%, #0f0f0f);
-      border: 2px solid #b89c5e;
-      border-radius: 6px;
-      width: 136px;
-      height: 32px;
-      margin-left: 9px;
-
-      p {
-        font-family: NotoSansCJKkr-Regular;
-        font-size: 16px;
-        margin-left: 6px;
-        margin-top: 3px;
-      }
-
-      &.active,
-      &:hover {
-        background: url('../../imagesHold/fade.png') no-repeat, linear-gradient(to top, #5f4821, #55411e 50%, #49381b);
-        img {
-          filter: brightness(4);
-        }
-      }
-    }
   }
 }

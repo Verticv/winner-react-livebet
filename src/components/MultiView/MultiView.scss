@@ -1,0 +1,156 @@
+@import 'variables.scss';
+
+.multi-view-cards-wrapper {
+  width: 1540px;
+  display: flex;
+  // justify-content: space-between;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+
+  .multi-view-card-wrapper {
+    padding: 0 9px;
+    min-width: 381px;
+    height: 111px;
+    margin-right: 5px;
+    background: url('../../imagesHold/multi/multi-view-card.png');
+    background-repeat: round;
+
+    .card-header {
+      height: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+
+      .left {
+        font-size: 15px;
+      }
+
+      .right {
+        width: 93px;
+        display: flex;
+        // justify-content: space-between;
+
+        .results-number {
+          font-family: RobotoMedium;
+          font-size: 18px;
+          margin-right: 20px;
+        }
+      }
+    }
+
+    .card-body {
+      color: white;
+
+      .teams-wrapper {
+        display: flex;
+        // flex-direction: column;
+        height: 71px;
+        justify-content: space-between;
+        align-items: center;
+
+        // padding: 14px 0;
+        .left {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 71px;
+          .team-1 {
+            height: 50%;
+            display: flex;
+            align-items: center;
+
+          }
+
+          .team-2 {
+            height: 50%;
+            display: flex;
+            align-items: center;
+            margin-top: -5px;
+
+            .shirt,
+            .bg-holder-26 {
+              margin-left: 1px;
+            }
+          }
+
+          .team-1,
+          .team-2 {
+            .shirt {
+              margin-right: 8px;
+              margin-left: -3px;
+            }
+
+            .bg-holder-26 {
+              height: 12px;
+              width: 10px;
+              border-radius: 3px;
+              background: rgba(255, 255, 255, 0.3);
+              margin-right: 11px;
+
+              .h-3 {
+                color: #212121;
+                font-family: Roboto, sans-serif;
+                font-size: 10px;
+                letter-spacing: 0;
+                line-height: 12px;
+                text-align: center;
+                text-transform: uppercase;
+              }
+            }
+          }
+        }
+        .right {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 71px;
+          font-family: RobotoMedium;
+          font-size: 18px;
+          .first-row, .second-row {
+            width: 93px;
+            display: flex;
+          }
+          .results-number {
+            margin-right: 20px;
+            &:nth-child(2) {
+              margin-right: 28px;
+            }
+          }
+          .result {
+            color: #ffcc66;
+          }
+        }
+      }
+    }
+  }
+
+  &::-webkit-scrollbar {
+    height: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #666666;
+    border-radius: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background: #333333;
+    border-radius: 5px;
+  }
+}
+
+.multi-view-container {
+  position: relative;
+  .static-scroll {
+    background: url('../../imagesHold/static-scroll-long.png');
+    background-repeat: round;
+    position: absolute;
+    width: 4px;
+    height: 605px;
+    top: 0;
+    right: 11px;
+  }
+}
