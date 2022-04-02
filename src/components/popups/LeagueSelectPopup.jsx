@@ -3,7 +3,7 @@ import { viewTypes } from "helpers/constants";
 import React, { useRef, useState } from "react";
 import useStore from "store/useStore";
 import { useOnClickOutside } from "../../helpers/functions";
-import "./LeagueSelectPopup.css";
+import "./LeagueSelectPopup.scss";
 
 export default function LeagueSelectPopup(props) {
     const leagues = [
@@ -64,145 +64,137 @@ export default function LeagueSelectPopup(props) {
         return allLeaguesSelected;
     }
     function toggleAllLeagues(toggleOn) {
-        if (toggleOn) handleLeaguesToAdd(leagues.map(league => league.id))
-        else handleLeaguesToAdd([])
+        if (toggleOn) handleLeaguesToAdd(leagues.map((league) => league.id));
+        else handleLeaguesToAdd([]);
     }
     return (
         selectedView === viewTypes.selectLeague && (
-            <div
-                style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    zIndex: 5,
-                    width: "100%",
-                    height: "100%",
-                    backgroundColor: "rgba(0,0,0,0.6)",
-                    overflow: "hidden",
-                }}
-            >
-                <div
-                    style={{ zIndex: 10 }}
-                    className="main-live-league-group-3"
-                    ref={ref}
-                >
-                    <div className="main-live-league-bg-holder">
-                        <div className="main-live-league-bg-holder-2">
-                            <p className="main-live-league-text">리그선택 </p>
-                            {/* <div className="main-live-league-line"></div>
-                            <div className="main-live-league-line-2"></div>
-                            <div className="main-live-league-line-3"></div>
-                            <img
-                                className="main-live-league-x"
-                                src={
-                                    require("../../imagesHold/x_3.png").default
+            <>  
+                <div style={{zIndex: '4', position: 'fixed', background: 'black', opacity: 0.702, width: '1920px', height: '1080px'}} />
+                <div className="league-popup">
+                    <div className="league-popup-wrapper" ref={ref}>
+                        <div className="header">
+                            <div className="line-1" />
+                            <p className="text">리그선택 </p>
+                            <button
+                                // style={{ borderLeft: "1px solid black" }}
+                                onClick={() =>
+                                    changeView(viewTypes.chronological)
                                 }
-                                alt=""
-                                width="14"
-                                height="14"
-                            /> */}
-                           
-                           <button style={{borderLeft: '1px solid black'}} onClick={() => changeView(viewTypes.chronological)}>
-                                <img src={
-                                    require("../../imagesHold/ico.png").default
-                                }  alt="fffff" style={{width: '14px', height: '14px', margin: '13px' }}/>
-                            </button>        
-                        </div>
-                        
-                    </div>
-                    <div className="main-live-league-bg-holder-3">
-                        <div className="main-live-league-col">
-                            <div className="main-live-league-group-4">
-                                <button
-                                    onClick={() => toggleAllLeagues(!allLeaguesSelected())}
-                                    className="main-live-league-chck"
-                                >
-                                    {allLeaguesSelected() && (
-                                        <img
-                                            className="main-live-league-chx-ck"
-                                            src={
-                                                require("../../imagesHold/chx_ck.png")
-                                                    .default
-                                            }
-                                            alt=""
-                                            width="16"
-                                            height="12"
-                                        ></img>
-                                    )}
-                                </button>
-                                <p
-                                    style={{ whiteSpace: "nowrap" }}
-                                    className="main-live-league-text-2"
-                                >
-                                    모든 리그 선택
-                                </p>
-                            </div>
-                            <div className="main-live-league-group-5">
-                                <div
-                                    style={{
-                                        display: "flex",
-                                        justifyContent: "space-between",
-                                        flexDirection: "column",
-                                    }}
-                                    className="main-live-league-col-2"
-                                >
-                                    {leagues
-                                        .slice(0, Math.ceil(leagues.length / 2))
-                                        .map((league) => {
-                                            return (
-                                                <SelectableLeague
-                                                    key={
-                                                        league.id +
-                                                        "league-select"
-                                                    }
-                                                    league={league}
-                                                    handleLeaguesToAdd={
-                                                        handleLeaguesToAdd
-                                                    }
-                                                    leaguesToAdd={leaguesToAdd}
-                                                />
-                                            );
-                                        })}
+                            >
+                                <div className="button-content">
+                                    <img
+                                        src={
+                                            require("../../imagesHold/ico.png")
+                                                .default
+                                        }
+                                        alt="fffff"
+                                    />
                                 </div>
-                                <div
-                                    style={{
-                                        display: "flex",
-                                        justifyContent: "space-between",
-                                        flexDirection: "column",
-                                    }}
-                                    className="main-live-league-col-3"
-                                >
-                                    {leagues
-                                        .slice(
-                                            Math.floor(leagues.length / 2),
-                                            leagues.length
-                                        )
-                                        .map((league) => {
-                                            return (
-                                                <SelectableLeague
-                                                    key={
-                                                        league.id +
-                                                        "league-select"
-                                                    }
-                                                    league={league}
-                                                    handleLeaguesToAdd={
-                                                        handleLeaguesToAdd
-                                                    }
-                                                    leaguesToAdd={leaguesToAdd}
-                                                />
-                                            );
-                                        })}
-                                </div>
-                            </div>
+                            </button>
                         </div>
-                    </div>
-                    <div className="main-live-league-bg-holder-4">
-                        <div className="main-live-league-bg-holder-5">
-                            <div className="main-live-league-group-6">
-                                <div className="main-live-league-wrapper-3">
-                                    <div className="main-live-league-bg-holder-6">
-                                        <div className="main-live-league-bg"></div>
+
+                        <div className="main-live-league-bg-holder-3">
+                            <div className="main-live-league-col">
+                                <div className="main-live-league-group-4">
+                                    <button
+                                        onClick={() =>
+                                            toggleAllLeagues(
+                                                !allLeaguesSelected()
+                                            )
+                                        }
+                                        className="main-live-league-chck"
+                                    >
+                                        {allLeaguesSelected() && (
+                                            <img
+                                                className="main-live-league-chx-ck"
+                                                src={
+                                                    require("../../imagesHold/chx_ck.png")
+                                                        .default
+                                                }
+                                                alt=""
+                                                width="16"
+                                                height="12"
+                                            ></img>
+                                        )}
+                                    </button>
+                                    <p
+                                        style={{ whiteSpace: "nowrap" }}
+                                        className="main-live-league-text-2"
+                                    >
+                                        모든 리그 선택
+                                    </p>
+                                </div>
+                                <div className="main-live-league-group-5">
+                                    <div
+                                        style={{
+                                            display: "flex",
+                                            justifyContent: "space-between",
+                                            flexDirection: "column",
+                                        }}
+                                        className="main-live-league-col-2"
+                                    >
+                                        {leagues
+                                            .slice(
+                                                0,
+                                                Math.ceil(leagues.length / 2)
+                                            )
+                                            .map((league) => {
+                                                return (
+                                                    <SelectableLeague
+                                                        key={
+                                                            league.id +
+                                                            "league-select"
+                                                        }
+                                                        league={league}
+                                                        handleLeaguesToAdd={
+                                                            handleLeaguesToAdd
+                                                        }
+                                                        leaguesToAdd={
+                                                            leaguesToAdd
+                                                        }
+                                                    />
+                                                );
+                                            })}
                                     </div>
+                                    <div
+                                        style={{
+                                            display: "flex",
+                                            justifyContent: "space-between",
+                                            flexDirection: "column",
+                                        }}
+                                        className="main-live-league-col-3"
+                                    >
+                                        {leagues
+                                            .slice(
+                                                Math.floor(leagues.length / 2),
+                                                leagues.length
+                                            )
+                                            .map((league) => {
+                                                return (
+                                                    <SelectableLeague
+                                                        key={
+                                                            league.id +
+                                                            "league-select"
+                                                        }
+                                                        league={league}
+                                                        handleLeaguesToAdd={
+                                                            handleLeaguesToAdd
+                                                        }
+                                                        leaguesToAdd={
+                                                            leaguesToAdd
+                                                        }
+                                                    />
+                                                );
+                                            })}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="main-live-league-bg-holder-4">
+                            <div className="main-live-league-bg-holder-5">
+                                <div className="main-live-league-group-6">
                                     <button
                                         onClick={() => {
                                             changeView(viewTypes.chronological);
@@ -217,37 +209,34 @@ export default function LeagueSelectPopup(props) {
                                             취소
                                         </p>
                                     </button>
-                                </div>
-                                <div className="main-live-league-wrapper-4">
-                                    <div className="main-live-league-bg-holder-8">
-                                        <div className="main-live-league-bg-2"></div>
-                                    </div>
-                                    <div className="main-live-league-bg-holder-9">
-                                        <button
-                                            onClick={() => {
-                                                changeLeagues(leaguesToAdd);
-                                                changeView(
-                                                    viewTypes.chronological
-                                                );
-                                            }}
-                                            className="main-live-league-bg-holder-10"
-                                        >
-                                            <p
-                                                style={{
-                                                    pointerEvents: "none",
+                                    <div className="main-live-league-wrapper-4">
+                                        <div>
+                                            <button
+                                                onClick={() => {
+                                                    changeLeagues(leaguesToAdd);
+                                                    changeView(
+                                                        viewTypes.chronological
+                                                    );
                                                 }}
-                                                className="main-live-league-text-12"
+                                                className="main-live-league-bg-holder-10"
                                             >
-                                                확인
-                                            </p>
-                                        </button>
+                                                <p
+                                                    style={{
+                                                        pointerEvents: "none",
+                                                    }}
+                                                    className="main-live-league-text-12"
+                                                >
+                                                    확인
+                                                </p>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </>
         )
     );
 }
