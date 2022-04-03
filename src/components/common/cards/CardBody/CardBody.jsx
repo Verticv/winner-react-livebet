@@ -59,7 +59,7 @@ export default function CardBody({
                         <div className="bg-holder-26">
                             <p className="h-3">h</p>
                         </div>
-                        <p style={{fontSize: '14px', whiteSpace: 'nowrap'}} className="text-54">{team1}</p>
+                        <p style={{fontSize: '14px', whiteSpace: 'nowrap', color: "#d1cecf"}} className="text-54">{team1}</p>
                     </div>
                     <div className="team-2">
                         <div className="shirt">
@@ -87,12 +87,12 @@ export default function CardBody({
                                 title="a"
                             />
                         </div> */}
-                        <p style={{fontSize: '14px', whiteSpace: 'nowrap'}} className="text-55">{team2}</p>
+                        <p style={{fontSize: '14px', whiteSpace: 'nowrap', color: "#d1cecf"}} className="text-55">{team2}</p>
                     </div>
                 </div>
             </div>
             <div className="middle">
-                <div className="text">후반전 35</div>
+                <div className="text"> {isRed ? (<>"후반전" <span>35</span></>) : "경기시간"} </div>
                 <div className="button-wrapper">
                     <button
                         onClick={(event) => {

@@ -3,10 +3,12 @@
 .multi-view-match-results-wrapper {
   display: flex;
   flex-wrap: wrap;
+
   .multi-view-match-result-wrapper {
     width: 510px;
     margin-right: 5px;
     margin-bottom: 5px;
+
     .multi-view-match-card-wrapper {
       width: 510px;
       height: 152px;
@@ -14,23 +16,23 @@
       background-repeat: round;
       display: flex;
       flex-direction: column;
-  
+
       .multi-card-header-content {
         display: flex;
         width: 100%;
         height: 40px;
-  
+
         .left {
           display: flex;
           width: 50%;
           height: 100%;
           align-items: center;
-  
+
           .ball {
             margin-left: 10px;
             margin-right: 14px;
           }
-  
+
           .text {
             color: #c8b273;
             font-size: 15px;
@@ -41,7 +43,7 @@
             font-family: NotoSansCJKkr-Regular;
           }
         }
-  
+
         .right {
           display: flex;
           width: 50%;
@@ -49,7 +51,7 @@
           align-items: center;
           justify-content: flex-end;
           margin-top: 1px;
-  
+
           button {
             position: relative;
             width: 49px;
@@ -59,7 +61,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-  
+
             .left-line-1 {
               position: absolute;
               left: 0;
@@ -68,7 +70,7 @@
               width: 1px;
               background-color: #3a191d;
             }
-  
+
             .left-line-2 {
               position: absolute;
               left: 1px;
@@ -77,7 +79,7 @@
               width: 1px;
               background: linear-gradient(to bottom, #702b30, #62262b 50%, #4e1f23);
             }
-  
+
             .fade {
               position: absolute;
               bottom: 0;
@@ -88,20 +90,20 @@
               background-repeat: round;
               // m-card-fade
             }
-  
+
             &.close {
               margin-right: 1px;
             }
-  
+
             // &:hover,
             &.active {
               // 7f2c30
               background: linear-gradient(to left, #7f2c30, #812c2f);
-  
+
               .left-line-2 {
                 background: linear-gradient(to bottom, #995b57, #794241 50%, #4f2024);
               }
-  
+
               .line {
                 position: absolute;
                 // width: calc(100% - 1px);
@@ -115,20 +117,20 @@
           }
         }
       }
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
       .multi-card-sub-header-content {
         display: flex;
         width: 100%;
         height: 40px;
-  
+
         .left {
           width: 50%;
           display: flex;
@@ -136,7 +138,7 @@
           color: white;
           font-size: 15px;
           margin-left: 11px;
-  
+
           span {
             display: inline-block;
             margin-left: 3px;
@@ -144,14 +146,14 @@
             font-size: 16px;
           }
         }
-  
+
         .right {
           display: flex;
           width: 50%;
           height: 100%;
           align-items: center;
           justify-content: flex-end;
-  
+
           .yellow-box {
             height: 18px;
             width: 18px;
@@ -160,7 +162,7 @@
             margin-left: 10px;
             margin-right: 10px;
           }
-  
+
           .red-box {
             height: 18px;
             width: 18px;
@@ -168,16 +170,15 @@
             background: #b92025;
             margin-right: 11px;
           }
-  
+
           .ball {
             margin-left: 9px;
-            margin-right: 15px;
+            margin-right: 10px;
           }
         }
       }
-  
+
       .multi-card-body-wrapper {
-        // background: url('../../../../imagesHold/cards/red-body.png');
         display: flex;
         justify-content: space-between;
         background-repeat: round;
@@ -185,58 +186,56 @@
         height: 70px;
         color: white;
         display: flex;
-  
+
         .left {
-          // width: 40%;
           height: 100%;
           display: flex;
-          margin-left: 13px;
-          margin-top: 6px;
-  
+          margin-left: 11px;
+          margin-top: 4px;
+
           .star {
             display: flex;
             align-items: center;
             margin-left: 10px;
             margin-right: 13px;
           }
-  
+
           .teams-wrapper {
             display: flex;
             flex-direction: column;
-  
-            // padding: 14px 0;
+
             .team-1 {
               height: 50%;
               display: flex;
               align-items: center;
-  
+
             }
-  
+
             .team-2 {
               height: 50%;
               display: flex;
               align-items: center;
-              margin-top: -5px;
-  
+              margin-top: -7px;
+
               .shirt,
               .bg-holder-26 {
                 margin-left: 1px;
               }
             }
-  
+
             .team-1,
             .team-2 {
               .shirt {
                 margin-right: 8px;
               }
-  
+
               .bg-holder-26 {
                 height: 12px;
                 width: 10px;
                 border-radius: 3px;
                 background: rgba(255, 255, 255, 0.3);
-                margin-right: 11px;
-  
+                margin-right: 10px;
+
                 .h-3 {
                   color: #212121;
                   font-family: Roboto, sans-serif;
@@ -250,10 +249,10 @@
             }
           }
         }
-  
+
         .middle {
           width: 20%;
-  
+
           .text {
             text-align: center;
             font-size: 16px;
@@ -262,21 +261,21 @@
             margin-right: 4px;
             letter-spacing: -1px;
             text-shadow: 0.4px 0.4px 9.6px #ff0006, -0.4px -0.4px 9.6px #ff0006, 0.4px -0.4px 3.6px #ff0006, -0.4px 0.4px 9.6px #ff0006;
-  
+
             span {
               font-family: Roboto, sans-serif;
               font-size: 16px;
             }
           }
-  
+
           .button-wrapper {
             width: 100%;
             text-align: center;
-  
+
             button {
               margin-top: 9px;
               margin-right: 2px;
-  
+
               .date {
                 font-family: Roboto, sans-serif;
                 font-size: 12px;
@@ -285,41 +284,28 @@
             }
           }
         }
-  
+
         .right {
-          // width: 40%;
-          padding-right: 3px;
+          padding-right: 0;
           margin-top: 10px;
-  
+          margin-right: -4px;
+
           .line {
             font-family: Roboto, sans-serif;
             font-size: 18px;
             font-weight: 500;
             letter-spacing: 0.96em;
             text-align: end;
-  
+
             .gold {
               color: #e9ca4e;
             }
           }
         }
-  
-        // &.active,
-        // &:hover {
-        //   @include active-body;
-        // }
-  
-        // &.blue {
-        //   background: url('../../../../imagesHold/cards/blue-body.png');
-        //   .middle {
-        //     .text {
-        //       text-shadow: none;
-        //     }
-        //   }
-        // }
       }
-  
+
     }
+
     .info {
       padding-left: 11px;
       width: 100%;
@@ -327,6 +313,7 @@
       height: 40px;
       display: flex;
       align-items: center;
+
       .info-image {
         height: 15px;
         width: 15px;
@@ -335,26 +322,31 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
         p {
-            color: #2a2a34;
-            font-family: RobotoBold, sans-serif;
-            font-size: 13.31599px;
-            line-height: 16px;
-            text-align: center;
+          color: #2a2a34;
+          font-family: RobotoBold, sans-serif;
+          font-size: 13.31599px;
+          line-height: 16px;
+          text-align: center;
         }
       }
+
       .info-content {
         display: flex;
         align-items: center;
         color: #999999;
         font-size: 15px;
         margin-left: 11px;
+
         .number {
           font-family: Roboto, sans-serif;
+
           span {
             color: #ffcc66;
           }
         }
+
         .text {
           margin-left: 3px;
         }
@@ -364,16 +356,17 @@
     .results-content {
       .match-bets-content {
         background-color: #181a1b;
+
         .match-bet-card-wrapper {
           position: relative;
           height: 248px;
           width: 500px;
           max-width: 863px;
           margin-top: 1px;
-          padding: 10px;
-          padding-top: 0;
+          padding: 0;
           background: url('../../imagesHold/match-bet--small-card.png');
           background-repeat: round;
+
           .line {
             position: absolute;
             top: -1px;
@@ -382,27 +375,33 @@
             height: 1px;
             background: linear-gradient(to right, #1d1922 0, #5e2830 30%, #581717 50%, #5f2830 70%, #1d1922 100%);
           }
+
           .match-details-wrapper {
 
             .match-details-header {
               display: flex;
               align-items: center;
               justify-content: space-between;
+              padding-left: 10px;
               height: 50px;
+
               .left {
                 display: flex;
                 align-items: center;
+
                 .square {
                   width: 4px;
                   height: 4px;
                   background-color: white;
                   margin-right: 10px;
                 }
+
                 .text {
                   color: #d1cecf;
                   font-size: 14px;
                 }
               }
+
               button {
                 display: flex;
                 justify-content: center;
@@ -413,29 +412,30 @@
                 margin-right: 9px;
                 background-color: rgb(255, 255, 255);
                 opacity: 0.2;
+
                 .rotate {
                   transform: rotate(180deg);
                 }
               }
             }
-          
+
             .match-details-content {
               display: flex;
               flex-wrap: wrap;
+
               .result-row {
                 display: flex;
                 width: 100%;
                 height: 36px;
               }
+
               .match-results-wrapper {
                 display: flex;
                 width: 100%;
                 height: 35px;
                 background-color: rgb(255, 255, 255, 0.102);
-                // background: url("./testing.png");
-                // background-repeat: round;
                 color: #d1cecf;
-               
+
                 .left {
                   height: 35px;
                   width: 347px;
@@ -443,17 +443,21 @@
                   justify-content: space-between;
                   clip-path: polygon(0 0, 94% 0, 99% 100%, 0% 100%);
                   align-items: center;
+
                   .text {
                     margin-left: 10px;
                     font-size: 14px;
                     font-family: NotoSansCJKkr-Regular;
                   }
+
                   .number {
                     font-family: Roboto;
                     font-size: 14px;
                     padding-right: 21px;
+
                     &.red-arrow {
                       position: relative;
+
                       .number-value {
                         position: absolute;
                         top: 17px;
@@ -461,6 +465,7 @@
                       }
                     }
                   }
+
                   .red-arrow {
                     background: url("../../imagesHold/cards/red-up-arrow.png");
                     background-repeat: round;
@@ -468,25 +473,27 @@
                     height: 54px;
                     margin-right: 1px;
                   }
+
                   &:hover {
                     background: linear-gradient(to right, #9b2f30, #9b2f30 25%, #9a2f30 50%, #872d2f 63%, #722a2e 75%, #5d282e);
                   }
                 }
-          
+
                 .right {
                   height: 35px;
                   width: 343px;
-                  // margin-left: -13px;
                   display: flex;
                   justify-content: space-between;
                   align-items: center;
                   clip-path: polygon(5% 0%, 100% 0, 100% 100%, 0% 100%);
                   margin-left: -14px;
+
                   .text {
                     margin-right: 7.5px;
                     font-size: 14px;
                     font-family: NotoSansCJKkr-Regular;
                   }
+
                   .blue-arrow {
                     background: url("../../imagesHold/cards/blue-down-arrow.png");
                     background-repeat: round;
@@ -494,14 +501,17 @@
                     height: 54px;
                     margin-right: 2px;
                   }
+
                   .number {
                     font-family: Roboto;
                     font-size: 14px;
                     margin-left: 7px;
                     padding-left: 15px;
+
                     &.blue-arrow {
                       position: relative;
                       margin-left: -1px;
+
                       .number-value {
                         position: absolute;
                         top: 17px;
@@ -509,24 +519,22 @@
                       }
                     }
                   }
+
                   &:hover {
                     background: linear-gradient(to left, #9b2f30, #9b2f30 25%, #9a2f30 50%, #872d2f 63%, #722a2e 75%, #5d282e);
                   }
                 }
-              
+
                 .middle {
                   position: relative;
                   width: 124px;
                   height: 35px;
                   padding: 0 1px;
                   margin-left: -13px;
-                  // margin-left: -14px;
-                  // background: linear-gradient(to top, #494949, #3e3c3c 50%, #191919);
-                  // background-color: rgb(255, 255, 255, 0.102);
                   clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%);
                   z-index: 2;
+
                   .left {
-                    // background-color: #666666;
                     background: linear-gradient(to top, rgb(255 255 255 / 22%), rgb(255 255 255 / 9%) 50%, rgba(255, 255, 255, 0));
                     width: 1px;
                     height: 40px;
@@ -536,7 +544,7 @@
                     transform: rotate(-16.5deg);
                     z-index: 10;
                   }
-                          
+
                   .right {
                     background: linear-gradient(to top, rgb(255 255 255 / 22%), rgb(255 255 255 / 9%) 50%, rgba(255, 255, 255, 0));
                     width: 1px;
@@ -547,6 +555,7 @@
                     transform: rotate(16.5deg);
                     z-index: 10;
                   }
+
                   .middle-content {
                     display: flex;
                     justify-content: center;
@@ -554,25 +563,15 @@
                     width: 73px;
                     height: 35px;
                     padding-left: 0;
-                    // background-color: #1b1b1b;
-                    // background-color: rgb(255, 255, 255, 0.102);
-                    // color: #d1cecf;
                     clip-path: polygon(0 0, 100% 0, 86% 100%, 14% 100%);
                     font-family: Roboto;
                     font-size: 14px;
+
                     &:hover {
                       background-color: #9b2f30;
                     }
                   }
                 }
-              
-              
-                // &.active,
-                // &:hover {
-                //   @include active-footer;
-                // }
-              
-                // &.blue {}
               }
             }
           }
@@ -580,10 +579,12 @@
       }
 
 
-      
+
     }
+
     .bet-info-wrapper {
       position: relative;
+
       .static-scroll {
         background: url('../../imagesHold/static-scroll.png');
         background-repeat: round;
@@ -594,6 +595,7 @@
         right: 0;
       }
     }
+
     .go-to-game {
       color: #cccccc;
       display: flex;
@@ -602,12 +604,13 @@
       width: 100%;
       height: 50px;
       background: linear-gradient(to right, #2a2a34, #22222a 50%, #1a1a20);
+
       p {
         margin-left: 5px;
       }
     }
   }
-  
+
 }
 
 .empty-card {
