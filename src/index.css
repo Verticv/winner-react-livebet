@@ -46,6 +46,15 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'NotoSansCJKkr-Regular';
+  src: local('NotoSansCJKkr-Regular'), url(./fonts/NotoSansCJKkr-Regular.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Roboto-Regular';
+  src: local('Roboto-Regular'), url(./fonts/Roboto-Regular.ttf) format('truetype');
+}
 
 /* @layer utilities {
     @variants responsive {

@@ -5,7 +5,7 @@ import blueShirt from "../../../imagesHold/image_64.png";
 
 
 export default function CardBody({
-    team1 = "fc바로셀로나",
+    team1 = "FC바로셀로나",
     team2 = "레알마드리드",
     team1stats = 5000,
     team1Goals = 2,

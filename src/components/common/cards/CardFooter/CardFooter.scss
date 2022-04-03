@@ -71,7 +71,7 @@
 
   .left {
     height: 32px;
-    width: 283px;
+    width: 296px;
     // background-color: green;
     display: flex;
     justify-content: space-between;
@@ -146,22 +146,22 @@
   }
 
   .middle {
-    width: 92px;
+    width: 94px;
     height: 32px;
     padding: 0 1px;
     margin-left: -14px;
     background: linear-gradient(to top, #494949, #3e3c3c 50%, #191919);
-    clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+    clip-path: polygon(0 0, 100% 0, 88% 100%, 12% 100%);
     z-index: 2;
     .middle-content {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 90px;
+      width: 92px;
       height: 32px;
       padding-left: 0;
       background-color: #1b1b1b;
-      clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%);
+      clip-path: polygon(0 0, 100% 0, 88% 100%, 12% 100%);
       font-family: Roboto;
       font-size: 14px;
       &:hover {
@@ -178,76 +178,3 @@
 
   &.blue {}
 }
-
-
-// .bet-btn-container {
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   width: 100%;
-//   padding-left: 1.875rem;
-//   padding-right: 1.875rem;
-
-//   .bet-btn-skew {
-//     display: flex;
-//     justify-content: space-between;
-//     width: 49.5%;
-//     align-items: center;
-
-//     p {
-//       color: #d1cecf;
-//       font-size: 2.125rem;
-//     }
-
-//     .add-button {
-//       border: none;
-//       background: none;
-//       color: #fff;
-//       width: 9.8rem;
-//       height: 9.2rem;
-//       font-family: RobotoRegular;
-//       font-size: 2.125rem;
-
-//       &.red-button {
-//         background: url("../../../../imagesHold/arrow/arrowWithButton-red.png");
-//         background-repeat: round;
-//       }
-
-//       &.blue-button {
-//         background: url("../../../../imagesHold/arrow/arrowWithButton-blue.png");
-//         background-repeat: round;
-//       }
-//     }
-
-//     &:nth-child(2) {
-//       justify-content: center;
-//       width: 13.7%;
-
-//       .add-button {
-//         width: auto;
-//       }
-//     }
-
-//     &:nth-child(3) {
-//       width: 47%;
-
-//       .add-button {
-//         color: #d1cecf;
-//       }
-//     }
-
-//     &:nth-child(1),
-//     &:nth-child(3) {
-//       width: 50%;
-//     }
-
-
-
-//     &.bet-btn-numbers {
-//       .add-button {
-//         color: #d1cecf;
-//       }
-//     }
-
-//   }
-// }
