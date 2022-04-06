@@ -56,7 +56,7 @@ export default function BetAmount() {
             <AmountDetails title="최대 베팅배당" amount="0.00" withLine={false} />
             <Amount title="배당률합계" amount="0.00" numberClasses="blue" />
             <Amount title="총적중금액" amount="0" numberClasses="green" />
-            <Amount title="베팅금액" amount="0" />
+            {/* <Amount title="베팅금액" amount="0" /> */}
             <Amount title="베팅금액" amount="0" withInput />
             <div className="amount-buttons">
                 <button>5,000</button>

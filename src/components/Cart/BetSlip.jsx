@@ -32,7 +32,7 @@ function AmountDetails({
     return (
         <div className="amount-details">
             <p className="text">{title}</p>
-            <p style={{color: numberColor ? "white" : ""}} className="number"> {extraText && <p style={{color: 'white'}}>{extraText}</p>} <span style={{color: numberColor}}>{amount}</span></p>
+            <p style={{color: numberColor ? "white" : ""}} className="number"> {extraText && <p style={{color: 'white', fontFamily: 'NotoSansCJKkr-Regular'}}>{extraText}</p>} <span style={{color: numberColor}}>{amount}</span></p>
             {withLine && <div className="line" />}
         </div>
     );

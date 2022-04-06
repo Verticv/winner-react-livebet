@@ -4,7 +4,7 @@
   display: flex;
 
   .match-img {
-    margin: 0 8px;
+    margin: 0 10px;
     width: 863px;
     height: 518px;
     background: url("../../imagesHold/pic1.png") no-repeat;
@@ -24,7 +24,8 @@
   height: 40px;
   width: 100%;
   margin-bottom: 10px;
-  padding-right: 76px;
+  padding-right: 86px;
+  padding-bottom: 1px;
   background: url("../../imagesHold/matches-count.png");
   background-repeat: round;
 
@@ -34,6 +35,11 @@
     align-items: center;
     height: 40px;
     color: #afb3be;
+    margin-left: 18px;
+
+    .text {
+      font-size: 13px;
+    }
 
     .number {
       width: 20px;
@@ -50,9 +56,15 @@
   .left {
     margin-right: 18px;
 
+    .text {
+      font-size: 13px;
+    }
+
     .number {
       background-color: #932d2e;
       margin-left: 11px;
+      padding-bottom: 0.5px;
+      padding-right: 1px;
     }
   }
 
@@ -61,6 +73,7 @@
     .number {
       background-color: #225f8b;
       margin-right: 11px;
+      padding-bottom: 0.5px;
     }
   }
 }

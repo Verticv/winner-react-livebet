@@ -38,6 +38,11 @@
   }
 } */
 
+*:focus {
+  outline: none;
+}
+
+
 html {
   width: 1920px;
   background-color: black;

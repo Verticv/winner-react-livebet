@@ -26,6 +26,7 @@
       align-items: center;
       margin-left: 10px;
       margin-right: 13px;
+      padding-bottom: 2px;
     }
 
     .teams-wrapper {
@@ -37,14 +38,14 @@
         height: 50%;
         display: flex;
         align-items: center;
-
+        margin-top: 2px;
       }
 
       .team-2 {
         height: 50%;
         display: flex;
         align-items: center;
-        margin-top: -5px;
+        margin-top: -7px;
 
         .shirt,
         .bg-holder-26 {
@@ -59,7 +60,7 @@
         }
 
         .bg-holder-26 {
-          height: 12px;
+          height: 10px;
           width: 10px;
           border-radius: 3px;
           background: rgba(255, 255, 255, 0.3);
@@ -70,7 +71,7 @@
             font-family: Roboto, sans-serif;
             font-size: 10px;
             letter-spacing: 0;
-            line-height: 12px;
+            line-height: 10px;
             text-align: center;
             text-transform: uppercase;
           }
@@ -102,7 +103,7 @@
       text-align: center;
 
       button {
-        margin-top: 14px;
+        margin-top: 11px;
         margin-right: 2px;
         .date {
           font-family: Roboto, sans-serif;
@@ -122,7 +123,7 @@
       font-family: RobotoMedium, sans-serif;
       font-size: 18px;
       font-weight: 500;
-      letter-spacing: 0.96em;
+      letter-spacing: 15.28px;
       text-align: end;
 
       &:last-child {

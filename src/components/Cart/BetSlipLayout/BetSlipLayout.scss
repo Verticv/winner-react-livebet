@@ -19,7 +19,7 @@
 
   button {
     P {
-      color: #909090;
+      color: #404043;
       font-size: 14px;
       font-family: NotoSansCJKkr-Regular;
     }
@@ -38,6 +38,4 @@
     background: #1d1e22;
     @include active-button;
   }
-
-
 }

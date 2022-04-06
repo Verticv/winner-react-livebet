@@ -126,6 +126,7 @@
         font-family: Roboto, sans-serif;
         font-size: 12px;
         color: #909090;
+        font-weight: 600;
       }
     }
 
@@ -174,7 +175,7 @@
       }
       .number {
         color: #e5b877;
-        font-size: 16px;
+        font-size: 14px;
         font-family: Roboto-Regular;
         display: flex;
         margin-top: -2px;
@@ -202,7 +203,8 @@
       background: linear-gradient(to right, #1a1a20, #18181b 50%, #161616);
 
       button {
-        width: 340px;
+        width: 345px;
+        margin-right: 2px;
         margin-top: 6px;
         height: 60px;
         display: flex;
