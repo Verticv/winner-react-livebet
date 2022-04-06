@@ -33,6 +33,7 @@
           }
           .number {
             color: #c8b273;
+            margin-top: 2.5px;
 
             span {
               background-color: rgb(16, 16, 16);
@@ -50,7 +51,7 @@
 
   .layout-button-content {
     color: black;
-    background: linear-gradient(to top, #a99365, #baa375);
+    background: linear-gradient(to top, #d8bc6f, #aa8f60 50%, #d6c8a5);
     img {
       filter: brightness(0);
     }
@@ -88,7 +89,7 @@
       width: 109.1px;
       padding: 2px;
       font-size: 14px;
-      background: linear-gradient(to top, #27272e, #33333c);
+      background: linear-gradient(to top, #202026, #3e3e49);
 
       .fade {
         display: none;
@@ -97,11 +98,11 @@
       .navbar-button-border {
         height: 100%;
         padding: 1px;
-        background: linear-gradient(to top, #4d4d5c, #3c3c47 50%, #33333c);
+        background: linear-gradient(to top, #4d4d5c, #3c3c47 50%, #3e3e49);
 
         .navbar-button-inner {
           height: 100%;
-          background: linear-gradient(to top, #27272e, #33333c);
+          background: linear-gradient(to top, #202026, #3e3e49);
 
           .navbar-button-content {
             height: 100%;
@@ -143,7 +144,6 @@
                   width: 19px;
                   height: 13px;
                   border-radius: 3px;
-                  background-color: rgb(34, 34, 38);
                 }
               }
             }
@@ -186,7 +186,7 @@
         align-items: center;
         padding-top: 18px;
         color: #8a8a8d;
-        background-color: rgb(44, 44, 52);
+        background: linear-gradient(to top, #202026, #24242b 50%, #3d3d48);
         width: 100%;
         height: 100%;
         border-radius: inherit;

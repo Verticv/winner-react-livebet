@@ -18,7 +18,7 @@
       justify-content: center;
       align-items: center;
       padding: 0 19px;
-      background: linear-gradient(to top, #27272e 0, #2d2d35 50%, #33333c 100%);
+      background: linear-gradient(to top, #202026, #24242b 50%, #3d3d48);
     }
 
     &.active,
@@ -27,7 +27,7 @@
       background: linear-gradient(to top, #fdfcc1 0, #dacead 50%, #c6b389 100%);
 
       .taps-button-content {
-        background: linear-gradient(to top, #ddc482 0, #bba476 50%, #c6b389 100%);
+        background: linear-gradient(to top, #d8bc6f, #aa8f60 50%, #d6c8a5);
       }
     }
   }

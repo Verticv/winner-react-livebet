@@ -89,8 +89,10 @@
         position: relative;
         .number-value {
           position: absolute;
-          top: 17px;
+          margin-left: 1.5px;
+          top: 16px;
           left: 22px;
+          font-family: RobotoMedium, sans-serif;
         }
       }
     }
@@ -135,8 +137,10 @@
         margin-left: 1px;
         .number-value {
           position: absolute;
-          top: 17px;
+          margin-left: 1.5px;
+          top: 16px;
           left: 22px;
+          font-family: RobotoMedium, sans-serif;
         }
       }
     }
@@ -160,9 +164,10 @@
       width: 92px;
       height: 32px;
       padding-left: 0;
+      padding-bottom: 2px;
       background-color: #1b1b1b;
       clip-path: polygon(0 0, 100% 0, 88% 100%, 12% 100%);
-      font-family: Roboto;
+      font-family: RobotoMedium, sans-serif;
       font-size: 14px;
       &:hover {
         background-color: #9b2f30;

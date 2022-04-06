@@ -92,7 +92,7 @@ export default function CardBody({
                 </div>
             </div>
             <div className="middle">
-                <div className="text"> {isRed ? (<>"후반전" <span>35</span></>) : "경기시간"} </div>
+                <div className="text"> {isRed ? (<>후반전 <span>35</span></>) : "경기시간"} </div>
                 <div className="button-wrapper">
                     <button
                         onClick={(event) => {
