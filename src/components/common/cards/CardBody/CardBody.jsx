@@ -16,9 +16,9 @@ export default function CardBody({
     team2stats = 5000,
     team2Goals = 0,
     isSelected,
+    currentTimeText = "후반전",
+    currentTimeNumber = "35",
     isRed = true,
-    league = "라리가",
-    withMatchResults = true,
     team1 = "fc바로셀로나",
     team2 = "레알마드리드",
     isActive,
@@ -48,18 +48,21 @@ export default function CardBody({
                 <div className="teams-wrapper">
                     <div className="team-1">
                         <div className="shirt">
-                            <img
-                                // className="layer-14"
-                                src={redShirt}
-                                alt=""
-                                width="15"
-                                height="10"
-                            />
+                            <img src={redShirt} alt="" width="15" height="10" />
                         </div>
                         <div className="bg-holder-26">
                             <p className="h-3">h</p>
                         </div>
-                        <p style={{fontSize: '14px', whiteSpace: 'nowrap', color: "#d1cecf"}} className="text-54">{team1}</p>
+                        <p
+                            style={{
+                                fontSize: "14px",
+                                whiteSpace: "nowrap",
+                                color: "#d1cecf",
+                            }}
+                            className="text-54"
+                        >
+                            {team1}
+                        </p>
                     </div>
                     <div className="team-2">
                         <div className="shirt">
@@ -74,25 +77,30 @@ export default function CardBody({
                         <div className="bg-holder-26">
                             <p className="h-3">A</p>
                         </div>
-                        {/* <div className="bg-holder-27">
-                            <img
-                                className="a-3"
-                                src={
-                                    require("../../../../imagesHold/a.png")
-                                        .default
-                                }
-                                alt="a"
-                                width="8"
-                                height="9"
-                                title="a"
-                            />
-                        </div> */}
-                        <p style={{fontSize: '14px', whiteSpace: 'nowrap', color: "#d1cecf"}} className="text-55">{team2}</p>
+                        <p
+                            style={{
+                                fontSize: "14px",
+                                whiteSpace: "nowrap",
+                                color: "#d1cecf",
+                            }}
+                            className="text-55"
+                        >
+                            {team2}
+                        </p>
                     </div>
                 </div>
             </div>
             <div className="middle">
-                <div className="text"> {isRed ? (<>후반전 <span>35</span></>) : "경기시간"} </div>
+                <div className="text">
+                    {" "}
+                    {isRed ? (
+                        <>
+                            {currentTimeText} <span>{currentTimeNumber}</span>
+                        </>
+                    ) : (
+                        currentTimeText
+                    )}{" "}
+                </div>
                 <div className="button-wrapper">
                     <button
                         onClick={(event) => {
@@ -100,18 +108,21 @@ export default function CardBody({
                             changePlayingMatchId(id);
                         }}
                     >
-                        { isRed ? (<img
-                            className="ico-19"
-                            src={
-                                playingMatchId === id
-                                    ? selectedPlayButton
-                                    : playButton
-                            }
-                            alt=""
-                            width="33"
-                            height="33"
-                        />) : (<div className="date">02-06 21:00</div>) }
-                        
+                        {isRed ? (
+                            <img
+                                className="ico-19"
+                                src={
+                                    playingMatchId === id
+                                        ? selectedPlayButton
+                                        : playButton
+                                }
+                                alt=""
+                                width="33"
+                                height="33"
+                            />
+                        ) : (
+                            <div className="date">02-06 21:00</div>
+                        )}
                     </button>
                 </div>
             </div>
@@ -119,7 +130,7 @@ export default function CardBody({
                 <div className="right">
                     <p className="line">
                         {team1stats}
-                        <span>{team1Goals}</span>
+                        <span className="gold">{team1Goals}</span>
                     </p>
                     <p className="line">
                         {team2stats}
