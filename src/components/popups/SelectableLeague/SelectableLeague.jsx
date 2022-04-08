@@ -34,7 +34,7 @@ export default function SelectableLeague({
                 {leaguesToAdd.includes(league.id) && (
                     <img
                         className="main-live-league-chx-ck"
-                        src={require("../imagesHold/chx_ck.png").default}
+                        src={require("../../../imagesHold/chx_ck.png").default}
                         alt=""
                         width="16"
                         height="12"

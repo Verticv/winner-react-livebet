@@ -4,7 +4,7 @@ import { singleOrMultiOptions } from "helpers/constants";
 import BetNavListItem from "./partial/BetNavListItem";
 import SelectLayoutButtons from "components/BetNav/partial/SelectLayoutButtons/SelectLayoutButtons";
 import SingleViewSelectButtons from "components/SingleViewSelectButtons/SingleViewSelectButtons";
-import NumberOfLiveMatches from "../NumberOfLiveMatches";
+import NumberOfLiveMatches from "../common/NumberOfLiveMatches/NumberOfLiveMatches";
 
 import "./BetNav.scss";
 
@@ -118,9 +118,6 @@ export default function BetNav() {
                 <NumberOfLiveMatches isMultiView={isMultiView}/>
                 {!isMultiView && <SingleViewSelectButtons />}
             </div>
-            {/* <div style={{width: '149px', height: '50px', background: 'red', marginLeft: '315px'}}></div> */}
-            {/* <div style={{width: '360px', height: '50px', background: 'blue'}}></div> */}
-            {/* <NumberOfLiveMatches/> */}
         </div>
     );
 }

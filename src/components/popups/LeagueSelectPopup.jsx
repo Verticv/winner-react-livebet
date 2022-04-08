@@ -1,4 +1,4 @@
-import SelectableLeague from "components/SelectableLeague";
+import SelectableLeague from "components/popups/SelectableLeague/SelectableLeague";
 import { viewTypes } from "helpers/constants";
 import React, { useRef, useState } from "react";
 import useStore from "store/useStore";

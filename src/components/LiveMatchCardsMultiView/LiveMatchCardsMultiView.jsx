@@ -1,5 +1,5 @@
 import React from "react";
-import LiveMatchCardMultiView from "./LiveMatchCardMultiView";
+import LiveMatchCardMultiView from "components/LiveMatchCardsMultiView/LiveMatchCardMultiView";
 
 export default function LiveMatchCardsMultiView() {
     return (

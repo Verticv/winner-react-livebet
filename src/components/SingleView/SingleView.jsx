@@ -2,7 +2,7 @@ import React from "react";
 
 import { matchTypes } from "helpers/constants";
 import MatchCards from "components/common/cards/MatchCards";
-import LiveUpcomingMatchesCount from "../LiveUpcomingMatchesCount";
+import LiveUpcomingMatchesCount from "components/LiveUpcomingMatchesCount/LiveUpcomingMatchesCount";
 import useStore from "store/useStore";
 import UpcomingMatches from "../common/cards/UpcomingMatches";
 import MatchBets from "../common/MatchBets/MatchBets";
