@@ -30,8 +30,8 @@ export default function CardHeader({ league = "라리가" }) {
             <div className="right">
                 <button
                     className={`watch ${playActive ? "active" : ""}`}
-                    // onMouseEnter={() => setIsPlayActive(true)}
-                    // onMouseLeave={() => setIsPlayActive(false)}
+                    onMouseEnter={() => setIsPlayActive(true)}
+                    onMouseLeave={() => setIsPlayActive(false)}
                     onClick={() => setIsPlayActive(prev => !prev)}
                 >
                     <div>
@@ -50,8 +50,8 @@ export default function CardHeader({ league = "라리가" }) {
                 </button>
                 <button
                     className={`ground ${stadiumActive ? "active" : ""}`}
-                    // onMouseEnter={() => setIsStadiumActive(true)}
-                    // onMouseLeave={() => setIsStadiumActive(false)}
+                    onMouseEnter={() => setIsStadiumActive(true)}
+                    onMouseLeave={() => setIsStadiumActive(false)}
                     onClick={() => setIsStadiumActive(prev => !prev)}
                 >
                     <div>
@@ -71,8 +71,8 @@ export default function CardHeader({ league = "라리가" }) {
                 </button>
                 <button
                     className={`close ${closeActive ? "active" : ""}`}
-                    // onMouseEnter={() => setIsCloseActive(true)}
-                    // onMouseLeave={() => setIsCloseActive(false)}
+                    onMouseEnter={() => setIsCloseActive(true)}
+                    onMouseLeave={() => setIsCloseActive(false)}
                     onClick={() => setIsCloseActive(prev => !prev)}
                 >
                     <div>

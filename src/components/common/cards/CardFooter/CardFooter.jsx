@@ -2,6 +2,10 @@ import React from "react";
 
 import useStore from "store/useStore";
 
+import upRedArrow from "imagesHold/cards/red-arrow-up.png"
+import downBlueArrow from "imagesHold/cards/blue-arrow-down.png"
+
+
 import "./CardFooter.scss";
 
 export default function CardFooter({ matchCard }) {
@@ -29,6 +33,7 @@ export default function CardFooter({ matchCard }) {
                 <div
                     className={`number ${isLeftArrowActive ? "red-arrow" : ""}`}
                 >
+                    {isLeftArrowActive && <img src={upRedArrow} alt="" />}
                     <div onClick={handleClick} className="number-value">{team1WinKof}</div>
                 </div>
             </div>
@@ -41,6 +46,7 @@ export default function CardFooter({ matchCard }) {
                         isRightArrowActive ? "blue-arrow" : ""
                     }`}
                 >
+                    {isRightArrowActive && <img src={downBlueArrow} alt="" />}
                     <div onClick={handleClick} className="number-value">{team2WinKof}</div>
                 </div>
                 <p className="text">{team2}</p>

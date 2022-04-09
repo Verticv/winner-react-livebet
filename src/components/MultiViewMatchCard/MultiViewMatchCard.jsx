@@ -5,6 +5,8 @@ import CardHeader from "components/MultiViewMatchCard/CardHeader/CardHeader";
 import CardSubHeader from "components/MultiViewMatchCard/CardSubHeader/CardSubHeader";
 import CardBody from "components/MultiViewMatchCard/CardBody/CardBody";
 import externalLinkIcon from "../../imagesHold/external-link.png";
+import upRedArrow from "imagesHold/cards/red-arrow-up.png"
+import downBlueArrow from "imagesHold/cards/blue-arrow-down.png"
 
 import "./MultiViewMatchCard.scss";
 
@@ -56,24 +58,33 @@ const matchBets = [
 ];
 
 function ResultsRow() {
+    const isRowActive = true;
+    const option1 = "오버";
+    const option2 = "언더";
+    const kof1 = "1.25";
+    const kof2 = "3.3";
+
     return (
         <div className="match-results-wrapper">
             <div className="left">
-                <p className="text">오버</p>
-                <div className="number red-arrow">
-                    <div className="number-value">1.25</div>
-                </div>
+                <p className="text">{option1}</p>
             </div>
+            <div className={`number1 ${isRowActive ? "red-arrow" : ""}`}>
+                {isRowActive && <img src={upRedArrow} alt="" />}
+                <div className="number-value">{kof1}</div>
+            </div>
+            
             <div className="middle">
                 <div className="left"></div>
                 <div className="middle-content">4.05</div>
                 <div className="right"></div>
             </div>
+            <div className={`number2 ${ isRowActive ? "blue-arrow" : ""}`}>
+                {isRowActive && <img src={downBlueArrow} alt="" />}
+                <div className="number-value">{kof2}</div>
+            </div>
             <div className="right">
-                <div className="number blue-arrow">
-                    <div className="number-value">3.3</div>
-                </div>
-                <p className="text">언더</p>
+                <p className="text">{option2}</p>
             </div>
         </div>
     );
@@ -123,7 +134,7 @@ function ResultsContent() {
         <div className="results-content">
             <div className="match-bets-content">
                 <div className="match-bet-card-wrapper">
-                    <div className="line"></div>
+                    {/* <div className="line"></div> */}
                     {matchBets.map((matchBet) => {
                         return <MatchDetail key={matchBet.id} bet={matchBet} />;
                     })}
@@ -146,12 +157,12 @@ function MultiViewMatchResults({ isEmpty = false }) {
                         <ResultsContent />
                         <div className="static-scroll"></div>
                     </div>
-                    <div className="go-to-game">
+                    <button className="go-to-game">
                         <div>
                             <img src={externalLinkIcon} alt="" />
                         </div>
                         <p>해당경기로 이동</p>
-                    </div>
+                    </button>
                 </div>
             )}
         </>
