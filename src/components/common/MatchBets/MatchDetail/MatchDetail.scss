@@ -1,5 +1,35 @@
 @import 'variables.scss';
 
+@keyframes redUpAnimation {
+  0% {
+    bottom: 36.5px;
+    left: 19px;
+  }
+  50% {
+    bottom: 33.5px;
+    left: 19px;
+  }
+  100% {
+    bottom: 36.5px;
+    left: 19px;
+  }
+}
+
+@keyframes blueDownAnimation {
+  0% {
+    top: 35.5px;
+    left: 19px;
+  }
+  50% {
+    top: 32.5px;
+    left: 19px;
+  }
+  100% {
+    top: 35.5px;
+    left: 19px;
+  }
+}
+
 .match-details-wrapper {
 
   .match-details-header {
@@ -66,29 +96,39 @@
           font-size: 14px;
           font-family: NotoSansCJKkr-Regular;
         }
-        .number {
-          font-family: robotoMedium;
-          font-size: 14px;
-          padding-right: 21px;
-          &.red-arrow {
-            position: relative;
-            .number-value {
-              position: absolute;
-              top: 17px;
-              left: 22px;
-            }
-          }
-        }
-        .red-arrow {
-          background: url("../../../../imagesHold/cards/red-up-arrow.png");
-          background-repeat: round;
-          width: 71px;
-          height: 54px;
-          margin-right: 2px;
-        }
         &:hover {
           background: linear-gradient(to right, #9b2f30, #9b2f30 25%, #9a2f30 50%, #872d2f 63%, #722a2e 75%, #5d282e);
         }
+      }
+
+      .number1 {
+        font-family: robotoMedium;
+        font-size: 14px;
+        padding-right: 21px;
+        position: absolute;
+        &.red-arrow {
+          img {
+            position: absolute;
+            bottom: 35.5px;
+            left: 19px;
+            animation: redUpAnimation 1s infinite;
+          }
+          .number-value {
+            position: absolute;
+            top: 17px;
+            left: 22px;
+          }
+        }
+      }
+      .red-arrow {
+        background: url("../../../../imagesHold/cards/red-up-arrow.png");
+        background-repeat: round;
+        width: 71px;
+        height: 57px;
+        margin-right: 2px;
+        left: 273px;
+        top: -11px;
+        z-index: 5;
       }
 
       .right {
@@ -96,7 +136,7 @@
         width: 346px;
         // margin-left: -13px;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
         align-items: center;
         clip-path: polygon(3% 0%, 100% 0, 100% 100%, 0% 100%);
         margin-left: -14px;
@@ -105,30 +145,39 @@
           font-size: 14px;
           font-family: NotoSansCJKkr-Regular;
         }
-        .blue-arrow {
-          background: url("../../../../imagesHold/cards/blue-down-arrow.png");
-          background-repeat: round;
-          width: 71px;
-          height: 54px;
-          margin-right: 2px;
-        }
-        .number {
-          font-family: robotoMedium;
-          font-size: 14px;
-          margin-left: 7px;
-          padding-left: 15px;
-          &.blue-arrow {
-            position: relative;
-            margin-left: 1px;
-            .number-value {
-              position: absolute;
-              top: 17px;
-              left: 26px;
-            }
-          }
-        }
         &:hover {
           background: linear-gradient(to left, #9b2f30, #9b2f30 25%, #9a2f30 50%, #872d2f 63%, #722a2e 75%, #5d282e);
+        }
+      }
+      .blue-arrow {
+        background: url("../../../../imagesHold/cards/blue-down-arrow.png");
+        background-repeat: round;
+        width: 71px;
+        height: 57px;
+        margin-right: 2px;
+        left: 495px;
+        top: -11px;
+        z-index: 5;
+      }
+      .number2 {
+        font-family: robotoMedium;
+        font-size: 14px;
+        margin-left: 7px;
+        padding-left: 15px;
+        position: absolute;
+        &.blue-arrow {
+          margin-left: 1px;
+          img {
+            position: absolute;
+            top: 35.5px;
+            left: 19px;
+            animation: blueDownAnimation 1s infinite;
+          }
+          .number-value {
+            position: absolute;
+            top: 17px;
+            left: 26px;
+          }
         }
       }
     

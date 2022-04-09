@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+
+import upRedArrow from "imagesHold/cards/red-arrow-up.png"
+import downBlueArrow from "imagesHold/cards/blue-arrow-down.png"
+
 import "./MatchDetail.scss";
 
 function ResultsRow({option1= "오버", option2= "언더", kof1 = 1.25, kof2 = 3.3, tieKof = 4.05, isRowActive = false}) {
@@ -6,19 +10,21 @@ function ResultsRow({option1= "오버", option2= "언더", kof1 = 1.25, kof2 = 3
         <div className="match-results-wrapper">
             <div className="left">
                 <p className="text">{option1}</p>
-                <div className={`number ${isRowActive ? "red-arrow" : ""}`}>
-                    <div className="number-value">{kof1}</div>
-                </div>
+            </div>
+            <div className={`number1 ${isRowActive ? "red-arrow" : ""}`}>
+                {isRowActive && <img src={upRedArrow} alt="" />}
+                <div className="number-value">{kof1}</div>
             </div>
             <div className="middle">
                 <div className="left"></div>
                 <div className="middle-content">{tieKof}</div>
                 <div className="right"></div>
             </div>
+            <div className={`number2 ${ isRowActive ? "blue-arrow" : ""}`}>
+                {isRowActive && <img src={downBlueArrow} alt="" />}
+                <div className="number-value">{kof2}</div>
+            </div>
             <div className="right">
-                <div className={`number ${ isRowActive ? "blue-arrow" : ""}`}>
-                    <div className="number-value">{kof2}</div>
-                </div>
                 <p className="text">{option2}</p>
             </div>
             <div style={{ position: "absolute", width: "100%", height: "1px", background: "linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0))", left: 0, top: 0}}></div>

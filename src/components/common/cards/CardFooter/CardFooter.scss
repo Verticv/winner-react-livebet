@@ -1,5 +1,36 @@
 @import 'variables.scss';
 
+
+@keyframes redAnimation {
+  0% {
+    left: 19px;
+    top: 5px;
+  }
+  50% {
+    left: 19px;
+    top: 2px;
+  }
+  100% {
+    left: 19px;
+    top: 5px;
+  }
+}
+
+@keyframes blueDownAnimation {
+  0% {
+    left: 19px;
+    bottom: 5px;
+  }
+  50% {
+    left: 16px;
+    bottom: 5px;
+  }
+  100% {
+    left: 19px;
+    bottom: 5px;
+  }
+}
+
 @mixin active-footer {
   // .left {
   //     background: linear-gradient(to right, #9b2f30, #9b2f30 25%, #9a2f30 50%, #872d2f 63%, #722a2e 75%, #5d282e);
@@ -43,6 +74,13 @@
       padding-right: 21px;
       &.red-arrow {
         position: relative;
+        z-index: 3;
+        img {
+          position: absolute;
+          left: 19px;
+          top: 5px;
+          animation: redAnimation 1s infinite;
+        }
         .number-value {
           position: absolute;
           margin-left: 1.5px;
@@ -91,6 +129,13 @@
       &.blue-arrow {
         position: relative;
         margin-left: 1px;
+        z-index: 3;
+        img {
+          position: absolute;
+          left: 19px;
+          bottom: 5px;
+          animation: blueDownAnimation 1s infinite;
+        }
         .number-value {
           position: absolute;
           margin-left: 1.5px;
