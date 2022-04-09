@@ -134,7 +134,7 @@ function ResultsContent() {
         <div className="results-content">
             <div className="match-bets-content">
                 <div className="match-bet-card-wrapper">
-                    <div className="line"></div>
+                    {/* <div className="line"></div> */}
                     {matchBets.map((matchBet) => {
                         return <MatchDetail key={matchBet.id} bet={matchBet} />;
                     })}
@@ -157,12 +157,12 @@ function MultiViewMatchResults({ isEmpty = false }) {
                         <ResultsContent />
                         <div className="static-scroll"></div>
                     </div>
-                    <div className="go-to-game">
+                    <button className="go-to-game">
                         <div>
                             <img src={externalLinkIcon} alt="" />
                         </div>
                         <p>해당경기로 이동</p>
-                    </div>
+                    </button>
                 </div>
             )}
         </>

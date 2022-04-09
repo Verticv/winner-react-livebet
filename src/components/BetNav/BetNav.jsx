@@ -117,7 +117,7 @@ export default function BetNav() {
             </div>
             <div style={{width: '100%', display: 'flex', height: '46px', justifyContent: 'space-between'}}>
                 <NumberOfLiveMatches selectedNav={selectedNav} isMultiView={isMultiView}/>
-                {!isMultiView && <SingleViewSelectButtons />}
+                <SingleViewSelectButtons />
             </div>
         </div>
     );
