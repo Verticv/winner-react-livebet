@@ -15,7 +15,7 @@ export default function UpcomingMatches({ data = [], isFavorite = false }) {
                           return (
                               <LiveMatchCard
                                   isRed={false}
-                                  isFavoriteCard={false}
+                                  isFavoriteCard={true}
                                   key={upcomingMatchCard.id}
                                   matchCard={upcomingMatchCard}
                               />

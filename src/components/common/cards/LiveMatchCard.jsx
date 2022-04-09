@@ -19,7 +19,9 @@ export default function LiveMatchCard({
         (state) => state.changeSelectedCardId
     );
 
-    const selected = selectedCardId === matchCard.id;
+    console.log('selectedCardId', selectedCardId)
+
+    const selected = matchCard.active;
 
     const handleContainerClick = () => {
         changeSelectedCardId(id);
@@ -59,7 +61,7 @@ export default function LiveMatchCard({
             <MatchButton
                 isRed={isRed}
                 isFavoriteCard={isFavoriteCard}
-                isSelected={selected}
+                isSelected={selected || (isRed && isFavoriteCard && matchCard.active)}
                 matchCard={matchCard}
             />
         </div>

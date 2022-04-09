@@ -11,7 +11,6 @@ import "./SingleView.scss";
 
 export default function SingleView() {
     const selectedNav = useStore((state) => state.selectedNav);
-    console.log("selectedNavselectedNav", selectedNav);
 
     const matchCards = [
         {
@@ -29,7 +28,9 @@ export default function SingleView() {
             team1WinKof: 5.01,
             tieKof: 4.05,
             team2WinKof: 3.75,
+            isLeftArrowActive: true,
             type: matchTypes.live,
+            active: false,
         },
         {
             id: 1,
@@ -46,7 +47,9 @@ export default function SingleView() {
             team1WinKof: 5.01,
             tieKof: 4.05,
             team2WinKof: 3.75,
+            isRightArrowActive: true,
             type: matchTypes.live,
+            active: true,
         },
         {
             id: 2,
@@ -64,6 +67,7 @@ export default function SingleView() {
             tieKof: 4.05,
             team2WinKof: 3.75,
             type: matchTypes.live,
+            active: false,
         },
         {
             id: 3,
@@ -81,6 +85,7 @@ export default function SingleView() {
             tieKof: 4.05,
             team2WinKof: 3.75,
             type: matchTypes.live,
+            active: false,
         },
     ];
 
@@ -88,93 +93,30 @@ export default function SingleView() {
 
     const upcomingMatchCards = [
         {
-            id: 10,
+            id: 1,
             league: "라리가",
             team1: "FC바로셀로나",
             team2: "레알마드리드",
             startDateAndTime: "02-06 21:00",
-            tieKof: (Math.random() * 5).toFixed(2),
-            team1WinKof: (Math.random() * 5).toFixed(2),
-            team2WinKof: (Math.random() * 5).toFixed(2),
-            // team1stats: Math.floor(getRandomNumberInInterval(1000, 5000)),
-            // team2stats: Math.floor(getRandomNumberInInterval(1000, 5000)),
-            team1Goals: Math.floor(Math.random() * 5),
-            team2Goals: Math.floor(Math.random() * 3),
+            flag: "spain",
             type: matchTypes.upcoming,
         },
         {
-            id: 11,
+            id: 2,
             league: "라리가",
-            team1: "FC바로셀로나",
-            team2: "레알마드리드",
-            startDateAndTime: "02-08 02:00",
-            tieKof: (Math.random() * 5).toFixed(2),
-            team1WinKof: (Math.random() * 5).toFixed(2),
-            team2WinKof: (Math.random() * 5).toFixed(2),
-            // team1stats: Math.floor(getRandomNumberInInterval(1000, 5000)),
-            // team2stats: Math.floor(getRandomNumberInInterval(1000, 5000)),
-            team1Goals: Math.floor(Math.random() * 5),
-            team2Goals: Math.floor(Math.random() * 3),
+            team1: "맨체스터유나이티드",
+            team2: "리버풀",
+            startDateAndTime: "02-06 21:00",
+            flag: "england",
             type: matchTypes.upcoming,
         },
         {
-            id: 12,
+            id: 3,
             league: "라리가",
-            team1: "FC바로셀로나",
-            team2: "레알마드리드",
-            startDateAndTime: "02-09 12:00",
-            tieKof: (Math.random() * 5).toFixed(2),
-            team1WinKof: (Math.random() * 5).toFixed(2),
-            team2WinKof: (Math.random() * 5).toFixed(2),
-            // team1stats: Math.floor(getRandomNumberInInterval(1000, 5000)),
-            // team2stats: Math.floor(getRandomNumberInInterval(1000, 5000)),
-            team1Goals: Math.floor(Math.random() * 5),
-            team2Goals: Math.floor(Math.random() * 3),
-            type: matchTypes.upcoming,
-        },
-        {
-            id: 13,
-            league: "라리가",
-            team1: "FC바로셀로나",
-            team2: "레알마드리드",
-            startDateAndTime: "02-10 23:00",
-            tieKof: (Math.random() * 5).toFixed(2),
-            team1WinKof: (Math.random() * 5).toFixed(2),
-            team2WinKof: (Math.random() * 5).toFixed(2),
-            // team1stats: Math.floor(getRandomNumberInInterval(1000, 5000)),
-            // team2stats: Math.floor(getRandomNumberInInterval(1000, 5000)),
-            team1Goals: Math.floor(Math.random() * 5),
-            team2Goals: Math.floor(Math.random() * 3),
-            type: matchTypes.upcoming,
-        },
-        {
-            id: 14,
-            league: "라리가",
-            team1: "FC바로셀로나",
-            team2: "레알마드리드",
-            startDateAndTime: "02-11 07:00",
-            tieKof: (Math.random() * 5).toFixed(2),
-            team1WinKof: (Math.random() * 5).toFixed(2),
-            team2WinKof: (Math.random() * 5).toFixed(2),
-            // team1stats: Math.floor(getRandomNumberInInterval(1000, 5000)),
-            // team2stats: Math.floor(getRandomNumberInInterval(1000, 5000)),
-            team1Goals: Math.floor(Math.random() * 5),
-            team2Goals: Math.floor(Math.random() * 3),
-            type: matchTypes.upcoming,
-        },
-        {
-            id: 15,
-            league: "라리가",
-            team1: "FC바로셀로나",
-            team2: "레알마드리드",
-            startDateAndTime: "02-12 13:00",
-            tieKof: (Math.random() * 5).toFixed(2),
-            team1WinKof: (Math.random() * 5).toFixed(2),
-            team2WinKof: (Math.random() * 5).toFixed(2),
-            // team1stats: Math.floor(getRandomNumberInInterval(1000, 5000)),
-            // team2stats: Math.floor(getRandomNumberInInterval(1000, 5000)),
-            team1Goals: Math.floor(Math.random() * 5),
-            team2Goals: Math.floor(Math.random() * 3),
+            team1: "맨체스터유나이티드",
+            team2: "리버풀",
+            startDateAndTime: "02-06 21:00",
+            flag: "england",
             type: matchTypes.upcoming,
         },
     ];
@@ -197,25 +139,29 @@ export default function SingleView() {
                     width: "681px",
                 }}
             >
-                <div>
-                    <MatchCards data={matchCards} isRed={true} />
-                </div>
-                <LiveUpcomingMatchesCount />
                 {selectedNav === 0 ? (
                     <>
                         <div>
                             <MatchCards
                                 data={favoriteMatchCards}
                                 isFavoriteCard={true}
+                                isRed={true}
                             />{" "}
                         </div>
+                        <LiveUpcomingMatchesCount />
                         <UpcomingMatches
                             data={favoriteMatchCards}
                             isFavorite={true}
                         />
                     </>
                 ) : (
-                    <UpcomingMatches data={upcomingMatchCards} />
+                    <>
+                        <div>
+                            <MatchCards data={matchCards} isRed={true} />
+                        </div>
+                        <LiveUpcomingMatchesCount />
+                        <UpcomingMatches data={upcomingMatchCards} />
+                    </>
                 )}
             </div>
             <div>

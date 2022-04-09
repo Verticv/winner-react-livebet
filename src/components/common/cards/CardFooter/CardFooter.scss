@@ -103,7 +103,8 @@
       height: 54px;
       margin-right: 2px;
     }
-    &:hover {
+    &:hover,
+    &.active {
       background: linear-gradient(to right, #9b2f30, #9b2f30 25%, #9a2f30 50%, #872d2f 63%, #722a2e 75%, #5d282e);
     }
   }
@@ -144,7 +145,8 @@
         }
       }
     }
-    &:hover {
+    &:hover,
+    &.active {
       background: linear-gradient(to left, #9b2f30, #9b2f30 25%, #9a2f30 50%, #872d2f 63%, #722a2e 75%, #5d282e);
     }
   }
@@ -169,7 +171,8 @@
       clip-path: polygon(0 0, 100% 0, 88% 100%, 12% 100%);
       font-family: RobotoMedium, sans-serif;
       font-size: 14px;
-      &:hover {
+      &:hover,
+      &.active {
         background-color: #9b2f30;
       }
     }
