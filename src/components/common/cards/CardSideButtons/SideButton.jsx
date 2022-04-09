@@ -1,4 +1,9 @@
 import React from "react";
+
+import useStore from "store/useStore";
+import { matchTypes } from "helpers/constants";
+import moveArrayItemToNewIndex from "helpers/moveArrayItemToNewIndex";
+
 import whiteArrow from "../../../../imagesHold/cards/white-arrow.png";
 import redArrow from "../../../../imagesHold/cards/red-arrow.png";
 import blueArrow from "../../../../imagesHold/cards/blue-arrow.png";
@@ -6,6 +11,7 @@ import blueArrow from "../../../../imagesHold/cards/blue-arrow.png";
 import "./SideButton.scss";
 
 export default function SideButton({
+    matchCard,
     onClick,
     onMouseEnter,
     onMouseLeave,
@@ -13,6 +19,7 @@ export default function SideButton({
     redCard = true,
     isFavoriteCard = false,
     isActive = false,
+    withHeader
 }) {
     let arrowImg;
     if (isSelected || isActive) {
@@ -22,6 +29,43 @@ export default function SideButton({
     } else {
         arrowImg = blueArrow;
     }
+
+    const favoriteMatches = useStore((state) => state.favoriteMatches);
+    const updateFavoritesMatches = useStore(
+        (state) => state.updateFavoritesMatches
+    );
+
+    const changeOrderHandler = (type, id) => {
+        const live = [...favoriteMatches].filter(
+            (match) => match.type === matchTypes.live
+        );
+        const upcoming = [...favoriteMatches].filter(
+            (match) => match.type === matchTypes.upcoming
+        );
+        if (type === matchTypes.live) {
+            let oldIndex;
+            live.forEach((ele, index) => {
+                if (ele.id === id) {
+                    oldIndex = index;
+                }
+            });
+            if (oldIndex !== 0) {
+                moveArrayItemToNewIndex(live, oldIndex, oldIndex - 1);
+                updateFavoritesMatches([...live, ...upcoming]);
+            }
+        } else if (type === matchTypes.upcoming) {
+            let oldIndex;
+            upcoming.forEach((ele, index) => {
+                if (ele.id === id) {
+                    oldIndex = index;
+                }
+            });
+            if (oldIndex !== 0) {
+                moveArrayItemToNewIndex(upcoming, oldIndex, oldIndex - 1);
+                updateFavoritesMatches([...live, ...upcoming]);
+            }
+        }
+    };
 
     return (
         <button
@@ -34,11 +78,17 @@ export default function SideButton({
             ${isSelected || isActive ? "active" : ""}
             ${isFavoriteCard ? "favorite-card" : ""}
             `}
+            style={{height: withHeader ? "" : redCard ? "105px" : "70px"}}
         >
             <div className="side-button-wrapper">
                 {isFavoriteCard && (
                     <>
-                        <div className="up-arrow-wrapper">
+                        <div
+                            onClick={() =>
+                                changeOrderHandler(matchCard.type, matchCard.id)
+                            }
+                            className="up-arrow-wrapper"
+                        >
                             <div className="up-arrow">
                                 <div>
                                     <img src={arrowImg} alt="arrow" />

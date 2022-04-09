@@ -9,7 +9,7 @@ export default function UpcomingMatches({ data = [], isFavorite = false }) {
                 ? data
                       .filter(
                           (favoriteMatch) =>
-                              favoriteMatch.type === matchTypes.upcoming
+                              favoriteMatch?.type === matchTypes?.upcoming
                       )
                       .map((upcomingMatchCard) => {
                           return (

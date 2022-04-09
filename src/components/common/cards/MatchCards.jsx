@@ -7,7 +7,7 @@ import "./Cards.scss";
 
 export default function MatchCards({ data, isFavoriteCard = false, isRed = false }) {
     return data
-        .filter((favoriteMatch) => favoriteMatch.type === matchTypes.live)
+        .filter((favoriteMatch) => favoriteMatch?.type === matchTypes?.live)
         .map((matchCard) => {
             return (
                 <LiveMatchCard

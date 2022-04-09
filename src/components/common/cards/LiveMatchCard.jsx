@@ -13,6 +13,9 @@ export default function LiveMatchCard({
     const { id } = matchCard;
 
     const [isActive, setIsActive] = useState(false);
+    const withHeader = matchCard.withHeader;
+    const marginBottom = matchCard.marginBottom
+    console.log('withHeader', withHeader)
 
     const selectedCardId = useStore((state) => state.selectedCardId);
     const changeSelectedCardId = useStore(
@@ -32,18 +35,20 @@ export default function LiveMatchCard({
             role="button"
             onClick={handleContainerClick}
             key={id + "live-match-card"}
-            style={{ background: "", display: "flex", marginBottom: "10px" }}
+            style={{ background: "", display: "flex", marginBottom: marginBottom }}
         >
             <div
-                style={{ width: "638px", height: isRed ? "145px" : "110px" }}
+                style={{ width: "638px", height: isRed ? withHeader ? "145px" : "105px" : withHeader ? "110px" : "70px" }}
                 className="card-content"
             >
-                <CardHeader
-                    {...matchCard}
-                    isRed={isRed}
-                    isActive={isActive || selected}
-                    setIsActive={setIsActive}
-                />
+                {withHeader && (
+                    <CardHeader
+                        {...matchCard}
+                        isRed={isRed}
+                        isActive={isActive || selected}
+                        setIsActive={setIsActive}
+                    />
+                )}
                 <CardBody
                     {...matchCard}
                     isRed={isRed}
@@ -59,6 +64,7 @@ export default function LiveMatchCard({
                 )}
             </div>
             <MatchButton
+                withHeader={withHeader}
                 isRed={isRed}
                 isFavoriteCard={isFavoriteCard}
                 isSelected={selected || (isRed && isFavoriteCard && matchCard.active)}
