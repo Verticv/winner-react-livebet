@@ -53,8 +53,8 @@ export default function LiveMatchCard({
                 {isRed && (
                     <CardFooter
                         isRed={isRed}
+                        matchCard={matchCard}
                         isActive={isActive || selected}
-                        {...matchCard}
                     />
                 )}
             </div>
