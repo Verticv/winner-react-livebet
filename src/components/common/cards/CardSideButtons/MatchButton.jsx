@@ -12,5 +12,5 @@ export default function MatchButton({ matchCard, isSelected, isFavoriteCard, isR
         setIsActive(prev => !prev)
     };
 
-    return <SideButton isActive={isActive} redCard={isRed} isFavoriteCard={isFavoriteCard} onClick={handlePlusButton} isSelected={isSelected} />;
+    return <SideButton matchCard={matchCard} isActive={isActive} redCard={isRed} isFavoriteCard={isFavoriteCard} onClick={handlePlusButton} isSelected={isSelected} />;
 }

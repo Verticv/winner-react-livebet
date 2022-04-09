@@ -133,6 +133,13 @@ export const createLiveCardSlice = (set, get) => ({
             })
         );
     },
+    updateFavoritesMatches: (newFavoriteMatchesData) => {
+        set(
+            produce((draft) => {
+                draft.favoriteMatches = newFavoriteMatchesData;
+            })
+        );
+    },
     removeMatchFromFavorites: (matchId) => {
         set(
             produce((draft) => {
