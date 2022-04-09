@@ -35,6 +35,7 @@ export const createLiveCardSlice = (set, get) => ({
             isLeftArrowActive: true,
             type:matchTypes.live,
             active: true,
+            withHeader: true
         },
         {
             id: 1,
@@ -54,6 +55,7 @@ export const createLiveCardSlice = (set, get) => ({
             isRightArrowActive: true,
             type: matchTypes.live,
             active: false,
+            withHeader: true
         },
         {
             id: 2,
@@ -72,6 +74,7 @@ export const createLiveCardSlice = (set, get) => ({
             team2WinKof: 3.75,
             type: matchTypes.live,
             active: false,
+            withHeader: true
         },
         {
             id: 3,
@@ -90,6 +93,7 @@ export const createLiveCardSlice = (set, get) => ({
             team2WinKof: 3.75,
             type: matchTypes.live,
             active: false,
+            withHeader: true
         },
 
         {
@@ -102,6 +106,7 @@ export const createLiveCardSlice = (set, get) => ({
             flag: "spain",
             type:matchTypes.upcoming,
             active: true,
+            withHeader: true
         },
         {
             id: 5,
@@ -113,6 +118,7 @@ export const createLiveCardSlice = (set, get) => ({
             flag: "england",
             type:matchTypes.upcoming,
             active: false,
+            withHeader: true
         },
         {
             id: 6,
@@ -124,6 +130,7 @@ export const createLiveCardSlice = (set, get) => ({
             flag: "england",
             type:matchTypes.upcoming,
             active: false,
+            withHeader: true
         },
     ],
     addMatchToFavorites: (match) => {

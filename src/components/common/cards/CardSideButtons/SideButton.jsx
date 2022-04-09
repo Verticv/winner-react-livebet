@@ -19,6 +19,7 @@ export default function SideButton({
     redCard = true,
     isFavoriteCard = false,
     isActive = false,
+    withHeader
 }) {
     let arrowImg;
     if (isSelected || isActive) {
@@ -77,6 +78,7 @@ export default function SideButton({
             ${isSelected || isActive ? "active" : ""}
             ${isFavoriteCard ? "favorite-card" : ""}
             `}
+            style={{height: withHeader ? "" : "105px"}}
         >
             <div className="side-button-wrapper">
                 {isFavoriteCard && (

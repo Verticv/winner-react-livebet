@@ -31,6 +31,7 @@ export default function SingleView() {
             isLeftArrowActive: true,
             type: matchTypes.live,
             active: false,
+            withHeader: true
         },
         {
             id: 1,
@@ -50,6 +51,7 @@ export default function SingleView() {
             isRightArrowActive: true,
             type: matchTypes.live,
             active: true,
+            withHeader: true
         },
         {
             id: 2,
@@ -68,6 +70,7 @@ export default function SingleView() {
             team2WinKof: 3.75,
             type: matchTypes.live,
             active: false,
+            withHeader: true
         },
         {
             id: 3,
@@ -86,6 +89,146 @@ export default function SingleView() {
             team2WinKof: 3.75,
             type: matchTypes.live,
             active: false,
+            withHeader: true
+        },
+    ];
+
+    const soccerCards = [
+        {
+            id: 0,
+            league: "라리가",
+            team1: "FC바로셀로나",
+            team2: "레알마드리드",
+            currentTimeText: "후반전",
+            currentTimeNumber: "35",
+            flag: "spain",
+            team1stats: 5000,
+            team2stats: 5000,
+            team1Goals: 2,
+            team2Goals: 0,
+            team1WinKof: 5.01,
+            tieKof: 4.05,
+            team2WinKof: 3.75,
+            isLeftArrowActive: true,
+            type: matchTypes.live,
+            active: false,
+            withHeader: true
+        },
+        {
+            id: 1,
+            league: "프리미어리그",
+            team1: "맨체스터유나이티드",
+            team2: "리버풀",
+            currentTimeText: "후반전",
+            currentTimeNumber: "35",
+            flag: "england",
+            team1stats: 5000,
+            team2stats: 5000,
+            team1Goals: 2,
+            team2Goals: 0,
+            team1WinKof: 5.01,
+            tieKof: 4.05,
+            team2WinKof: 3.75,
+            isRightArrowActive: true,
+            type: matchTypes.live,
+            active: true,
+            withHeader: true
+        },
+        {
+            id: 2,
+            league: "분데스리가",
+            team1: "바이헤른뮌헨",
+            team2: "프랑크푸르트",
+            currentTimeText: "후반전",
+            currentTimeNumber: "35",
+            flag: "germany",
+            team1stats: 5000,
+            team2stats: 5000,
+            team1Goals: 2,
+            team2Goals: 0,
+            team1WinKof: 5.01,
+            tieKof: 4.05,
+            team2WinKof: 3.75,
+            type: matchTypes.live,
+            active: false,
+            withHeader: true
+        },
+        {
+            id: 3,
+            league: "라리가",
+            team1: "FC바로셀로나",
+            team2: "레알마드리드",
+            currentTimeText: "후반전",
+            currentTimeNumber: "35",
+            flag: "spain",
+            team1stats: 5000,
+            team2stats: 5000,
+            team1Goals: 2,
+            team2Goals: 0,
+            team1WinKof: 5.01,
+            tieKof: 4.05,
+            team2WinKof: 3.75,
+            type: matchTypes.live,
+            active: false,
+            withHeader: true
+        },
+        {
+            id: 4,
+            league: "라리가",
+            team1: "FC바로셀로나",
+            team2: "레알마드리드",
+            currentTimeText: "후반전",
+            currentTimeNumber: "35",
+            flag: "spain",
+            team1stats: 5000,
+            team2stats: 5000,
+            team1Goals: 2,
+            team2Goals: 0,
+            team1WinKof: 5.01,
+            tieKof: 4.05,
+            team2WinKof: 3.75,
+            type: matchTypes.live,
+            active: false,
+            withHeader: false
+        },
+        {
+            id: 5,
+            league: "라리가",
+            team1: "FC바로셀로나",
+            team2: "레알마드리드",
+            currentTimeText: "후반전",
+            currentTimeNumber: "35",
+            flag: "spain",
+            team1stats: 5000,
+            team2stats: 5000,
+            team1Goals: 2,
+            team2Goals: 0,
+            team1WinKof: 5.01,
+            tieKof: 4.05,
+            team2WinKof: 3.75,
+            type: matchTypes.live,
+            active: false,
+            withHeader: false,
+            withMarginBottom: true
+        },
+        {
+            id: 6,
+            league: "프리미어리그",
+            team1: "맨체스터유나이티드",
+            team2: "리버풀",
+            currentTimeText: "후반전",
+            currentTimeNumber: "35",
+            flag: "england",
+            team1stats: 5000,
+            team2stats: 5000,
+            team1Goals: 2,
+            team2Goals: 0,
+            team1WinKof: 5.01,
+            tieKof: 4.05,
+            team2WinKof: 3.75,
+            type: matchTypes.live,
+            active: false,
+            withHeader: true
         },
     ];
 
@@ -100,6 +243,7 @@ export default function SingleView() {
             startDateAndTime: "02-06 21:00",
             flag: "spain",
             type: matchTypes.upcoming,
+            withHeader: true
         },
         {
             id: 2,
@@ -109,6 +253,7 @@ export default function SingleView() {
             startDateAndTime: "02-06 21:00",
             flag: "england",
             type: matchTypes.upcoming,
+            withHeader: true
         },
         {
             id: 3,
@@ -118,6 +263,7 @@ export default function SingleView() {
             startDateAndTime: "02-06 21:00",
             flag: "england",
             type: matchTypes.upcoming,
+            withHeader: true
         },
     ];
 
@@ -154,7 +300,13 @@ export default function SingleView() {
                             isFavorite={true}
                         />
                     </>
-                ) : (
+                ) : selectedNav === 2 ? (
+                    <>
+                        <div>
+                            <MatchCards data={soccerCards} isRed={true} />
+                        </div>
+                    </>
+                ): (
                     <>
                         <div>
                             <MatchCards data={matchCards} isRed={true} />

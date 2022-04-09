@@ -3,7 +3,7 @@ import React from "react";
 
 import SideButton from "./SideButton"
 
-export default function MatchButton({ matchCard, isSelected, isFavoriteCard, isRed, setIsActive, isActive }) {
+export default function MatchButton({ withHeader, matchCard, isSelected, isFavoriteCard, isRed, setIsActive, isActive }) {
     // const addBetSlipBet = useStore((s) => s.addBetSlipBet);
 
     const handlePlusButton = (event) => {
@@ -12,5 +12,5 @@ export default function MatchButton({ matchCard, isSelected, isFavoriteCard, isR
         setIsActive(prev => !prev)
     };
 
-    return <SideButton matchCard={matchCard} isActive={isActive} redCard={isRed} isFavoriteCard={isFavoriteCard} onClick={handlePlusButton} isSelected={isSelected} />;
+    return <SideButton withHeader={withHeader} matchCard={matchCard} isActive={isActive} redCard={isRed} isFavoriteCard={isFavoriteCard} onClick={handlePlusButton} isSelected={isSelected} />;
 }
