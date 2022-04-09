@@ -63,6 +63,8 @@ export default function LiveMatchCard({
                 isFavoriteCard={isFavoriteCard}
                 isSelected={selected || (isRed && isFavoriteCard && matchCard.active)}
                 matchCard={matchCard}
+                isActive={isActive}
+                setIsActive={setIsActive}
             />
         </div>
     );

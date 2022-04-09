@@ -1,15 +1,16 @@
 import React from "react";
-import useStore from "store/useStore";
+// import useStore from "store/useStore";
 
 import SideButton from "./SideButton"
 
-export default function MatchButton({ matchCard, isSelected, isFavoriteCard, isRed }) {
-    const addBetSlipBet = useStore((s) => s.addBetSlipBet);
+export default function MatchButton({ matchCard, isSelected, isFavoriteCard, isRed, setIsActive, isActive }) {
+    // const addBetSlipBet = useStore((s) => s.addBetSlipBet);
 
     const handlePlusButton = (event) => {
         event.stopPropagation();
-        addBetSlipBet(matchCard);
+        // addBetSlipBet(matchCard);
+        setIsActive(prev => !prev)
     };
 
-    return <SideButton redCard={isRed} isFavoriteCard={isFavoriteCard} onClick={handlePlusButton} isSelected={isSelected} />;
+    return <SideButton isActive={isActive} redCard={isRed} isFavoriteCard={isFavoriteCard} onClick={handlePlusButton} isSelected={isSelected} />;
 }
