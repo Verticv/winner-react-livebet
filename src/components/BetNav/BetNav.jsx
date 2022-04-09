@@ -87,6 +87,7 @@ export default function BetNav() {
     const changeSelectedNav = useStore((state) => state.changeSelectedNav);
     const singleOrMulti = useStore((state) => state.singleOrMulti);
     const isMultiView = singleOrMulti === singleOrMultiOptions.multi;
+    const selectedNav = useStore((state) => state.selectedNav);
 
     return (
         <div style={{width: '1560px'}} className="navbar-wrapper">
@@ -115,7 +116,7 @@ export default function BetNav() {
                 </div>
             </div>
             <div style={{width: '100%', display: 'flex', height: '46px', justifyContent: 'space-between'}}>
-                <NumberOfLiveMatches isMultiView={isMultiView}/>
+                <NumberOfLiveMatches selectedNav={selectedNav} isMultiView={isMultiView}/>
                 {!isMultiView && <SingleViewSelectButtons />}
             </div>
         </div>
