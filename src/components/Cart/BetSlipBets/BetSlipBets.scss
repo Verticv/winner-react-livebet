@@ -45,4 +45,15 @@
       margin-right: 9px;
     }
   }
+  .cart-card-wrapper-multi {
+    width: 360px;
+    height: 81px;
+    background: url('../../../imagesHold/cart-card-multi.png');
+    background-repeat: round;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #909090;
+    font-size: 14px;
+  }
 }

@@ -156,6 +156,18 @@
       }
     }
 
+    .my-bet-card-multi {
+      background: url('../../imagesHold/my-bet-card-multi.png');
+      background-repeat: round;
+      width: 360px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #909090;
+      font-size: 14px;
+    }
+
     // TODO: this should removed
     .amount-details {
       position: relative;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import refresh from "../../../imagesHold/refresh-button.png";
 import close from "../../../imagesHold/action-close.png";
@@ -14,16 +14,18 @@ function Amount({
     amount = "3,000,000",
     numberClasses = "",
     withInput = false,
+    inputValue,
+    setInputValue
 }) {
     return (
         <div className="amount">
             <p className="text">{title}</p>
             {withInput ? (
                 <div className="input-wrapper">
-                    <button>
+                    <button onClick={() => setInputValue(0)}>
                         <img src={refresh} alt="" width="29" height="29" />
                     </button>
-                    <div className="number">0</div>
+                    <input type="number" className="number" onChange={(e) => setInputValue(e.target.value)} value={inputValue} />
                 </div>
             ) : (
                 <p className={`number ${numberClasses}`}>{amount}</p>
@@ -47,23 +49,25 @@ function AmountDetails({
 }
 
 export default function BetAmount() {
+    const [inputValue, setInputValue] = useState(0)
+
     return (
         <div className="amount-wrapper">
-            <Amount />
+            <Amount inputValue={inputValue} setInputValue={setInputValue} />
             <AmountDetails />
             <AmountDetails title="최대 베팅금액" amount="1,000,000" />
             <AmountDetails title="최대 당첨금액" amount="2,000,000" />
             <AmountDetails title="최대 베팅배당" amount="0.00" withLine={false} />
-            <Amount title="배당률합계" amount="0.00" numberClasses="blue" />
-            <Amount title="총적중금액" amount="0" numberClasses="green" />
+            <Amount inputValue={inputValue} setInputValue={setInputValue} title="배당률합계" amount="0.00" numberClasses="blue" />
+            <Amount inputValue={inputValue} setInputValue={setInputValue} title="총적중금액" amount="0" numberClasses="green" />
             {/* <Amount title="베팅금액" amount="0" /> */}
-            <Amount title="베팅금액" amount="0" withInput />
+            <Amount inputValue={inputValue} setInputValue={setInputValue} title="베팅금액" amount="0" withInput />
             <div className="amount-buttons">
-                <button>5,000</button>
-                <button>10,000</button>
-                <button>50,000</button>
-                <button>100,000</button>
-                <button>1,000,000</button>
+                <button onClick={() => setInputValue(prev => prev + 5000)}>5,000</button>
+                <button onClick={() => setInputValue(prev => prev + 10000)}>10,000</button>
+                <button onClick={() => setInputValue(prev => prev + 50000)}>50,000</button>
+                <button onClick={() => setInputValue(prev => prev + 100000)}>100,000</button>
+                <button onClick={() => setInputValue(prev => prev + 1000000)}>1,000,000</button>
                 <button className="active">최대</button>
             </div>
             <div className="action-buttons">
