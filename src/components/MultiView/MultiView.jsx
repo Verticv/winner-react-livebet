@@ -1,6 +1,6 @@
 import React from "react";
 
-import LiveMatchCardsMultiView from "../LiveMatchCardsMultiView";
+import LiveMatchCardsMultiView from "../LiveMatchCardsMultiView/LiveMatchCardsMultiView";
 import MultiViewMatchCards from "components/MultiViewMatchCard/MultiViewMatchCard"
 
 import "./MultiView.scss"

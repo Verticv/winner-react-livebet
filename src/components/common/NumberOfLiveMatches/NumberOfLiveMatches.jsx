@@ -1,6 +1,6 @@
 import React from 'react'
 
-import MultiViewSelectButtons from "./MultiViewSelectButtons/MultiViewSelectButtons"
+import MultiViewSelectButtons from "../../MultiViewSelectButtons/MultiViewSelectButtons"
 
 export default function NumberOfLiveMatches({isMultiView}) {
     

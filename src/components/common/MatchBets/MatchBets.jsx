@@ -1,5 +1,4 @@
 import { betTypes } from "helpers/constants";
-import getRandomNumberInInterval from "helpers/getRandomNumberInInterval";
 import React, { useCallback, useState } from "react";
 import useStore from "store/useStore";
 import MatchDetail from "./MatchDetail/MatchDetail";
@@ -25,9 +24,14 @@ export default function MatchDetails() {
                     betType: "홈팀 오버언더",
                     option1: "오버",
                     option2: "언더",
-                    kof1: getRandomNumberInInterval(1.5, 5).toFixed(2),
-                    kof2: getRandomNumberInInterval(1.5, 5).toFixed(2),
-                    tieKof: getRandomNumberInInterval(1.5, 5).toFixed(2),
+                    row1kof1: 1.25,
+                    row1kof2: 3.3,
+                    row1tieKof: 4.05,
+                    isRow1Active: true,
+                    row2kof1: 1.25,
+                    row2kof2: 3.3,
+                    row2tieKof: 4.05,
+                    isRow2Active: true,
                     selectedCardId: selectedCardId,
                 },
                 {
@@ -36,9 +40,14 @@ export default function MatchDetails() {
                     betType: "오버언더",
                     option1: "오버",
                     option2: "언더",
-                    kof1: getRandomNumberInInterval(1.5, 5).toFixed(2),
-                    kof2: getRandomNumberInInterval(1.5, 5).toFixed(2),
-                    tieKof: getRandomNumberInInterval(1.5, 5).toFixed(2),
+                    row1kof1: 3.15,
+                    row1kof2: 4.05,
+                    row1tieKof: 1.3,
+                    isRow1Active: false,
+                    row2kof1: 1.45,
+                    row2kof2: 4.05,
+                    row2tieKof: 2.4,
+                    isRow2Active: false,
                 },
                 {
                     id: 2,
@@ -46,26 +55,19 @@ export default function MatchDetails() {
                     betType: "승무패핸디캡",
                     option1: "맨체스터유나이티드",
                     option2: "리버풀",
-                    kof1: getRandomNumberInInterval(1.5, 5).toFixed(2),
-                    kof2: getRandomNumberInInterval(1.5, 5).toFixed(2),
-                    tieKof: getRandomNumberInInterval(1.5, 5).toFixed(2),
+                    row1kof1: 9.5,
+                    row1kof2: 5.75,
+                    row1tieKof: 1.22,
+                    isRow1Active: false,
+                    row2kof1: 1.30,
+                    row2kof2: 4.90,
+                    row2tieKof: 8.25,
+                    isRow2Active: false,
                 },
             ];
         },
         [selectedCardId],
     )
-
-    // function getBets() {
-    //     if (selectedTab === "all") {
-    //         return matchBets().map((matchBet) => {
-    //             return <MatchDetail key={matchBet.id} bet={matchBet} />;
-    //         });
-    //     } else {
-    //         return matchBets().filter(match => match.typeIdentifier === selectedTab).map((matchBet) => {
-    //             return <MatchDetail key={matchBet.id} bet={matchBet} />;
-    //         });
-    //     }
-    // }
 
     return (
         <div className="match-bets-content">
@@ -87,17 +89,3 @@ export default function MatchDetails() {
         </div>
     );
 }
-
-
-// .line {
-//     background-image: -moz-linear-gradient( 0deg, rgb(29,25,34) 0%, rgb(94,40,48) 30%, rgb(88,23,23) 50%, rgb(95,40,48) 70%, rgb(29,25,34) 100%);
-//     background-image: -webkit-linear-gradient( 0deg, rgb(29,25,34) 0%, rgb(94,40,48) 30%, rgb(88,23,23) 50%, rgb(95,40,48) 70%, rgb(29,25,34) 100%);
-//     background-image: -ms-linear-gradient( 0deg, rgb(29,25,34) 0%, rgb(94,40,48) 30%, rgb(88,23,23) 50%, rgb(95,40,48) 70%, rgb(29,25,34) 100%);
-//     position: absolute;
-//     left: 757px;
-//     top: 693px;
-//     width: 793px;
-//     height: 1px;
-//     z-index: 400;
-//   }
-  
