@@ -14,7 +14,7 @@ export default function LiveMatchCard({
 
     const [isActive, setIsActive] = useState(false);
     const withHeader = matchCard.withHeader;
-    const withMarginBottom = matchCard.withMarginBottom
+    const marginBottom = matchCard.marginBottom
     console.log('withHeader', withHeader)
 
     const selectedCardId = useStore((state) => state.selectedCardId);
@@ -35,10 +35,10 @@ export default function LiveMatchCard({
             role="button"
             onClick={handleContainerClick}
             key={id + "live-match-card"}
-            style={{ background: "", display: "flex", marginBottom: withHeader || withMarginBottom  ? "10px" : "1px" }}
+            style={{ background: "", display: "flex", marginBottom: marginBottom }}
         >
             <div
-                style={{ width: "638px", height: isRed ? withHeader ? "145px" : "105px" : "110px" }}
+                style={{ width: "638px", height: isRed ? withHeader ? "145px" : "105px" : withHeader ? "110px" : "70px" }}
                 className="card-content"
             >
                 {withHeader && (

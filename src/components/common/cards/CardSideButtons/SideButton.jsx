@@ -78,7 +78,7 @@ export default function SideButton({
             ${isSelected || isActive ? "active" : ""}
             ${isFavoriteCard ? "favorite-card" : ""}
             `}
-            style={{height: withHeader ? "" : "105px"}}
+            style={{height: withHeader ? "" : redCard ? "105px" : "70px"}}
         >
             <div className="side-button-wrapper">
                 {isFavoriteCard && (

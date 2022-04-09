@@ -31,7 +31,8 @@ export default function SingleView() {
             isLeftArrowActive: true,
             type: matchTypes.live,
             active: false,
-            withHeader: true
+            withHeader: true,
+            marginBottom: '10px',
         },
         {
             id: 1,
@@ -51,7 +52,8 @@ export default function SingleView() {
             isRightArrowActive: true,
             type: matchTypes.live,
             active: true,
-            withHeader: true
+            withHeader: true,
+            marginBottom: '10px',
         },
         {
             id: 2,
@@ -70,7 +72,8 @@ export default function SingleView() {
             team2WinKof: 3.75,
             type: matchTypes.live,
             active: false,
-            withHeader: true
+            withHeader: true,
+            marginBottom: '10px',
         },
         {
             id: 3,
@@ -89,7 +92,8 @@ export default function SingleView() {
             team2WinKof: 3.75,
             type: matchTypes.live,
             active: false,
-            withHeader: true
+            withHeader: true,
+            marginBottom: '10px',
         },
     ];
 
@@ -112,7 +116,8 @@ export default function SingleView() {
             isLeftArrowActive: true,
             type: matchTypes.live,
             active: false,
-            withHeader: true
+            withHeader: true,
+            marginBottom: '10px',
         },
         {
             id: 1,
@@ -132,7 +137,8 @@ export default function SingleView() {
             isRightArrowActive: true,
             type: matchTypes.live,
             active: true,
-            withHeader: true
+            withHeader: true,
+            marginBottom: '10px',
         },
         {
             id: 2,
@@ -151,7 +157,8 @@ export default function SingleView() {
             team2WinKof: 3.75,
             type: matchTypes.live,
             active: false,
-            withHeader: true
+            withHeader: true,
+            marginBottom: '10px',
         },
         {
             id: 3,
@@ -170,7 +177,8 @@ export default function SingleView() {
             team2WinKof: 3.75,
             type: matchTypes.live,
             active: false,
-            withHeader: true
+            withHeader: true,
+            marginBottom: '1px',
         },
         {
             id: 4,
@@ -189,7 +197,8 @@ export default function SingleView() {
             team2WinKof: 3.75,
             type: matchTypes.live,
             active: false,
-            withHeader: false
+            withHeader: false,
+            marginBottom: '1px',
         },
         {
             id: 5,
@@ -209,7 +218,7 @@ export default function SingleView() {
             type: matchTypes.live,
             active: false,
             withHeader: false,
-            withMarginBottom: true
+            marginBottom: '10px',
         },
         {
             id: 6,
@@ -228,7 +237,8 @@ export default function SingleView() {
             team2WinKof: 3.75,
             type: matchTypes.live,
             active: false,
-            withHeader: true
+            withHeader: true,
+            marginBottom: '10px',
         },
     ];
 
@@ -243,27 +253,132 @@ export default function SingleView() {
             startDateAndTime: "02-06 21:00",
             flag: "spain",
             type: matchTypes.upcoming,
-            withHeader: true
+            withHeader: true,
+            marginBottom: '10px',
         },
         {
             id: 2,
-            league: "라리가",
+            league: "프리미어리그",
             team1: "맨체스터유나이티드",
             team2: "리버풀",
             startDateAndTime: "02-06 21:00",
             flag: "england",
             type: matchTypes.upcoming,
-            withHeader: true
+            withHeader: true,
+            marginBottom: '10px',
         },
         {
             id: 3,
-            league: "라리가",
+            league: "프리미어리그",
             team1: "맨체스터유나이티드",
             team2: "리버풀",
             startDateAndTime: "02-06 21:00",
             flag: "england",
             type: matchTypes.upcoming,
-            withHeader: true
+            withHeader: true,
+            marginBottom: '10px',
+        },
+    ];
+
+    const basketBallUpcomingMatchCards = [
+        {
+            id: 1,
+            league: "라리가",
+            team1: "FC바로셀로나",
+            team2: "레알마드리드",
+            startDateAndTime: "02-06 21:00",
+            flag: "spain",
+            type: matchTypes.upcoming,
+            withHeader: true,
+            marginBottom: '10px',
+        },
+        {
+            id: 2,
+            league: "프리미어리그",
+            team1: "맨체스터유나이티드",
+            team2: "리버풀",
+            startDateAndTime: "02-06 21:00",
+            flag: "england",
+            type: matchTypes.upcoming,
+            withHeader: true,
+            marginBottom: '10px',
+        },
+        {
+            id: 3,
+            league: "분데스리가",
+            team1: "맨체스터유나이티드",
+            team2: "리버풀",
+            startDateAndTime: "02-06 21:00",
+            flag: "germany",
+            type: matchTypes.upcoming,
+            withHeader: true,
+            marginBottom: '10px',
+        },
+        {
+            id: 4,
+            league: "라리가",
+            team1: "맨체스터유나이티드",
+            team2: "리버풀",
+            startDateAndTime: "02-06 21:00",
+            flag: "spain",
+            type: matchTypes.upcoming,
+            withHeader: true,
+            marginBottom: '1px',
+        },
+        {
+            id: 5,
+            league: "라리가",
+            team1: "맨체스터유나이티드",
+            team2: "리버풀",
+            startDateAndTime: "02-06 21:00",
+            flag: "spain",
+            type: matchTypes.upcoming,
+            withHeader: false,
+            marginBottom: '1px',
+        },
+        {
+            id: 6,
+            league: "라리가",
+            team1: "맨체스터유나이티드",
+            team2: "리버풀",
+            startDateAndTime: "02-06 21:00",
+            flag: "spain",
+            type: matchTypes.upcoming,
+            withHeader: false,
+            marginBottom: '10px',
+        },
+        {
+            id: 7,
+            league: "라리가",
+            team1: "맨체스터유나이티드",
+            team2: "리버풀",
+            startDateAndTime: "02-06 21:00",
+            flag: "spain",
+            type: matchTypes.upcoming,
+            withHeader: true,
+            marginBottom: '10px',
+        },
+        {
+            id: 8,
+            league: "프리미어리그",
+            team1: "맨체스터유나이티드",
+            team2: "리버풀",
+            startDateAndTime: "02-06 21:00",
+            flag: "england",
+            type: matchTypes.upcoming,
+            withHeader: true,
+            marginBottom: '10px',
+        },
+        {
+            id: 9,
+            league: "프리미어리그",
+            team1: "맨체스터유나이티드",
+            team2: "리버풀",
+            startDateAndTime: "02-06 21:00",
+            flag: "england",
+            type: matchTypes.upcoming,
+            withHeader: true,
+            marginBottom: '10px',
         },
     ];
 
@@ -305,6 +420,10 @@ export default function SingleView() {
                         <div>
                             <MatchCards data={soccerCards} isRed={true} />
                         </div>
+                    </>
+                ): selectedNav === 3 ? (
+                    <>
+                        <UpcomingMatches data={basketBallUpcomingMatchCards} />
                     </>
                 ): (
                     <>
