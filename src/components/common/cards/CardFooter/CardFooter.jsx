@@ -23,7 +23,7 @@ export default function CardFooter({ matchCard }) {
     };
 
     return (
-        <div className="card-footer-wrapper">
+        <div className={`card-footer-wrapper ${isLeftArrowActive || isRightArrowActive ? "active" : ""}`}>
             <div className={`left ${isLeftArrowActive ? "active" : ""}`}>
                 <p className="text">{team1}</p>
                 <div
