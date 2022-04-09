@@ -31,7 +31,7 @@ export default function SideButton({
             className={`
             side-button 
             ${redCard ? "red-card" : "blue-card"}
-            ${isSelected ? "active" : ""}
+            ${isSelected || isActive ? "active" : ""}
             ${isFavoriteCard ? "favorite-card" : ""}
             `}
         >

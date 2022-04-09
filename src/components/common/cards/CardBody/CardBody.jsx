@@ -112,7 +112,7 @@ export default function CardBody({
                             <img
                                 className="ico-19"
                                 src={
-                                    playingMatchId === id
+                                    playingMatchId === id || isActive
                                         ? selectedPlayButton
                                         : playButton
                                 }
