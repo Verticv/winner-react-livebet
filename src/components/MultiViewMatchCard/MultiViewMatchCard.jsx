@@ -90,7 +90,7 @@ function ResultsRow() {
     );
 }
 
-function MatchDetail({ bet }) {
+function MatchDetail({ bet, isEmpty = false }) {
     const [isShowing, setIsShowing] = useState(true);
     const handleToggleIsShowing = () => {
         setIsShowing((prev) => !prev);
@@ -102,22 +102,24 @@ function MatchDetail({ bet }) {
     // const [selectedOutcome2, setSelectedOutcome2] = useState(selections.none);
     return (
         <div className="match-details-wrapper">
-            <div className="match-details-header">
-                <div className="left">
-                    <div className="square"></div>
-                    <p className="text">{betType}</p>
+            {!isEmpty && (
+                <div className="match-details-header">
+                    <div className="left">
+                        <div className="square"></div>
+                        <p className="text">{betType}</p>
+                    </div>
+                    <button onClick={handleToggleIsShowing}>
+                        <img
+                            className={`${isShowing ? "" : "rotate"}`}
+                            src={require("../../imagesHold/ico_21.png").default}
+                            alt=""
+                            width="16"
+                            height="10"
+                        />
+                    </button>
                 </div>
-                <button onClick={handleToggleIsShowing}>
-                    <img
-                        className={`${isShowing ? "" : "rotate"}`}
-                        src={require("../../imagesHold/ico_21.png").default}
-                        alt=""
-                        width="16"
-                        height="10"
-                    />
-                </button>
-            </div>
-            {isShowing ? (
+            )}
+            {isShowing && !isEmpty ? (
                 <div className="match-details-content">
                     <div style={{ marginBottom: "4px", width: "100%" }}>
                         <ResultsRow />
@@ -129,14 +131,16 @@ function MatchDetail({ bet }) {
     );
 }
 
-function ResultsContent() {
+function ResultsContent({isEmpty = false}) {
     return (
         <div className="results-content">
             <div className="match-bets-content">
                 <div className="match-bet-card-wrapper">
                     {/* <div className="line"></div> */}
                     {matchBets.map((matchBet) => {
-                        return <MatchDetail key={matchBet.id} bet={matchBet} />;
+                        return <>
+                            <MatchDetail key={matchBet.id} bet={matchBet} isEmpty={isEmpty} />
+                        </>;
                     })}
                 </div>
             </div>
@@ -153,9 +157,11 @@ function MultiViewMatchResults({ isEmpty = false }) {
                 <div className="multi-view-match-result-wrapper">
                     <MultiViewMatchCard />
                     <div className="bet-info-wrapper">
-                        <Info />
-                        <ResultsContent />
-                        <div className="static-scroll"></div>
+                        <div className="scroll-wrapper">
+                            <Info />
+                            <ResultsContent />
+                            <ResultsContent isEmpty={true} />
+                        </div>
                     </div>
                     <button className="go-to-game">
                         <div>

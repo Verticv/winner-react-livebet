@@ -29,8 +29,8 @@
           align-items: center;
 
           .ball {
-            margin-left: 10px;
-            margin-right: 14px;
+            margin-left: 12px;
+            margin-right: 12px;
           }
 
           .text {
@@ -138,6 +138,7 @@
           color: white;
           font-size: 15px;
           margin-left: 11px;
+          margin-bottom: 1px;
 
           span {
             display: inline-block;
@@ -168,11 +169,11 @@
             width: 18px;
             border-radius: 3px;
             background: #b92025;
-            margin-right: 11px;
+            margin-right: 10px;
           }
 
           .ball {
-            margin-left: 9px;
+            margin-left: 8px;
             margin-right: 10px;
           }
         }
@@ -216,7 +217,7 @@
               display: flex;
               align-items: center;
               margin-top: -7px;
-
+              margin-left: 1px;
               .shirt,
               .bg-holder-26 {
                 margin-left: 1px;
@@ -228,9 +229,15 @@
               .shirt {
                 margin-right: 8px;
               }
+            
 
               .bg-holder-26 {
-                height: 12px;
+                // height: 12px;
+                // width: 10px;
+                // border-radius: 3px;
+                // background: rgba(255, 255, 255, 0.3);
+                // margin-right: 10px;
+                height: 10px;
                 width: 10px;
                 border-radius: 3px;
                 background: rgba(255, 255, 255, 0.3);
@@ -245,6 +252,11 @@
                   text-align: center;
                   text-transform: uppercase;
                 }
+              }
+            }
+            .team-2 {
+              .shirt {
+                margin-right: 7px;
               }
             }
           }
@@ -288,13 +300,13 @@
         .right {
           padding-right: 0;
           margin-top: 10px;
-          margin-right: -4px;
+          margin-right: -2px;
 
           .line {
-            font-family: Roboto, sans-serif;
+            font-family: RobotoMedium, sans-serif;
             font-size: 18px;
             font-weight: 500;
-            letter-spacing: 0.96em;
+            letter-spacing: 16.8px;
             text-align: end;
 
             .gold {
@@ -586,15 +598,24 @@
 
     .bet-info-wrapper {
       position: relative;
+      height: 288px;
+      overflow-y: scroll;
+      overflow-x: hidden;
 
-      .static-scroll {
-        background: url('../../imagesHold/static-scroll.png');
-        background-repeat: round;
-        position: absolute;
+      .scroll-wrapper {
+        height: 500px;
+      }
+
+      &::-webkit-scrollbar {
         width: 5px;
-        height: 283px;
-        top: 5px;
-        right: 0;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: #666666;
+        border-radius: 5px;
+      }
+      &::-webkit-scrollbar-track {
+        background: #333333;
+        border-radius: 5px;
       }
     }
 

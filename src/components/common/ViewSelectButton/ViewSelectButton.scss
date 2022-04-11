@@ -31,21 +31,26 @@
 
     &.multi {
       width: 104px;
-      margin-right: 5px;
+      margin-right: 6px;
       border: none;
       background: linear-gradient(to top, #282828, #1c1c1c 50%, #0f0f0f);
       border: 2px solid #7a7e8d;
       margin-top: 3px;
+      margin-left: -1px;
       p {
         font-size: 14px;
         margin-left: 0;
         margin-top: 2px;
+        color: #949494;
       }
       &.active,
       &:hover {
         background: url('../../../imagesHold/multi/multi-view-button.png');
         background-repeat: round;
         border: 0;
+        p {
+          color: white;
+        }
       }
     }
 
