@@ -9,8 +9,8 @@ export const createMultiViewCardSlice = (set, get) => ({
         },
         {
             id: 1,
-            team1: "FC바로셀로나1",
-            team2: "레알마드리드2",
+            team1: "FC바로셀로나",
+            team2: "레알마드리드",
         },
         {
             id: 2,
@@ -19,8 +19,8 @@ export const createMultiViewCardSlice = (set, get) => ({
         },
         {
             id: 3,
-            team1: "FC바로셀로나1",
-            team2: "레알마드리드2",
+            team1: "FC바로셀로나",
+            team2: "레알마드리드",
         },
         {
             id: 4,
@@ -29,8 +29,8 @@ export const createMultiViewCardSlice = (set, get) => ({
         },
         {
             id: 5,
-            team1: "FC바로셀로나1",
-            team2: "레알마드리드2",
+            team1: "FC바로셀로나",
+            team2: "레알마드리드",
         },
         {
             id: 6,
@@ -39,8 +39,8 @@ export const createMultiViewCardSlice = (set, get) => ({
         },
         {
             id: 7,
-            team1: "FC바로셀로나1",
-            team2: "레알마드리드2",
+            team1: "FC바로셀로나",
+            team2: "레알마드리드",
         },
         {
             id: 8,
@@ -49,8 +49,8 @@ export const createMultiViewCardSlice = (set, get) => ({
         },
         {
             id: 9,
-            team1: "FC바로셀로나1",
-            team2: "레알마드리드2",
+            team1: "FC바로셀로나",
+            team2: "레알마드리드",
         },
     ],
     addNewMatch: (match) => {
