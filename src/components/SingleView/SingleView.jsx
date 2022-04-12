@@ -153,7 +153,7 @@ export default function SingleView() {
             team1Goals: 2,
             team2Goals: 0,
             team1WinKof: 5.01,
-            tieKof: 4.05,
+            tieKof: 5.00,
             team2WinKof: 3.75,
             type: matchTypes.live,
             active: false,
