@@ -9,6 +9,7 @@
   margin-bottom: 5px;
 
   .multi-view-card-wrapper {
+    cursor: move;
     padding: 0 9px;
     padding-right: 1px;
     min-width: 381px;
@@ -32,14 +33,13 @@
         width: 93px;
         display: flex;
         color: #d1cecf;
-        // justify-content: space-between;
 
         .results-number {
           font-family: RobotoMedium;
           font-size: 18px;
-          margin-right: 20px;
-          &:last-child {
-            margin-right: 13px;
+          margin-right: 17px;
+          &:nth-child(2) {
+            margin-right: 17px;
           }
         }
       }
@@ -94,11 +94,11 @@
             }
 
             .bg-holder-26 {
-              height: 12px;
+              height: 11px;
               width: 10px;
               border-radius: 3px;
               background: rgba(255, 255, 255, 0.3);
-              margin-right: 9px;
+              margin-right: 10px;
 
               .h-3 {
                 color: #212121;
@@ -131,9 +131,9 @@
             margin-top: 5px;
           }
           .results-number {
-            margin-right: 20px;
+            margin-right: 18px;
             &:nth-child(2) {
-              margin-right: 24px;
+              margin-right: 26px;
             }
           }
           .result {

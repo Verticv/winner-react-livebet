@@ -5,6 +5,7 @@ export default function SelectableLeague({
     handleLeaguesToAdd,
     leaguesToAdd,
 }) {
+    const marginTop = league?.marginTop;
     return (
         <div
             style={{
@@ -13,6 +14,7 @@ export default function SelectableLeague({
                 alignItems: "center",
                 width: "100%",
                 position: "relative",
+                marginTop: marginTop ? marginTop : ""
             }}
             className="main-live-league-row-8"
         >

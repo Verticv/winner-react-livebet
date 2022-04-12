@@ -1,14 +1,72 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
+
+import useStore from "store/useStore";
+import { useDrag } from "react-dnd";
 
 import redShirt from "../../imagesHold/image_66.png";
 import blueShirt from "../../imagesHold/image_64.png";
 
+
+
+function useSingleAndDoubleClick(actionSimpleClick, actionDoubleClick, delay = 250) {
+    const [click, setClick] = useState(0);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            if (click === 1) actionSimpleClick();
+            setClick(0);
+        }, delay);
+
+        // the duration between this click and the previous one
+        // is less than the value of delay = double-click
+        if (click === 2) actionDoubleClick();
+
+        return () => clearTimeout(timer);
+        
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [click]);
+
+    return () => setClick(prev => prev + 1);
+}
+
+
 export default function LiveMatchCardMultiView({
+    id,
     team1 = "FC바로셀로나",
     team2 = "레알마드리드",
 }) {
+
+    const resultsCardsList = useStore((state) => state.multiViewLiveMatchResultsCards);
+    const removeMatchFromMultiViewMatches = useStore((state) => state.removeMatchFromMultiViewMatches);
+    const updateMultiViewMatchesResults = useStore((state) => state.updateMultiViewMatchesResults);
+
+    const [{isDragging}, drag] = useDrag(() => ({
+        type: "card",
+        item: {id},
+        collect: (monitor) => ({
+            isDragging: !!monitor.isDragging(),
+        })
+    }))
+    console.log('isDragging', isDragging)
+    const callbackClick = () => console.log('click!')
+    const callbackDoubleClick = (idddd) => {
+        console.log('id', idddd)
+        removeMatchFromMultiViewMatches(id)
+        let isElementFound = false
+        const newData = resultsCardsList.map((match => {
+            if (match.isEmpty === true && !isElementFound) {
+                isElementFound = true
+                return {...match, isEmpty: false}
+            }
+            return match
+        }))
+        updateMultiViewMatchesResults(newData)
+    }
+
+    const click = useSingleAndDoubleClick(callbackClick, callbackDoubleClick);
+    
     return (
-        <div className="multi-view-card-wrapper">
+        <div ref={drag} onClick={click} className="multi-view-card-wrapper">
             <div className="card-header">
                 <div className="left">
                     <p>후반전 35분</p>

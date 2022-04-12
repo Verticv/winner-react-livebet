@@ -16,16 +16,19 @@ export default function LeagueSelectPopup(props) {
             id: 1,
             name: "분데스리가",
             flag: require("../../imagesHold/image_145.png").default,
+            marginTop: "5px",
         },
         {
             id: 2,
             name: "프리미어리그",
             flag: require("../../imagesHold/image_149.png").default,
+            marginTop: "5px",
         },
         {
             id: 3,
             name: "라리가",
             flag: require("../../imagesHold/image_153.png").default,
+            marginTop: "5px",
         },
         {
             id: 4,
@@ -36,16 +39,19 @@ export default function LeagueSelectPopup(props) {
             id: 5,
             name: "라리가",
             flag: require("../../imagesHold/image_147.png").default,
+            marginTop: "5px",
         },
         {
             id: 6,
             name: "분데스리가",
             flag: require("../../imagesHold/image_145.png").default,
+            marginTop: "5px",
         },
         {
             id: 7,
             name: "프리미어리그",
             flag: require("../../imagesHold/image_149.png").default,
+            marginTop: "5px",
         },
     ];
     const { selectedView, changeView, selectedLeagues, changeLeagues } =
@@ -83,13 +89,15 @@ export default function LeagueSelectPopup(props) {
                                 }
                             >
                                 <div className="button-content">
-                                    <img
-                                        src={
-                                            require("../../imagesHold/ico.png")
-                                                .default
-                                        }
-                                        alt="fffff"
-                                    />
+                                    <div>
+                                        <img
+                                            src={
+                                                require("../../imagesHold/ico.png")
+                                                    .default
+                                            }
+                                            alt="fffff"
+                                        />
+                                    </div>
                                 </div>
                             </button>
                         </div>
@@ -129,7 +137,7 @@ export default function LeagueSelectPopup(props) {
                                     <div
                                         style={{
                                             display: "flex",
-                                            justifyContent: "space-between",
+                                            // justifyContent: "space-between",
                                             flexDirection: "column",
                                         }}
                                         className="main-live-league-col-2"
@@ -160,7 +168,7 @@ export default function LeagueSelectPopup(props) {
                                     <div
                                         style={{
                                             display: "flex",
-                                            justifyContent: "space-between",
+                                            // justifyContent: "space-between",
                                             flexDirection: "column",
                                         }}
                                         className="main-live-league-col-3"

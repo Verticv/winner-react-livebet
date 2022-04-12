@@ -38,7 +38,7 @@ export default function CardFooter({ matchCard }) {
                 </div>
             </div>
             <div className="middle">
-                <div onClick={handleClick} className="middle-content">{tieKof}</div>
+                <div onClick={handleClick} className="middle-content">{tieKof.toFixed(2)}</div>
             </div>
             <div className={`right ${isRightArrowActive ? "active" : ""}`}>
                 <div

@@ -5,6 +5,7 @@ import { createLeagueSlice } from "./createLeagueSlice";
 import { createLiveCardSlice } from "./createLiveCardSlice";
 import { createSingleMultiSlice } from "./createSingleMultiSlice";
 import { createViewSelectSlice } from "./createViewSelectSlice";
+import { createMultiViewCardSlice } from "./createMultiViewCardSlice";
 
 const useStore = create((set, get) => ({
     ...createLeagueSlice(set, get),
@@ -13,6 +14,7 @@ const useStore = create((set, get) => ({
     ...createSingleMultiSlice(set, get),
     ...createBetNavSlice(set, get),
     ...createBetSlipBetSlice(set, get),
+    ...createMultiViewCardSlice(set, get),
 }));
 
 export default useStore
