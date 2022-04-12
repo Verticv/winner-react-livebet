@@ -13,10 +13,10 @@ import downBlueArrow from "imagesHold/cards/blue-arrow-down.png";
 
 import "./MultiViewMatchCard.scss";
 
-function MultiViewMatchCard() {
+function MultiViewMatchCard({id}) {
     return (
         <div className="multi-view-match-card-wrapper">
-            <CardHeader />
+            <CardHeader id={id} />
             <CardSubHeader />
             <CardBody />
         </div>
@@ -189,7 +189,7 @@ function MultiViewMatchResults({ id, isEmpty = false }) {
                 <div style={{opacity: isOver ? "0.5" : ""}} ref={drop} className="empty-card"></div>
             ) : (
                 <div className="multi-view-match-result-wrapper">
-                    <MultiViewMatchCard />
+                    <MultiViewMatchCard id={id} />
                     <div className="bet-info-wrapper">
                         <div className="scroll-wrapper">
                             <Info />

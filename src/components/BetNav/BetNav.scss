@@ -31,6 +31,7 @@
           img {
             filter: invert(1);
           }
+
           .number {
             color: #c8b273;
             margin-top: 2.5px;
@@ -52,6 +53,7 @@
   .layout-button-content {
     color: black;
     background: linear-gradient(to top, #d8bc6f, #aa8f60 50%, #d6c8a5);
+
     img {
       filter: brightness(0);
     }
@@ -156,6 +158,86 @@
         @include list-active-button;
       }
 
+      &:nth-child(1) {
+        .navbar-button-border {
+          .navbar-button-inner {
+            .navbar-button-content {
+              .button-content-wrapper {
+                .number {
+                  margin-top: 5px;
+                }
+              }
+            }
+          }
+        }
+      }
+      &:nth-child(4) {
+        .navbar-button-border {
+          .navbar-button-inner {
+            .navbar-button-content {
+              .button-content-wrapper {
+                .number {
+                  margin-top: 4px;
+                }
+              }
+            }
+          }
+        }
+      }
+      &:nth-child(5) {
+        .navbar-button-border {
+          .navbar-button-inner {
+            .navbar-button-content {
+              .button-content-wrapper {
+                .number {
+                  margin-top: 4px;
+                }
+              }
+            }
+          }
+        }
+      }
+      &:nth-child(6) {
+        .navbar-button-border {
+          .navbar-button-inner {
+            .navbar-button-content {
+              .button-content-wrapper {
+                .number {
+                  margin-top: 4px;
+                }
+              }
+            }
+          }
+        }
+      }
+      &:nth-child(8) {
+        .navbar-button-border {
+          .navbar-button-inner {
+            .navbar-button-content {
+              .button-content-wrapper {
+                .number {
+                  margin-top: 4px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &:nth-child(10) {
+        .navbar-button-border {
+          .navbar-button-inner {
+            .navbar-button-content {
+              .button-content-wrapper {
+                .number {
+                  margin-top: 4px;
+                }
+              }
+            }
+          }
+        }
+      }
+
       &:nth-child(7) {
         margin-left: -1px;
       }
@@ -193,7 +275,7 @@
 
         p {
           margin-top: 5px;
-          
+
           font-family: NotoSansCJKkr-Regular;
           font-size: 14px;
         }
@@ -247,6 +329,7 @@
         align-items: center;
         margin-left: 5px;
         margin-top: 4px;
+
         .number {
           margin-top: 2px;
           font-size: 14px;
@@ -254,6 +337,7 @@
         }
       }
     }
+
     .multi-view-buttons-wrapper {
       margin-left: 9px;
       height: 100%;

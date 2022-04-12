@@ -2,7 +2,7 @@ import { matchTypes } from "helpers/constants";
 import React from "react";
 import LiveMatchCard from "./LiveMatchCard";
 
-export default function UpcomingMatches({ data = [], isFavorite = false }) {
+export default function UpcomingMatches({ data = [], setData, isFavorite = false }) {
     return (
         <>
             {isFavorite
@@ -14,6 +14,8 @@ export default function UpcomingMatches({ data = [], isFavorite = false }) {
                       .map((upcomingMatchCard) => {
                           return (
                               <LiveMatchCard
+                                  data={data}
+                                  setData={setData}
                                   isRed={false}
                                   isFavoriteCard={true}
                                   key={upcomingMatchCard.id}
@@ -24,6 +26,8 @@ export default function UpcomingMatches({ data = [], isFavorite = false }) {
                 : data.map((upcomingMatchCard) => {
                       return (
                           <LiveMatchCard
+                              data={data}
+                              setData={setData}
                               isRed={false}
                               isFavoriteCard={false}
                               key={upcomingMatchCard.id}

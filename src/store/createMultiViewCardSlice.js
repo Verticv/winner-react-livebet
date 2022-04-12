@@ -22,36 +22,6 @@ export const createMultiViewCardSlice = (set, get) => ({
             team1: "FC바로셀로나",
             team2: "레알마드리드",
         },
-        {
-            id: 4,
-            team1: "FC바로셀로나",
-            team2: "레알마드리드",
-        },
-        {
-            id: 5,
-            team1: "FC바로셀로나",
-            team2: "레알마드리드",
-        },
-        {
-            id: 6,
-            team1: "FC바로셀로나",
-            team2: "레알마드리드",
-        },
-        {
-            id: 7,
-            team1: "FC바로셀로나",
-            team2: "레알마드리드",
-        },
-        {
-            id: 8,
-            team1: "FC바로셀로나",
-            team2: "레알마드리드",
-        },
-        {
-            id: 9,
-            team1: "FC바로셀로나",
-            team2: "레알마드리드",
-        },
     ],
     addNewMatch: (match) => {
         set(
@@ -133,11 +103,17 @@ export const createMultiViewCardSlice = (set, get) => ({
     removeMatchFromMultiViewMatchesResults: (matchId) => {
         set(
             produce((draft) => {
-                const matchIndex =
-                    draft.multiViewLiveMatchResultsCards.findIndex(
-                        (el) => el.id === matchId
+                const newMatchesData =
+                    draft.multiViewLiveMatchResultsCards.map(
+                        (el) => {
+                            if (el.id === matchId) {
+                                el.isEmpty = true
+                                return el
+                            }
+                            return el
+                        }
                     );
-                draft.multiViewLiveMatchResultsCards.splice(matchIndex, 1);
+                draft.multiViewLiveMatchResultsCards = newMatchesData;
             })
         );
     },

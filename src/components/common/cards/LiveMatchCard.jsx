@@ -6,6 +6,8 @@ import CardBody from "./CardBody/CardBody";
 import CardFooter from "./CardFooter/CardFooter";
 
 export default function LiveMatchCard({
+    data,
+    setData,
     matchCard,
     isRed = true,
     isFavoriteCard = false,
@@ -64,6 +66,8 @@ export default function LiveMatchCard({
                 )}
             </div>
             <MatchButton
+                data={data}
+                setData={setData}
                 withHeader={withHeader}
                 isRed={isRed}
                 isFavoriteCard={isFavoriteCard}
