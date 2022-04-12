@@ -1,6 +1,5 @@
 import React from "react";
 
-import useStore from "store/useStore";
 import { matchTypes } from "helpers/constants";
 import moveArrayItemToNewIndex from "helpers/moveArrayItemToNewIndex";
 
@@ -11,6 +10,8 @@ import blueArrow from "../../../../imagesHold/cards/blue-arrow.png";
 import "./SideButton.scss";
 
 export default function SideButton({
+    data,
+    setData,
     matchCard,
     onClick,
     onMouseEnter,
@@ -30,12 +31,13 @@ export default function SideButton({
         arrowImg = blueArrow;
     }
 
-    const favoriteMatches = useStore((state) => state.favoriteMatches);
-    const updateFavoritesMatches = useStore(
-        (state) => state.updateFavoritesMatches
-    );
+    const favoriteMatches = data
+    // const updateFavoritesMatches = useStore(
+    //     (state) => state.updateFavoritesMatches
+    // );
 
     const changeOrderHandler = (type, id) => {
+        console.log('!!!!!!!!')
         const live = [...favoriteMatches].filter(
             (match) => match.type === matchTypes.live
         );
@@ -51,7 +53,13 @@ export default function SideButton({
             });
             if (oldIndex !== 0) {
                 moveArrayItemToNewIndex(live, oldIndex, oldIndex - 1);
-                updateFavoritesMatches([...live, ...upcoming]);
+                // updateFavoritesMatches([...live, ...upcoming]);
+                const newArr = [...live, ...upcoming].map((card, index) => {
+                    const newCard = {...card}
+                    newCard.id = index
+                    return newCard
+                })
+                setData(newArr)
             }
         } else if (type === matchTypes.upcoming) {
             let oldIndex;
@@ -62,14 +70,20 @@ export default function SideButton({
             });
             if (oldIndex !== 0) {
                 moveArrayItemToNewIndex(upcoming, oldIndex, oldIndex - 1);
-                updateFavoritesMatches([...live, ...upcoming]);
+                // updateFavoritesMatches([...live, ...upcoming]);
+                const newArr = [...live, ...upcoming].map((card, index) => {
+                    const newCard = {...card}
+                    newCard.id = index
+                    return newCard
+                })
+                setData(newArr)
             }
         }
     };
 
     return (
         <button
-            onClick={onClick}
+            onClick={isFavoriteCard ? () => {} : onClick}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
             className={`
@@ -100,14 +114,14 @@ export default function SideButton({
                     </>
                 )}
                 {redCard ? (
-                    <>
+                    <div onClick={isFavoriteCard ? onClick : () => {}}>
                         <p className="plus">+</p>
                         <p className="number">23</p>
-                    </>
+                    </div>
                 ) : (
-                    <>
+                    <div onClick={isFavoriteCard ? onClick : () => {}}>
                         <p className="text">정보</p>
-                    </>
+                    </div>
                 )}
             </div>
             <div className="line"></div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { matchTypes } from "helpers/constants";
 import MatchCards from "components/common/cards/MatchCards";
@@ -12,7 +12,7 @@ import "./SingleView.scss";
 export default function SingleView() {
     const selectedNav = useStore((state) => state.selectedNav);
 
-    const matchCards = [
+    const matchCardsData = [
         {
             id: 0,
             league: "라리가",
@@ -28,7 +28,8 @@ export default function SingleView() {
             team1WinKof: 5.01,
             tieKof: 4.05,
             team2WinKof: 3.75,
-            isLeftArrowActive: true,
+            isRightArrowActive: true,
+            isLeftArrowActive: false,
             type: matchTypes.live,
             active: false,
             withHeader: true,
@@ -49,7 +50,8 @@ export default function SingleView() {
             team1WinKof: 5.01,
             tieKof: 4.05,
             team2WinKof: 3.75,
-            isRightArrowActive: true,
+            isRightArrowActive: false,
+            isLeftArrowActive: true,
             type: matchTypes.live,
             active: true,
             withHeader: true,
@@ -96,8 +98,10 @@ export default function SingleView() {
             marginBottom: '10px',
         },
     ];
+    const [matchCards, setMatchCards] = useState(matchCardsData)
 
-    const soccerCards = [
+
+    const soccerCardsData = [
         {
             id: 0,
             league: "라리가",
@@ -113,7 +117,8 @@ export default function SingleView() {
             team1WinKof: 5.01,
             tieKof: 4.05,
             team2WinKof: 3.75,
-            isLeftArrowActive: true,
+            isRightArrowActive: true,
+            isLeftArrowActive: false,
             type: matchTypes.live,
             active: false,
             withHeader: true,
@@ -134,7 +139,7 @@ export default function SingleView() {
             team1WinKof: 5.01,
             tieKof: 4.05,
             team2WinKof: 3.75,
-            isRightArrowActive: true,
+            isLeftArrowActive: true,
             type: matchTypes.live,
             active: true,
             withHeader: true,
@@ -241,10 +246,16 @@ export default function SingleView() {
             marginBottom: '10px',
         },
     ];
+    const [soccerCards, setSoccerCards] = useState(soccerCardsData)
 
-    const favoriteMatchCards = useStore((state) => state.favoriteMatches);
 
-    const upcomingMatchCards = [
+    const favoriteMatchCardsData = useStore((state) => state.favoriteMatches);
+    const [favoriteMatchCards, setFavoriteMatchCards] = useState(favoriteMatchCardsData)
+    console.log('favoriteMatchCards', favoriteMatchCards)
+
+    
+
+    const upcomingMatchCardsData = [
         {
             id: 1,
             league: "라리가",
@@ -279,8 +290,9 @@ export default function SingleView() {
             marginBottom: '10px',
         },
     ];
+    const [upcomingMatchCards, setUpcomingMatchCards] = useState(upcomingMatchCardsData)
 
-    const basketBallUpcomingMatchCards = [
+    const basketBallUpcomingMatchCardsData = [
         {
             id: 1,
             league: "라리가",
@@ -382,6 +394,9 @@ export default function SingleView() {
         },
     ];
 
+    const [basketBallUpcomingMatchCards, setBasketBallUpcomingMatchCards] = useState(basketBallUpcomingMatchCardsData)
+
+
     return (
         <div
             className="match-img-wrapper hide-scrollbar"
@@ -405,6 +420,7 @@ export default function SingleView() {
                         <div>
                             <MatchCards
                                 data={favoriteMatchCards}
+                                setData={setFavoriteMatchCards}
                                 isFavoriteCard={true}
                                 isRed={true}
                             />{" "}
@@ -412,26 +428,27 @@ export default function SingleView() {
                         <LiveUpcomingMatchesCount />
                         <UpcomingMatches
                             data={favoriteMatchCards}
+                            setData={setFavoriteMatchCards}
                             isFavorite={true}
                         />
                     </>
                 ) : selectedNav === 2 ? (
                     <>
                         <div>
-                            <MatchCards data={soccerCards} isRed={true} />
+                            <MatchCards setData={setSoccerCards} data={soccerCards} isRed={true} />
                         </div>
                     </>
                 ): selectedNav === 3 ? (
                     <>
-                        <UpcomingMatches data={basketBallUpcomingMatchCards} />
+                        <UpcomingMatches setData={setBasketBallUpcomingMatchCards} data={basketBallUpcomingMatchCards} />
                     </>
                 ): (
                     <>
                         <div>
-                            <MatchCards data={matchCards} isRed={true} />
+                            <MatchCards setData={setMatchCards} data={matchCards} isRed={true} />
                         </div>
                         <LiveUpcomingMatchesCount />
-                        <UpcomingMatches data={upcomingMatchCards} />
+                        <UpcomingMatches setData={setUpcomingMatchCards} data={upcomingMatchCards} />
                     </>
                 )}
             </div>

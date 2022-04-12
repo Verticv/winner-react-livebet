@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import useStore from "store/useStore";
 import ball from "../../../imagesHold/image_70.png";
 import spain from "../../../imagesHold/image_61.png";
 import stadium from "../../../imagesHold/m-card-stadium.png";
@@ -8,10 +9,20 @@ import activeStadium from "../../../imagesHold/m-card-stadium-active.png";
 import activeClose from "../../../imagesHold/m-card-close-active.png";
 import activePlay from "../../../imagesHold/m-card-play-active.png";
 
-export default function CardHeader({ league = "라리가" }) {
+export default function CardHeader({ id, league = "라리가" }) {
+    const resultsCardsList = useStore((state) => state.multiViewLiveMatchResultsCards);
+    const removeMatchFromMultiViewMatchesResults = useStore((state) => state.removeMatchFromMultiViewMatchesResults);
+    const addNewMatch = useStore((state) => state.addNewMatch);
     const [playActive, setIsPlayActive] = useState(false);
     const [stadiumActive, setIsStadiumActive] = useState(false);
     const [closeActive, setIsCloseActive] = useState(false);
+
+    const closeHandler = (cardId) => {
+            removeMatchFromMultiViewMatchesResults(cardId)
+            const newCard = {...resultsCardsList[resultsCardsList?.length - 1]}
+            newCard.id = newCard.id + 1
+            addNewMatch(newCard)
+    }
 
     return (
         <div className="multi-card-header-content">
@@ -73,7 +84,10 @@ export default function CardHeader({ league = "라리가" }) {
                     className={`close ${closeActive ? "active" : ""}`}
                     onMouseEnter={() => setIsCloseActive(true)}
                     onMouseLeave={() => setIsCloseActive(false)}
-                    onClick={() => setIsCloseActive(prev => !prev)}
+                    onClick={() => {
+                        setIsCloseActive(prev => !prev)
+                        closeHandler(id)
+                     }}
                 >
                     <div>
                         <img
