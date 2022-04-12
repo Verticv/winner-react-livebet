@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 
+import useStore from "store/useStore";
+import { useDrop } from "react-dnd";
+
 import getRandomNumberInInterval from "helpers/getRandomNumberInInterval";
 import CardHeader from "components/MultiViewMatchCard/CardHeader/CardHeader";
 import CardSubHeader from "components/MultiViewMatchCard/CardSubHeader/CardSubHeader";
 import CardBody from "components/MultiViewMatchCard/CardBody/CardBody";
 import externalLinkIcon from "../../imagesHold/external-link.png";
-import upRedArrow from "imagesHold/cards/red-arrow-up.png"
-import downBlueArrow from "imagesHold/cards/blue-arrow-down.png"
+import upRedArrow from "imagesHold/cards/red-arrow-up.png";
+import downBlueArrow from "imagesHold/cards/blue-arrow-down.png";
 
 import "./MultiViewMatchCard.scss";
 
@@ -73,13 +76,13 @@ function ResultsRow() {
                 {isRowActive && <img src={upRedArrow} alt="" />}
                 <div className="number-value">{kof1}</div>
             </div>
-            
+
             <div className="middle">
                 <div className="left"></div>
                 <div className="middle-content">4.05</div>
                 <div className="right"></div>
             </div>
-            <div className={`number2 ${ isRowActive ? "blue-arrow" : ""}`}>
+            <div className={`number2 ${isRowActive ? "blue-arrow" : ""}`}>
                 {isRowActive && <img src={downBlueArrow} alt="" />}
                 <div className="number-value">{kof2}</div>
             </div>
@@ -96,10 +99,7 @@ function MatchDetail({ bet, isEmpty = false }) {
         setIsShowing((prev) => !prev);
     };
     const { betType, option1, option2 } = bet;
-    console.log(option2, option1)
-    // const selections = { team1: 3, team2: 1, draw: 2, none: 0 };
-    // const [selectedOutcome, setSelectedOutcome] = useState(selections.none);
-    // const [selectedOutcome2, setSelectedOutcome2] = useState(selections.none);
+    console.log(option2, option1);
     return (
         <div className="match-details-wrapper">
             {!isEmpty && (
@@ -131,16 +131,21 @@ function MatchDetail({ bet, isEmpty = false }) {
     );
 }
 
-function ResultsContent({isEmpty = false}) {
+function ResultsContent({ isEmpty = false }) {
     return (
         <div className="results-content">
             <div className="match-bets-content">
                 <div className="match-bet-card-wrapper">
-                    {/* <div className="line"></div> */}
                     {matchBets.map((matchBet) => {
-                        return <>
-                            <MatchDetail key={matchBet.id} bet={matchBet} isEmpty={isEmpty} />
-                        </>;
+                        return (
+                            <>
+                                <MatchDetail
+                                    key={matchBet.id}
+                                    bet={matchBet}
+                                    isEmpty={isEmpty}
+                                />
+                            </>
+                        );
                     })}
                 </div>
             </div>
@@ -148,11 +153,40 @@ function ResultsContent({isEmpty = false}) {
     );
 }
 
-function MultiViewMatchResults({ isEmpty = false }) {
+function MultiViewMatchResults({ id, isEmpty = false }) {
+    const resultsCardsList = useStore((state) => state.multiViewLiveMatchResultsCards);
+    const removeMatchFromMultiViewMatches = useStore((state) => state.removeMatchFromMultiViewMatches);
+    const updateMultiViewMatchesResults = useStore((state) => state.updateMultiViewMatchesResults);
+
+    const [{isOver}, drop] = useDrop(() => ({
+        accept: "card",
+        drop: (item) => addCard(item.id),
+        collect: (monitor) => ({
+            isOver: !!monitor.isOver(),
+        })
+    }))
+
+    const addCard = (cardId) => {
+        let data = resultsCardsList;
+        if (window.cardsData) {
+            data = window.cardsData
+        }
+        removeMatchFromMultiViewMatches(cardId)
+        const newData = data.map((match => {
+            if (match.id === id) {
+                return {...match, isEmpty: false}
+            }
+            return match
+        }))
+        window.cardsData = newData
+        updateMultiViewMatchesResults(newData)
+
+    }
+
     return (
         <>
             {isEmpty ? (
-                <div className="empty-card"></div>
+                <div style={{opacity: isOver ? "0.5" : ""}} ref={drop} className="empty-card"></div>
             ) : (
                 <div className="multi-view-match-result-wrapper">
                     <MultiViewMatchCard />
@@ -176,14 +210,14 @@ function MultiViewMatchResults({ isEmpty = false }) {
 }
 
 export default function MultiViewMatchCards() {
+
+    const resultsCardsList = useStore((state) => state.multiViewLiveMatchResultsCards);
     return (
         <div className="multi-view-match-results-wrapper">
-            <MultiViewMatchResults />
-            <MultiViewMatchResults />
-            <MultiViewMatchResults />
-            <MultiViewMatchResults isEmpty />
-            <MultiViewMatchResults isEmpty />
-            <MultiViewMatchResults isEmpty />
+            {resultsCardsList.map(({id, isEmpty}) => {
+
+                return <MultiViewMatchResults id={id} isEmpty={isEmpty} />
+            })}
         </div>
     );
 }

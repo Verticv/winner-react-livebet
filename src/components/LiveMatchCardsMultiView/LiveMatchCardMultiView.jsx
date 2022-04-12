@@ -1,14 +1,24 @@
 import React from "react";
+import { useDrag } from "react-dnd";
 
 import redShirt from "../../imagesHold/image_66.png";
 import blueShirt from "../../imagesHold/image_64.png";
 
 export default function LiveMatchCardMultiView({
+    id,
     team1 = "FC바로셀로나",
     team2 = "레알마드리드",
 }) {
+    const [{isDragging}, drag] = useDrag(() => ({
+        type: "card",
+        item: {id},
+        collect: (monitor) => ({
+            isDragging: !!monitor.isDragging(),
+        })
+    }))
+    console.log('isDragging', isDragging)
     return (
-        <div className="multi-view-card-wrapper">
+        <div ref={drag} className="multi-view-card-wrapper">
             <div className="card-header">
                 <div className="left">
                     <p>후반전 35분</p>
