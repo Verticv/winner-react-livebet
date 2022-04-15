@@ -413,7 +413,6 @@ export default function SingleView() {
         <div
             className="match-img-wrapper hide-scrollbar"
             style={{
-                height: "954px",
                 overflowY: "scroll",
                 overflowX: "hidden",
                 background: "black",
