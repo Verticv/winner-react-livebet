@@ -86,6 +86,9 @@
     width: 20%;
 
     .text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
       font-size: 14px;
       font-family: NotoSansCJKkr-Regular;
@@ -97,12 +100,14 @@
       span {
         font-family: Roboto, sans-serif;
         font-size: 16px;
+        margin-top: 1px;
       }
     }
 
     .button-wrapper {
       width: 100%;
       text-align: center;
+      margin-top: -1px;
 
       button {
         margin-top: 11px;
