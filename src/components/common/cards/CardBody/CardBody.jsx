@@ -117,8 +117,8 @@ export default function CardBody({
                                         : playButton
                                 }
                                 alt=""
-                                width="33"
-                                height="33"
+                                width="32"
+                                height="32"
                             />
                         ) : (
                             <div className="date">02-06 21:00</div>
