@@ -60,18 +60,20 @@
         }
 
         .bg-holder-26 {
-          height: 10px;
+          height: 11px;
           width: 10px;
           border-radius: 3px;
           background: rgba(255, 255, 255, 0.3);
           margin-right: 11px;
 
           .h-3 {
+            height: 11px;
+            font-weight: 600;
             color: #212121;
             font-family: Roboto, sans-serif;
             font-size: 10px;
             letter-spacing: 0;
-            line-height: 10px;
+            line-height: 11px;
             text-align: center;
             text-transform: uppercase;
           }
