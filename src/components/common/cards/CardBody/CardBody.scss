@@ -126,19 +126,43 @@
     padding-right: 3px;
     margin-top: 8px;
 
+    p {
+      display: flex;
+      justify-content: center;
+    }
+
     .line {
+      display: flex;
+      justify-content: flex-end;
       font-family: RobotoMedium, sans-serif;
       font-size: 18px;
       font-weight: 500;
-      letter-spacing: 15.28px;
       text-align: end;
 
-      &:last-child {
-        margin-top: 2px;
-      }
 
       .gold {
         color: #e9ca4e;
+      }
+      .second {
+        height: 18px;
+        width: 18px;
+        margin-left: 13px;
+        margin-right: 10px;
+      }
+  
+      .third {
+        height: 18px;
+        width: 18px;
+        margin-right: 13px;
+      }
+
+      .forth {
+        margin-right: 9.5px;
+      }
+  
+      .ball {
+        margin-left: 8px;
+        margin-right: 15px;
       }
     }
   }
