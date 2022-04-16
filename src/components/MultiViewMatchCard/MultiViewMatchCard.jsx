@@ -89,6 +89,10 @@ function ResultsRow() {
             <div className="right">
                 <p className="text">{option2}</p>
             </div>
+            <div style={{ position: "absolute", width: "100%", height: "1px", background: "linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0))", left: 0, top: 0}}></div>
+            <div style={{ position: "absolute", width: "100%", height: "1px", background: "rgba(255, 255, 255, 0.05)", bottom: 0}}></div>
+            <div style={{ position: "absolute", width: "1px", height: "calc(100% - 1px)", background: "linear-gradient(to top, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.03) 30%, rgba(255, 255, 255, 0))", left: 0, top: 0}}></div>
+            <div style={{ position: "absolute", width: "1px", height: "calc(100% - 1px)", background: "linear-gradient(to top, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.03) 30%, rgba(255, 255, 255, 0))", right: 0, top: 0}}></div>
         </div>
     );
 }
