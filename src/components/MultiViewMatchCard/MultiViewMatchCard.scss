@@ -422,8 +422,9 @@
                 height: 28px;
                 border-radius: 3px;
                 margin-right: 9px;
-                background-color: rgb(255, 255, 255);
-                opacity: 0.2;
+                // background-color: rgb(255, 255, 255);
+                background: url("../../imagesHold/new-button-bg1.png");
+                // opacity: 0.2;
 
                 .rotate {
                   transform: rotate(180deg);
