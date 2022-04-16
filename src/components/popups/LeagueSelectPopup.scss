@@ -20,7 +20,7 @@
       height: 40px;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(to bottom, #303039, #2f2f38 50%, #2d2d35);
+      background: linear-gradient(to bottom, #4d4d5c, #3c3c47 50%, #2d2d35);
       .line-1 {
         position: absolute;
         top: 0;
@@ -54,7 +54,10 @@
           align-items: center;
           width: calc(100% - 1px);
           height: 100%;
-          background: linear-gradient(to bottom, #303039, #303038 50%, #2d2d35);
+          background: linear-gradient(to bottom, #4d4d5c, #3c3c47 50%, #2d2d35);
+          &:hover {
+            opacity: 0.7;
+          }
           img {
             width: 14px;
             height: 14px;
@@ -156,12 +159,13 @@
             position: absolute;
             top: 0;
             width: 239px;
-            -webkit-border-radius: 4.23px/3.56px;
-            -moz-border-radius: 4.23px/3.56px;
-            border-radius: 4.23px/3.56px;
-            background: url('../../imagesHold/popup-gray-button.png');
+            border-radius: 2px;
+            background: url('../../imagesHold/new-popup-btn.png');
             background-repeat: round;
             box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.75); /*drop shadow*/
+            &:hover {
+              opacity: 0.7;
+            }
             .main-live-league-text-11 {
               left: 103px;
               top: 0px;
@@ -186,10 +190,13 @@
               position: absolute;
               top: 0;
               width: 239px;
-              border-radius: 4.23px/3.56px;
-              background: url('../../imagesHold/popup-gold-button.png');
+              border-radius: 2px;
+              background: url('../../imagesHold/new-popup-btn-active.png');
               background-repeat: round;
               box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.75); /*drop shadow*/
+              &:hover {
+                opacity: 0.85;
+              }
               .main-live-league-text-12 {
                 left: 104px;
                 position: absolute;
