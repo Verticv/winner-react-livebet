@@ -60,10 +60,10 @@
           display: flex;
           flex-direction: column;
           align-items: center;
-          justify-content: center;
+          padding-top: 2px;
           height: 71px;
           .team-1 {
-            margin-left: 4px;
+            margin-left: 3px;
             height: 50%;
             display: flex;
             align-items: center;
@@ -108,7 +108,16 @@
                 line-height: 12px;
                 text-align: center;
                 text-transform: uppercase;
+                font-weight: 600;
               }
+            }
+          }
+          .team-2 {
+            .shirt {
+              margin-bottom: 1px;
+            }
+            .bg-holder-26 {
+              margin-bottom: 1px;
             }
           }
         }
@@ -116,7 +125,7 @@
           display: flex;
           flex-direction: column;
           align-items: center;
-          justify-content: center;
+          margin-top: 7px;
           height: 71px;
           font-family: RobotoMedium;
           font-size: 18px;
@@ -128,7 +137,7 @@
             margin-top: 4px;
           }
           .second-row {
-            margin-top: 5px;
+            margin-top: 2px;
           }
           .results-number {
             margin-right: 18px;
