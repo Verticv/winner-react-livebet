@@ -106,7 +106,7 @@
         font-size: 14px;
         padding-right: 21px;
         position: absolute;
-        left: 295px;
+        left: 293px;
         top: 8px;
         &.red-arrow {
           img {
@@ -128,7 +128,7 @@
         width: 71px;
         height: 57px;
         margin-right: 2px;
-        left: 273px;
+        left: 271px;
         top: -11px;
         z-index: 5;
       }
@@ -157,7 +157,7 @@
         width: 71px;
         height: 57px;
         margin-right: 2px;
-        left: 495px;
+        left: 493px;
         top: -11px;
         z-index: 5;
       }
@@ -170,7 +170,7 @@
 
         &:not(.blue-arrow) {
           z-index: 1;
-          left: 501px;
+          left: 498px;
           top: 8px;
         }
 
@@ -200,7 +200,7 @@
         z-index: 2;
         .left {
           background: linear-gradient(to top, rgb(255 255 255 / 22%), rgb(255 255 255 / 9%) 50%, rgba(255, 255, 255, 0));
-          width: 0.5px;
+          width: 1.5px;
           height: 40px;
           position: absolute;
           left: 5.6px;
@@ -212,7 +212,7 @@
 
         .right {
           background: linear-gradient(to top, rgb(255 255 255 / 22%), rgb(255 255 255 / 9%) 50%, rgba(255, 255, 255, 0));
-          width: 0.5px;
+          width: 1.5px;
           height: 40px;
           position: absolute;
           right: 8.6px;
@@ -224,7 +224,8 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          width: 174.5px;
+          width: 173px;
+          margin-left: 0.5px;
           height: 35px;
           padding-left: 0;
           padding-top: 1px;
