@@ -95,7 +95,7 @@ export default function CardBody({
                     {" "}
                     {isRed ? (
                         <>
-                            {currentTimeText} <span>{currentTimeNumber}</span>
+                           <p>{currentTimeText}</p> <span>{currentTimeNumber}</span>
                         </>
                     ) : (
                         currentTimeText
@@ -117,8 +117,8 @@ export default function CardBody({
                                         : playButton
                                 }
                                 alt=""
-                                width="33"
-                                height="33"
+                                width="32"
+                                height="32"
                             />
                         ) : (
                             <div className="date">02-06 21:00</div>
@@ -129,12 +129,18 @@ export default function CardBody({
             {isRed && (
                 <div className="right">
                     <p className="line">
-                        {team1stats}
-                        <span className="gold">{team1Goals}</span>
+                        <p>{team1stats.toString()[0]}</p>
+                        <p className="second">{team1stats.toString()[1]}</p>
+                        <p className="third">{team1stats.toString()[2]}</p>
+                        <p className="forth">{team1stats.toString()[3]}</p>
+                        <span className="gold ball">{team1Goals}</span>
                     </p>
                     <p className="line">
-                        {team2stats}
-                        <span className="gold">{team2Goals}</span>
+                        <p>{team2stats.toString()[0]}</p>
+                        <p className="second">{team2stats.toString()[1]}</p>
+                        <p className="third">{team2stats.toString()[2]}</p>
+                        <p className="forth">{team2stats.toString()[3]}</p>
+                        <span className="gold ball">{team2Goals}</span>
                     </p>
                 </div>
             )}

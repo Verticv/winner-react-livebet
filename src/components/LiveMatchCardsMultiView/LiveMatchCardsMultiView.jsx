@@ -8,7 +8,7 @@ export default function LiveMatchCardsMultiView() {
     const cardsList = useStore((state) => state.multiViewLiveMatchCards);
     return (
         <div className="multi-view-cards-wrapper">
-            {cardsList.map(({id, team1, team2}) => <LiveMatchCardMultiView id={id} team1={team1} team2={team2} />)}
+            {cardsList.map((data) => <LiveMatchCardMultiView {...data} />)}
         </div>
     );
 }

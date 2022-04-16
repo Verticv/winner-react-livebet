@@ -15,7 +15,8 @@ function Amount({
     numberClasses = "",
     withInput = false,
     inputValue,
-    setInputValue
+    setInputValue,
+    boldNumber = false
 }) {
     return (
         <div className="amount">
@@ -28,7 +29,7 @@ function Amount({
                     <input type="number" className="number" onChange={(e) => setInputValue(e.target.value)} value={inputValue} />
                 </div>
             ) : (
-                <p className={`number ${numberClasses}`}>{amount}</p>
+                <p style={{fontWeight: boldNumber ? "600" : ""}} className={`number ${numberClasses}`}>{amount}</p>
             )}
         </div>
     );
@@ -53,7 +54,7 @@ export default function BetAmount() {
 
     return (
         <div className="amount-wrapper">
-            <Amount inputValue={inputValue} setInputValue={setInputValue} />
+            <Amount boldNumber inputValue={inputValue} setInputValue={setInputValue} />
             <AmountDetails />
             <AmountDetails title="최대 베팅금액" amount="1,000,000" />
             <AmountDetails title="최대 당첨금액" amount="2,000,000" />

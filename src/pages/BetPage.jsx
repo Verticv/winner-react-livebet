@@ -7,6 +7,7 @@ import { singleOrMultiOptions } from "helpers/constants";
 import React from "react";
 import useStore from "store/useStore";
 // import testing  from "../imagesHold/testing.png"
+// import testing1  from "../imagesHold/testing1.png"
 
 export default function BetPage() {
     const singleOrMulti = useStore((state) => state.singleOrMulti);
@@ -24,10 +25,11 @@ export default function BetPage() {
                 {isSingleView && <SingleView />}
                 {isMultiView && <MultiView />}
             </div>
-            <div className="bet-page-cart">
+            <div style={{marginLeft: '-4px'}} className="bet-page-cart">
                 <BetSlip />
             </div>
-            {/* <img src={testing} style={{position: 'fixed', top: "0", left: "0"}} /> */}
+            {/* <img src={testing} style={{position: 'fixed', top: "688.4px", left: "700px", zIndex: 100}} /> */}
+            {/* <img src={testing1} style={{position: 'fixed', top: "220px", left: "700px", zIndex: 100}} /> */}
         </div>
     );
 }

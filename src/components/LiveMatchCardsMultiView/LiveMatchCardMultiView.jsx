@@ -32,8 +32,15 @@ function useSingleAndDoubleClick(actionSimpleClick, actionDoubleClick, delay = 2
 
 export default function LiveMatchCardMultiView({
     id,
+    title = "후반전 35분",
     team1 = "FC바로셀로나",
     team2 = "레알마드리드",
+    team1Result1 = "0",
+    team1Result2 = "0",
+    team1Goal = "1",
+    team2Result1 = "0",
+    team2Result2 = "0",
+    team2Goal = "0",
 }) {
 
     const resultsCardsList = useStore((state) => state.multiViewLiveMatchResultsCards);
@@ -69,7 +76,7 @@ export default function LiveMatchCardMultiView({
         <div ref={drag} onClick={click} className="multi-view-card-wrapper">
             <div className="card-header">
                 <div className="left">
-                    <p>후반전 35분</p>
+                    <p>{title}</p>
                 </div>
                 <div className="right">
                     <span className="results-number">1</span>
@@ -128,14 +135,14 @@ export default function LiveMatchCardMultiView({
                     </div>
                     <div className="right">
                         <div className="first-row">
-                            <span className="results-number">0</span>
-                            <span className="results-number">0</span>
-                            <span className="result">0</span>
+                            <span className="results-number">{team1Result1}</span>
+                            <span className="results-number">{team1Result2}</span>
+                            <span className="result">{team1Goal}</span>
                         </div>
                         <div className="second-row">
-                            <span className="results-number">0</span>
-                            <span className="results-number">0</span>
-                            <span className="result">0</span>
+                            <span className="results-number">{team2Result1}</span>
+                            <span className="results-number">{team2Result2}</span>
+                            <span className="result">{team2Goal}</span>
                         </div>
                     </div>
                 </div>
