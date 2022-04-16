@@ -160,8 +160,8 @@
             width: 18px;
             border-radius: 3px;
             background: #e9ca4e;
-            margin-left: 10px;
-            margin-right: 10px;
+            margin-left: 9px;
+            margin-right: 9px;
           }
 
           .red-box {
@@ -169,7 +169,7 @@
             width: 18px;
             border-radius: 3px;
             background: #b92025;
-            margin-right: 10px;
+            margin-right: 9px;
           }
 
           .ball {
@@ -192,7 +192,7 @@
           height: 100%;
           display: flex;
           margin-left: 11px;
-          margin-top: 4px;
+          margin-top: 3px;
 
           .star {
             display: flex;
@@ -216,7 +216,7 @@
               height: 50%;
               display: flex;
               align-items: center;
-              margin-top: -7px;
+              margin-top: -6px;
               margin-left: 1px;
               .shirt,
               .bg-holder-26 {
@@ -237,8 +237,9 @@
                 // border-radius: 3px;
                 // background: rgba(255, 255, 255, 0.3);
                 // margin-right: 10px;
-                height: 10px;
+                height: 11px;
                 width: 10px;
+                font-weight: 600;
                 border-radius: 3px;
                 background: rgba(255, 255, 255, 0.3);
                 margin-right: 10px;
@@ -252,6 +253,18 @@
                   text-align: center;
                   text-transform: uppercase;
                 }
+              }
+            }
+            .team-1 {
+              .shirt {
+                margin-right: 7px;
+                img {
+                  margin-left: 1px;
+                  margin-bottom: 1px;
+                }
+              }
+              .bg-holder-26 {
+                margin-bottom: 1px;
               }
             }
             .team-2 {
@@ -299,7 +312,7 @@
 
         .right {
           padding-right: 0;
-          margin-top: 10px;
+          margin-top: 8px;
           margin-right: -2px;
 
           .line {
@@ -311,6 +324,9 @@
 
             .gold {
               color: #e9ca4e;
+            }
+            &:nth-child(2) {
+              margin-top: 2px;
             }
           }
         }
