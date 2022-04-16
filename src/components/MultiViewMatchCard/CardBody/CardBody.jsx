@@ -30,7 +30,7 @@ export default function CardBody({
                             <p className="h-3">h</p>
                         </div>
                         <p
-                            style={{ fontSize: "14px", whiteSpace: "nowrap" }}
+                            style={{ fontSize: "14px", whiteSpace: "nowrap", color: "#d1cecf" }}
                             className="text-54"
                         >
                             {team1}
@@ -63,7 +63,7 @@ export default function CardBody({
                             />
                         </div> */}
                         <p
-                            style={{ fontSize: "14px", whiteSpace: "nowrap" }}
+                            style={{ fontSize: "14px", whiteSpace: "nowrap", color: "#d1cecf" }}
                             className="text-55"
                         >
                             {team2}
