@@ -178,7 +178,15 @@
     height: 70px;
     .left {
        .star {
-          margin-bottom: 13px;
+          margin-bottom: 2px;
+       }
+       .teams-wrapper {
+         .team-1 {
+            margin-top: 3px;
+         }
+         .team2 {
+            margin-top: -6px;
+         }
        }
     }
     .middle {
