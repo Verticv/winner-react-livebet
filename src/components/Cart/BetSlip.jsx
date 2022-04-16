@@ -68,6 +68,8 @@ function AmountDetails({
 export default function BetSlip() {
     const singleOrMulti = useStore((state) => state.singleOrMulti);
     const isSingleView = singleOrMulti === singleOrMultiOptions.single;
+    const selectedNav = useStore((state) => state.selectedNav);
+
     return (
         <div className="cart hide-scrollbar">
             <div className="cart-wrapper">
@@ -117,7 +119,7 @@ export default function BetSlip() {
                         </div>
                     </div>
                 </div>
-                {isSingleView ? (
+                {selectedNav !== 3 ? (
                     <>
                         <div className="id-wrapper">
                             <div className="left">
