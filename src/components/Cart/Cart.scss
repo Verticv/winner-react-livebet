@@ -218,15 +218,17 @@
       button {
         width: 345px;
         margin-right: 2px;
-        margin-top: 6px;
-        height: 60px;
+        margin-top: 7px;
+        height: 62px;
         display: flex;
         justify-content: center;
         align-items: center;
         background: url('../../imagesHold/see-all-button.png');
         background-repeat: round;
+        padding-bottom: 6px;
         p {
           margin-left: 11px;
+          margin-bottom: 4px;
           color: black;
         }
       }
