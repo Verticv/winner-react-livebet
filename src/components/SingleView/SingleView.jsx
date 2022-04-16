@@ -465,9 +465,11 @@ export default function SingleView() {
             </div>
             <div>
                 <div className="match-img" />
-                <div className="match-bets-wrapper">
-                    <MatchBets />
-                </div>
+                {selectedNav !== 3 && (
+                    <div className="match-bets-wrapper">
+                        <MatchBets />
+                    </div>
+                )}
             </div>
         </div>
     );
