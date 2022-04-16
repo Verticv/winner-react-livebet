@@ -106,6 +106,8 @@
         font-size: 14px;
         padding-right: 21px;
         position: absolute;
+        left: 295px;
+        top: 8px;
         &.red-arrow {
           img {
             position: absolute;
@@ -115,7 +117,7 @@
           }
           .number-value {
             position: absolute;
-            top: 17px;
+            top: 19px;
             left: 22px;
           }
         }
@@ -165,6 +167,13 @@
         margin-left: 7px;
         padding-left: 15px;
         position: absolute;
+
+        &:not(.blue-arrow) {
+          z-index: 1;
+          left: 501px;
+          top: 8px;
+        }
+
         &.blue-arrow {
           margin-left: 1px;
           img {
@@ -175,7 +184,7 @@
           }
           .number-value {
             position: absolute;
-            top: 17px;
+            top: 19px;
             left: 26px;
           }
         }
@@ -218,8 +227,9 @@
           width: 174.5px;
           height: 35px;
           padding-left: 0;
+          padding-top: 1px;
           clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%);
-          font-family: Roboto;
+          font-family: robotoMedium;
           font-size: 14px;
           &:hover {
             background-color: #9b2f30;
