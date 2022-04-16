@@ -567,7 +567,7 @@
 
                   .left {
                     background: linear-gradient(to top, rgb(255 255 255 / 22%), rgb(255 255 255 / 9%) 50%, rgba(255, 255, 255, 0));
-                    width: 1px;
+                    width: 1.5px;
                     height: 40px;
                     position: absolute;
                     left: 5.6px;
@@ -578,7 +578,7 @@
 
                   .right {
                     background: linear-gradient(to top, rgb(255 255 255 / 22%), rgb(255 255 255 / 9%) 50%, rgba(255, 255, 255, 0));
-                    width: 1px;
+                    width: 1.5px;
                     height: 40px;
                     position: absolute;
                     right: 8.6px;
@@ -591,7 +591,7 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    width: 76.5px;
+                    width: 75px;
                     height: 35px;
                     padding-left: 0;
                     clip-path: polygon(0 0, 100% 0, 86% 100%, 14% 100%);
