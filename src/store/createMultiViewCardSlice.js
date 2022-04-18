@@ -5,7 +5,7 @@ export const createMultiViewCardSlice = (set, get) => ({
         {
             id: 0,
             title: "후반전 35분",
-            team1: "fc바로셀로나",
+            team1: "FC바로셀로나",
             team2: "레알마드리드",
             team1Result1: "0",
             team1Result2: "0",

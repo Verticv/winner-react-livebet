@@ -19,7 +19,7 @@ export default function CardBody({
     currentTimeText = "후반전",
     currentTimeNumber = "35",
     isRed = true,
-    team1 = "fc바로셀로나",
+    team1 = "FC바로셀로나",
     team2 = "레알마드리드",
     isActive,
     setIsActive,

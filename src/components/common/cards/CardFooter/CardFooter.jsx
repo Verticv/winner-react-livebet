@@ -10,7 +10,7 @@ import "./CardFooter.scss";
 
 export default function CardFooter({ matchCard }) {
     const {
-        team1 = "fc바로셀로나",
+        team1 = "FC바로셀로나",
         team2 = "레알마드리드",
         team1WinKof = 5.01,
         tieKof = 4.05,
