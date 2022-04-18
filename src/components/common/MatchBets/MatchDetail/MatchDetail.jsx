@@ -13,16 +13,16 @@ function ResultsRow({option1= "오버", option2= "언더", kof1 = 1.25, kof2 = 3
             </div>
             <div className={`number1 ${isRowActive ? "red-arrow" : ""}`}>
                 {isRowActive && <img src={upRedArrow} alt="" />}
-                <div className="number-value">{kof1}</div>
+                <div className="number-value">{kof1.toFixed(2)}</div>
             </div>
             <div className="middle">
                 <div className="left"></div>
-                <div className="middle-content">{tieKof}</div>
+                <div className="middle-content">{tieKof.toFixed(2)}</div>
                 <div className="right"></div>
             </div>
             <div className={`number2 ${ isRowActive ? "blue-arrow" : ""}`}>
                 {isRowActive && <img src={downBlueArrow} alt="" />}
-                <div className="number-value">{kof2}</div>
+                <div className="number-value">{kof2.toFixed(2)}</div>
             </div>
             <div className="right">
                 <p className="text">{option2}</p>

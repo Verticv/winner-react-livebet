@@ -64,8 +64,8 @@ function ResultsRow() {
     const isRowActive = true;
     const option1 = "오버";
     const option2 = "언더";
-    const kof1 = "1.25";
-    const kof2 = "3.3";
+    const kof1 = 1.25;
+    const kof2 = 3.3;
 
     return (
         <div className="match-results-wrapper">
@@ -74,7 +74,7 @@ function ResultsRow() {
             </div>
             <div className={`number1 ${isRowActive ? "red-arrow" : ""}`}>
                 {isRowActive && <img src={upRedArrow} alt="" />}
-                <div className="number-value">{kof1}</div>
+                <div className="number-value">{kof1.toFixed(2)}</div>
             </div>
 
             <div className="middle">
@@ -84,7 +84,7 @@ function ResultsRow() {
             </div>
             <div className={`number2 ${isRowActive ? "blue-arrow" : ""}`}>
                 {isRowActive && <img src={downBlueArrow} alt="" />}
-                <div className="number-value">{kof2}</div>
+                <div className="number-value">{kof2.toFixed(2)}</div>
             </div>
             <div className="right">
                 <p className="text">{option2}</p>

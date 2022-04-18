@@ -29,7 +29,7 @@ function Amount({
                     <input type="number" className="number" onChange={(e) => setInputValue(e.target.value)} value={inputValue} />
                 </div>
             ) : (
-                <p style={{fontWeight: boldNumber ? "600" : ""}} className={`number ${numberClasses}`}>{amount}</p>
+                <p className={`number ${numberClasses}`}>{amount}</p>
             )}
         </div>
     );

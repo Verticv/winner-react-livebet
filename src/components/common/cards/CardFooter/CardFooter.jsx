@@ -10,7 +10,7 @@ import "./CardFooter.scss";
 
 export default function CardFooter({ matchCard }) {
     const {
-        team1 = "fc바로셀로나",
+        team1 = "FC바로셀로나",
         team2 = "레알마드리드",
         team1WinKof = 5.01,
         tieKof = 4.05,
@@ -44,7 +44,7 @@ export default function CardFooter({ matchCard }) {
                     className={`number ${leftActive ? "red-arrow" : ""}`}
                 >
                     {leftActive && <img src={upRedArrow} alt="" />}
-                    <div className="number-value">{team1WinKof}</div>
+                    <div className="number-value">{team1WinKof.toFixed(2)}</div>
                 </div>
             </div>
             <div className="middle">
@@ -57,7 +57,7 @@ export default function CardFooter({ matchCard }) {
                     }`}
                 >
                     {rightActive && <img src={downBlueArrow} alt="" />}
-                    <div className="number-value">{team2WinKof}</div>
+                    <div className="number-value">{team2WinKof.toFixed(2)}</div>
                 </div>
                 <p className="text">{team2}</p>
             </div>
