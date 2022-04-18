@@ -95,7 +95,7 @@ export default function CardBody({
                     {" "}
                     {isRed ? (
                         <>
-                           <p>{currentTimeText}</p> <span>{currentTimeNumber}</span>
+                           <p>{currentTimeText}</p> &nbsp; <span>{currentTimeNumber}</span>
                         </>
                     ) : (
                         currentTimeText
