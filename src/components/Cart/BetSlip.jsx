@@ -26,7 +26,7 @@ function MyBetCard({
     return (
         <div className="my-bet-card">
             <p className="title">
-                {team1} <span>VS</span> {team2}
+                {team1} <span>&nbsp;VS&nbsp;</span> {team2}
             </p>
             <p className="result">
                 {text1} - {text2} <span>{result}</span>{" "}
