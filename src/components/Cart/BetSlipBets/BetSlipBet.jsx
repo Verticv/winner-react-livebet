@@ -15,7 +15,7 @@ export default function BetSlipBet({ bet }) {
                 <img src={closeIco} alt="" width="14" height="14" />
             </button>
             <div className="title">
-                FC바로셀로나 <span className="gold">VS</span> 레알마드리드
+                FC바로셀로나 <span className="gold-1">&nbsp;VS&nbsp;</span> 레알마드리드
             </div>
             <div className="content gold">승무패(홈) - FC바로셀로나</div>
             <div className="number">
