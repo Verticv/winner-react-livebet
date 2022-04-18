@@ -44,7 +44,7 @@ export default function CardFooter({ matchCard }) {
                     className={`number ${leftActive ? "red-arrow" : ""}`}
                 >
                     {leftActive && <img src={upRedArrow} alt="" />}
-                    <div className="number-value">{team1WinKof}</div>
+                    <div className="number-value">{team1WinKof.toFixed(2)}</div>
                 </div>
             </div>
             <div className="middle">
@@ -57,7 +57,7 @@ export default function CardFooter({ matchCard }) {
                     }`}
                 >
                     {rightActive && <img src={downBlueArrow} alt="" />}
-                    <div className="number-value">{team2WinKof}</div>
+                    <div className="number-value">{team2WinKof.toFixed(2)}</div>
                 </div>
                 <p className="text">{team2}</p>
             </div>
