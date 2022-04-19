@@ -65,11 +65,6 @@ export default function CardHeader({
                     </div>
                 )}
             </div>
-            {isSelected || isActive ? (
-                <div className="line bottom-line"></div>
-            ) : (
-                <></>
-            )}
         </div>
     );
 }

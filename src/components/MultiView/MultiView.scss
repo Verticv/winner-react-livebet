@@ -110,6 +110,15 @@
                 text-align: center;
                 text-transform: uppercase;
                 font-weight: 600;
+                margin-top: -1px;
+              }
+            }
+          }
+          .team-1 {
+            .shirt {
+              margin-right: 7px;
+              img {
+                margin-left: 1px;
               }
             }
           }
@@ -181,5 +190,6 @@
     height: 605px;
     top: 0;
     right: 11px;
+    border-radius: 3px;
   }
 }
