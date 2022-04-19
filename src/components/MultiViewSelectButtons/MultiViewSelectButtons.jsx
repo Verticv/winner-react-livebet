@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import ViewSelectButton from "../common/ViewSelectButton/ViewSelectButton";
 
 export default function MultiViewSelectButtons() {
-    const [activeButton, setActiveButton] = useState(0)
+    const [activeButton, setActiveButton] = useState(null)
     const views = [
         {
             id: 0,
