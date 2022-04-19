@@ -126,9 +126,9 @@ function MatchDetail({ bet, isEmpty = false }) {
             {isShowing && !isEmpty ? (
                 <div className="match-details-content">
                     <div style={{ marginBottom: "4px", width: "100%" }}>
-                        <ResultsRow />
+                        <ResultsRow bet={bet} />
                     </div>
-                    <ResultsRow />
+                    <ResultsRow bet={bet} />
                 </div>
             ) : null}
         </div>

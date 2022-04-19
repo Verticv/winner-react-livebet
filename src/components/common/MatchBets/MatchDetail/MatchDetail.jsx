@@ -1,13 +1,21 @@
 import React, { useState } from "react";
+import useStore from "store/useStore";
 
 import upRedArrow from "imagesHold/cards/red-arrow-up.png"
 import downBlueArrow from "imagesHold/cards/blue-arrow-down.png"
 
 import "./MatchDetail.scss";
 
-function ResultsRow({option1= "오버", option2= "언더", kof1 = 1.25, kof2 = 3.3, tieKof = 4.05, isRowActive = false}) {
+function ResultsRow({bet, option1= "오버", option2= "언더", kof1 = 1.25, kof2 = 3.3, tieKof = 4.05, isRowActive = false}) {
+
+    const addBetSlipBet = useStore((s) => s.addBetSlipBet);
+    const handleClick = (event) => {
+        event.stopPropagation();
+        addBetSlipBet(bet);
+    };
+
     return (
-        <div className="match-results-wrapper">
+        <div onClick={handleClick} className="match-results-wrapper">
             <div className="left">
                 <p className="text">{option1}</p>
             </div>
@@ -66,9 +74,9 @@ export default function MatchDetail({ bet }) {
             {isShowing ? (
                 <div className="match-details-content">
                     <div style={{marginBottom: '4px', width: '100%'}}>
-                        <ResultsRow option1={option1} option2={option2} kof1={row1kof1} kof2={row1kof2} tieKof={row1tieKof} isRowActive={isRow1Active} />
+                        <ResultsRow bet={bet} option1={option1} option2={option2} kof1={row1kof1} kof2={row1kof2} tieKof={row1tieKof} isRowActive={isRow1Active} />
                     </div>
-                    <ResultsRow option1={option1} option2={option2} kof1={row2kof1} kof2={row2kof2} tieKof={row2tieKof} isRowActive={isRow2Active} />
+                    <ResultsRow bet={bet} option1={option1} option2={option2} kof1={row2kof1} kof2={row2kof2} tieKof={row2tieKof} isRowActive={isRow2Active} />
                 </div>
             ) : null}
         </div>
