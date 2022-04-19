@@ -44,6 +44,9 @@
         width: 29px;
         height: 29px;
         margin-left: 1px;
+        &:hover {
+          opacity: 0.85;
+        }
       }
       .number {
         background-color: black;
@@ -120,11 +123,13 @@
       &:nth-child(2), &:nth-child(5) {
         margin: 0 3px;
       }
-      &.active,
-      &:hover {
+      &.active {
         background: url('../../../imagesHold/input-button-gold.png');
         background-repeat: round;
         color: black;
+      }
+      &:hover {
+        opacity: 0.75;
       }
     }
   }
@@ -148,6 +153,9 @@
       align-items: center;
       background: url('../../../imagesHold/input-increase-button.png');
       background-repeat: round;
+      &:hover {
+        opacity: 0.85;
+      }
       .img-wrapper {
         margin-right: 9px;
       }
@@ -158,6 +166,9 @@
         box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.75);
         border-radius: 3px;
         color: #909090;
+        &:hover {
+          opacity: 0.7;
+        }
         .img-wrapper {
           margin-right: 11px;
         }
