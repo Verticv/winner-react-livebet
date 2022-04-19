@@ -103,7 +103,7 @@ function MatchDetail({ bet, isEmpty = false }) {
     const handleToggleIsShowing = () => {
         setIsShowing((prev) => !prev);
     };
-    const { betType, option1, option2, isActive } = bet;
+    const { betType, option1, option2 } = bet;
     console.log(option2, option1);
     return (
         <div className="match-details-wrapper">
@@ -127,9 +127,9 @@ function MatchDetail({ bet, isEmpty = false }) {
             {isShowing && !isEmpty ? (
                 <div className="match-details-content">
                     <div style={{ marginBottom: "4px", width: "100%" }}>
-                        <ResultsRow isActive={isActive} />
+                        <ResultsRow bet={bet} />
                     </div>
-                    <ResultsRow isActive={isActive} />
+                    <ResultsRow bet={bet} />
                 </div>
             ) : null}
         </div>
@@ -162,6 +162,7 @@ function MultiViewMatchResults({ id, isEmpty = false }) {
     const resultsCardsList = useStore((state) => state.multiViewLiveMatchResultsCards);
     const removeMatchFromMultiViewMatches = useStore((state) => state.removeMatchFromMultiViewMatches);
     const updateMultiViewMatchesResults = useStore((state) => state.updateMultiViewMatchesResults);
+    const addNewMatchResult = useStore((state) => state.addNewMatchResult);
 
     const [{isOver}, drop] = useDrop(() => ({
         accept: "card",
@@ -185,7 +186,30 @@ function MultiViewMatchResults({ id, isEmpty = false }) {
         }))
         window.cardsData = newData
         updateMultiViewMatchesResults(newData)
-
+        console.log('ssssssssssssssss', document.querySelectorAll('.empty-card'))
+        if (document.querySelectorAll('.empty-card')?.length === 0) {
+            const id = resultsCardsList[resultsCardsList.length - 1]?.id
+            const newData = [{
+                id: id + 1,
+                team1: "FC바로셀로나",
+                team2: "레알마드리드",
+                isEmpty: true,
+            },
+            {
+                id: id + 2,
+                team1: "FC바로셀로나",
+                team2: "레알마드리드",
+                isEmpty: true,
+            },
+            {
+                id: id + 3,
+                team1: "FC바로셀로나",
+                team2: "레알마드리드",
+                isEmpty: true,
+            },]
+            newData.forEach(card => addNewMatchResult(card));
+            window.cardsData = [...window.cardsData, ...newData]
+        }   
     }
 
     return (

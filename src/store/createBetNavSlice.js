@@ -1,5 +1,5 @@
 export const createBetNavSlice = (set, get) => ({
-    selectedNav: 2,
+    selectedNav: 1,
     changeSelectedNav: (navId) => {
         set((state) => {
             state.selectedNav = navId;

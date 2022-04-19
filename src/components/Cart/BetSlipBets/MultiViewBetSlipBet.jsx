@@ -1,7 +1,6 @@
 import React from "react";
+import BetSlipBets from "./BetSlipBets";
 
-export default function MultiViewBetSlipBet({ bet }) {
-    const { text = "베팅할 게임을 선택하세요." } = bet;
-
-    return <div className="cart-card-wrapper-multi">{text}</div>;
+export default function MultiViewBetSlipBet() {
+    return <BetSlipBets />;
 }

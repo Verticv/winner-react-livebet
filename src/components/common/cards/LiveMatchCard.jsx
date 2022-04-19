@@ -32,6 +32,21 @@ export default function LiveMatchCard({
         changeSelectedCardId(id);
     };
 
+    const activeCardHandler = (event) => {
+        event.stopPropagation();
+        const updatedData = data.map(card => {
+            const newCard = {...card}
+            if (card.id === matchCard.id) {
+                newCard.active = true;
+                return newCard
+            } else {
+                newCard.active = false;
+                return newCard
+            }
+        })
+        setData(updatedData)
+    };
+
     return (
         <div
             role="button"
@@ -56,16 +71,19 @@ export default function LiveMatchCard({
                     isRed={isRed}
                     isActive={isActive || selected}
                     setIsActive={setIsActive}
+                    onClickHandler={activeCardHandler}
                 />
                 {isRed && (
                     <CardFooter
                         isRed={isRed}
                         matchCard={matchCard}
                         isActive={isActive || selected}
+                        setIsActive={setIsActive}
                     />
                 )}
             </div>
             <MatchButton
+                onClickHandler={activeCardHandler}
                 data={data}
                 setData={setData}
                 withHeader={withHeader}

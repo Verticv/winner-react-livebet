@@ -3,6 +3,7 @@ import produce from "immer";
 export const createBetSlipBetSlice = (set, get) => ({
     betSlipBets: [],
     addBetSlipBet: (newBet) => {
+        console.log('newBetnewBetnewBetnewBet', newBet)
         set(
             produce((state) => {
                 state.betSlipBets.push(newBet);
@@ -14,6 +15,13 @@ export const createBetSlipBetSlice = (set, get) => ({
             produce((state) => {
                 const index = state.betSlipBets.findIndex(item => item.id === id)
                 state.betSlipBets.splice(index, 1);
+            })
+        );
+    },
+    removeAllBetSlipBet: () => {
+        set(
+            produce((state) => {
+                state.betSlipBets = [];
             })
         );
     },

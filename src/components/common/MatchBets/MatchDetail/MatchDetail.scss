@@ -17,15 +17,15 @@
 
 @keyframes blueDownAnimation {
   0% {
-    top: 35.5px;
-    left: 19px;
-  }
-  50% {
     top: 32.5px;
     left: 19px;
   }
-  100% {
+  50% {
     top: 35.5px;
+    left: 19px;
+  }
+  100% {
+    top: 32.5px;
     left: 19px;
   }
 }
@@ -62,6 +62,9 @@
       margin-top: 5px;
       background: url("../../../../imagesHold/new-button-bg.png");
       background-repeat: round;
+      &:hover {
+        opacity: 0.75;
+      }
       .rotate {
         transform: rotate(180deg);
       }

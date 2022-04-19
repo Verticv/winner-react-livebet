@@ -18,15 +18,15 @@
 
 @keyframes blueDownAnimation {
   0% {
-    left: 19px;
-    bottom: 5px;
-  }
-  50% {
     left: 16px;
     bottom: 5px;
   }
-  100% {
+  50% {
     left: 19px;
+    bottom: 5px;
+  }
+  100% {
+    left: 16px;
     bottom: 5px;
   }
 }
@@ -103,8 +103,7 @@
       height: 54px;
       margin-right: 2px;
     }
-    &:hover,
-    &.active {
+    &:hover {
       background: linear-gradient(to right, #9b2f30, #9b2f30 25%, #9a2f30 50%, #872d2f 63%, #722a2e 75%, #5d282e);
     }
   }
@@ -154,8 +153,7 @@
         }
       }
     }
-    &:hover,
-    &.active {
+    &:hover {
       background: linear-gradient(to left, #9b2f30, #9b2f30 25%, #9a2f30 50%, #872d2f 63%, #722a2e 75%, #5d282e);
     }
   }

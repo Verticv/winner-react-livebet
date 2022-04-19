@@ -88,6 +88,9 @@
               justify-content: center;
               align-items: center;
               margin-right: 9px;
+              &:hover {
+                opacity: 0.85;
+              }
               p {
                 margin-right: 4px;
                 margin-top: -5px;
@@ -226,6 +229,9 @@
         background: url('../../imagesHold/see-all-button.png');
         background-repeat: round;
         padding-bottom: 6px;
+        &:hover {
+          opacity: 0.85;
+        }
         p {
           margin-left: 11px;
           margin-bottom: 2px;
