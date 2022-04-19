@@ -10,7 +10,7 @@ export default function BetSlipBets() {
         <div className="cart-cards-wrapper">
             {betSlipBets.length ? (
                 betSlipBets.map((bet, index) => {
-                    return <BetSlipBet key={bet.id + index} bet={bet} />;
+                    return <BetSlipBet index={index} key={bet.id + index} bet={bet} />;
                 })
             ) : (
                 <div className="cart-card-wrapper-multi">

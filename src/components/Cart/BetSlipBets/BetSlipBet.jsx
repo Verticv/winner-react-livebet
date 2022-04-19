@@ -6,9 +6,9 @@ import upIco from "../../../imagesHold/arr-up.png";
 
 
 
-export default function BetSlipBet({ bet }) {
+export default function BetSlipBet({ bet, index }) {
     const removeBetSlipBet = useStore((s) => s.removeBetSlipBet);
-
+    console.log('bet', bet)
     return (
         <div className="cart-card-wrapper">
             <button className="close" onClick={() => removeBetSlipBet(bet.id)}>
@@ -20,11 +20,11 @@ export default function BetSlipBet({ bet }) {
             <div className="content gold">승무패(홈) - FC바로셀로나</div>
             <div className="number">
                 <span className="strikethrough" >6.11</span>
-                <span className="blue">{bet?.tieKof || 4.05}</span>
+                <span className="blue">{parseInt(index) % 2 === 0 ? 3.75 : 5.01}</span>
                 <div>
                     <img
                         className="arr-7"
-                        src={ parseInt(bet?.tieKof) % 2 === 0 ? upIco : downIco   }
+                        src={ parseInt(index) % 2 === 0 ? upIco : downIco   }
                         alt=""
                         width="13"
                         height="8"
