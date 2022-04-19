@@ -103,7 +103,7 @@ function MatchDetail({ bet, isEmpty = false }) {
     const handleToggleIsShowing = () => {
         setIsShowing((prev) => !prev);
     };
-    const { betType, option1, option2, isActive } = bet;
+    const { betType, option1, option2 } = bet;
     console.log(option2, option1);
     return (
         <div className="match-details-wrapper">
