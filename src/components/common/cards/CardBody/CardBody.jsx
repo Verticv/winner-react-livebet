@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import useStore from "store/useStore";
 
 import goldStar from "../../../../imagesHold/cards/gold-star.png";
+import whiteStar from "../../../../imagesHold/cards/white-star.png";
 import redShirt from "../../../../imagesHold/image_66.png";
 import blueShirt from "../../../../imagesHold/image_64.png";
 import selectedPlayButton from "../../../../imagesHold/play_button_selected.png";
@@ -24,10 +25,13 @@ export default function CardBody({
     isActive,
     setIsActive,
 }) {
+    const [activeStar, setActiveStar] = useState(false)
+    const playingMatchId = useStore((state) => state.playingMatchId);
+
     const mouseEnterHandler = () => setIsActive(true);
     const mouseLeaveHandler = () => setIsActive(false);
+    const starHandler = () => setActiveStar(prev => !prev);
 
-    const playingMatchId = useStore((state) => state.playingMatchId);
 
     const changePlayingMatchId = useStore(
         (state) => state.changePlayingMatchId
@@ -43,7 +47,7 @@ export default function CardBody({
         >
             <div className="left">
                 <div className="star">
-                    <img src={goldStar} alt="" width="18" height="18" />
+                    <img onClick={starHandler} src={activeStar ? goldStar : whiteStar} alt="" width="18" height="18" />
                 </div>
                 <div className="teams-wrapper">
                     <div className="team-1">
