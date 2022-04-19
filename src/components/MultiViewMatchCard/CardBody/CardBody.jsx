@@ -73,11 +73,17 @@ export default function CardBody({
             </div>
             <div className="right">
                 <p className="line">
-                    {team1stats}
+                    <p>{team1stats.toString()[0]}</p>
+                    <p className="second">{team1stats.toString()[1]}</p>
+                    <p className="third">{team1stats.toString()[2]}</p>
+                    <p className="forth">{team1stats.toString()[3]}</p>
                     <span className="gold">{team1Goals}</span>
                 </p>
                 <p className="line">
-                    {team2stats}
+                    <p>{team2stats.toString()[0]}</p>
+                    <p className="second">{team2stats.toString()[1]}</p>
+                    <p className="third">{team2stats.toString()[2]}</p>
+                    <p className="forth">{team2stats.toString()[3]}</p>
                     <span className="gold">{team2Goals}</span>
                 </p>
             </div>
