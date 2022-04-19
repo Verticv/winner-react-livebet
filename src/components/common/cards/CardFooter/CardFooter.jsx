@@ -8,7 +8,7 @@ import downBlueArrow from "imagesHold/cards/blue-arrow-down.png"
 
 import "./CardFooter.scss";
 
-export default function CardFooter({ matchCard, setIsActive }) {
+export default function CardFooter({ matchCard, isActive, setIsActive }) {
     const {
         team1 = "FC바로셀로나",
         team2 = "레알마드리드",
@@ -43,7 +43,7 @@ export default function CardFooter({ matchCard, setIsActive }) {
     };
 
     return (
-        <div className={`card-footer-wrapper ${leftActive || rightActive ? "active" : ""}`}>
+        <div className={`card-footer-wrapper ${isActive ? "active" : ""}`}>
             <div onClick={handleClick} className={`left ${leftActive ? "active" : ""}`}>
                 <p className="text">{team1}</p>
                 <div
