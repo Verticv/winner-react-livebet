@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import useStore from "store/useStore";
 
@@ -8,7 +8,7 @@ import downBlueArrow from "imagesHold/cards/blue-arrow-down.png"
 
 import "./CardFooter.scss";
 
-export default function CardFooter({ matchCard }) {
+export default function CardFooter({ matchCard, setIsActive }) {
     const {
         team1 = "FC바로셀로나",
         team2 = "레알마드리드",
@@ -23,6 +23,11 @@ export default function CardFooter({ matchCard }) {
     const [rightActive, setRightActive] = useState(isRightArrowActive);
 
     const addBetSlipBet = useStore((s) => s.addBetSlipBet);
+    useEffect(() => {
+        setRightActive(isRightArrowActive)
+        setLeftActive(isLeftArrowActive)
+    }, [])
+
 
     const handleClick = (event) => {
         event.stopPropagation();
@@ -34,6 +39,7 @@ export default function CardFooter({ matchCard }) {
             setLeftActive(prev => !prev)
         }
         addBetSlipBet(matchCard);
+        setIsActive(prev => !prev)
     };
 
     return (

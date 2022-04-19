@@ -61,7 +61,7 @@ export default function LiveMatchCard({
                     <CardFooter
                         isRed={isRed}
                         matchCard={matchCard}
-                        isActive={isActive || selected}
+                        setIsActive={setIsActive}
                     />
                 )}
             </div>
