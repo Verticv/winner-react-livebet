@@ -74,7 +74,7 @@ export default function CardBody({
             <div className="right">
                 <p className="line">
                     {team1stats}
-                    <span>{team1Goals}</span>
+                    <span className="gold">{team1Goals}</span>
                 </p>
                 <p className="line">
                     {team2stats}
