@@ -161,6 +161,7 @@ function MultiViewMatchResults({ id, isEmpty = false }) {
     const resultsCardsList = useStore((state) => state.multiViewLiveMatchResultsCards);
     const removeMatchFromMultiViewMatches = useStore((state) => state.removeMatchFromMultiViewMatches);
     const updateMultiViewMatchesResults = useStore((state) => state.updateMultiViewMatchesResults);
+    const addNewMatchResult = useStore((state) => state.addNewMatchResult);
 
     const [{isOver}, drop] = useDrop(() => ({
         accept: "card",
@@ -184,7 +185,30 @@ function MultiViewMatchResults({ id, isEmpty = false }) {
         }))
         window.cardsData = newData
         updateMultiViewMatchesResults(newData)
-
+        console.log('ssssssssssssssss', document.querySelectorAll('.empty-card'))
+        if (document.querySelectorAll('.empty-card')?.length === 0) {
+            const id = resultsCardsList[resultsCardsList.length - 1]?.id
+            const newData = [{
+                id: id + 1,
+                team1: "FC바로셀로나",
+                team2: "레알마드리드",
+                isEmpty: true,
+            },
+            {
+                id: id + 2,
+                team1: "FC바로셀로나",
+                team2: "레알마드리드",
+                isEmpty: true,
+            },
+            {
+                id: id + 3,
+                team1: "FC바로셀로나",
+                team2: "레알마드리드",
+                isEmpty: true,
+            },]
+            newData.forEach(card => addNewMatchResult(card));
+            window.cardsData = [...window.cardsData, ...newData]
+        }   
     }
 
     return (

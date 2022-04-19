@@ -20,7 +20,7 @@ export default function BetSlipBet({ bet }) {
             <div className="content gold">승무패(홈) - FC바로셀로나</div>
             <div className="number">
                 <span className="strikethrough" >6.11</span>
-                <span className="blue">{bet?.tieKof}</span>
+                <span className="blue">{bet?.tieKof || 4.05}</span>
                 <div>
                     <img
                         className="arr-7"
