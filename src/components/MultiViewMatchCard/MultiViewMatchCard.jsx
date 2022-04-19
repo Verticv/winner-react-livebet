@@ -48,6 +48,7 @@ const matchBets = [
         kof1: getRandomNumberInInterval(1.5, 5).toFixed(2),
         kof2: getRandomNumberInInterval(1.5, 5).toFixed(2),
         tieKof: getRandomNumberInInterval(1.5, 5).toFixed(2),
+        isActive: true,
     },
     {
         id: 1,
@@ -57,11 +58,11 @@ const matchBets = [
         kof1: getRandomNumberInInterval(1.5, 5).toFixed(2),
         kof2: getRandomNumberInInterval(1.5, 5).toFixed(2),
         tieKof: getRandomNumberInInterval(1.5, 5).toFixed(2),
+        isActive: false,
     },
 ];
 
-function ResultsRow() {
-    const isRowActive = true;
+function ResultsRow({isActive: isRowActive}) {
     const option1 = "오버";
     const option2 = "언더";
     const kof1 = 1.25;
@@ -102,7 +103,7 @@ function MatchDetail({ bet, isEmpty = false }) {
     const handleToggleIsShowing = () => {
         setIsShowing((prev) => !prev);
     };
-    const { betType, option1, option2 } = bet;
+    const { betType, option1, option2, isActive } = bet;
     console.log(option2, option1);
     return (
         <div className="match-details-wrapper">

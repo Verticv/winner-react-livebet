@@ -156,6 +156,19 @@
       &.active,
       &:hover {
         @include list-active-button;
+        &:nth-child(2), &:nth-child(3), &:nth-child(7), &:nth-child(9) {
+          .navbar-button-border {
+            .navbar-button-inner {
+              .navbar-button-content {
+                .button-content-wrapper {
+                  .number {
+                    margin-top: 2px;
+                  }
+                }
+              }
+            }
+          }
+        }
       }
 
       &:nth-child(1) {
