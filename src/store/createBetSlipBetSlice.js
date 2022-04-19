@@ -17,4 +17,11 @@ export const createBetSlipBetSlice = (set, get) => ({
             })
         );
     },
+    removeAllBetSlipBet: () => {
+        set(
+            produce((state) => {
+                state.betSlipBets = [];
+            })
+        );
+    },
 });
