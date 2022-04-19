@@ -15,8 +15,8 @@ export default function CardFooter({ matchCard, isActive, setIsActive }) {
         team1WinKof = 5.01,
         tieKof = 4.05,
         team2WinKof = 3.75,
-        isLeftArrowActive = false,
-        isRightArrowActive = false,
+        isLeftArrowActive = true,
+        isRightArrowActive = true,
     } = matchCard;
 
     const [leftActive, setLeftActive] = useState(isLeftArrowActive);
