@@ -26,7 +26,7 @@ export default function CardFooter({ matchCard, setIsActive }) {
     useEffect(() => {
         setRightActive(isRightArrowActive)
         setLeftActive(isLeftArrowActive)
-    }, [])
+    }, [isLeftArrowActive, isRightArrowActive])
 
 
     const handleClick = (event) => {
