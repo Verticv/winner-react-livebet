@@ -24,7 +24,6 @@ export default function SideButton({
     withHeader
 }) {
     const [arrowImg, setArrowImg] = useState(blueArrow);
-    const selectedNav = useStore((state) => state.selectedNav);
     const removeMiddleComponent = useStore((state) => state.removeMiddleComponent);
 
     useEffect(() => {
