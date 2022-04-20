@@ -101,19 +101,12 @@ export default function SideButton({
             }}
             onMouseEnter={() => {
                 onMouseEnter();
-                if (isFavoriteCard && !(isSelected || isActive)) {
-                    setArrowImg(whiteArrow);
-                }
+                // if (isFavoriteCard && !(isSelected || isActive)) {
+                //     setArrowImg(whiteArrow);
+                // }
             }}
             onMouseLeave={() => {
                 onMouseLeave();
-                if (isFavoriteCard && !(isSelected || isActive)) {
-                    if (redCard) {
-                        setArrowImg(redArrow);
-                    } else {
-                        setArrowImg(blueArrow);
-                    }
-                }
             }}
             className={`
             side-button 
@@ -130,30 +123,44 @@ export default function SideButton({
                             onClick={() =>
                                 changeOrderHandler(matchCard.type, matchCard.id)
                             }
-                            className="up-arrow-wrapper"
+                            onMouseEnter={() => {
+                                if (isFavoriteCard && !(isSelected || isActive)) {
+                                    setArrowImg(whiteArrow);
+                                }
+                            }}
+                            onMouseLeave={() => {
+                                if (isFavoriteCard && !(isSelected || isActive)) {
+                                    if (redCard) {
+                                        setArrowImg(redArrow);
+                                    } else {
+                                        setArrowImg(blueArrow);
+                                    }
+                                }
+                            }}
+                            className={`up-arrow-wrapper ${isSelected || isActive ? "active" : ""}`}
                         >
                             <div className="up-arrow">
                                 <div>
                                     <img src={arrowImg} alt="arrow" />
                                 </div>
                             </div>
-                            <div className="arrow-line1"></div>
-                            <div className="arrow-line2"></div>
+                            {!isFavoriteCard && <div className="arrow-line1"></div>}
+                            {!isFavoriteCard && <div className="arrow-line2"></div>}
                         </div>
                     </>
                 )}
                 {redCard ? (
-                    <div onClick={isFavoriteCard ? (e) => onClick : () => {}}>
+                    <div className={`favorite-plus ${isSelected || isActive ? "active" : ""}`} onClick={isFavoriteCard ? (e) => onClick : () => {}}>
                         <p className="plus">+</p>
                         <p className="number">23</p>
                     </div>
                 ) : (
-                    <div onClick={isFavoriteCard ? (e) => onClick : () => {}}>
+                    <div className={`favorite-plus ${isSelected || isActive ? "active" : ""}`} onClick={isFavoriteCard ? (e) => onClick : () => {}}>
                         <p className="text">정보</p>
                     </div>
                 )}
             </div>
-            <div className="line"></div>
+            {!isFavoriteCard && <div className="line"></div>}
             <div className="left-shadow"></div>
         </button>
     );
