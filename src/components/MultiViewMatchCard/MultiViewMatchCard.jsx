@@ -67,14 +67,19 @@ const matchBets = [
     },
 ];
 
-function ResultsRow({isActive: isRowActive, option1, option2, kof1, kof2, tieKof}) {
+function ResultsRow({isActive: isRowActive, option1, option2, kof1, kof2, tieKof, bet}) {
     // const option1 = "오버";
     // const option2 = "언더";
     // const kof1 = 1.25;
     // const kof2 = 3.3;
+    const addBetSlipBet = useStore((s) => s.addBetSlipBet);
+    const handleClick = (event) => {
+        event.stopPropagation();
+        addBetSlipBet(bet);
+    };
 
     return (
-        <div className="match-results-wrapper">
+        <div onClick={handleClick} className="match-results-wrapper">
             <div className="left">
                 <p className="text">{option1}</p>
             </div>
@@ -132,9 +137,9 @@ function MatchDetail({ bet, isEmpty = false }) {
             {isShowing && !isEmpty ? (
                 <div className="match-details-content">
                     <div style={{ marginBottom: "4px", width: "100%" }}>
-                        <ResultsRow isActive={isActive} option1={option1} option2={option2} kof1={row1kof1} kof2={row1kof2} tieKof={row1tieKof} />
+                        <ResultsRow bet={bet} isActive={isActive} option1={option1} option2={option2} kof1={row1kof1} kof2={row1kof2} tieKof={row1tieKof} />
                     </div>
-                    <ResultsRow isActive={isActive} option1={option1} option2={option2} kof1={row2kof1} kof2={row2kof2} tieKof={row2tieKof} />
+                    <ResultsRow bet={bet} isActive={isActive} option1={option1} option2={option2} kof1={row2kof1} kof2={row2kof2} tieKof={row2tieKof} />
                 </div>
             ) : null}
         </div>
