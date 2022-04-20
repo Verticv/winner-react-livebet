@@ -24,7 +24,8 @@ export default function CardBody({
     team2 = "레알마드리드",
     isActive,
     setIsActive,
-    onClickHandler
+    onClickHandler,
+    matchCard
 }) {
     const [activeStar, setActiveStar] = useState(false)
     const [playActive, setPlayActive] = useState(false)
@@ -43,7 +44,7 @@ export default function CardBody({
         <div
             onMouseEnter={mouseEnterHandler}
             onMouseLeave={mouseLeaveHandler}
-            onClick={onClickHandler}
+            onClick={(e) => onClickHandler(e, matchCard)}
             className={`card-body-wrapper ${
                 isSelected || isActive ? "active" : ""
             } ${isRed ? "" : "blue"}`}

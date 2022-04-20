@@ -88,7 +88,7 @@ export default function SideButton({
 
     return (
         <button
-            onClick={isFavoriteCard ? () => {} : onClick}
+            onClick={isFavoriteCard ? () => {} : (e) => onClick(e, matchCard)}
             onMouseEnter={() => {
                 onMouseEnter();
                 if (isFavoriteCard && !(isSelected || isActive)) {
