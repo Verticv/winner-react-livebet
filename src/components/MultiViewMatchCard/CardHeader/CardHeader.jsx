@@ -10,19 +10,35 @@ import activeClose from "../../../imagesHold/m-card-close-active.png";
 import activePlay from "../../../imagesHold/m-card-play-active.png";
 
 export default function CardHeader({ id, league = "라리가" }) {
-    const resultsCardsList = useStore((state) => state.multiViewLiveMatchResultsCards);
-    const removeMatchFromMultiViewMatchesResults = useStore((state) => state.removeMatchFromMultiViewMatchesResults);
+    const resultsCardsList = useStore(
+        (state) => state.multiViewLiveMatchResultsCards
+    );
+    const removeMatchFromMultiViewMatchesResults = useStore(
+        (state) => state.removeMatchFromMultiViewMatchesResults
+    );
     const addNewMatch = useStore((state) => state.addNewMatch);
     const [playActive, setIsPlayActive] = useState(false);
+    const [playClicked, setIsPlayClicked] = useState(false);
+    const [playHovered, setIsPlayHovered] = useState(false);
+
+
     const [stadiumActive, setIsStadiumActive] = useState(false);
+    const [stadiumClicked, setIsStadiumClicked] = useState(false);
+    const [stadiumHovered, setIsStadiumHovered] = useState(false);
+
+
     const [closeActive, setIsCloseActive] = useState(false);
+    const [closeClicked, setIsCloseClicked] = useState(false);
+    const [closeHovered, setIsCloseHovered] = useState(false);
+
 
     const closeHandler = (cardId) => {
-            removeMatchFromMultiViewMatchesResults(cardId)
-            const newCard = {...resultsCardsList[resultsCardsList?.length - 1]}
-            newCard.id = newCard.id + 1
-            addNewMatch(newCard)
-    }
+        removeMatchFromMultiViewMatchesResults(cardId);
+        const newCard = { ...resultsCardsList[resultsCardsList?.length - 1] };
+        newCard.id = newCard.id + 1;
+        addNewMatch(newCard);
+    };
+    console.log('playActiveplayActiveplayActive', playActive)
 
     return (
         <div className="multi-card-header-content">
@@ -41,9 +57,23 @@ export default function CardHeader({ id, league = "라리가" }) {
             <div className="right">
                 <button
                     className={`watch ${playActive ? "active" : ""}`}
-                    onMouseEnter={() => setIsPlayActive(true)}
-                    onMouseLeave={() => setIsPlayActive(false)}
-                    onClick={() => setIsPlayActive(prev => !prev)}
+                    onMouseEnter={() => {
+                        if (!playClicked) {
+                            setIsPlayActive(true);
+                        }
+                        setIsPlayHovered(true)
+                    }}
+                    onMouseLeave={() => {
+                        if (!playClicked) {
+                            setIsPlayActive(false);
+                        }
+                    }}
+                    onClick={() => {
+                        setIsPlayClicked((prev) => !prev);
+                        if (!playHovered) {
+                            setIsPlayActive((prev) => !prev);
+                        }
+                    }}
                 >
                     <div>
                         <img
@@ -56,14 +86,28 @@ export default function CardHeader({ id, league = "라리가" }) {
                     </div>
                     <div className="left-line-1"></div>
                     <div className="left-line-2"></div>
-                    {playActive && (<div className="line"></div>)}
+                    {playActive && <div className="line"></div>}
                     {playActive && <div className="fade"></div>}
                 </button>
                 <button
                     className={`ground ${stadiumActive ? "active" : ""}`}
-                    onMouseEnter={() => setIsStadiumActive(true)}
-                    onMouseLeave={() => setIsStadiumActive(false)}
-                    onClick={() => setIsStadiumActive(prev => !prev)}
+                    onMouseEnter={() => {
+                        if (!stadiumClicked) {
+                            setIsStadiumActive(true);
+                        }
+                        setIsStadiumHovered(true)
+                    }}
+                    onMouseLeave={() => {
+                        if (!stadiumClicked) {
+                            setIsStadiumActive(false);
+                        }
+                    }}
+                    onClick={() => {
+                        setIsStadiumClicked((prev) => !prev);
+                        if (!stadiumHovered) {
+                            setIsStadiumActive((prev) => !prev);
+                        }
+                    }}
                 >
                     <div>
                         <img
@@ -76,18 +120,29 @@ export default function CardHeader({ id, league = "라리가" }) {
                     </div>
                     <div className="left-line-1"></div>
                     <div className="left-line-2"></div>
-                     {stadiumActive && (<div className="line"></div>)}
-                     {stadiumActive && <div className="fade"></div>}
-
+                    {stadiumActive && <div className="line"></div>}
+                    {stadiumActive && <div className="fade"></div>}
                 </button>
                 <button
                     className={`close ${closeActive ? "active" : ""}`}
-                    onMouseEnter={() => setIsCloseActive(true)}
-                    onMouseLeave={() => setIsCloseActive(false)}
+                    onMouseEnter={() => {
+                        if (!closeClicked) {
+                            setIsCloseActive(true);
+                        }
+                        setIsCloseHovered(true)
+                    }}
+                    onMouseLeave={() => {
+                        if (!closeClicked) {
+                            setIsCloseActive(false);
+                        }
+                    }}
                     onClick={() => {
-                        setIsCloseActive(prev => !prev)
-                        closeHandler(id)
-                     }}
+                        setIsStadiumClicked((prev) => !prev);
+                        if (!closeHovered) {
+                            setIsCloseClicked((prev) => !prev);
+                        }
+                        closeHandler(id);
+                    }}
                 >
                     <div>
                         <img
@@ -100,7 +155,7 @@ export default function CardHeader({ id, league = "라리가" }) {
                     </div>
                     <div className="left-line-1"></div>
                     <div className="left-line-2"></div>
-                    {closeActive && (<div className="line"></div>)}
+                    {closeActive && <div className="line"></div>}
                     {closeActive && <div className="fade"></div>}
                 </button>
             </div>
