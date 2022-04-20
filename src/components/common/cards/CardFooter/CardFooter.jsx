@@ -39,7 +39,6 @@ export default function CardFooter({ matchCard, isActive, setIsActive }) {
             setLeftActive(prev => !prev)
         }
         addBetSlipBet(matchCard);
-        setIsActive(prev => !prev)
     };
 
     return (
