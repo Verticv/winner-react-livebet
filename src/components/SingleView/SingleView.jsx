@@ -11,6 +11,7 @@ import "./SingleView.scss";
 
 export default function SingleView() {
     const selectedNav = useStore((state) => state.selectedNav);
+    const hideMiddleComponent = useStore((state) => state.hideMiddleComponent);
 
     const matchCardsData = [
         {
@@ -488,7 +489,7 @@ export default function SingleView() {
             </div>
             <div>
                 <div className="match-img" />
-                {selectedNav !== 3 && (
+                {selectedNav !== 3 && !hideMiddleComponent && (
                     <div className="match-bets-wrapper">
                         <MatchBets />
                     </div>

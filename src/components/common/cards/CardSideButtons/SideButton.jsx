@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 
+import useStore from "store/useStore";
 import { matchTypes } from "helpers/constants";
 import moveArrayItemToNewIndex from "helpers/moveArrayItemToNewIndex";
 
@@ -23,6 +24,8 @@ export default function SideButton({
     withHeader
 }) {
     const [arrowImg, setArrowImg] = useState(blueArrow);
+    const selectedNav = useStore((state) => state.selectedNav);
+    const removeMiddleComponent = useStore((state) => state.removeMiddleComponent);
 
     useEffect(() => {
         if (isSelected || isActive) {
@@ -88,7 +91,10 @@ export default function SideButton({
 
     return (
         <button
-            onClick={isFavoriteCard ? () => {} : (e) => onClick(e, matchCard)}
+            onClick={isFavoriteCard ? () => {} : (e) => {
+                onClick(e, matchCard)
+                removeMiddleComponent()
+            }}
             onMouseEnter={() => {
                 onMouseEnter();
                 if (isFavoriteCard && !(isSelected || isActive)) {
@@ -133,12 +139,12 @@ export default function SideButton({
                     </>
                 )}
                 {redCard ? (
-                    <div onClick={isFavoriteCard ? onClick : () => {}}>
+                    <div onClick={isFavoriteCard ? (e) => {onClick(e, matchCard)} : () => {}}>
                         <p className="plus">+</p>
                         <p className="number">23</p>
                     </div>
                 ) : (
-                    <div onClick={isFavoriteCard ? onClick : () => {}}>
+                    <div onClick={isFavoriteCard ? (e) => {onClick(e, matchCard)} : () => {}}>
                         <p className="text">정보</p>
                     </div>
                 )}
