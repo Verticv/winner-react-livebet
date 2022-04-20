@@ -27,7 +27,7 @@ export default function CardBody({
     onClickHandler
 }) {
     const [activeStar, setActiveStar] = useState(false)
-    const playingMatchId = useStore((state) => state.playingMatchId);
+    // const playingMatchId = useStore((state) => state.playingMatchId);
 
     const mouseEnterHandler = () => setIsActive(true);
     const mouseLeaveHandler = () => setIsActive(false);
@@ -118,7 +118,7 @@ export default function CardBody({
                             <img
                                 className="ico-19"
                                 src={
-                                    playingMatchId === id || isActive
+                                    isActive
                                         ? selectedPlayButton
                                         : playButton
                                 }
