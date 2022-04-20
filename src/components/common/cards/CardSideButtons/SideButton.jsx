@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { matchTypes } from "helpers/constants";
 import moveArrayItemToNewIndex from "helpers/moveArrayItemToNewIndex";
@@ -14,22 +14,27 @@ export default function SideButton({
     setData,
     matchCard,
     onClick,
-    onMouseEnter,
-    onMouseLeave,
+    onMouseEnter = () => {},
+    onMouseLeave = () => {},
     isSelected,
     redCard = true,
     isFavoriteCard = false,
     isActive = false,
     withHeader
 }) {
-    let arrowImg;
-    if (isSelected || isActive) {
-        arrowImg = whiteArrow;
-    } else if (redCard) {
-        arrowImg = redArrow;
-    } else {
-        arrowImg = blueArrow;
-    }
+    const [arrowImg, setArrowImg] = useState(blueArrow);
+
+    useEffect(() => {
+        if (isSelected || isActive) {
+            setArrowImg(whiteArrow);
+        } else if (redCard) {
+            setArrowImg(redArrow);
+        } else {
+            setArrowImg(blueArrow);
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
+
 
     const favoriteMatches = data
     // const updateFavoritesMatches = useStore(
@@ -84,8 +89,22 @@ export default function SideButton({
     return (
         <button
             onClick={isFavoriteCard ? () => {} : onClick}
-            onMouseEnter={onMouseEnter}
-            onMouseLeave={onMouseLeave}
+            onMouseEnter={() => {
+                onMouseEnter();
+                if (isFavoriteCard && !(isSelected || isActive)) {
+                    setArrowImg(whiteArrow);
+                }
+            }}
+            onMouseLeave={() => {
+                onMouseLeave();
+                if (isFavoriteCard && !(isSelected || isActive)) {
+                    if (redCard) {
+                        setArrowImg(redArrow);
+                    } else {
+                        setArrowImg(blueArrow);
+                    }
+                }
+            }}
             className={`
             side-button 
             ${redCard ? "red-card" : "blue-card"}
