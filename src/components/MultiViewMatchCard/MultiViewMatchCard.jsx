@@ -85,7 +85,7 @@ function ResultsRow({isActive: isRowActive, option1, option2, kof1, kof2, tieKof
 
             <div className="middle">
                 <div className="left"></div>
-                <div className="middle-content">{tieKof}</div>
+                <div className="middle-content">{tieKof?.toFixed(2)}</div>
                 <div className="right"></div>
             </div>
             <div className={`number2 ${isRowActive ? "blue-arrow" : ""}`}>

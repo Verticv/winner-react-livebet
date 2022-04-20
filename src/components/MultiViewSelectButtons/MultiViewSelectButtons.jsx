@@ -6,8 +6,10 @@ import ViewSelectButton from "../common/ViewSelectButton/ViewSelectButton";
 export default function MultiViewSelectButtons() {
     const [activeButton, setActiveButton] = useState(0);
     const cardsList = useStore((state) => state.multiViewLiveMatchCards);
-    const addBetSlipBet = useStore((state) => state.addBetSlipBet);
-    const removeAllBetSlipBet = useStore((state) => state.removeAllBetSlipBet);
+    const updateMultiViewMatches = useStore((state) => state.updateMultiViewMatches);
+    const resultsCardsList = useStore((state) => state.multiViewLiveMatchResultsCards);
+    const updateMultiViewMatchesResults = useStore((state) => state.updateMultiViewMatchesResults);
+
 
     const views = [
         {
@@ -15,9 +17,8 @@ export default function MultiViewSelectButtons() {
             name: "전체추가",
             onclick: (event) => {
                 event.stopPropagation();
-                cardsList.forEach((matchCard) => {
-                    addBetSlipBet(matchCard);
-                });
+                updateMultiViewMatchesResults(cardsList)
+                updateMultiViewMatches([])
             },
         },
         {
@@ -25,7 +26,43 @@ export default function MultiViewSelectButtons() {
             name: "전체삭제",
             onclick: (event) => {
                 event.stopPropagation();
-                removeAllBetSlipBet();
+                updateMultiViewMatchesResults([{
+                    id: 0,
+                    team1: "FC바로셀로나",
+                    team2: "레알마드리드",
+                    isEmpty: true,
+                },
+                {
+                    id: 1,
+                    team1: "FC바로셀로나",
+                    team2: "레알마드리드",
+                    isEmpty: true,
+                },
+                {
+                    id: 2,
+                    team1: "FC바로셀로나",
+                    team2: "레알마드리드",
+                    isEmpty: true,
+                },
+                {
+                    id: 3,
+                    team1: "FC바로셀로나",
+                    team2: "레알마드리드",
+                    isEmpty: true,
+                },
+                {
+                    id: 4,
+                    team1: "FC바로셀로나",
+                    team2: "레알마드리드",
+                    isEmpty: true,
+                },
+                {
+                    id: 5,
+                    team1: "FC바로셀로나",
+                    team2: "레알마드리드",
+                    isEmpty: true,
+                }])
+                updateMultiViewMatches(resultsCardsList)
             },
         },
     ];
