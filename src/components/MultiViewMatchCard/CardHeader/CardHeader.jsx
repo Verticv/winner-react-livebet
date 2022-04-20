@@ -18,18 +18,8 @@ export default function CardHeader({ id, league = "라리가" }) {
     );
     const addNewMatch = useStore((state) => state.addNewMatch);
     const [playActive, setIsPlayActive] = useState(false);
-    const [playClicked, setIsPlayClicked] = useState(false);
-    const [playHovered, setIsPlayHovered] = useState(false);
-
-
     const [stadiumActive, setIsStadiumActive] = useState(false);
-    const [stadiumClicked, setIsStadiumClicked] = useState(false);
-    const [stadiumHovered, setIsStadiumHovered] = useState(false);
-
-
     const [closeActive, setIsCloseActive] = useState(false);
-    const [closeClicked, setIsCloseClicked] = useState(false);
-    const [closeHovered, setIsCloseHovered] = useState(false);
 
 
     const closeHandler = (cardId) => {
@@ -57,23 +47,8 @@ export default function CardHeader({ id, league = "라리가" }) {
             <div className="right">
                 <button
                     className={`watch ${playActive ? "active" : ""}`}
-                    onMouseEnter={() => {
-                        if (!playClicked) {
-                            setIsPlayActive(true);
-                        }
-                        setIsPlayHovered(true)
-                    }}
-                    onMouseLeave={() => {
-                        if (!playClicked) {
-                            setIsPlayActive(false);
-                        }
-                    }}
-                    onClick={() => {
-                        setIsPlayClicked((prev) => !prev);
-                        if (!playHovered) {
-                            setIsPlayActive((prev) => !prev);
-                        }
-                    }}
+                    onMouseEnter={() => setIsPlayActive(true)}
+                    onMouseLeave={() => setIsPlayActive(false)}
                 >
                     <div>
                         <img
@@ -91,23 +66,8 @@ export default function CardHeader({ id, league = "라리가" }) {
                 </button>
                 <button
                     className={`ground ${stadiumActive ? "active" : ""}`}
-                    onMouseEnter={() => {
-                        if (!stadiumClicked) {
-                            setIsStadiumActive(true);
-                        }
-                        setIsStadiumHovered(true)
-                    }}
-                    onMouseLeave={() => {
-                        if (!stadiumClicked) {
-                            setIsStadiumActive(false);
-                        }
-                    }}
-                    onClick={() => {
-                        setIsStadiumClicked((prev) => !prev);
-                        if (!stadiumHovered) {
-                            setIsStadiumActive((prev) => !prev);
-                        }
-                    }}
+                    onMouseEnter={() => setIsStadiumActive(true)}
+                    onMouseLeave={() => setIsStadiumActive(false)}
                 >
                     <div>
                         <img
@@ -125,22 +85,9 @@ export default function CardHeader({ id, league = "라리가" }) {
                 </button>
                 <button
                     className={`close ${closeActive ? "active" : ""}`}
-                    onMouseEnter={() => {
-                        if (!closeClicked) {
-                            setIsCloseActive(true);
-                        }
-                        setIsCloseHovered(true)
-                    }}
-                    onMouseLeave={() => {
-                        if (!closeClicked) {
-                            setIsCloseActive(false);
-                        }
-                    }}
+                    onMouseEnter={() => setIsCloseActive(true)}
+                    onMouseLeave={() => setIsCloseActive(false)}
                     onClick={() => {
-                        setIsStadiumClicked((prev) => !prev);
-                        if (!closeHovered) {
-                            setIsCloseClicked((prev) => !prev);
-                        }
                         closeHandler(id);
                     }}
                 >
