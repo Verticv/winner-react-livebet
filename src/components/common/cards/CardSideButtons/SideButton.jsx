@@ -25,6 +25,7 @@ export default function SideButton({
 }) {
     const [arrowImg, setArrowImg] = useState(blueArrow);
     const removeMiddleComponent = useStore((state) => state.removeMiddleComponent);
+    const showMiddleComponent = useStore((state) => state.showMiddleComponent);
 
     useEffect(() => {
         if (isSelected || isActive) {
@@ -92,7 +93,11 @@ export default function SideButton({
         <button
             onClick={isFavoriteCard ? () => {} : (e) => {
                 onClick(e, matchCard)
-                removeMiddleComponent()
+                if (redCard) {
+                    showMiddleComponent()
+                } else {
+                    removeMiddleComponent()
+                }
             }}
             onMouseEnter={() => {
                 onMouseEnter();
@@ -138,12 +143,12 @@ export default function SideButton({
                     </>
                 )}
                 {redCard ? (
-                    <div onClick={isFavoriteCard ? (e) => {onClick(e, matchCard)} : () => {}}>
+                    <div onClick={isFavoriteCard ? (e) => onClick : () => {}}>
                         <p className="plus">+</p>
                         <p className="number">23</p>
                     </div>
                 ) : (
-                    <div onClick={isFavoriteCard ? (e) => {onClick(e, matchCard)} : () => {}}>
+                    <div onClick={isFavoriteCard ? (e) => onClick : () => {}}>
                         <p className="text">정보</p>
                     </div>
                 )}

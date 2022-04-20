@@ -13,4 +13,9 @@ export const createSingleMultiSlice = (set, get) => ({
             state.hideMiddleComponent = true;
         });
     },
+    showMiddleComponent: () => {
+        set((state) => {
+            state.hideMiddleComponent = false;
+        });
+    },
 });
