@@ -27,12 +27,13 @@ export default function CardBody({
     onClickHandler
 }) {
     const [activeStar, setActiveStar] = useState(false)
-    // const playingMatchId = useStore((state) => state.playingMatchId);
+    const [playActive, setPlayActive] = useState(false)
 
     const mouseEnterHandler = () => setIsActive(true);
     const mouseLeaveHandler = () => setIsActive(false);
+    const playMouseEnterHandler = () => setPlayActive(true);
+    const playMouseLeaveHandler = () => setPlayActive(false);
     const starHandler = () => setActiveStar(prev => !prev);
-
 
     const changePlayingMatchId = useStore(
         (state) => state.changePlayingMatchId
@@ -113,12 +114,14 @@ export default function CardBody({
                             event.stopPropagation();
                             changePlayingMatchId(id);
                         }}
+                        onMouseEnter={playMouseEnterHandler}
+                        onMouseLeave={playMouseLeaveHandler}
                     >
                         {isRed ? (
                             <img
                                 className="ico-19"
                                 src={
-                                    isActive
+                                    playActive
                                         ? selectedPlayButton
                                         : playButton
                                 }
