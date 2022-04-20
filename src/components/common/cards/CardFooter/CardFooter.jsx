@@ -31,13 +31,6 @@ export default function CardFooter({ matchCard, isActive, setIsActive }) {
 
     const handleClick = (event) => {
         event.stopPropagation();
-        // parseInt(bet?.tieKof) % 2 === 0
-        console.log('matchCard', matchCard)
-        if (matchCard.id % 2 === 0) {
-            setRightActive(prev => !prev)
-        } else {
-            setLeftActive(prev => !prev)
-        }
         addBetSlipBet(matchCard);
     };
 
