@@ -17,14 +17,14 @@ function Amount({
     boldNumber = false,
 }) {
     const onChangeHandler = (e) => {
-        const newValue = e.target.value.replaceAll(',', '')
-        const formattedValue = (Number(newValue)).toLocaleString(undefined, {
+        const newValue = e.target.value.replaceAll(",", "");
+        const formattedValue = Number(newValue).toLocaleString(undefined, {
             minimumFractionDigits: 0,
         });
         setInputValue(formattedValue);
     };
 
-    console.log('typeof inputValue', typeof inputValue)
+    console.log("typeof inputValue", typeof inputValue);
     return (
         <div className="amount">
             <p className="text">{title}</p>
@@ -62,7 +62,7 @@ function AmountDetails({
 }
 
 export default function BetAmount() {
-    const [inputValue, setInputValue] = useState(0);
+    const [inputValue, setInputValue] = useState("0");
     const removeAllBetSlipBet = useStore((s) => s.removeAllBetSlipBet);
 
     return (
@@ -103,19 +103,63 @@ export default function BetAmount() {
                 withInput
             />
             <div className="amount-buttons">
-                <button onClick={() => setInputValue((prev) => prev + 5000)}>
+                <button
+                    onClick={() =>
+                        setInputValue((prev) => {
+                            const newValue = prev?.replaceAll(",", "");
+                            const formattedValue = Number(
+                                Number(newValue) + 5000
+                            ).toLocaleString(undefined, {
+                                minimumFractionDigits: 0,
+                            });
+                            return formattedValue;
+                        })
+                    }
+                >
                     5,000
                 </button>
-                <button onClick={() => setInputValue((prev) => prev + 10000)}>
+                <button onClick={() => setInputValue((prev) => {
+                            const newValue = prev?.replaceAll(",", "");
+                            const formattedValue = Number(
+                                Number(newValue) + 10000
+                            ).toLocaleString(undefined, {
+                                minimumFractionDigits: 0,
+                            });
+                            return formattedValue;
+                        })}>
                     10,000
                 </button>
-                <button onClick={() => setInputValue((prev) => prev + 50000)}>
+                <button onClick={() => setInputValue((prev) => {
+                            const newValue = prev?.replaceAll(",", "");
+                            const formattedValue = Number(
+                                Number(newValue) + 50000
+                            ).toLocaleString(undefined, {
+                                minimumFractionDigits: 0,
+                            });
+                            return formattedValue;
+                        })}>
                     50,000
                 </button>
-                <button onClick={() => setInputValue((prev) => prev + 100000)}>
+                <button onClick={() => setInputValue((prev) => {
+                            const newValue = prev?.replaceAll(",", "");
+                            const formattedValue = Number(
+                                Number(newValue) + 100000
+                            ).toLocaleString(undefined, {
+                                minimumFractionDigits: 0,
+                            });
+                            return formattedValue;
+                        })}>
                     100,000
                 </button>
-                <button onClick={() => setInputValue((prev) => prev + 1000000)}>
+                <button onClick={() => setInputValue((prev) => {
+                            const newValue = prev?.replaceAll(",", "");
+                            const formattedValue = Number(
+                                Number(newValue) + 1000000
+                            ).toLocaleString(undefined, {
+                                minimumFractionDigits: 0,
+                            });
+                            return formattedValue;
+                        })}>
                     1,000,000
                 </button>
                 <button className="active">최대</button>
