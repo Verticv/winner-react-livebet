@@ -36,7 +36,7 @@ export default function SideButton({
             setArrowImg(blueArrow);
         }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    }, [isSelected, isActive])
 
 
     const favoriteMatches = data
@@ -150,12 +150,26 @@ export default function SideButton({
                     </>
                 )}
                 {redCard ? (
-                    <div className={`favorite-plus ${isSelected || isActive ? "active" : ""}`} onClick={isFavoriteCard ? (e) => onClick : () => {}}>
+                    <div className={`favorite-plus ${isSelected || isActive ? "active" : ""}`} onClick={isFavoriteCard ? (e) => {
+                        onClick(e, matchCard)
+                        if (redCard) {
+                            showMiddleComponent()
+                        } else {
+                            removeMiddleComponent()
+                        }
+                    } : () => {}}>
                         <p className="plus">+</p>
                         <p className="number">23</p>
                     </div>
                 ) : (
-                    <div className={`favorite-plus ${isSelected || isActive ? "active" : ""}`} onClick={isFavoriteCard ? (e) => onClick : () => {}}>
+                    <div className={`favorite-plus ${isSelected || isActive ? "active" : ""}`} onClick={isFavoriteCard ? (e) => {
+                        onClick(e, matchCard)
+                        if (redCard) {
+                            showMiddleComponent()
+                        } else {
+                            removeMiddleComponent()
+                        }
+                    } : () => {}}>
                         <p className="text">정보</p>
                     </div>
                 )}
