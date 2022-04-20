@@ -127,9 +127,12 @@
         background: url('../../../imagesHold/input-button-gold.png');
         background-repeat: round;
         color: black;
+        &:hover {
+          filter: brightness(115%);
+        }
       }
       &:hover {
-        opacity: 0.75;
+        filter: brightness(130%);
       }
     }
   }
