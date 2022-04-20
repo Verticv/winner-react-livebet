@@ -65,6 +65,11 @@ export default function CardHeader({
                     </div>
                 )}
             </div>
+            {(isSelected || isActive) && isRed ? (
+                <div className="line bottom-line"></div>
+            ) : (
+                <></>
+            )}
         </div>
     );
 }

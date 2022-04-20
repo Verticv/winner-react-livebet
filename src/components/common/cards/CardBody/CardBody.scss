@@ -195,14 +195,15 @@
     height: 70px;
     .left {
        .star {
-          margin-bottom: 2px;
+          margin-bottom: 1px;
+          padding-bottom: 0;
        }
        .teams-wrapper {
          .team-1 {
             margin-top: 3px;
          }
-         .team2 {
-            margin-top: -6px;
+         .team-2 {
+            margin-top: -6px !important;
          }
        }
     }
@@ -210,6 +211,11 @@
       .text {
         text-shadow: none;
         margin-top: 2px;
+      }
+      .button-wrapper {
+        button {
+          margin-top: 14px;
+        }
       }
     }
   }

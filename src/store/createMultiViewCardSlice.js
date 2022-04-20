@@ -80,19 +80,19 @@ export const createMultiViewCardSlice = (set, get) => ({
             id: 0,
             team1: "FC바로셀로나",
             team2: "레알마드리드",
-            isEmpty: false,
+            isEmpty: true,
         },
         {
             id: 1,
             team1: "FC바로셀로나",
             team2: "레알마드리드",
-            isEmpty: false,
+            isEmpty: true,
         },
         {
             id: 2,
             team1: "FC바로셀로나",
             team2: "레알마드리드",
-            isEmpty: false,
+            isEmpty: true,
         },
         {
             id: 3,
