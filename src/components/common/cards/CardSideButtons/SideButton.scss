@@ -1,19 +1,37 @@
 @import 'variables.scss';
 
 @mixin active-side-button {
-  background: linear-gradient(to bottom, #e3a99e, #db8182 50%, #c55758);
-
-  .side-button-wrapper {
-    background-color: #e65757;
-    text-shadow: 0.4px 0.4px 4.6px rgb(255 237 154 / 90%), -0.4px -0.4px 9.6px rgb(255 237 154 / 90%), 0.4px -0.4px 9.6px rgb(255 237 154 / 90%), -0.4px 0.4px 9.6px rgb(255 237 154 / 90%);
-
-    .plus {}
-
-    .number {}
+  &.red-card:not(.favorite-card) {
+    background: linear-gradient(to bottom, #e3a99e, #db8182 50%, #c55758);
+  
+    .side-button-wrapper {
+        background-color: #e65757;
+        text-shadow: 0.4px 0.4px 4.6px rgb(255 237 154 / 90%), -0.4px -0.4px 9.6px rgb(255 237 154 / 90%), 0.4px -0.4px 9.6px rgb(255 237 154 / 90%), -0.4px 0.4px 9.6px rgb(255 237 154 / 90%);
+    
+        .plus {}
+    
+        .number {}
+    }
+  
+    .line {
+      background: linear-gradient(to right, #ca9289, #f1b1a6);
+    }
   }
-
-  .line {
-    background: linear-gradient(to right, #ca9289, #f1b1a6);
+  &:not(.favorite-card) &:not(.blue-card) {
+    background: linear-gradient(to bottom, #e3a99e, #db8182 50%, #c55758);
+  
+    .side-button-wrapper {
+        background-color: #e65757;
+        text-shadow: 0.4px 0.4px 4.6px rgb(255 237 154 / 90%), -0.4px -0.4px 9.6px rgb(255 237 154 / 90%), 0.4px -0.4px 9.6px rgb(255 237 154 / 90%), -0.4px 0.4px 9.6px rgb(255 237 154 / 90%);
+    
+        .plus {}
+    
+        .number {}
+    }
+  
+    .line {
+      background: linear-gradient(to right, #ca9289, #f1b1a6);
+    }
   }
 }
 
@@ -102,26 +120,36 @@
       display: none;
     }
 
-    &.active,
-    &:hover {
-      background: url('../../../../imagesHold/cards/live_card_blue_active.png');
-      background-repeat: round;
+    &:not(.favorite-card) {
+      &.active,
+      &:hover {
+        background: url('../../../../imagesHold/cards/live_card_blue_active.png');
+        background-repeat: round;
+      }
     }
   }
 }
 
-.favorite-card {
+.favorite-card:not(.blue-card) {
+  padding: 0;
   .side-button-wrapper {
     justify-content: flex-start;
-
     .up-arrow-wrapper {
       position: relative;
       width: 100%;
-      height: 37px;
+      height: 40px;
+      background: url('../../../../imagesHold/cards/new/red-arow-inactive.png');
+      background-repeat: round;
+
+      &.active,
+      &:hover {
+        background: url('../../../../imagesHold/cards/new/red-arow-active.png');
+      }
 
       .up-arrow {
         width: 100%;
-        height: 100%;
+        height: 40px;
+        padding-bottom: 2px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -146,6 +174,20 @@
       }
     }
 
+    .favorite-plus {
+      background: url('../../../../imagesHold/cards/new/red-plus-inactive.png');
+      background-repeat: round;
+      height: 105px;
+      .plus {
+        margin-top: 17px;
+      }
+      &.active,
+      &:hover {
+        background: url('../../../../imagesHold/cards/new/red-plus-active.png');
+        text-shadow: 0.4px 0.4px 4.6px rgb(255 237 154 / 90%), -0.4px -0.4px 9.6px rgb(255 237 154 / 90%), 0.4px -0.4px 9.6px rgb(255 237 154 / 90%), -0.4px 0.4px 9.6px rgb(255 237 154 / 90%);
+      }
+    }
+
     .plus {
       margin-top: 19px;
     }
@@ -156,19 +198,22 @@
 
   &.active,
   &:hover {
-    .side-button-wrapper {
-      .up-arrow-wrapper {
-        .arrow-line1 {
-          background-color: #c77f7e;
-        }
 
-        .arrow-line2 {
-          background: linear-gradient(to right, #ffcbc8, #ffb2b0 50%, #ff9998);
+
+    &:not(.favorite-card) {
+      .side-button-wrapper {
+        .up-arrow-wrapper {
+          .arrow-line1 {
+            background-color: #c77f7e;
+          }
+  
+          .arrow-line2 {
+            background: linear-gradient(to right, #ffcbc8, #ffb2b0 50%, #ff9998);
+          }
         }
       }
     }
-
-    &.blue-card {
+    &.blue-card &:not(.favorite-card) {
       .side-button-wrapper {
         .up-arrow-wrapper {
           .arrow-line1 {
@@ -183,13 +228,152 @@
     }
   }
 
-  &.blue-card {
+
+  &.blue-card &:not(.favorite-card) {
     .side-button-wrapper {
       .up-arrow-wrapper {
         .arrow-line1 {
           background-color: #284d67;
         }
 
+        .arrow-line2 {
+          background: linear-gradient(to right, #4e96c1, #4285bb 50%, #42698a);
+        }
+      }
+    }
+  }
+  &.blue-card {
+    .side-button-wrapper {
+      .up-arrow-wrapper {
+        .arrow-line1 {
+          background-color: #284d67;
+        }
+        .arrow-line2 {
+          background: linear-gradient(to right, #4e96c1, #4285bb 50%, #42698a);
+        }
+      }
+    }
+  }
+}
+
+.favorite-card:not(.red-card) {
+  padding: 0;
+  .side-button-wrapper {
+    justify-content: flex-start;
+    .up-arrow-wrapper {
+      position: relative;
+      width: 100%;
+      height: 40px;
+      background: url('../../../../imagesHold/cards/new/blue-arow-inactive.png');
+      background-repeat: round;
+
+      &.active,
+      &:hover {
+        background: url('../../../../imagesHold/cards/new/blue-arow-active.png');
+      }
+
+      .up-arrow {
+        width: 100%;
+        height: 40px;
+        padding-bottom: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .arrow-line1 {
+        position: absolute;
+        bottom: -1px;
+        left: -1px;
+        width: calc(100% + 2px);
+        height: 1px;
+        background-color: #6f2f2d;
+      }
+
+      .arrow-line2 {
+        position: absolute;
+        bottom: -2px;
+        left: -1px;
+        width: calc(100% + 2px);
+        height: 1px;
+        background: linear-gradient(to right, #cd8a86, #b37271 50%, #9c5d5e);
+      }
+    }
+
+    .favorite-plus {
+      background: url('../../../../imagesHold/cards/new/blue-plus-inactive.png');
+      background-repeat: round;
+      height: 105px;
+      .plus {
+        margin-top: 16px;
+      }
+      &.active,
+      &:hover {
+        background: url('../../../../imagesHold/cards/new/blue-plus-active.png');
+        text-shadow: 0.4px 0.4px 4.6px rgb(255 237 154 / 90%), -0.4px -0.4px 9.6px rgb(255 237 154 / 90%), 0.4px -0.4px 9.6px rgb(255 237 154 / 90%), -0.4px 0.4px 9.6px rgb(255 237 154 / 90%);
+      }
+    }
+
+    .plus {
+      margin-top: 19px;
+    }
+    .number {
+      margin-top: 0;
+    }
+  }
+
+  &.active,
+  &:hover {
+
+
+    &:not(.favorite-card) {
+      .side-button-wrapper {
+        .up-arrow-wrapper {
+          .arrow-line1 {
+            background-color: #c77f7e;
+          }
+  
+          .arrow-line2 {
+            background: linear-gradient(to right, #ffcbc8, #ffb2b0 50%, #ff9998);
+          }
+        }
+      }
+    }
+    &.blue-card &:not(.favorite-card) {
+      .side-button-wrapper {
+        .up-arrow-wrapper {
+          .arrow-line1 {
+            background-color: #457f96;
+          }
+
+          .arrow-line2 {
+            background: linear-gradient(to right, #6bbbd8, #68aedb 50%, #5d95c9);
+          }
+        }
+      }
+    }
+  }
+
+
+  &.blue-card &:not(.favorite-card) {
+    .side-button-wrapper {
+      .up-arrow-wrapper {
+        .arrow-line1 {
+          background-color: #284d67;
+        }
+
+        .arrow-line2 {
+          background: linear-gradient(to right, #4e96c1, #4285bb 50%, #42698a);
+        }
+      }
+    }
+  }
+  &.blue-card {
+    .side-button-wrapper {
+      .up-arrow-wrapper {
+        .arrow-line1 {
+          background-color: #284d67;
+        }
         .arrow-line2 {
           background: linear-gradient(to right, #4e96c1, #4285bb 50%, #42698a);
         }
