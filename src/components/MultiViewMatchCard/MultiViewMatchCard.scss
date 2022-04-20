@@ -317,6 +317,8 @@
           margin-right: -2px;
 
           .line {
+            display: flex;
+            justify-content: flex-end;
             font-family: RobotoMedium, sans-serif;
             font-size: 18px;
             font-weight: 500;
@@ -494,7 +496,7 @@
                   &.red-arrow {
                     .number-value {
                       position: absolute;
-                      top: 17px;
+                      top: 19px;
                       left: 22px;
                     }
                   }
@@ -552,8 +554,8 @@
 
                     .number-value {
                       position: absolute;
-                      top: 17px;
-                      left: 23px;
+                      top: 19px;
+                      left: 22px;
                     }
                   }
                 }

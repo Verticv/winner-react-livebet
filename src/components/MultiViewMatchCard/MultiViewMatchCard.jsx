@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import useStore from "store/useStore";
 import { useDrop } from "react-dnd";
 
-import getRandomNumberInInterval from "helpers/getRandomNumberInInterval";
 import CardHeader from "components/MultiViewMatchCard/CardHeader/CardHeader";
 import CardSubHeader from "components/MultiViewMatchCard/CardSubHeader/CardSubHeader";
 import CardBody from "components/MultiViewMatchCard/CardBody/CardBody";
@@ -42,31 +41,37 @@ function Info() {
 const matchBets = [
     {
         id: 0,
-        betType: "홈팀 오버언더",
+        betType: "오버언더",
         option1: "오버",
         option2: "언더",
-        kof1: getRandomNumberInInterval(1.5, 5).toFixed(2),
-        kof2: getRandomNumberInInterval(1.5, 5).toFixed(2),
-        tieKof: getRandomNumberInInterval(1.5, 5).toFixed(2),
+        row1kof1: 1.25,
+        row1kof2: 3.30,
+        row1tieKof: 4.05,
+        row2kof1: 1.25,
+        row2kof2: 3.30,
+        row2tieKof: 4.05,
         isActive: true,
     },
     {
         id: 1,
-        betType: "오버언더",
-        option1: "오버",
-        option2: "언더",
-        kof1: getRandomNumberInInterval(1.5, 5).toFixed(2),
-        kof2: getRandomNumberInInterval(1.5, 5).toFixed(2),
-        tieKof: getRandomNumberInInterval(1.5, 5).toFixed(2),
+        betType: "승무패핸디캡",
+        option1: "FC바르셀로나",
+        option2: "레알마드리드",
+        row1kof1: 9.50,
+        row1kof2: 1.2,
+        row1tieKof: 5.75,
+        row2kof1: 1.30,
+        row2kof2: 8.25,
+        row2tieKof: 4.90,
         isActive: false,
     },
 ];
 
-function ResultsRow({isActive: isRowActive}) {
-    const option1 = "오버";
-    const option2 = "언더";
-    const kof1 = 1.25;
-    const kof2 = 3.3;
+function ResultsRow({isActive: isRowActive, option1, option2, kof1, kof2, tieKof}) {
+    // const option1 = "오버";
+    // const option2 = "언더";
+    // const kof1 = 1.25;
+    // const kof2 = 3.3;
 
     return (
         <div className="match-results-wrapper">
@@ -75,17 +80,17 @@ function ResultsRow({isActive: isRowActive}) {
             </div>
             <div className={`number1 ${isRowActive ? "red-arrow" : ""}`}>
                 {isRowActive && <img src={upRedArrow} alt="" />}
-                <div className="number-value">{kof1.toFixed(2)}</div>
+                <div className="number-value">{kof1?.toFixed(2)}</div>
             </div>
 
             <div className="middle">
                 <div className="left"></div>
-                <div className="middle-content">4.05</div>
+                <div className="middle-content">{tieKof}</div>
                 <div className="right"></div>
             </div>
             <div className={`number2 ${isRowActive ? "blue-arrow" : ""}`}>
                 {isRowActive && <img src={downBlueArrow} alt="" />}
-                <div className="number-value">{kof2.toFixed(2)}</div>
+                <div className="number-value">{kof2?.toFixed(2)}</div>
             </div>
             <div className="right">
                 <p className="text">{option2}</p>
@@ -103,7 +108,7 @@ function MatchDetail({ bet, isEmpty = false }) {
     const handleToggleIsShowing = () => {
         setIsShowing((prev) => !prev);
     };
-    const { betType, option1, option2 } = bet;
+    const { betType, option1, option2, row1kof1, row1kof2, row1tieKof, row2kof1, row2kof2, row2tieKof, isActive } = bet;
     console.log(option2, option1);
     return (
         <div className="match-details-wrapper">
@@ -127,9 +132,9 @@ function MatchDetail({ bet, isEmpty = false }) {
             {isShowing && !isEmpty ? (
                 <div className="match-details-content">
                     <div style={{ marginBottom: "4px", width: "100%" }}>
-                        <ResultsRow bet={bet} />
+                        <ResultsRow isActive={isActive} option1={option1} option2={option2} kof1={row1kof1} kof2={row1kof2} tieKof={row1tieKof} />
                     </div>
-                    <ResultsRow bet={bet} />
+                    <ResultsRow isActive={isActive} option1={option1} option2={option2} kof1={row2kof1} kof2={row2kof2} tieKof={row2tieKof} />
                 </div>
             ) : null}
         </div>
