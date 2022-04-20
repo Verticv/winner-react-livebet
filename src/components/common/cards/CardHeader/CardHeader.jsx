@@ -16,6 +16,10 @@ export default function CardHeader({
     isActive,
     flag = "spain",
     setIsActive,
+    id,
+    matchCard,
+    clickHandler = () => {},
+    activeCardHandler = () => {}
 }) {
     let flagPath = spain;
 
@@ -32,6 +36,11 @@ export default function CardHeader({
         <div
             onMouseEnter={mouseEnterHandler}
             onMouseLeave={mouseLeaveHandler}
+            onClick={(e) => {
+                console.log('clicked!', id)
+                // clickHandler(id)
+                activeCardHandler(e, matchCard)
+            } }
             className={`card-header-wrapper ${
                 isSelected || isActive ? "active" : ""
             } ${isRed ? "" : "blue"}`}

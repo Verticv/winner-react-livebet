@@ -24,15 +24,17 @@ export default function CardBody({
     team2 = "레알마드리드",
     isActive,
     setIsActive,
-    onClickHandler
+    onClickHandler,
+    matchCard
 }) {
     const [activeStar, setActiveStar] = useState(false)
-    // const playingMatchId = useStore((state) => state.playingMatchId);
+    const [playActive, setPlayActive] = useState(false)
 
     const mouseEnterHandler = () => setIsActive(true);
     const mouseLeaveHandler = () => setIsActive(false);
+    const playMouseEnterHandler = () => setPlayActive(true);
+    const playMouseLeaveHandler = () => setPlayActive(false);
     const starHandler = () => setActiveStar(prev => !prev);
-
 
     const changePlayingMatchId = useStore(
         (state) => state.changePlayingMatchId
@@ -42,7 +44,7 @@ export default function CardBody({
         <div
             onMouseEnter={mouseEnterHandler}
             onMouseLeave={mouseLeaveHandler}
-            onClick={onClickHandler}
+            onClick={(e) => onClickHandler(e, matchCard)}
             className={`card-body-wrapper ${
                 isSelected || isActive ? "active" : ""
             } ${isRed ? "" : "blue"}`}
@@ -113,12 +115,14 @@ export default function CardBody({
                             event.stopPropagation();
                             changePlayingMatchId(id);
                         }}
+                        onMouseEnter={playMouseEnterHandler}
+                        onMouseLeave={playMouseLeaveHandler}
                     >
                         {isRed ? (
                             <img
                                 className="ico-19"
                                 src={
-                                    isActive
+                                    playActive
                                         ? selectedPlayButton
                                         : playButton
                                 }

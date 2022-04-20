@@ -7,4 +7,15 @@ export const createSingleMultiSlice = (set, get) => ({
             state.singleOrMulti = view;
         });
     },
+    hideMiddleComponent: false,
+    removeMiddleComponent: () => {
+        set((state) => {
+            state.hideMiddleComponent = true;
+        });
+    },
+    showMiddleComponent: () => {
+        set((state) => {
+            state.hideMiddleComponent = false;
+        });
+    },
 });

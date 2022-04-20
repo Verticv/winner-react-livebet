@@ -32,7 +32,7 @@ export default function LiveMatchCard({
         changeSelectedCardId(id);
     };
 
-    const activeCardHandler = (event) => {
+    const activeCardHandler = (event, matchCard) => {
         event.stopPropagation();
         const updatedData = data.map(card => {
             const newCard = {...card}
@@ -64,6 +64,9 @@ export default function LiveMatchCard({
                         isRed={isRed}
                         isActive={isActive || selected}
                         setIsActive={setIsActive}
+                        clickHandler={handleContainerClick}
+                        matchCard={matchCard}
+                        activeCardHandler={activeCardHandler}
                     />
                 )}
                 <CardBody
@@ -71,6 +74,7 @@ export default function LiveMatchCard({
                     isRed={isRed}
                     isActive={isActive || selected}
                     setIsActive={setIsActive}
+                    matchCard={matchCard}
                     onClickHandler={activeCardHandler}
                 />
                 {isRed && (

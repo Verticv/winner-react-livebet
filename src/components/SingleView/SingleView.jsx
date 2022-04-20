@@ -11,6 +11,7 @@ import "./SingleView.scss";
 
 export default function SingleView() {
     const selectedNav = useStore((state) => state.selectedNav);
+    const hideMiddleComponent = useStore((state) => state.hideMiddleComponent);
 
     const matchCardsData = [
         {
@@ -50,8 +51,8 @@ export default function SingleView() {
             team1WinKof: 5.01,
             tieKof: 4.05,
             team2WinKof: 3.75,
-            isRightArrowActive: true,
-            isLeftArrowActive: true,
+            isRightArrowActive: false,
+            isLeftArrowActive: false,
             type: matchTypes.live,
             active: false,
             withHeader: true,
@@ -72,8 +73,8 @@ export default function SingleView() {
             team1WinKof: 5.01,
             tieKof: 4.05,
             team2WinKof: 3.75,
-            isRightArrowActive: true,
-            isLeftArrowActive: true,
+            isRightArrowActive: false,
+            isLeftArrowActive: false,
             type: matchTypes.live,
             active: false,
             withHeader: true,
@@ -94,8 +95,8 @@ export default function SingleView() {
             team1WinKof: 5.01,
             tieKof: 4.05,
             team2WinKof: 3.75,
-            isRightArrowActive: true,
-            isLeftArrowActive: true,
+            isRightArrowActive: false,
+            isLeftArrowActive: false,
             type: matchTypes.live,
             active: false,
             withHeader: true,
@@ -143,8 +144,8 @@ export default function SingleView() {
             team1WinKof: 5.01,
             tieKof: 4.05,
             team2WinKof: 3.75,
-            isRightArrowActive: true,
-            isLeftArrowActive: true,
+            isRightArrowActive: false,
+            isLeftArrowActive: false,
             type: matchTypes.live,
             active: false,
             withHeader: true,
@@ -165,8 +166,8 @@ export default function SingleView() {
             team1WinKof: 5.01,
             tieKof: 5.00,
             team2WinKof: 3.75,
-            isRightArrowActive: true,
-            isLeftArrowActive: true,
+            isRightArrowActive: false,
+            isLeftArrowActive: false,
             type: matchTypes.live,
             active: false,
             withHeader: true,
@@ -187,8 +188,8 @@ export default function SingleView() {
             team1WinKof: 5.01,
             tieKof: 4.05,
             team2WinKof: 3.75,
-            isRightArrowActive: true,
-            isLeftArrowActive: true,
+            isRightArrowActive: false,
+            isLeftArrowActive: false,
             type: matchTypes.live,
             active: false,
             withHeader: true,
@@ -209,8 +210,8 @@ export default function SingleView() {
             team1WinKof: 5.01,
             tieKof: 4.05,
             team2WinKof: 3.75,
-            isRightArrowActive: true,
-            isLeftArrowActive: true,
+            isRightArrowActive: false,
+            isLeftArrowActive: false,
             type: matchTypes.live,
             active: false,
             withHeader: false,
@@ -231,8 +232,8 @@ export default function SingleView() {
             team1WinKof: 5.01,
             tieKof: 4.05,
             team2WinKof: 3.75,
-            isRightArrowActive: true,
-            isLeftArrowActive: true,
+            isRightArrowActive: false,
+            isLeftArrowActive: false,
             type: matchTypes.live,
             active: false,
             withHeader: false,
@@ -253,8 +254,8 @@ export default function SingleView() {
             team1WinKof: 5.01,
             tieKof: 4.05,
             team2WinKof: 3.75,
-            isRightArrowActive: true,
-            isLeftArrowActive: true,
+            isRightArrowActive: false,
+            isLeftArrowActive: false,
             type: matchTypes.live,
             active: false,
             withHeader: true,
@@ -488,7 +489,7 @@ export default function SingleView() {
             </div>
             <div>
                 <div className="match-img" />
-                {selectedNav !== 3 && (
+                {selectedNav !== 3 && !hideMiddleComponent && (
                     <div className="match-bets-wrapper">
                         <MatchBets />
                     </div>
