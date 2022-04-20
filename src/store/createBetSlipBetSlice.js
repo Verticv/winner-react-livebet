@@ -3,18 +3,19 @@ import produce from "immer";
 export const createBetSlipBetSlice = (set, get) => ({
     betSlipBets: [],
     addBetSlipBet: (newBet) => {
-        console.log('newBetnewBetnewBetnewBet', newBet)
+        const newObj = {...newBet}
+        newObj.id = Math.random();
         set(
             produce((state) => {
-                state.betSlipBets.push(newBet);
+                state.betSlipBets.push(newObj);
             })
         );
     },
     removeBetSlipBet: (id) => {
         set(
             produce((state) => {
-                const index = state.betSlipBets.findIndex(item => item.id === id)
-                state.betSlipBets.splice(index, 1);
+                const newArr = state.betSlipBets.filter((bet) => bet.id !== id)
+                state.betSlipBets = newArr;
             })
         );
     },
