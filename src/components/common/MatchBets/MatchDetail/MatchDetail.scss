@@ -63,7 +63,7 @@
       background: url("../../../../imagesHold/new-button-bg.png");
       background-repeat: round;
       &:hover {
-        opacity: 0.75;
+        filter: brightness(125%);
       }
       .rotate {
         transform: rotate(180deg);

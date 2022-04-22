@@ -45,7 +45,7 @@
         height: 29px;
         margin-left: 1px;
         &:hover {
-          opacity: 0.85;
+          filter: brightness(115%);
         }
       }
       .number {
@@ -157,7 +157,7 @@
       background: url('../../../imagesHold/input-increase-button.png');
       background-repeat: round;
       &:hover {
-        opacity: 0.85;
+        filter: brightness(115%);
       }
       .img-wrapper {
         margin-right: 9px;
@@ -170,7 +170,7 @@
         border-radius: 3px;
         color: #909090;
         &:hover {
-          opacity: 0.7;
+          filter: brightness(130%);
         }
         .img-wrapper {
           margin-right: 11px;

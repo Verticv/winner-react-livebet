@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import useStore from "store/useStore";
+import { singleOrMultiOptions } from "helpers/constants";
 
 import refresh from "../../../imagesHold/refresh-button.png";
 import close from "../../../imagesHold/action-close.png";
@@ -64,6 +65,9 @@ function AmountDetails({
 export default function BetAmount() {
     const [inputValue, setInputValue] = useState("0");
     const removeAllBetSlipBet = useStore((s) => s.removeAllBetSlipBet);
+    const removeMultiViewAllBetSlipBet = useStore((s) => s.removeMultiViewAllBetSlipBet);
+    const singleOrMulti = useStore((state) => state.singleOrMulti);
+    const isSingleView = singleOrMulti === singleOrMultiOptions.single;
 
     return (
         <div className="amount-wrapper">
@@ -165,7 +169,7 @@ export default function BetAmount() {
                 <button className="active">최대</button>
             </div>
             <div className="action-buttons">
-                <button onClick={removeAllBetSlipBet}>
+                <button onClick={isSingleView ? removeAllBetSlipBet : removeMultiViewAllBetSlipBet}>
                     <div className="img-wrapper">
                         <img src={close} alt="" width="14" height="14" />
                     </div>
