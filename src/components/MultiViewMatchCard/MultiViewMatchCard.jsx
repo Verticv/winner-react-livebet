@@ -232,8 +232,10 @@ function MultiViewMatchResults({ id, isEmpty = false }) {
                     <div className="bet-info-wrapper">
                         <div className="scroll-wrapper">
                             <Info />
-                            <ResultsContent />
-                            <ResultsContent isEmpty={true} />
+                            <div className="internal-scroll-wrapper hide-scrollbar">
+                                <ResultsContent />
+                                <ResultsContent isEmpty={true} />
+                            </div>
                         </div>
                     </div>
                     <button className="go-to-game">
