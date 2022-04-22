@@ -1,8 +1,9 @@
 @import 'variables.scss';
 
 .cart {
-  overflow: scroll;
-  color: white; // temp
+  height: 100vh;
+  overflow-y: scroll;
+  color: white;
   width: 360px;
   .cart-wrapper {
     display: flex;
