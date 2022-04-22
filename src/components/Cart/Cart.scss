@@ -28,6 +28,10 @@
           align-items: center;
           margin-left: 10px;
 
+          img {
+            margin-bottom: 1px;
+          }
+
           .text {
             margin: 0 10px;
             font-family: RobotoMedium, sans-serif;
@@ -45,6 +49,7 @@
             font-family: Roboto;
             font-size: 12px;
             font-weight: 600;
+            margin-bottom: 1px;
           }
         }
       }
