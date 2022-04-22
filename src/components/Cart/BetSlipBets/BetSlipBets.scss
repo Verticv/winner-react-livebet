@@ -19,6 +19,9 @@
       position: absolute;
       right: 10px;
       top: 10px;
+      &:hover {
+        filter: brightness(130%);
+      }
     }
     .title {
       margin-top: 1px;
