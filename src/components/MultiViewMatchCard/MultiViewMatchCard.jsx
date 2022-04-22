@@ -72,10 +72,10 @@ function ResultsRow({isActive: isRowActive, option1, option2, kof1, kof2, tieKof
     // const option2 = "언더";
     // const kof1 = 1.25;
     // const kof2 = 3.3;
-    const addBetSlipBet = useStore((s) => s.addBetSlipBet);
+    const addMultiViewBetSlipBet = useStore((s) => s.addMultiViewBetSlipBet);
     const handleClick = (event) => {
         event.stopPropagation();
-        addBetSlipBet(bet);
+        addMultiViewBetSlipBet(bet);
     };
 
     return (
