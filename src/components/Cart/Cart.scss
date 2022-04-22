@@ -89,7 +89,7 @@
               align-items: center;
               margin-right: 9px;
               &:hover {
-                opacity: 0.85;
+                filter: brightness(115%);
               }
               p {
                 margin-right: 4px;
@@ -230,7 +230,7 @@
         background-repeat: round;
         padding-bottom: 6px;
         &:hover {
-          opacity: 0.85;
+          filter: brightness(115%);
         }
         p {
           margin-left: 11px;
