@@ -76,7 +76,7 @@ export default function LeagueSelectPopup(props) {
     return (
         selectedView === viewTypes.selectLeague && (
             <>  
-                <div style={{zIndex: '6', position: 'fixed', background: 'black', opacity: 0.702, width: '1920px', height: '1080px'}} />
+                <div style={{zIndex: '6', position: 'fixed', background: 'black', opacity: 0.702, width: '1920px', height: '100vh'}} />
                 <div className="league-popup">
                     <div className="league-popup-wrapper" ref={ref}>
                         <div className="header">
