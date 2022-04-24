@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import _ from "lodash" 
+// import _ from "lodash" 
 
 import useStore from "store/useStore";
 import ball from "../../../imagesHold/image_70.png";
