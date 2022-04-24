@@ -27,8 +27,17 @@ export default function CardHeader({ id, league = "라리가" }) {
     const closeHandler = (cardId) => {
         removeMatchFromMultiViewMatchesResults(cardId);
         const newCard = { ...resultsCardsList[resultsCardsList?.length - 1] };
+        const newData = window.cardsData.map((card) => {
+            if (card.id === cardId) {
+                const cardCopy = {...card}
+                cardCopy.isEmpty = true
+                return cardCopy
+            }
+            return card
+        })
         newCard.id = Math.random();
-        newCard.isEmpty = false;
+        newCard.isEmpty = true;
+        window.cardsData = newData
         addNewMatch(newCard);
     };
     console.log('playActiveplayActiveplayActive', playActive)
