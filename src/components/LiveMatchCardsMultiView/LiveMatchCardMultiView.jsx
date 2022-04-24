@@ -57,8 +57,7 @@ export default function LiveMatchCardMultiView({
     }))
     console.log('isDragging', isDragging)
     const callbackClick = () => console.log('click!')
-    const callbackDoubleClick = (idddd) => {
-        console.log('id', idddd)
+    const callbackDoubleClick = () => {
         removeMatchFromMultiViewMatches(id)
         let isElementFound = false
         const newData = resultsCardsList.map((match => {
