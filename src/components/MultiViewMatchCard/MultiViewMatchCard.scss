@@ -338,9 +338,282 @@
     }
 
     .scroll-wrapper {
+      height: 248px;
+      overflow-y: scroll;
+      
+      .background-image {
+        height: 248px;
+        background: url('../../imagesHold/match-bet--small-card.png');
+      }
+      .background-image-1 {
+        height: 250px;
+        background: url('../../imagesHold/cards/new/new-bet-card.png');
+      }
+      // padding-top: 40px;
+  
+      // .internal-scroll-wrapper {
+      //   background: url('../../imagesHold/match-bet--small-card.png');
+      //   height: 248px;
+      //   overflow-y: scroll; 
+      // }
+
+      .results-content {
+        background: transparent;
+        // &:nth-child(2) {
+        //   .match-bets-content {
+        //     .match-bet-card-wrapper {
+        //       background: url('../../imagesHold/match-bet--small-card.png');
+        //     }
+        //   }
+        // }
+        .match-bets-content {
+            background: transparent;
+  
+          .match-bet-card-wrapper {
+            position: relative;
+            height: auto;
+            width: 500px;
+            max-width: 863px;
+            margin-top: 0;
+            padding: 0;
+            background: transparent;
+            // background: url('../../imagesHold/cards/new/new-bet-card.png');
+            background-repeat: round;
+            // &:nth-child(1) {
+            //   background: url('../../imagesHold/match-bet--small-card.png');
+            // }
+  
+            .line {
+              position: absolute;
+              top: -1px;
+              left: 0;
+              width: 100%;
+              height: 1px;
+              background: linear-gradient(to right, #1d1922 0, #5e2830 30%, #581717 50%, #5f2830 70%, #1d1922 100%);
+            }
+  
+            .match-details-wrapper {
+  
+              .match-details-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding-left: 10px;
+                height: 50px;
+  
+                .left {
+                  display: flex;
+                  align-items: center;
+  
+                  .square {
+                    width: 4px;
+                    height: 4px;
+                    margin-right: 10px;
+                  }
+  
+                  .text {
+                    color: #d1cecf;
+                    font-size: 14px;
+                  }
+                }
+  
+                button {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  width: 28px;
+                  height: 28px;
+                  border-radius: 3px;
+                  margin-right: 9px;
+                  // background-color: rgb(255, 255, 255);
+                  background: url("../../imagesHold/new-button-bg1.png");
+                  // opacity: 0.2;
+  
+                  .rotate {
+                    transform: rotate(180deg);
+                  }
+                }
+              }
+  
+              .match-details-content {
+                display: flex;
+                flex-wrap: wrap;
+  
+                .result-row {
+                  display: flex;
+                  width: 100%;
+                  height: 36px;
+                }
+  
+                .match-results-wrapper {
+                  position: relative;
+                  display: flex;
+                  width: 100%;
+                  height: 35px;
+                  background-color: rgb(255, 255, 255, 0.102);
+                  color: #d1cecf;
+  
+                  .left {
+                    height: 35px;
+                    width: 347px;
+                    display: flex;
+                    justify-content: space-between;
+                    clip-path: polygon(0 0, 94% 0, 99% 100%, 0% 100%);
+                    align-items: center;
+  
+                    .text {
+                      margin-left: 10px;
+                      font-size: 14px;
+                      font-family: NotoSansCJKkr-Regular;
+                    }
+  
+                    &:hover {
+                      background: linear-gradient(to right, #9b2f30, #9b2f30 25%, #9a2f30 50%, #872d2f 63%, #722a2e 75%, #5d282e);
+                    }
+                  }
+  
+                  .number1 {
+                    font-family: RobotoMedium;
+                    font-size: 14px;
+                    padding-right: 21px;
+                    position: absolute;
+                    left: 174px;
+                    &.red-arrow {
+                      .number-value {
+                        position: absolute;
+                        top: 19px;
+                        left: 22px;
+                      }
+                    }
+                  }
+  
+                  .red-arrow {
+                    background: url("../../imagesHold/cards/red-up-arrow.png");
+                    background-repeat: round;
+                    width: 71px;
+                    height: 57px;
+                    margin-right: 1px;
+                    left: 152px;
+                    top: -11px;
+                  }
+  
+                  .right {
+                    height: 35px;
+                    width: 343px;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    clip-path: polygon(5% 0%, 100% 0, 100% 100%, 0% 100%);
+                    margin-left: -14px;
+  
+                    .text {
+                      margin-right: 7.5px;
+                      font-size: 14px;
+                      font-family: NotoSansCJKkr-Regular;
+                    }
+  
+                    &:hover {
+                      background: linear-gradient(to left, #9b2f30, #9b2f30 25%, #9a2f30 50%, #872d2f 63%, #722a2e 75%, #5d282e);
+                    }
+                  }
+  
+                  .blue-arrow {
+                    background: url("../../imagesHold/cards/blue-down-arrow.png");
+                    background-repeat: round;
+                    width: 71px;
+                    height: 57px;
+                    left: 279px;
+                    top: -11px;
+                    margin-right: 2px;
+                  }
+  
+                  .number2 {
+                    font-family: RobotoMedium;
+                    font-size: 14px;
+                    margin-left: 7px;
+                    padding-left: 15px;
+                    position: absolute;
+                    left: 279px;
+                    &.blue-arrow {
+                      margin-left: -1px;
+  
+                      .number-value {
+                        position: absolute;
+                        top: 19px;
+                        left: 22px;
+                      }
+                    }
+                  }
+  
+  
+                  .middle {
+                    position: relative;
+                    width: 124px;
+                    height: 35px;
+                    padding: 0 1px;
+                    margin-left: -13px;
+                    clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%);
+                    z-index: 2;
+  
+                    .left {
+                      background: linear-gradient(to top, rgb(255 255 255 / 22%), rgb(255 255 255 / 9%) 50%, rgba(255, 255, 255, 0));
+                      width: 1.5px;
+                      height: 40px;
+                      position: absolute;
+                      left: 5.6px;
+                      top: -1px;
+                      transform: rotate(-16.5deg);
+                      z-index: 10;
+                    }
+  
+                    .right {
+                      background: linear-gradient(to top, rgb(255 255 255 / 22%), rgb(255 255 255 / 9%) 50%, rgba(255, 255, 255, 0));
+                      width: 1.5px;
+                      height: 40px;
+                      position: absolute;
+                      right: 8.6px;
+                      top: -1px;
+                      transform: rotate(16.5deg);
+                      z-index: 10;
+                    }
+  
+                    .middle-content {
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      width: 75px;
+                      height: 35px;
+                      padding-left: 0;
+                      clip-path: polygon(0 0, 100% 0, 86% 100%, 14% 100%);
+                      font-family: RobotoMedium;
+                      font-size: 14px;
+  
+                      &:hover {
+                        background-color: #9b2f30;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+
+
+    .bet-info-wrapper {
+      position: relative;
+      height: 288px;
+      // overflow-y: scroll;
+      // overflow-x: hidden;
+
       .info {
+        position: absolute;
+        z-index: 15;
         padding-left: 11px;
-        width: 100%;
+        width: 99%;
         background: linear-gradient(to right, #2a2a34, #222229 50%, #1a1a20);
         height: 40px;
         display: flex;
@@ -384,277 +657,20 @@
           }
         }
       }
-  
-      .internal-scroll-wrapper {
-        background: url('../../imagesHold/match-bet--small-card.png');
-        height: 248px;
-        overflow-y: scroll;
-        .results-content {
-          background: transparent;
-          // &:nth-child(2) {
-          //   .match-bets-content {
-          //     .match-bet-card-wrapper {
-          //       background: url('../../imagesHold/match-bet--small-card.png');
-          //     }
-          //   }
-          // }
-          .match-bets-content {
-              background: transparent;
-    
-            .match-bet-card-wrapper {
-              position: relative;
-              height: 248px;
-              width: 500px;
-              max-width: 863px;
-              margin-top: 0;
-              padding: 0;
-              background: transparent;
-              // background: url('../../imagesHold/cards/new/new-bet-card.png');
-              background-repeat: round;
-              // &:nth-child(1) {
-              //   background: url('../../imagesHold/match-bet--small-card.png');
-              // }
-    
-              .line {
-                position: absolute;
-                top: -1px;
-                left: 0;
-                width: 100%;
-                height: 1px;
-                background: linear-gradient(to right, #1d1922 0, #5e2830 30%, #581717 50%, #5f2830 70%, #1d1922 100%);
-              }
-    
-              .match-details-wrapper {
-    
-                .match-details-header {
-                  display: flex;
-                  align-items: center;
-                  justify-content: space-between;
-                  padding-left: 10px;
-                  height: 50px;
-    
-                  .left {
-                    display: flex;
-                    align-items: center;
-    
-                    .square {
-                      width: 4px;
-                      height: 4px;
-                      margin-right: 10px;
-                    }
-    
-                    .text {
-                      color: #d1cecf;
-                      font-size: 14px;
-                    }
-                  }
-    
-                  button {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    width: 28px;
-                    height: 28px;
-                    border-radius: 3px;
-                    margin-right: 9px;
-                    // background-color: rgb(255, 255, 255);
-                    background: url("../../imagesHold/new-button-bg1.png");
-                    // opacity: 0.2;
-    
-                    .rotate {
-                      transform: rotate(180deg);
-                    }
-                  }
-                }
-    
-                .match-details-content {
-                  display: flex;
-                  flex-wrap: wrap;
-    
-                  .result-row {
-                    display: flex;
-                    width: 100%;
-                    height: 36px;
-                  }
-    
-                  .match-results-wrapper {
-                    position: relative;
-                    display: flex;
-                    width: 100%;
-                    height: 35px;
-                    background-color: rgb(255, 255, 255, 0.102);
-                    color: #d1cecf;
-    
-                    .left {
-                      height: 35px;
-                      width: 347px;
-                      display: flex;
-                      justify-content: space-between;
-                      clip-path: polygon(0 0, 94% 0, 99% 100%, 0% 100%);
-                      align-items: center;
-    
-                      .text {
-                        margin-left: 10px;
-                        font-size: 14px;
-                        font-family: NotoSansCJKkr-Regular;
-                      }
-    
-                      &:hover {
-                        background: linear-gradient(to right, #9b2f30, #9b2f30 25%, #9a2f30 50%, #872d2f 63%, #722a2e 75%, #5d282e);
-                      }
-                    }
-    
-                    .number1 {
-                      font-family: RobotoMedium;
-                      font-size: 14px;
-                      padding-right: 21px;
-                      position: absolute;
-                      left: 174px;
-                      &.red-arrow {
-                        .number-value {
-                          position: absolute;
-                          top: 19px;
-                          left: 22px;
-                        }
-                      }
-                    }
-    
-                    .red-arrow {
-                      background: url("../../imagesHold/cards/red-up-arrow.png");
-                      background-repeat: round;
-                      width: 71px;
-                      height: 57px;
-                      margin-right: 1px;
-                      left: 152px;
-                      top: -11px;
-                    }
-    
-                    .right {
-                      height: 35px;
-                      width: 343px;
-                      display: flex;
-                      justify-content: flex-end;
-                      align-items: center;
-                      clip-path: polygon(5% 0%, 100% 0, 100% 100%, 0% 100%);
-                      margin-left: -14px;
-    
-                      .text {
-                        margin-right: 7.5px;
-                        font-size: 14px;
-                        font-family: NotoSansCJKkr-Regular;
-                      }
-    
-                      &:hover {
-                        background: linear-gradient(to left, #9b2f30, #9b2f30 25%, #9a2f30 50%, #872d2f 63%, #722a2e 75%, #5d282e);
-                      }
-                    }
-    
-                    .blue-arrow {
-                      background: url("../../imagesHold/cards/blue-down-arrow.png");
-                      background-repeat: round;
-                      width: 71px;
-                      height: 57px;
-                      left: 279px;
-                      top: -11px;
-                      margin-right: 2px;
-                    }
-    
-                    .number2 {
-                      font-family: RobotoMedium;
-                      font-size: 14px;
-                      margin-left: 7px;
-                      padding-left: 15px;
-                      position: absolute;
-                      left: 279px;
-                      &.blue-arrow {
-                        margin-left: -1px;
-    
-                        .number-value {
-                          position: absolute;
-                          top: 19px;
-                          left: 22px;
-                        }
-                      }
-                    }
-    
-    
-                    .middle {
-                      position: relative;
-                      width: 124px;
-                      height: 35px;
-                      padding: 0 1px;
-                      margin-left: -13px;
-                      clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%);
-                      z-index: 2;
-    
-                      .left {
-                        background: linear-gradient(to top, rgb(255 255 255 / 22%), rgb(255 255 255 / 9%) 50%, rgba(255, 255, 255, 0));
-                        width: 1.5px;
-                        height: 40px;
-                        position: absolute;
-                        left: 5.6px;
-                        top: -1px;
-                        transform: rotate(-16.5deg);
-                        z-index: 10;
-                      }
-    
-                      .right {
-                        background: linear-gradient(to top, rgb(255 255 255 / 22%), rgb(255 255 255 / 9%) 50%, rgba(255, 255, 255, 0));
-                        width: 1.5px;
-                        height: 40px;
-                        position: absolute;
-                        right: 8.6px;
-                        top: -1px;
-                        transform: rotate(16.5deg);
-                        z-index: 10;
-                      }
-    
-                      .middle-content {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        width: 75px;
-                        height: 35px;
-                        padding-left: 0;
-                        clip-path: polygon(0 0, 100% 0, 86% 100%, 14% 100%);
-                        font-family: RobotoMedium;
-                        font-size: 14px;
-    
-                        &:hover {
-                          background-color: #9b2f30;
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-
-
-    .bet-info-wrapper {
-      position: relative;
-      height: 288px;
-      overflow-y: scroll;
-      overflow-x: hidden;
 
       .scroll-wrapper {
-        height: 500px;
-      }
-
-      &::-webkit-scrollbar {
-        width: 5px;
-      }
-      &::-webkit-scrollbar-thumb {
-        background: #666666;
-        border-radius: 5px;
-      }
-      &::-webkit-scrollbar-track {
-        background: #333333;
-        border-radius: 5px;
+        height: 288px;
+        &::-webkit-scrollbar {
+          width: 5px;
+        }
+        &::-webkit-scrollbar-thumb {
+          background: #666666;
+          border-radius: 5px;
+        }
+        &::-webkit-scrollbar-track {
+          background: #333333;
+          border-radius: 5px;
+        }
       }
     }
 

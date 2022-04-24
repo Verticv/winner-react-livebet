@@ -320,12 +320,18 @@ function MultiViewMatchResults({ id, isEmpty = false }) {
                 <div className="multi-view-match-result-wrapper">
                     <MultiViewMatchCard id={id} />
                     <div className="bet-info-wrapper">
+                        <Info />
                         <div className="scroll-wrapper">
-                            <Info />
-                            <div className="internal-scroll-wrapper hide-scrollbar">
-                                <ResultsContent />
-                                <ResultsContent isEmpty={true} />
-                            </div>
+                            {/* <div className="internal-scroll-wrapper hide-scrollbar"> */}
+                                <div className="background-image" style={{background: '', marginTop: '40px'}} >
+                                    <ResultsContent />
+                                    <ResultsContent isEmpty={true} />
+                                </div>
+                                <div className="background-image-1" >
+                                    <ResultsContent />
+                                    <ResultsContent isEmpty={true} />
+                                </div>
+                            {/* </div> */}
                         </div>
                     </div>
                     <button className="go-to-game">
