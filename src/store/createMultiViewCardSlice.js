@@ -1,9 +1,11 @@
 import produce from "immer";
+import _ from "lodash" 
+
 
 export const createMultiViewCardSlice = (set, get) => ({
     multiViewLiveMatchCards: [
         {
-            id: 0,
+            id: _.uniqueId(),
             title: "후반전 35분",
             team1: "FC바로셀로나",
             team2: "레알마드리드",
@@ -15,7 +17,7 @@ export const createMultiViewCardSlice = (set, get) => ({
             team2Goal: "0",
         },
         {
-            id: 1,
+            id: _.uniqueId(),
             title: "후반전 15분",
             team1: "맨체스터유나이티드",
             team2: "리버풀",
@@ -27,7 +29,7 @@ export const createMultiViewCardSlice = (set, get) => ({
             team2Goal: "0",
         },
         {
-            id: 2,
+            id: _.uniqueId(),
             title: "후반전 15분",
             team1: "맨시티",
             team2: "첼시",
@@ -39,7 +41,7 @@ export const createMultiViewCardSlice = (set, get) => ({
             team2Goal: "0",
         },
         {
-            id: 3,
+            id: _.uniqueId(),
             title: "후반전 11분",
             team1: "바이헤른뮌헨",
             team2: "프랑크푸르트",
@@ -51,7 +53,7 @@ export const createMultiViewCardSlice = (set, get) => ({
             team2Goal: "0",
         },
         {
-            id: 4,
+            id: _.uniqueId(),
             title: "후반전 11분",
             team1: "바이헤른뮌헨",
             team2: "프랑크푸르트",
@@ -63,7 +65,7 @@ export const createMultiViewCardSlice = (set, get) => ({
             team2Goal: "0",
         },
         {
-            id: 5,
+            id: _.uniqueId(),
             title: "후반전 11분",
             team1: "바이헤른뮌헨",
             team2: "프랑크푸르트",
@@ -75,7 +77,7 @@ export const createMultiViewCardSlice = (set, get) => ({
             team2Goal: "0",
         },
         {
-            id: 6,
+            id: _.uniqueId(),
             title: "후반전 11분",
             team1: "바이헤른뮌헨",
             team2: "프랑크푸르트",
@@ -113,37 +115,37 @@ export const createMultiViewCardSlice = (set, get) => ({
     },
     multiViewLiveMatchResultsCards: [
         {
-            id: 0,
+            id: _.uniqueId(),
             team1: "FC바로셀로나",
             team2: "레알마드리드",
             isEmpty: true,
         },
         {
-            id: 1,
+            id: _.uniqueId(),
             team1: "FC바로셀로나",
             team2: "레알마드리드",
             isEmpty: true,
         },
         {
-            id: 2,
+            id: _.uniqueId(),
             team1: "FC바로셀로나",
             team2: "레알마드리드",
             isEmpty: true,
         },
         {
-            id: 3,
+            id: _.uniqueId(),
             team1: "FC바로셀로나",
             team2: "레알마드리드",
             isEmpty: true,
         },
         {
-            id: 4,
+            id: _.uniqueId(),
             team1: "FC바로셀로나",
             team2: "레알마드리드",
             isEmpty: true,
         },
         {
-            id: 5,
+            id: _.uniqueId(),
             team1: "FC바로셀로나",
             team2: "레알마드리드",
             isEmpty: true,
@@ -160,7 +162,8 @@ export const createMultiViewCardSlice = (set, get) => ({
         console.log('newMatchesDatanewMatchesDatanewMatchesDatanewMatchesDatanewMatchesDatanewMatchesData', newMatchesData)
         set(
             produce((draft) => {
-                draft.multiViewLiveMatchResultsCards = newMatchesData;
+                draft.multiViewLiveMatchResultsCards.length  = 0
+                draft.multiViewLiveMatchResultsCards  = newMatchesData
             })
         );
     },
