@@ -12,6 +12,19 @@
 
   .match-bets-wrapper {
     margin: 0 10px;
+    height: 445px;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #666666;
+      border-radius: 5px;
+    }
+    &::-webkit-scrollbar-track {
+      background: #333333;
+      border-radius: 5px;
+    }
   }
 }
 

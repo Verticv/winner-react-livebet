@@ -17,8 +17,33 @@ export default function MultiViewSelectButtons() {
             name: "전체추가",
             onclick: (event) => {
                 event.stopPropagation();
-                updateMultiViewMatchesResults(cardsList)
-                updateMultiViewMatches([])
+                if (cardsList.length > 0) {
+                    
+                    const newMatchCards = [...cardsList, ...resultsCardsList]
+                    const lastId = newMatchCards[newMatchCards.length - 1].id
+                    const newData = [{
+                        id: lastId + 1,
+                        team1: "FC바로셀로나",
+                        team2: "레알마드리드",
+                        isEmpty: true,
+                    },
+                    {
+                        id: lastId + 2,
+                        team1: "FC바로셀로나",
+                        team2: "레알마드리드",
+                        isEmpty: true,
+                    },
+                    {
+                        id: lastId + 3,
+                        team1: "FC바로셀로나",
+                        team2: "레알마드리드",
+                        isEmpty: true,
+                    }]
+                    const newMatchResultsCards = newMatchCards.filter(card => !card.isEmpty)
+                    newMatchResultsCards.push(...newData)
+                    updateMultiViewMatchesResults(newMatchResultsCards)
+                    updateMultiViewMatches([])
+                }
             },
         },
         {
@@ -62,7 +87,13 @@ export default function MultiViewSelectButtons() {
                     team2: "레알마드리드",
                     isEmpty: true,
                 }])
-                updateMultiViewMatches(resultsCardsList)
+                const notEmptyMatchCards = resultsCardsList.map(card => {
+                    const newCard = {...card}
+                    newCard.isEmpty = true
+                    return newCard
+                }) || []
+                console.log('notEmptyMatchCards', notEmptyMatchCards)
+                updateMultiViewMatches([...cardsList, ...notEmptyMatchCards])
             },
         },
     ];

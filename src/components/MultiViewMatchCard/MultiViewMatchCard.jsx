@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import _ from "lodash" 
 
 import useStore from "store/useStore";
 import { useDrop } from "react-dnd";
@@ -12,7 +13,7 @@ import downBlueArrow from "imagesHold/cards/blue-arrow-down.png";
 
 import "./MultiViewMatchCard.scss";
 
-function MultiViewMatchCard({id}) {
+function MultiViewMatchCard({ id }) {
     return (
         <div className="multi-view-match-card-wrapper">
             <CardHeader id={id} />
@@ -67,11 +68,15 @@ const matchBets = [
     },
 ];
 
-function ResultsRow({isActive: isRowActive, option1, option2, kof1, kof2, tieKof, bet}) {
-    // const option1 = "오버";
-    // const option2 = "언더";
-    // const kof1 = 1.25;
-    // const kof2 = 3.3;
+function ResultsRow({
+    isActive: isRowActive,
+    option1,
+    option2,
+    kof1,
+    kof2,
+    tieKof,
+    bet,
+}) {
     const addMultiViewBetSlipBet = useStore((s) => s.addMultiViewBetSlipBet);
     const handleClick = (event) => {
         event.stopPropagation();
@@ -100,10 +105,48 @@ function ResultsRow({isActive: isRowActive, option1, option2, kof1, kof2, tieKof
             <div className="right">
                 <p className="text">{option2}</p>
             </div>
-            <div style={{ position: "absolute", width: "100%", height: "1px", background: "linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0))", left: 0, top: 0}}></div>
-            <div style={{ position: "absolute", width: "100%", height: "1px", background: "rgba(255, 255, 255, 0.05)", bottom: 0}}></div>
-            <div style={{ position: "absolute", width: "1px", height: "calc(100% - 1px)", background: "linear-gradient(to top, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.03) 30%, rgba(255, 255, 255, 0))", left: 0, top: 0}}></div>
-            <div style={{ position: "absolute", width: "1px", height: "calc(100% - 1px)", background: "linear-gradient(to top, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.03) 30%, rgba(255, 255, 255, 0))", right: 0, top: 0}}></div>
+            <div
+                style={{
+                    position: "absolute",
+                    width: "100%",
+                    height: "1px",
+                    background:
+                        "linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0))",
+                    left: 0,
+                    top: 0,
+                }}
+            ></div>
+            <div
+                style={{
+                    position: "absolute",
+                    width: "100%",
+                    height: "1px",
+                    background: "rgba(255, 255, 255, 0.05)",
+                    bottom: 0,
+                }}
+            ></div>
+            <div
+                style={{
+                    position: "absolute",
+                    width: "1px",
+                    height: "calc(100% - 1px)",
+                    background:
+                        "linear-gradient(to top, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.03) 30%, rgba(255, 255, 255, 0))",
+                    left: 0,
+                    top: 0,
+                }}
+            ></div>
+            <div
+                style={{
+                    position: "absolute",
+                    width: "1px",
+                    height: "calc(100% - 1px)",
+                    background:
+                        "linear-gradient(to top, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.03) 30%, rgba(255, 255, 255, 0))",
+                    right: 0,
+                    top: 0,
+                }}
+            ></div>
         </div>
     );
 }
@@ -113,7 +156,18 @@ function MatchDetail({ bet, isEmpty = false }) {
     const handleToggleIsShowing = () => {
         setIsShowing((prev) => !prev);
     };
-    const { betType, option1, option2, row1kof1, row1kof2, row1tieKof, row2kof1, row2kof2, row2tieKof, isActive } = bet;
+    const {
+        betType,
+        option1,
+        option2,
+        row1kof1,
+        row1kof2,
+        row1tieKof,
+        row2kof1,
+        row2kof2,
+        row2tieKof,
+        isActive,
+    } = bet;
     console.log(option2, option1);
     return (
         <div className="match-details-wrapper">
@@ -137,9 +191,25 @@ function MatchDetail({ bet, isEmpty = false }) {
             {isShowing && !isEmpty ? (
                 <div className="match-details-content">
                     <div style={{ marginBottom: "4px", width: "100%" }}>
-                        <ResultsRow bet={bet} isActive={isActive} option1={option1} option2={option2} kof1={row1kof1} kof2={row1kof2} tieKof={row1tieKof} />
+                        <ResultsRow
+                            bet={bet}
+                            isActive={isActive}
+                            option1={option1}
+                            option2={option2}
+                            kof1={row1kof1}
+                            kof2={row1kof2}
+                            tieKof={row1tieKof}
+                        />
                     </div>
-                    <ResultsRow bet={bet} isActive={isActive} option1={option1} option2={option2} kof1={row2kof1} kof2={row2kof2} tieKof={row2tieKof} />
+                    <ResultsRow
+                        bet={bet}
+                        isActive={isActive}
+                        option1={option1}
+                        option2={option2}
+                        kof1={row2kof1}
+                        kof2={row2kof2}
+                        tieKof={row2tieKof}
+                    />
                 </div>
             ) : null}
         </div>
@@ -169,73 +239,99 @@ function ResultsContent({ isEmpty = false }) {
 }
 
 function MultiViewMatchResults({ id, isEmpty = false }) {
-    const resultsCardsList = useStore((state) => state.multiViewLiveMatchResultsCards);
-    const removeMatchFromMultiViewMatches = useStore((state) => state.removeMatchFromMultiViewMatches);
-    const updateMultiViewMatchesResults = useStore((state) => state.updateMultiViewMatchesResults);
+    const resultsCardsList = useStore(
+        (state) => state.multiViewLiveMatchResultsCards
+    );
+    const removeMatchFromMultiViewMatches = useStore(
+        (state) => state.removeMatchFromMultiViewMatches
+    );
+    const updateMultiViewMatchesResults = useStore(
+        (state) => state.updateMultiViewMatchesResults
+    );
     const addNewMatchResult = useStore((state) => state.addNewMatchResult);
 
-    const [{isOver}, drop] = useDrop(() => ({
+    const [{ isOver }, drop] = useDrop(() => ({
         accept: "card",
         drop: (item) => addCard(item.id),
         collect: (monitor) => ({
             isOver: !!monitor.isOver(),
-        })
-    }))
+        }),
+    }));
 
     const addCard = (cardId) => {
+        console.log('cardIdcardId', cardId)
+        console.log('cardIdcardId data', resultsCardsList)
+
+        
         let data = resultsCardsList;
         if (window.cardsData) {
-            data = window.cardsData
+            data = window.cardsData;
         }
-        removeMatchFromMultiViewMatches(cardId)
-        const newData = data.map((match => {
+        removeMatchFromMultiViewMatches(cardId);
+        const newData = data.map((match) => {
+            console.log('match.id === id', match.id)
+            console.log('match.id id', id)
+            console.log('match.id id', match.id === id)
+
             if (match.id === id) {
-                return {...match, isEmpty: false}
+                return { ...match, isEmpty: false };
             }
-            return match
-        }))
-        window.cardsData = newData
-        updateMultiViewMatchesResults(newData)
-        console.log('ssssssssssssssss', document.querySelectorAll('.empty-card'))
-        if (document.querySelectorAll('.empty-card')?.length === 0) {
-            const id = resultsCardsList[resultsCardsList.length - 1]?.id
-            const newData = [{
-                id: id + 1,
-                team1: "FC바로셀로나",
-                team2: "레알마드리드",
-                isEmpty: true,
-            },
-            {
-                id: id + 2,
-                team1: "FC바로셀로나",
-                team2: "레알마드리드",
-                isEmpty: true,
-            },
-            {
-                id: id + 3,
-                team1: "FC바로셀로나",
-                team2: "레알마드리드",
-                isEmpty: true,
-            },]
-            newData.forEach(card => addNewMatchResult(card));
-            window.cardsData = [...window.cardsData, ...newData]
-        }   
-    }
+            return match;
+        });
+        console.log('cardIdcardId newData', newData)
+
+        window.cardsData = newData;
+        updateMultiViewMatchesResults(newData);
+        if (document.querySelectorAll(".empty-card")?.length === 0) {
+            const newData = [
+                {
+                    id: _.uniqueId(),
+                    team1: "FC바로셀로나",
+                    team2: "레알마드리드",
+                    isEmpty: true,
+                },
+                {
+                    id: _.uniqueId(),
+                    team1: "FC바로셀로나",
+                    team2: "레알마드리드",
+                    isEmpty: true,
+                },
+                {
+                    id: _.uniqueId(),
+                    team1: "FC바로셀로나",
+                    team2: "레알마드리드",
+                    isEmpty: true,
+                },
+            ];
+            newData.forEach((card) => addNewMatchResult(card));
+            window.cardsData = [...window.cardsData, ...newData];
+        }
+    };
 
     return (
         <>
             {isEmpty ? (
-                <div style={{opacity: isOver ? "0.5" : ""}} ref={drop} className="empty-card"></div>
+                <div
+                    style={{ opacity: isOver ? "0.5" : "" }}
+                    ref={drop}
+                    className="empty-card"
+                ></div>
             ) : (
                 <div className="multi-view-match-result-wrapper">
                     <MultiViewMatchCard id={id} />
                     <div className="bet-info-wrapper">
+                        <Info />
                         <div className="scroll-wrapper">
-                            <Info />
-                            <div className="internal-scroll-wrapper hide-scrollbar">
-                                <ResultsContent />
-                                <ResultsContent isEmpty={true} />
-                            </div>
+                            {/* <div className="internal-scroll-wrapper hide-scrollbar"> */}
+                                <div className="background-image" style={{background: '', marginTop: '40px'}} >
+                                    <ResultsContent />
+                                    <ResultsContent isEmpty={true} />
+                                </div>
+                                <div className="background-image-1" >
+                                    <ResultsContent />
+                                    <ResultsContent isEmpty={true} />
+                                </div>
+                            {/* </div> */}
                         </div>
                     </div>
                     <button className="go-to-game">
@@ -251,13 +347,20 @@ function MultiViewMatchResults({ id, isEmpty = false }) {
 }
 
 export default function MultiViewMatchCards() {
+    const resultsCardsList = useStore(
+        (state) => state.multiViewLiveMatchResultsCards
+    );
 
-    const resultsCardsList = useStore((state) => state.multiViewLiveMatchResultsCards);
+    // const sortedData = [...resultsCardsList].sort(function (x, y) {
+    //     return   Number(x.isEmpty) - Number(y.isEmpty);
+    // });
+
+    console.log('>>>>>>>>>>> resultsCardsList',resultsCardsList)
+
     return (
         <div className="multi-view-match-results-wrapper">
-            {resultsCardsList.map(({id, isEmpty}) => {
-
-                return <MultiViewMatchResults id={id} isEmpty={isEmpty} />
+            {resultsCardsList.map(({ id, isEmpty }) => {
+                return <MultiViewMatchResults id={id} isEmpty={isEmpty} />;
             })}
         </div>
     );

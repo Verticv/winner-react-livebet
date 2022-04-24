@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+// import _ from "lodash" 
+
 import useStore from "store/useStore";
 import ball from "../../../imagesHold/image_70.png";
 import spain from "../../../imagesHold/image_61.png";
@@ -25,7 +27,8 @@ export default function CardHeader({ id, league = "라리가" }) {
     const closeHandler = (cardId) => {
         removeMatchFromMultiViewMatchesResults(cardId);
         const newCard = { ...resultsCardsList[resultsCardsList?.length - 1] };
-        newCard.id = newCard.id + 1;
+        newCard.id = Math.random();
+        newCard.isEmpty = false;
         addNewMatch(newCard);
     };
     console.log('playActiveplayActiveplayActive', playActive)

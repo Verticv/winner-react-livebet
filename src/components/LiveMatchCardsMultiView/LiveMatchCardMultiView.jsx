@@ -46,6 +46,7 @@ export default function LiveMatchCardMultiView({
     const resultsCardsList = useStore((state) => state.multiViewLiveMatchResultsCards);
     const removeMatchFromMultiViewMatches = useStore((state) => state.removeMatchFromMultiViewMatches);
     const updateMultiViewMatchesResults = useStore((state) => state.updateMultiViewMatchesResults);
+    const addNewMatchResult = useStore((state) => state.addNewMatchResult);
 
     const [{isDragging}, drag] = useDrag(() => ({
         type: "card",
@@ -68,6 +69,30 @@ export default function LiveMatchCardMultiView({
             return match
         }))
         updateMultiViewMatchesResults(newData)
+
+        if (document.querySelectorAll('.empty-card')?.length === 1) {
+            const newData = [{
+                id: id + 1,
+                team1: "FC바로셀로나",
+                team2: "레알마드리드",
+                isEmpty: true,
+            },
+            {
+                id: id + 2,
+                team1: "FC바로셀로나",
+                team2: "레알마드리드",
+                isEmpty: true,
+            },
+            {
+                id: id + 3,
+                team1: "FC바로셀로나",
+                team2: "레알마드리드",
+                isEmpty: true,
+            },]
+            newData.forEach(card => addNewMatchResult(card));
+            const cards = window.cardsData || []
+            window.cardsData = [...cards || [], ...newData]
+        }
     }
 
     const click = useSingleAndDoubleClick(callbackClick, callbackDoubleClick);
