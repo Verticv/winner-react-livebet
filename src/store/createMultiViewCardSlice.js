@@ -1,11 +1,11 @@
 import produce from "immer";
-import _ from "lodash" 
+// import _ from "lodash" 
 
 
 export const createMultiViewCardSlice = (set, get) => ({
     multiViewLiveMatchCards: [
         {
-            id: _.uniqueId(),
+            id: 201,
             title: "후반전 35분",
             team1: "FC바로셀로나",
             team2: "레알마드리드",
@@ -17,7 +17,7 @@ export const createMultiViewCardSlice = (set, get) => ({
             team2Goal: "0",
         },
         {
-            id: _.uniqueId(),
+            id: 202,
             title: "후반전 15분",
             team1: "맨체스터유나이티드",
             team2: "리버풀",
@@ -29,7 +29,7 @@ export const createMultiViewCardSlice = (set, get) => ({
             team2Goal: "0",
         },
         {
-            id: _.uniqueId(),
+            id: 203,
             title: "후반전 15분",
             team1: "맨시티",
             team2: "첼시",
@@ -41,7 +41,7 @@ export const createMultiViewCardSlice = (set, get) => ({
             team2Goal: "0",
         },
         {
-            id: _.uniqueId(),
+            id: 204,
             title: "후반전 11분",
             team1: "바이헤른뮌헨",
             team2: "프랑크푸르트",
@@ -53,7 +53,7 @@ export const createMultiViewCardSlice = (set, get) => ({
             team2Goal: "0",
         },
         {
-            id: _.uniqueId(),
+            id: 205,
             title: "후반전 11분",
             team1: "바이헤른뮌헨",
             team2: "프랑크푸르트",
@@ -65,7 +65,7 @@ export const createMultiViewCardSlice = (set, get) => ({
             team2Goal: "0",
         },
         {
-            id: _.uniqueId(),
+            id: 206,
             title: "후반전 11분",
             team1: "바이헤른뮌헨",
             team2: "프랑크푸르트",
@@ -77,7 +77,7 @@ export const createMultiViewCardSlice = (set, get) => ({
             team2Goal: "0",
         },
         {
-            id: _.uniqueId(),
+            id: 207,
             title: "후반전 11분",
             team1: "바이헤른뮌헨",
             team2: "프랑크푸르트",
@@ -115,37 +115,37 @@ export const createMultiViewCardSlice = (set, get) => ({
     },
     multiViewLiveMatchResultsCards: [
         {
-            id: _.uniqueId(),
+            id: 101,
             team1: "FC바로셀로나",
             team2: "레알마드리드",
             isEmpty: true,
         },
         {
-            id: _.uniqueId(),
+            id: 102,
             team1: "FC바로셀로나",
             team2: "레알마드리드",
             isEmpty: true,
         },
         {
-            id: _.uniqueId(),
+            id: 103,
             team1: "FC바로셀로나",
             team2: "레알마드리드",
             isEmpty: true,
         },
         {
-            id: _.uniqueId(),
+            id: 104,
             team1: "FC바로셀로나",
             team2: "레알마드리드",
             isEmpty: true,
         },
         {
-            id: _.uniqueId(),
+            id: 105,
             team1: "FC바로셀로나",
             team2: "레알마드리드",
             isEmpty: true,
         },
         {
-            id: _.uniqueId(),
+            id: 106,
             team1: "FC바로셀로나",
             team2: "레알마드리드",
             isEmpty: true,
