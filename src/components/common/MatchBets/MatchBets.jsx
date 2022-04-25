@@ -68,7 +68,7 @@ export default function MatchDetails() {
     }, [selectedCardId]);
 
     const CardContent = (
-        <div className="match-bet-card-wrapper">
+        <div style={{height: 'auto'}} className="match-bet-card-wrapper">
             <div className="line"></div>
             <img style={{height: "100%", position: "absolute", left: "0"}} src={background} alt="" />
             {selectedTab === "all"
