@@ -3,6 +3,7 @@ import React, { useCallback, useState } from "react";
 import useStore from "store/useStore";
 import MatchDetail from "./MatchDetail/MatchDetail";
 import MatchBetsTabs from "./MatchBetsTabs/MatchBetsTabs";
+import background from "../../../imagesHold/match-bet-card.png"
 
 import "./MatchBets.scss";
 
@@ -69,6 +70,7 @@ export default function MatchDetails() {
     const CardContent = (
         <div className="match-bet-card-wrapper">
             <div className="line"></div>
+            <img style={{height: "100%", position: "absolute", left: "0"}} src={background} alt="" />
             {selectedTab === "all"
                 ? matchBets().map((matchBet) => {
                       return <MatchDetail key={matchBet.id} bet={matchBet} />;
@@ -87,7 +89,7 @@ export default function MatchDetails() {
         <div className="match-bets-content">
             <MatchBetsTabs handleChangeSelectedTab={handleChangeSelectedTab} />
             {CardContent}
-            {CardContent}
+            {/* {CardContent} */}
         </div>
     );
 }
