@@ -201,6 +201,17 @@ function MatchDetail({ bet, isEmpty = false }) {
                             tieKof={row1tieKof}
                         />
                     </div>
+                    <div style={{ marginBottom: "4px", width: "100%" }}>
+                        <ResultsRow
+                            bet={bet}
+                            isActive={isActive}
+                            option1={option1}
+                            option2={option2}
+                            kof1={row1kof1}
+                            kof2={row1kof2}
+                            tieKof={row1tieKof}
+                        />
+                    </div>
                     <ResultsRow
                         bet={bet}
                         isActive={isActive}
@@ -320,6 +331,7 @@ function MultiViewMatchResults({ id, isEmpty = false }) {
                 <div className="multi-view-match-result-wrapper">
                     <MultiViewMatchCard id={id} />
                     <div className="bet-info-wrapper">
+                        <div className="fixed-background-image"></div>
                         <Info />
                         <div className="scroll-wrapper">
                             {/* <div className="internal-scroll-wrapper hide-scrollbar"> */}
@@ -327,10 +339,10 @@ function MultiViewMatchResults({ id, isEmpty = false }) {
                                     <ResultsContent />
                                     <ResultsContent isEmpty={true} />
                                 </div>
-                                <div className="background-image-1" >
+                                {/* <div className="background-image-1" >
                                     <ResultsContent />
                                     <ResultsContent isEmpty={true} />
-                                </div>
+                                </div> */}
                             {/* </div> */}
                         </div>
                     </div>

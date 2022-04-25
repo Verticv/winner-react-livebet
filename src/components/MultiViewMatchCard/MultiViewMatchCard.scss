@@ -340,10 +340,9 @@
     .scroll-wrapper {
       height: 248px;
       overflow-y: scroll;
-      
       .background-image {
         height: 248px;
-        background: url('../../imagesHold/match-bet--small-card.png');
+        // background: url('../../imagesHold/match-bet--small-card.png');
       }
       .background-image-1 {
         height: 250px;
@@ -606,8 +605,16 @@
     .bet-info-wrapper {
       position: relative;
       height: 288px;
-      // overflow-y: scroll;
-      // overflow-x: hidden;
+
+      .fixed-background-image {
+        position: absolute;
+        top: 40px;
+        left: 0;
+        height: 248px;
+        width: 100%;
+        z-index: -1;
+        background: url('../../imagesHold/match-bet--small-card.png');
+      }
 
       .info {
         position: absolute;
