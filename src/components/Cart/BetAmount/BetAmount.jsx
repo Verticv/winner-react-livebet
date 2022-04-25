@@ -31,7 +31,9 @@ function Amount({
             <p className="text">{title}</p>
             {withInput ? (
                 <div className="input-wrapper">
-                    <button onClick={() => setInputValue(0)}>
+                    <button onClick={() => setInputValue(Number(0).toLocaleString(undefined, {
+            minimumFractionDigits: 0,
+        }))}>
                         <img src={refresh} alt="" width="29" height="29" />
                     </button>
                     <input
