@@ -67,6 +67,7 @@ export default function LiveMatchCardMultiView({
             }
             return match
         }))
+        window.cardsData = newData;     
         updateMultiViewMatchesResults(newData)
 
         if (document.querySelectorAll('.empty-card')?.length === 1) {

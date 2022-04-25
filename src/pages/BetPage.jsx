@@ -16,7 +16,7 @@ export default function BetPage() {
     return (
         <div style={{ display: "flex" }} className="bet-page-wrapper">
             <LeagueSelectPopup />
-            <div className="bet-page-nav">
+            <div style={{minWidth: "1564px"}} className="bet-page-nav">
                 <div>
                     <div>
                         <BetNav />

@@ -51,42 +51,44 @@ export default function MultiViewSelectButtons() {
             name: "전체삭제",
             onclick: (event) => {
                 event.stopPropagation();
-                updateMultiViewMatchesResults([{
-                    id: 0,
+                const defaultMatchesResults = [{
+                    id: 101,
                     team1: "FC바로셀로나",
                     team2: "레알마드리드",
                     isEmpty: true,
                 },
                 {
-                    id: 1,
+                    id: 102,
                     team1: "FC바로셀로나",
                     team2: "레알마드리드",
                     isEmpty: true,
                 },
                 {
-                    id: 2,
+                    id: 103,
                     team1: "FC바로셀로나",
                     team2: "레알마드리드",
                     isEmpty: true,
                 },
                 {
-                    id: 3,
+                    id: 104,
                     team1: "FC바로셀로나",
                     team2: "레알마드리드",
                     isEmpty: true,
                 },
                 {
-                    id: 4,
+                    id: 105,
                     team1: "FC바로셀로나",
                     team2: "레알마드리드",
                     isEmpty: true,
                 },
                 {
-                    id: 5,
+                    id: 106,
                     team1: "FC바로셀로나",
                     team2: "레알마드리드",
                     isEmpty: true,
-                }])
+                }]
+                updateMultiViewMatchesResults(defaultMatchesResults)
+                window.cardsData = defaultMatchesResults
                 const notEmptyMatchCards = resultsCardsList.map(card => {
                     const newCard = {...card}
                     newCard.isEmpty = true

@@ -77,6 +77,7 @@
       .number-value {
         margin-top: 2px;
         font-family: RobotoMedium, sans-serif;
+        margin-right: 2px;
       }
       &.red-arrow {
         position: relative;
@@ -90,8 +91,8 @@
         .number-value {
           position: absolute;
           margin-left: 2.5px;
-          top: 17px;
-          left: 22px;
+          top: 18px;
+          left: 20px;
           margin-top: 0;
         }
       }
@@ -135,6 +136,7 @@
       .number-value {
         font-family: RobotoMedium, sans-serif;
         margin-top: 2px;
+        margin-left: 1px;
       }
       &.blue-arrow {
         position: relative;
@@ -150,7 +152,7 @@
           position: absolute;
           margin-left: -1px;
           top: 16px;
-          left: 22px;
+          left: 23px;
         }
       }
     }
