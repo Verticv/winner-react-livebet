@@ -30,6 +30,7 @@ export default function CardBody({
 }) {
     const [activeStar, setActiveStar] = useState(false)
     const [playActive, setPlayActive] = useState(false)
+    console.log('playActive', playActive)
 
     const mouseEnterHandler = () => setIsActive(true);
     const mouseLeaveHandler = () => setIsActive(false);
