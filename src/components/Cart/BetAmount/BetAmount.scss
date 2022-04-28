@@ -127,6 +127,7 @@
         background: url('../../../imagesHold/input-button-gold.png');
         background-repeat: round;
         color: black;
+        font-family: NotoSansCJKkr-Medium;
         &:hover {
           filter: brightness(115%);
         }
@@ -156,6 +157,7 @@
       align-items: center;
       background: url('../../../imagesHold/input-increase-button.png');
       background-repeat: round;
+      font-family: NotoSansCJKkr-Medium;
       &:hover {
         filter: brightness(115%);
       }

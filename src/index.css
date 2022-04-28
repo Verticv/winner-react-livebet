@@ -52,6 +52,11 @@
 }
 
 @font-face {
+  font-family: 'NotoSansCJKkr-Medium';
+  src: local('NotoSansCJKkr-Medium'), url(./fonts/NotoSansCJKkr-Medium.otf) format('opentype');
+}
+
+@font-face {
   font-family: 'Roboto-Regular';
   src: local('Roboto-Regular'), url(./fonts/Roboto-Regular.ttf) format('truetype');
 }
