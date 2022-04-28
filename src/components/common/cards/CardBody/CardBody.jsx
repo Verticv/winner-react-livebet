@@ -25,6 +25,7 @@ export default function CardBody({
     isActive,
     setIsActive,
     onClickHandler,
+    isPlayButtonActive = false,
     matchCard
 }) {
     const [activeStar, setActiveStar] = useState(false)
@@ -122,7 +123,7 @@ export default function CardBody({
                             <img
                                 className="ico-19"
                                 src={
-                                    playActive
+                                    isPlayButtonActive
                                         ? selectedPlayButton
                                         : playButton
                                 }

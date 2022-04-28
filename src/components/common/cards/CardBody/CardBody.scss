@@ -135,6 +135,9 @@
           font-weight: 600;
           color: #78b7e5;
         }
+        &:hover {
+          filter: brightness(115%);
+        }
       }
     }
   }

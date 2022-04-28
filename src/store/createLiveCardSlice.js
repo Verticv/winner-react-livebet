@@ -37,6 +37,7 @@ export const createLiveCardSlice = (set, get) => ({
             type:matchTypes.live,
             active: false,
             withHeader: true,
+            isPlayButtonActive: true,
             marginBottom: '10px',
         },
         {
@@ -59,6 +60,7 @@ export const createLiveCardSlice = (set, get) => ({
             type: matchTypes.live,
             active: false,
             withHeader: true,
+            isPlayButtonActive: true,
             marginBottom: '10px',
         },
         {
