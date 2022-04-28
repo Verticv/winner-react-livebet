@@ -34,6 +34,7 @@ export default function SingleView() {
             type: matchTypes.live,
             active: true,
             withHeader: true,
+            isPlayButtonActive: true,
             marginBottom: '10px',
         },
         {
@@ -56,6 +57,7 @@ export default function SingleView() {
             type: matchTypes.live,
             active: false,
             withHeader: true,
+            isPlayButtonActive: true,
             marginBottom: '10px',
         },
         {
@@ -127,6 +129,7 @@ export default function SingleView() {
             type: matchTypes.live,
             active: true,
             withHeader: true,
+            isPlayButtonActive: true,
             marginBottom: '10px',
         },
         {
@@ -149,6 +152,7 @@ export default function SingleView() {
             type: matchTypes.live,
             active: false,
             withHeader: true,
+            isPlayButtonActive: true,
             marginBottom: '10px',
         },
         {

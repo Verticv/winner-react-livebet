@@ -22,7 +22,7 @@
 
     .navbar-button-inner {
       height: 100%;
-      background: linear-gradient(to top, #a99365, #baa375);
+      background: linear-gradient(to top, #d8bc6f, #aa8f60 50%, #d6c8a5);
 
       .navbar-button-content {
         color: black;
@@ -117,11 +117,11 @@
 
               img {
                 margin: auto;
-                filter: invert(0.4);
+                // filter: invert(0.4);
               }
 
               p {
-                font-family: NotoSansCJKkr-Regular;
+                font-family: NotoSansCJKkr-Medium;
                 margin-top: 3px;
 
                 &.english {
@@ -319,8 +319,7 @@
 
         p {
           margin-top: 5px;
-
-          font-family: NotoSansCJKkr-Regular;
+          font-family: NotoSansCJKkr-Medium;
           font-size: 14px;
         }
       }
