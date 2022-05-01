@@ -22,6 +22,10 @@ export default function CardFooter({ matchCard, isActive, setIsActive }) {
     const [leftActive, setLeftActive] = useState(isLeftArrowActive);
     const [rightActive, setRightActive] = useState(isRightArrowActive);
 
+    const [leftActiveBackground, setLeftActiveBackground] = useState(false)
+    const [middleActiveBackground, setMiddleActiveBackground] = useState(false)
+    const [rightActiveBackground, setRightActiveBackground] = useState(false)
+
     const addBetSlipBet = useStore((s) => s.addBetSlipBet);
     useEffect(() => {
         setRightActive(isRightArrowActive)
@@ -36,7 +40,12 @@ export default function CardFooter({ matchCard, isActive, setIsActive }) {
 
     return (
         <div className={`card-footer-wrapper ${isActive ? "active" : ""}`}>
-            <div onClick={handleClick} className={`left ${leftActive ? "active" : ""}`}>
+            <div onClick={(e) => {
+                handleClick(e)
+                setLeftActiveBackground(prev => !prev)
+                setMiddleActiveBackground(false)
+                setRightActiveBackground(false)
+            }} className={`left ${leftActive ? "active" : ""} ${leftActiveBackground ? "active-background" : ""}`}>
                 <p className="text">{team1}</p>
                 <div
                     className={`number ${leftActive ? "red-arrow" : ""}`}
@@ -46,9 +55,19 @@ export default function CardFooter({ matchCard, isActive, setIsActive }) {
                 </div>
             </div>
             <div className="middle">
-                <div onClick={handleClick} className="middle-content">{tieKof.toFixed(2)}</div>
+                <div onClick={(e) => {
+                    handleClick(e);
+                    setLeftActiveBackground(false)
+                    setMiddleActiveBackground(prev => !prev)
+                    setRightActiveBackground(false)
+                }} className={`middle-content ${middleActiveBackground ? "active" : ""}`}>{tieKof.toFixed(2)}</div>
             </div>
-            <div onClick={handleClick} className={`right ${rightActive ? "active" : ""}`}>
+            <div onClick={(e) => {
+                handleClick(e)
+                setLeftActiveBackground(false)
+                setMiddleActiveBackground(false)
+                setRightActiveBackground(prev => !prev)
+                }} className={`right ${rightActive ? "active" : ""} ${rightActiveBackground ? "active-background" : ""}`}>
                 <div
                     className={`number ${
                         rightActive ? "blue-arrow" : ""
