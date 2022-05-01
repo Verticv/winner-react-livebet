@@ -26,17 +26,35 @@ export default function CardBody({
     setIsActive,
     onClickHandler,
     isPlayButtonActive = false,
-    matchCard
+    matchCard,
+    isActiveStar = false,
+    data = [],
+    setData
 }) {
+
+    console.log('isActiveStar', isActiveStar)
     const [activeStar, setActiveStar] = useState(false)
     const [playActive, setPlayActive] = useState(false)
     console.log('playActive', playActive)
+    const updateFavoritesMatches = useStore(
+        (state) => state.updateFavoritesMatches
+    );
+    const selectedNav = useStore((state) => state.selectedNav);
 
     const mouseEnterHandler = () => setIsActive(true);
     const mouseLeaveHandler = () => setIsActive(false);
     const playMouseEnterHandler = () => setPlayActive(true);
     const playMouseLeaveHandler = () => setPlayActive(false);
-    const starHandler = () => setActiveStar(prev => !prev);
+    const starHandler = () => {
+        setActiveStar(prev => !prev);
+        
+        if (selectedNav === 0) {
+            const newData = [...data].filter(card => card.id !== id)
+            console.log('newData', newData)
+            updateFavoritesMatches(newData)
+            setData(newData)
+        }
+    }
 
     const changePlayingMatchId = useStore(
         (state) => state.changePlayingMatchId
@@ -53,7 +71,7 @@ export default function CardBody({
         >
             <div className="left">
                 <div className="star">
-                    <img onClick={starHandler} src={activeStar ? goldStar : whiteStar} alt="" width="18" height="18" />
+                    <img onClick={starHandler} src={activeStar || isActiveStar ? goldStar : whiteStar} alt="" width="18" height="18" />
                 </div>
                 <div className="teams-wrapper">
                     <div className="team-1">

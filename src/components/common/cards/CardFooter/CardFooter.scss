@@ -107,6 +107,9 @@
     &:hover {
       background: linear-gradient(to right, #9b2f30, #9b2f30 25%, #9a2f30 50%, #872d2f 63%, #722a2e 75%, #5d282e);
     }
+    &.active-background {
+        background: linear-gradient(to right, #9b2f30, #9b2f30 25%, #9a2f30 50%, #872d2f 63%, #722a2e 75%, #5d282e);
+    }
   }
   .right {
     height: 32px;
@@ -157,6 +160,9 @@
       }
     }
     &:hover {
+      background: linear-gradient(to left, #9b2f30, #9b2f30 25%, #9a2f30 50%, #872d2f 63%, #722a2e 75%, #5d282e);
+    }
+    &.active-background {
       background: linear-gradient(to left, #9b2f30, #9b2f30 25%, #9a2f30 50%, #872d2f 63%, #722a2e 75%, #5d282e);
     }
   }
