@@ -27,30 +27,30 @@ export const createBetSlipBetSlice = (set, get) => ({
         );
     },
 
-    multiViewBetSlipBets: [],
-    addMultiViewBetSlipBet: (newBet) => {
-        const newObj = {...newBet}
-        newObj.id = Math.random();
-        set(
-            produce((state) => {
-                state.multiViewBetSlipBets.push(newObj);
-            })
-        );
-    },
-    removeMultiViewBetSlipBet: (id) => {
-        set(
-            produce((state) => {
-                const newArr = state.multiViewBetSlipBets.filter((bet) => bet.id !== id)
-                state.multiViewBetSlipBets = newArr;
-            })
-        );
-    },
-    removeMultiViewAllBetSlipBet: () => {
-        set(
-            produce((state) => {
-                state.multiViewBetSlipBets = [];
-            })
-        );
-    },
+    // multiViewBetSlipBets: [],
+    // addMultiViewBetSlipBet: (newBet) => {
+    //     const newObj = {...newBet}
+    //     newObj.id = Math.random();
+    //     set(
+    //         produce((state) => {
+    //             state.multiViewBetSlipBets.push(newObj);
+    //         })
+    //     );
+    // },
+    // removeMultiViewBetSlipBet: (id) => {
+    //     set(
+    //         produce((state) => {
+    //             const newArr = state.multiViewBetSlipBets.filter((bet) => bet.id !== id)
+    //             state.multiViewBetSlipBets = newArr;
+    //         })
+    //     );
+    // },
+    // removeMultiViewAllBetSlipBet: () => {
+    //     set(
+    //         produce((state) => {
+    //             state.multiViewBetSlipBets = [];
+    //         })
+    //     );
+    // },
 
 });

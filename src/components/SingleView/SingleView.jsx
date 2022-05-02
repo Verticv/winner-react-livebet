@@ -270,7 +270,7 @@ export default function SingleView() {
 
 
     const favoriteMatchCardsData = useStore((state) => state.favoriteMatches);
-    const [favoriteMatchCards, setFavoriteMatchCards] = useState([])
+    const [favoriteMatchCards, setFavoriteMatchCards] = useState(favoriteMatchCardsData)
     console.log('favoriteMatchCards', favoriteMatchCards)
 
     
@@ -458,7 +458,7 @@ export default function SingleView() {
                     <>
                         <div>
                             <MatchCards
-                                data={favoriteMatchCardsData}
+                                data={favoriteMatchCards}
                                 setData={setFavoriteMatchCards}
                                 isFavoriteCard={true}
                                 isRed={true}
@@ -466,7 +466,7 @@ export default function SingleView() {
                         </div>
                         <LiveUpcomingMatchesCount />
                         <UpcomingMatches
-                            data={favoriteMatchCardsData}
+                            data={favoriteMatchCards}
                             setData={setFavoriteMatchCards}
                             isFavorite={true}
                         />

@@ -24,4 +24,10 @@ export const createSingleMultiSlice = (set, get) => ({
             state.hideMiddleComponent = false;
         });
     },
+    currentActiveBetCard: '',
+    changeCurrentActiveBetCard: (newCardModifier) => {
+        set((state) => {
+            state.currentActiveBetCard = newCardModifier;
+        });
+    },
 });

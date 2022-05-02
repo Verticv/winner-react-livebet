@@ -14,6 +14,7 @@ export default function LiveMatchCardsMultiView() {
                     {cardsList.map((data) => (
                         <LiveMatchCardMultiView {...data} />
                     ))}
+                    <div style={{position: 'absolute', bottom: 0, left: 0, width: '100%', background: 'black', height: '5px'}} />
                 </div>
             ) : (
                 <div

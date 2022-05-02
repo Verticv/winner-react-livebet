@@ -10,6 +10,8 @@ import "./CardFooter.scss";
 
 export default function CardFooter({ matchCard, isActive, setIsActive }) {
     const {
+        id,
+        league,
         team1 = "FC바로셀로나",
         team2 = "레알마드리드",
         team1WinKof = 5.01,
@@ -21,6 +23,9 @@ export default function CardFooter({ matchCard, isActive, setIsActive }) {
 
     const [leftActive, setLeftActive] = useState(isLeftArrowActive);
     const [rightActive, setRightActive] = useState(isRightArrowActive);
+    const selectedNav = useStore((state) => state.selectedNav);
+    const currentActiveBetCard = useStore((state) => state.currentActiveBetCard);
+    const changeCurrentActiveBetCard = useStore((state) => state.changeCurrentActiveBetCard);
 
     const [leftActiveBackground, setLeftActiveBackground] = useState(false)
     const [middleActiveBackground, setMiddleActiveBackground] = useState(false)
@@ -32,6 +37,20 @@ export default function CardFooter({ matchCard, isActive, setIsActive }) {
         setLeftActive(isLeftArrowActive)
     }, [isLeftArrowActive, isRightArrowActive])
 
+    useEffect(() => {
+        setLeftActiveBackground(false)
+        setMiddleActiveBackground(false)
+        setRightActiveBackground(false)
+    }, [selectedNav])
+
+    useEffect(() => {  
+        if (id+league !== currentActiveBetCard) {
+            setLeftActiveBackground(false)
+            setMiddleActiveBackground(false)
+            setRightActiveBackground(false)
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [currentActiveBetCard])
 
     const handleClick = (event) => {
         event.stopPropagation();
@@ -45,6 +64,7 @@ export default function CardFooter({ matchCard, isActive, setIsActive }) {
                 setLeftActiveBackground(prev => !prev)
                 setMiddleActiveBackground(false)
                 setRightActiveBackground(false)
+                changeCurrentActiveBetCard(id+league)
             }} className={`left ${leftActive ? "active" : ""} ${leftActiveBackground ? "active-background" : ""}`}>
                 <p className="text">{team1}</p>
                 <div
@@ -60,6 +80,7 @@ export default function CardFooter({ matchCard, isActive, setIsActive }) {
                     setLeftActiveBackground(false)
                     setMiddleActiveBackground(prev => !prev)
                     setRightActiveBackground(false)
+                    changeCurrentActiveBetCard(id+league)
                 }} className={`middle-content ${middleActiveBackground ? "active" : ""}`}>{tieKof.toFixed(2)}</div>
             </div>
             <div onClick={(e) => {
@@ -67,6 +88,7 @@ export default function CardFooter({ matchCard, isActive, setIsActive }) {
                 setLeftActiveBackground(false)
                 setMiddleActiveBackground(false)
                 setRightActiveBackground(prev => !prev)
+                changeCurrentActiveBetCard(id+league)
                 }} className={`right ${rightActive ? "active" : ""} ${rightActiveBackground ? "active-background" : ""}`}>
                 <div
                     className={`number ${

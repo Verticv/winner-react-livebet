@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import _ from "lodash" 
 
 import useStore from "store/useStore";
@@ -13,10 +13,10 @@ import downBlueArrow from "imagesHold/cards/blue-arrow-down.png";
 
 import "./MultiViewMatchCard.scss";
 
-function MultiViewMatchCard({ id }) {
+function MultiViewMatchCard({ index, id }) {
     return (
         <div className="multi-view-match-card-wrapper">
-            <CardHeader id={id} />
+            <CardHeader index={index} id={id} />
             <CardSubHeader />
             <CardBody />
         </div>
@@ -69,6 +69,9 @@ const matchBets = [
 ];
 
 function ResultsRow({
+    activeCard,
+    setActiveCard,
+    id,
     isActive: isRowActive,
     option1,
     option2,
@@ -77,15 +80,35 @@ function ResultsRow({
     tieKof,
     bet,
 }) {
-    const addMultiViewBetSlipBet = useStore((s) => s.addMultiViewBetSlipBet);
+    const addBetSlipBet = useStore((s) => s.addBetSlipBet);
     const handleClick = (event) => {
         event.stopPropagation();
-        addMultiViewBetSlipBet(bet);
+        addBetSlipBet(bet);
     };
+
+    const [leftActiveBackground, setLeftActiveBackground] = useState(false);
+    const [middleActiveBackground, setMiddleActiveBackground] = useState(false);
+    const [rightActiveBackground, setRightActiveBackground] = useState(false);
+
+    
+    useEffect(() => {
+        if (activeCard !== id ) {
+            setLeftActiveBackground(false)
+            setMiddleActiveBackground(false)
+            setRightActiveBackground(false)
+        }
+    }, [id, activeCard])
 
     return (
         <div onClick={handleClick} className="match-results-wrapper">
-            <div className="left">
+            <div 
+            onClick={() => {
+                setLeftActiveBackground((prev) => !prev);
+                setMiddleActiveBackground(false);
+                setRightActiveBackground(false);
+                setActiveCard(id)
+            }}
+            className={`left ${leftActiveBackground ? "active" : ""}`}>
                 <p className="text">{option1}</p>
             </div>
             <div className={`number1 ${isRowActive ? "red-arrow" : ""}`}>
@@ -93,16 +116,30 @@ function ResultsRow({
                 <div className="number-value">{kof1?.toFixed(2)}</div>
             </div>
 
-            <div className="middle">
+            <div 
+            onClick={() => {
+                setLeftActiveBackground(false);
+                setMiddleActiveBackground((prev) => !prev);
+                setRightActiveBackground(false);
+                setActiveCard(id)
+            }}
+            className="middle">
                 <div className="left"></div>
-                <div className="middle-content">{tieKof?.toFixed(2)}</div>
+                <div className={`middle-content ${middleActiveBackground ? "active" : ""}`}>{tieKof.toFixed(2)}</div>
                 <div className="right"></div>
             </div>
             <div className={`number2 ${isRowActive ? "blue-arrow" : ""}`}>
                 {isRowActive && <img src={downBlueArrow} alt="" />}
                 <div className="number-value">{kof2?.toFixed(2)}</div>
             </div>
-            <div className="right">
+            <div 
+             onClick={() => {
+                setLeftActiveBackground(false);
+                setMiddleActiveBackground(false);
+                setRightActiveBackground((prev) => !prev);
+                setActiveCard(id)
+            }}
+            className={`right ${rightActiveBackground ? "active" : ""}`}>
                 <p className="text">{option2}</p>
             </div>
             <div
@@ -153,6 +190,7 @@ function ResultsRow({
 
 function MatchDetail({ bet, isEmpty = false }) {
     const [isShowing, setIsShowing] = useState(true);
+    const [activeCard, setActiveCard] = useState(0);
     const handleToggleIsShowing = () => {
         setIsShowing((prev) => !prev);
     };
@@ -192,6 +230,9 @@ function MatchDetail({ bet, isEmpty = false }) {
                 <div className="match-details-content">
                     <div style={{ marginBottom: "4px", width: "100%" }}>
                         <ResultsRow
+                            id={0}
+                            activeCard={activeCard}
+                            setActiveCard={setActiveCard}
                             bet={bet}
                             isActive={isActive}
                             option1={option1}
@@ -203,6 +244,9 @@ function MatchDetail({ bet, isEmpty = false }) {
                     </div>
                     <div style={{ marginBottom: "4px", width: "100%" }}>
                         <ResultsRow
+                            id={1}
+                            activeCard={activeCard}
+                            setActiveCard={setActiveCard}
                             bet={bet}
                             isActive={isActive}
                             option1={option1}
@@ -213,6 +257,9 @@ function MatchDetail({ bet, isEmpty = false }) {
                         />
                     </div>
                     <ResultsRow
+                        id={2}
+                        activeCard={activeCard}
+                        setActiveCard={setActiveCard}
                         bet={bet}
                         isActive={isActive}
                         option1={option1}
@@ -249,7 +296,7 @@ function ResultsContent({ isEmpty = false }) {
     );
 }
 
-function MultiViewMatchResults({ id, isEmpty = false }) {
+function MultiViewMatchResults({ index, id, isEmpty = false }) {
     const resultsCardsList = useStore(
         (state) => state.multiViewLiveMatchResultsCards
     );
@@ -329,7 +376,7 @@ function MultiViewMatchResults({ id, isEmpty = false }) {
                 ></div>
             ) : (
                 <div className="multi-view-match-result-wrapper">
-                    <MultiViewMatchCard id={id} />
+                    <MultiViewMatchCard index={index} id={id} />
                     <div className="bet-info-wrapper">
                         <div className="fixed-background-image"></div>
                         <Info />
@@ -371,8 +418,8 @@ export default function MultiViewMatchCards() {
 
     return (
         <div className="multi-view-match-results-wrapper">
-            {resultsCardsList.map(({ id, isEmpty }) => {
-                return <MultiViewMatchResults id={id} isEmpty={isEmpty} />;
+            {resultsCardsList.map(({ id, isEmpty }, index) => {
+                return <MultiViewMatchResults index={index} id={id} isEmpty={isEmpty} />;
             })}
         </div>
     );
