@@ -13,10 +13,10 @@ import downBlueArrow from "imagesHold/cards/blue-arrow-down.png";
 
 import "./MultiViewMatchCard.scss";
 
-function MultiViewMatchCard({ id }) {
+function MultiViewMatchCard({ index, id }) {
     return (
         <div className="multi-view-match-card-wrapper">
-            <CardHeader id={id} />
+            <CardHeader index={index} id={id} />
             <CardSubHeader />
             <CardBody />
         </div>
@@ -249,7 +249,7 @@ function ResultsContent({ isEmpty = false }) {
     );
 }
 
-function MultiViewMatchResults({ id, isEmpty = false }) {
+function MultiViewMatchResults({ index, id, isEmpty = false }) {
     const resultsCardsList = useStore(
         (state) => state.multiViewLiveMatchResultsCards
     );
@@ -329,7 +329,7 @@ function MultiViewMatchResults({ id, isEmpty = false }) {
                 ></div>
             ) : (
                 <div className="multi-view-match-result-wrapper">
-                    <MultiViewMatchCard id={id} />
+                    <MultiViewMatchCard index={index} id={id} />
                     <div className="bet-info-wrapper">
                         <div className="fixed-background-image"></div>
                         <Info />
@@ -371,8 +371,8 @@ export default function MultiViewMatchCards() {
 
     return (
         <div className="multi-view-match-results-wrapper">
-            {resultsCardsList.map(({ id, isEmpty }) => {
-                return <MultiViewMatchResults id={id} isEmpty={isEmpty} />;
+            {resultsCardsList.map(({ id, isEmpty }, index) => {
+                return <MultiViewMatchResults index={index} id={id} isEmpty={isEmpty} />;
             })}
         </div>
     );
