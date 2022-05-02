@@ -68,8 +68,9 @@ function AmountDetails({
 }
 
 export default function BetSlip() {
-    const singleOrMulti = useStore((state) => state.singleOrMulti);
-    const isSingleView = singleOrMulti === singleOrMultiOptions.single;
+    const singleOrMultiBet = useStore((state) => state.singleOrMultiBet);
+    const isSingleViewBet = singleOrMultiBet === singleOrMultiOptions.single;
+
     const selectedNav = useStore((state) => state.selectedNav);
 
     const dateFormat = "yyyy-MM-dd"
@@ -115,7 +116,7 @@ export default function BetSlip() {
                     </div>
                 </div>
                 <BetSlipLayout />
-                {isSingleView ? <BetSlipBets /> : <MultiViewBetSlipBets />}
+                {isSingleViewBet ? <BetSlipBets /> : <MultiViewBetSlipBets />}
                 <BetAmount />
                 <div className="my-bets-wrapper">
                     <div className="bets-content">

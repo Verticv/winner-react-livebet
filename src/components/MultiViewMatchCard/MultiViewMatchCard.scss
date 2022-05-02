@@ -95,7 +95,7 @@
               margin-right: 1px;
             }
 
-            // &:hover,
+            
             &.active {
               // 7f2c30
               background: linear-gradient(to left, #7f2c30, #812c2f);
@@ -113,6 +113,9 @@
                 left: 1px;
                 background: linear-gradient(to right, #ab615a, #9b5651 50%, #8b4c49);
               }
+            }
+            &:hover {
+              filter: brightness(130%);
             }
           }
         }

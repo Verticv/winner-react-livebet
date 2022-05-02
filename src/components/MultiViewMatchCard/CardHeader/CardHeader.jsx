@@ -59,8 +59,9 @@ export default function CardHeader({ id, league = "라리가" }) {
             <div className="right">
                 <button
                     className={`watch ${playActive ? "active" : ""}`}
-                    onMouseEnter={() => setIsPlayActive(true)}
-                    onMouseLeave={() => setIsPlayActive(false)}
+                    onClick={() => setIsPlayActive(prev => !prev)}
+                    // onMouseEnter={() => setIsPlayActive(true)}
+                    // onMouseLeave={() => setIsPlayActive(false)}
                 >
                     <div>
                         <img
@@ -78,8 +79,9 @@ export default function CardHeader({ id, league = "라리가" }) {
                 </button>
                 <button
                     className={`ground ${stadiumActive ? "active" : ""}`}
-                    onMouseEnter={() => setIsStadiumActive(true)}
-                    onMouseLeave={() => setIsStadiumActive(false)}
+                    onClick={() => setIsStadiumActive(prev => !prev)}
+                    // onMouseEnter={() => setIsStadiumActive(true)}
+                    // onMouseLeave={() => setIsStadiumActive(false)}
                 >
                     <div>
                         <img
