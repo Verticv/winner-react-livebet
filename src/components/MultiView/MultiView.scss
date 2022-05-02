@@ -1,7 +1,7 @@
 @import 'variables.scss';
 
 .multi-view-cards-wrapper {
-  width: 1540px;
+  width: 1539px;
   display: flex;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -10,7 +10,7 @@
   position: sticky;
   top: 0;
   z-index: 20;
-  background: black;
+  background: #222226;
   height: 121px;
 
   .multi-view-card-wrapper {
