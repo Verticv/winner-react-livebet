@@ -6,7 +6,6 @@ import "./BetSlipLayout.scss";
 export default function BetSlipLayout() {
     const singleOrMultiBet = useStore((state) => state.singleOrMultiBet);
     const changeSingleOrMultiBet = useStore((state) => state.changeSingleOrMultiBet);
-
     return (
         <div className="cart-select-layout">
             <button

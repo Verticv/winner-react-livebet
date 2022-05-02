@@ -77,10 +77,10 @@ function ResultsRow({
     tieKof,
     bet,
 }) {
-    const addMultiViewBetSlipBet = useStore((s) => s.addMultiViewBetSlipBet);
+    const addBetSlipBet = useStore((s) => s.addBetSlipBet);
     const handleClick = (event) => {
         event.stopPropagation();
-        addMultiViewBetSlipBet(bet);
+        addBetSlipBet(bet);
     };
 
     return (

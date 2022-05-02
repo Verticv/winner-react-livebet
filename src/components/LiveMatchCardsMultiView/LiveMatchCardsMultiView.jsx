@@ -10,7 +10,7 @@ export default function LiveMatchCardsMultiView() {
     return (
         <>
             {length ? (
-                <div style={{position: 'relative'}} className="multi-view-cards-wrapper">
+                <div className="multi-view-cards-wrapper">
                     {cardsList.map((data) => (
                         <LiveMatchCardMultiView {...data} />
                     ))}

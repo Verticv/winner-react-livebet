@@ -3,12 +3,10 @@ import React, { useEffect, useState } from "react";
 import { format } from 'date-fns'
 import { ko } from "date-fns/locale"
 import useStore from "store/useStore";
-
 import { singleOrMultiOptions } from "helpers/constants";
 
 import BetAmount from "./BetAmount/BetAmount";
 import BetSlipBets from "./BetSlipBets/BetSlipBets";
-import MultiViewBetSlipBets from "./BetSlipBets/MultiViewBetSlipBets";
 import BetSlipLayout from "./BetSlipLayout/BetSlipLayout";
 import checksIcon from "../../imagesHold/checks.png";
 import cartIcon from "../../imagesHold/ico_3.png";
@@ -68,10 +66,18 @@ function AmountDetails({
 }
 
 export default function BetSlip() {
-    const singleOrMultiBet = useStore((state) => state.singleOrMultiBet);
-    const isSingleViewBet = singleOrMultiBet === singleOrMultiOptions.single;
-
     const selectedNav = useStore((state) => state.selectedNav);
+
+    const changeSingleOrMultiBet = useStore((state) => state.changeSingleOrMultiBet);
+        const betSlipBets = useStore((state) => state.betSlipBets);
+
+    useEffect(() =>  {
+        console.log('betSlipBets.length', betSlipBets.length)
+        if (betSlipBets.length > 1) {
+            changeSingleOrMultiBet(singleOrMultiOptions.multi)
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [betSlipBets])
 
     const dateFormat = "yyyy-MM-dd"
     const dateFormat1 = "H:mm:ss"
@@ -116,7 +122,7 @@ export default function BetSlip() {
                     </div>
                 </div>
                 <BetSlipLayout />
-                {isSingleViewBet ? <BetSlipBets /> : <MultiViewBetSlipBets />}
+                <BetSlipBets />
                 <BetAmount />
                 <div className="my-bets-wrapper">
                     <div className="bets-content">
