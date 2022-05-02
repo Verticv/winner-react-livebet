@@ -24,9 +24,11 @@ export default function LiveMatchCardsMultiView() {
                         display: "flex",
                         justifyContent: "center",
                         alignItems: "center",
+                        position: 'relative',
                     }}
                     className="multi-view-cards-wrapper"
                 >
+                    <div style={{position: 'absolute', bottom: 0, left: 0, width: '100%', background: 'black', height: '5px'}} />
                     경기정보가 없습니다
                 </div>
             )}
