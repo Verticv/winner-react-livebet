@@ -88,11 +88,13 @@
               height: 10px;
               background: url('../../imagesHold/m-card-fade.png');
               background-repeat: round;
-              // m-card-fade
             }
 
             &.close {
               margin-right: 1px;
+              &:hover {
+                filter: brightness(140%);
+              }
             }
 
             
