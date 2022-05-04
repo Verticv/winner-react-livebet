@@ -88,11 +88,13 @@
               height: 10px;
               background: url('../../imagesHold/m-card-fade.png');
               background-repeat: round;
-              // m-card-fade
             }
 
             &.close {
               margin-right: 1px;
+              &:hover {
+                filter: brightness(140%);
+              }
             }
 
             
@@ -252,10 +254,10 @@
                   font-family: Roboto, sans-serif;
                   font-size: 10px;
                   letter-spacing: 0;
-                  line-height: 12px;
+                  line-height: 11px;
                   text-align: center;
                   text-transform: uppercase;
-                  margin-top: -1px;
+                  // margin-top: -1px;
                 }
               }
             }
@@ -655,7 +657,7 @@
           margin-left: 11px;
   
           .number {
-            font-family: Roboto, sans-serif;
+            font-family: Roboto-Regular, sans-serif;
   
             span {
               color: #ffcc66;

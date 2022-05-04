@@ -7,7 +7,6 @@ import stadium from "../../../imagesHold/m-card-stadium.png";
 import close from "../../../imagesHold/m-card-close.png";
 import play from "../../../imagesHold/m-card-play.png";
 import activeStadium from "../../../imagesHold/m-card-stadium-active.png";
-import activeClose from "../../../imagesHold/m-card-close-active.png";
 import activePlay from "../../../imagesHold/m-card-play-active.png";
 
 export default function CardHeader({ index, id, league = "라리가" }) {
@@ -20,7 +19,6 @@ export default function CardHeader({ index, id, league = "라리가" }) {
     const addNewMatch = useStore((state) => state.addNewMatch);
     const [playActive, setIsPlayActive] = useState(false);
     const [stadiumActive, setIsStadiumActive] = useState(false);
-    const [closeActive, setIsCloseActive] = useState(false);
 
     useEffect(() => {
         if (index === 0) {
@@ -96,9 +94,9 @@ export default function CardHeader({ index, id, league = "라리가" }) {
                     {stadiumActive && <div className="fade"></div>}
                 </button>
                 <button
-                    className={`close ${closeActive ? "active" : ""}`}
-                    onMouseEnter={() => setIsCloseActive(true)}
-                    onMouseLeave={() => setIsCloseActive(false)}
+                    className={`close`}
+                    // onMouseEnter={() => setIsCloseActive(true)}
+                    // onMouseLeave={() => setIsCloseActive(false)}
                     onClick={() => {
                         closeHandler(id);
                     }}
@@ -106,14 +104,14 @@ export default function CardHeader({ index, id, league = "라리가" }) {
                     <div>
                         <img
                             className="ball"
-                            src={closeActive ? activeClose : close}
+                            src={close}
                             alt=""
                         />
                     </div>
                     <div className="left-line-1"></div>
                     <div className="left-line-2"></div>
-                    {closeActive && <div className="line"></div>}
-                    {closeActive && <div className="fade"></div>}
+                    {/* {closeActive && <div className="line"></div>}
+                    {closeActive && <div className="fade"></div>} */}
                 </button>
             </div>
         </div>
