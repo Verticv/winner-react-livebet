@@ -99,7 +99,7 @@ export default function BetSlip() {
                         <div className="line"></div>
                         <div className="content">
                             <div>
-                                <img src={cartIcon} alt="" width="24" height="23" />
+                                <img className="cart-icon" src={cartIcon} alt="" width="24" height="23" />
                                 <p className="text">betslip</p>
                                 <div className="circle">
                                     <p>2</p>
