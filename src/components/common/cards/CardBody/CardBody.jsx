@@ -45,7 +45,8 @@ export default function CardBody({
     const mouseLeaveHandler = () => setIsActive(false);
     const playMouseEnterHandler = () => setPlayActive(true);
     const playMouseLeaveHandler = () => setPlayActive(false);
-    const starHandler = () => {
+    const starHandler = (event) => {
+        event.stopPropagation()
         setActiveStar(prev => !prev);
         
         if (selectedNav === 0) {
