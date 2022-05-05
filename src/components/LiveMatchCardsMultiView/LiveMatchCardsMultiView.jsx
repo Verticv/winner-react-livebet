@@ -21,7 +21,7 @@ export default function LiveMatchCardsMultiView() {
                     style={{
                         background: "#222226",
                         color: "#717172",
-                        fontSize: "13px",
+                        fontSize: "15px",
                         display: "flex",
                         justifyContent: "center",
                         alignItems: "center",
