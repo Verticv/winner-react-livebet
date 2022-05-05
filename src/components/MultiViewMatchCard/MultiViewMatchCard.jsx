@@ -370,10 +370,15 @@ function MultiViewMatchResults({ index, id, isEmpty = false }) {
         <>
             {isEmpty ? (
                 <div
-                    style={{ opacity: isOver ? "0.5" : "" }}
+                    style={{ opacity: isOver ? "0.5" : ""}}
                     ref={drop}
                     className="empty-card"
-                ></div>
+                >
+                    <div className="content">
+                        <p>상단에 있는 경기를 더블클릭하거나</p>
+                        <p>여기로 드래그 하세요.</p>
+                    </div>
+                </div>
             ) : (
                 <div className="multi-view-match-result-wrapper">
                     <MultiViewMatchCard index={index} id={id} />

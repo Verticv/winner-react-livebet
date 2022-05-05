@@ -6,6 +6,7 @@ import "./BetSlipLayout.scss";
 export default function BetSlipLayout() {
     const singleOrMultiBet = useStore((state) => state.singleOrMultiBet);
     const changeSingleOrMultiBet = useStore((state) => state.changeSingleOrMultiBet);
+    const betSlipBets = useStore((s) => s.betSlipBets);
     return (
         <div className="cart-select-layout">
             <button
@@ -19,7 +20,11 @@ export default function BetSlipLayout() {
                 <p>싱글</p>
             </button>
             <button
-                onClick={() => changeSingleOrMultiBet(singleOrMultiOptions.multi)}
+                onClick={() => {
+                    if (betSlipBets.length !== 1 ) {
+                        changeSingleOrMultiBet(singleOrMultiOptions.multi)
+                    }
+                }}
                 className={`select-layout-second-button ${
                     singleOrMultiBet === singleOrMultiOptions.multi ? "active" : ""
                 }`}
