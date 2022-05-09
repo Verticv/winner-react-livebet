@@ -71,6 +71,8 @@ export default function LiveMatchCardMultiView({
     useEffect(() => {
         if (selectedNav === 0) {
             setActiveStar(true);
+        } else {
+            setActiveStar(false);
         }
     }, [selectedNav]);
 
