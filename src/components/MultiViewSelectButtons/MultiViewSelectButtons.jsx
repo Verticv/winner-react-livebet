@@ -4,12 +4,36 @@ import useStore from "store/useStore";
 import ViewSelectButton from "../common/ViewSelectButton/ViewSelectButton";
 
 export default function MultiViewSelectButtons() {
+    const selectedNav = useStore((state) => state.selectedNav);
     const [activeButton, setActiveButton] = useState(0);
-    const cardsList = useStore((state) => state.multiViewLiveMatchCards);
-    const updateMultiViewMatches = useStore((state) => state.updateMultiViewMatches);
-    const resultsCardsList = useStore((state) => state.multiViewLiveMatchResultsCards);
-    const updateMultiViewMatchesResults = useStore((state) => state.updateMultiViewMatchesResults);
+    const multiViewLiveMatchCards = useStore(
+        (state) => state.multiViewLiveMatchCards
+    );
+    const favoriteMultiViewLiveMatchCards = useStore(
+        (state) => state.favoriteMultiViewLiveMatchCards
+    );
 
+    const updateMultiViewMatches = useStore(
+        (state) => state.updateMultiViewMatches
+    );
+    const updateFavoriteMultiViewMatches = useStore(
+        (state) => state.updateFavoriteMultiViewMatches
+    );
+    const resultsCardsList = useStore(
+        (state) => state.multiViewLiveMatchResultsCards
+    );
+    const updateMultiViewMatchesResults = useStore(
+        (state) => state.updateMultiViewMatchesResults
+    );
+    const updateFavoriteMultiViewMatchesResults = useStore(
+        (state) => state.updateFavoriteMultiViewMatchesResults
+    );
+
+    let cardsList = multiViewLiveMatchCards;
+
+    if (selectedNav === 0) {
+        cardsList = favoriteMultiViewLiveMatchCards;
+    }
 
     const views = [
         {
@@ -18,31 +42,41 @@ export default function MultiViewSelectButtons() {
             onclick: (event) => {
                 event.stopPropagation();
                 if (cardsList.length > 0) {
-                    
-                    const newMatchCards = [...cardsList, ...resultsCardsList]
-                    const lastId = newMatchCards[newMatchCards.length - 1].id
-                    const newData = [{
-                        id: lastId + 1,
-                        team1: "FC바로셀로나",
-                        team2: "레알마드리드",
-                        isEmpty: true,
-                    },
-                    {
-                        id: lastId + 2,
-                        team1: "FC바로셀로나",
-                        team2: "레알마드리드",
-                        isEmpty: true,
-                    },
-                    {
-                        id: lastId + 3,
-                        team1: "FC바로셀로나",
-                        team2: "레알마드리드",
-                        isEmpty: true,
-                    }]
-                    const newMatchResultsCards = newMatchCards.filter(card => !card.isEmpty)
-                    newMatchResultsCards.push(...newData)
-                    updateMultiViewMatchesResults(newMatchResultsCards)
-                    updateMultiViewMatches([])
+                    const newMatchCards = [...cardsList, ...resultsCardsList];
+                    const lastId = newMatchCards[newMatchCards.length - 1].id;
+                    const newData = [
+                        {
+                            id: lastId + 1,
+                            team1: "FC바로셀로나",
+                            team2: "레알마드리드",
+                            isEmpty: true,
+                        },
+                        {
+                            id: lastId + 2,
+                            team1: "FC바로셀로나",
+                            team2: "레알마드리드",
+                            isEmpty: true,
+                        },
+                        {
+                            id: lastId + 3,
+                            team1: "FC바로셀로나",
+                            team2: "레알마드리드",
+                            isEmpty: true,
+                        },
+                    ];
+                    const newMatchResultsCards = newMatchCards.filter(
+                        (card) => !card.isEmpty
+                    );
+                    newMatchResultsCards.push(...newData);
+                    if (selectedNav === 0) {
+                        updateFavoriteMultiViewMatchesResults(
+                            newMatchResultsCards
+                        );
+                        updateFavoriteMultiViewMatches([]);
+                    } else {
+                        updateMultiViewMatchesResults(newMatchResultsCards);
+                        updateMultiViewMatches([]);
+                    }
                 }
             },
         },
@@ -51,50 +85,60 @@ export default function MultiViewSelectButtons() {
             name: "전체삭제",
             onclick: (event) => {
                 event.stopPropagation();
-                const defaultMatchesResults = [{
-                    id: 101,
-                    team1: "FC바로셀로나",
-                    team2: "레알마드리드",
-                    isEmpty: true,
-                },
-                {
-                    id: 102,
-                    team1: "FC바로셀로나",
-                    team2: "레알마드리드",
-                    isEmpty: true,
-                },
-                {
-                    id: 103,
-                    team1: "FC바로셀로나",
-                    team2: "레알마드리드",
-                    isEmpty: true,
-                },
-                {
-                    id: 104,
-                    team1: "FC바로셀로나",
-                    team2: "레알마드리드",
-                    isEmpty: true,
-                },
-                {
-                    id: 105,
-                    team1: "FC바로셀로나",
-                    team2: "레알마드리드",
-                    isEmpty: true,
-                },
-                {
-                    id: 106,
-                    team1: "FC바로셀로나",
-                    team2: "레알마드리드",
-                    isEmpty: true,
-                }]
-                updateMultiViewMatchesResults(defaultMatchesResults)
-                window.cardsData = defaultMatchesResults
-                const notEmptyMatchCards = resultsCardsList.map(card => {
-                    const newCard = {...card}
-                    newCard.isEmpty = true
-                    return newCard
-                }) || []
-                console.log('notEmptyMatchCards', notEmptyMatchCards)
+                const defaultMatchesResults = [
+                    {
+                        id: 101,
+                        team1: "FC바로셀로나",
+                        team2: "레알마드리드",
+                        isEmpty: true,
+                    },
+                    {
+                        id: 102,
+                        team1: "FC바로셀로나",
+                        team2: "레알마드리드",
+                        isEmpty: true,
+                    },
+                    {
+                        id: 103,
+                        team1: "FC바로셀로나",
+                        team2: "레알마드리드",
+                        isEmpty: true,
+                    },
+                    {
+                        id: 104,
+                        team1: "FC바로셀로나",
+                        team2: "레알마드리드",
+                        isEmpty: true,
+                    },
+                    {
+                        id: 105,
+                        team1: "FC바로셀로나",
+                        team2: "레알마드리드",
+                        isEmpty: true,
+                    },
+                    {
+                        id: 106,
+                        team1: "FC바로셀로나",
+                        team2: "레알마드리드",
+                        isEmpty: true,
+                    },
+                ];
+                if (selectedNav === 0) {
+                    updateFavoriteMultiViewMatchesResults(
+                        defaultMatchesResults
+                    );
+                    window.favoriteCardsData = defaultMatchesResults;
+                } else {
+                    updateMultiViewMatchesResults(defaultMatchesResults);
+                    window.cardsData = defaultMatchesResults;
+                }
+                const notEmptyMatchCards =
+                    resultsCardsList.map((card) => {
+                        const newCard = { ...card };
+                        newCard.isEmpty = true;
+                        return newCard;
+                    }) || [];
+                console.log("notEmptyMatchCards", notEmptyMatchCards);
                 const defaultData = [
                     {
                         id: 201,
@@ -180,8 +224,12 @@ export default function MultiViewSelectButtons() {
                         team2Result2: "0",
                         team2Goal: "0",
                     },
-                ]
-                updateMultiViewMatches(defaultData)
+                ];
+                if (selectedNav === 0) {
+                    updateFavoriteMultiViewMatches(defaultData);
+                } else {
+                    updateMultiViewMatches(defaultData);
+                }
             },
         },
     ];

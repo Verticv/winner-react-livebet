@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import useStore from "store/useStore";
 
-import goldStar from "../../../../imagesHold/cards/gold-star.png";
-import whiteStar from "../../../../imagesHold/cards/white-star.png";
-import redShirt from "../../../../imagesHold/image_66.png";
-import blueShirt from "../../../../imagesHold/image_64.png";
-import selectedPlayButton from "../../../../imagesHold/play_button_selected.png";
-import playButton from "../../../../imagesHold/play_button.png";
+import goldStar from "imagesHold/cards/gold-star.png";
+import whiteStar from "imagesHold/cards/white-star.png";
+import redShirt from "imagesHold/image_66.png";
+import blueShirt from "imagesHold/image_64.png";
+import selectedPlayButton from "imagesHold/play_button_selected.png";
+import playButton from "imagesHold/play_button.png";
 
 import "./CardBody.scss";
 
@@ -29,13 +29,12 @@ export default function CardBody({
     matchCard,
     isActiveStar = false,
     data = [],
-    setData
+    setData,
 }) {
-
-    console.log('isActiveStar', isActiveStar)
-    const [activeStar, setActiveStar] = useState(false)
-    const [playActive, setPlayActive] = useState(false)
-    console.log('playActive', playActive)
+    console.log("isActiveStar", isActiveStar);
+    const [activeStar, setActiveStar] = useState(false);
+    const [playActive, setPlayActive] = useState(false);
+    console.log("playActive", playActive);
     const updateFavoritesMatches = useStore(
         (state) => state.updateFavoritesMatches
     );
@@ -46,16 +45,16 @@ export default function CardBody({
     const playMouseEnterHandler = () => setPlayActive(true);
     const playMouseLeaveHandler = () => setPlayActive(false);
     const starHandler = (event) => {
-        event.stopPropagation()
-        setActiveStar(prev => !prev);
-        
+        event.stopPropagation();
+        setActiveStar((prev) => !prev);
+
         if (selectedNav === 0) {
-            const newData = [...data].filter(card => card.id !== id)
-            console.log('newData', newData)
-            updateFavoritesMatches(newData)
-            setData(newData)
+            const newData = [...data].filter((card) => card.id !== id);
+            console.log("newData", newData);
+            updateFavoritesMatches(newData);
+            setData(newData);
         }
-    }
+    };
 
     const changePlayingMatchId = useStore(
         (state) => state.changePlayingMatchId
@@ -72,7 +71,13 @@ export default function CardBody({
         >
             <div className="left">
                 <div className="star">
-                    <img onClick={starHandler} src={activeStar || isActiveStar ? goldStar : whiteStar} alt="" width="18" height="18" />
+                    <img
+                        onClick={starHandler}
+                        src={activeStar || isActiveStar ? goldStar : whiteStar}
+                        alt=""
+                        width="18"
+                        height="18"
+                    />
                 </div>
                 <div className="teams-wrapper">
                     <div className="team-1">
@@ -124,7 +129,8 @@ export default function CardBody({
                     {" "}
                     {isRed ? (
                         <>
-                           <p>{currentTimeText}</p> &nbsp; <span>{currentTimeNumber}</span>
+                            <p>{currentTimeText}</p> &nbsp;{" "}
+                            <span>{currentTimeNumber}</span>
                         </>
                     ) : (
                         currentTimeText

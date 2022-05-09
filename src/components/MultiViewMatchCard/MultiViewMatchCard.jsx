@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import _ from "lodash" 
+import _ from "lodash";
 
 import useStore from "store/useStore";
 import { useDrop } from "react-dnd";
@@ -46,10 +46,10 @@ const matchBets = [
         option1: "오버",
         option2: "언더",
         row1kof1: 1.25,
-        row1kof2: 3.30,
+        row1kof2: 3.3,
         row1tieKof: 4.05,
         row2kof1: 1.25,
-        row2kof2: 3.30,
+        row2kof2: 3.3,
         row2tieKof: 4.05,
         isActive: true,
     },
@@ -58,12 +58,12 @@ const matchBets = [
         betType: "승무패핸디캡",
         option1: "FC바르셀로나",
         option2: "레알마드리드",
-        row1kof1: 9.50,
+        row1kof1: 9.5,
         row1kof2: 1.2,
         row1tieKof: 5.75,
-        row2kof1: 1.30,
+        row2kof1: 1.3,
         row2kof2: 8.25,
-        row2tieKof: 4.90,
+        row2tieKof: 4.9,
         isActive: false,
     },
 ];
@@ -90,25 +90,25 @@ function ResultsRow({
     const [middleActiveBackground, setMiddleActiveBackground] = useState(false);
     const [rightActiveBackground, setRightActiveBackground] = useState(false);
 
-    
     useEffect(() => {
-        if (activeCard !== id ) {
-            setLeftActiveBackground(false)
-            setMiddleActiveBackground(false)
-            setRightActiveBackground(false)
+        if (activeCard !== id) {
+            setLeftActiveBackground(false);
+            setMiddleActiveBackground(false);
+            setRightActiveBackground(false);
         }
-    }, [id, activeCard])
+    }, [id, activeCard]);
 
     return (
         <div onClick={handleClick} className="match-results-wrapper">
-            <div 
-            onClick={() => {
-                setLeftActiveBackground((prev) => !prev);
-                setMiddleActiveBackground(false);
-                setRightActiveBackground(false);
-                setActiveCard(id)
-            }}
-            className={`left ${leftActiveBackground ? "active" : ""}`}>
+            <div
+                onClick={() => {
+                    setLeftActiveBackground((prev) => !prev);
+                    setMiddleActiveBackground(false);
+                    setRightActiveBackground(false);
+                    setActiveCard(id);
+                }}
+                className={`left ${leftActiveBackground ? "active" : ""}`}
+            >
                 <p className="text">{option1}</p>
             </div>
             <div className={`number1 ${isRowActive ? "red-arrow" : ""}`}>
@@ -116,30 +116,38 @@ function ResultsRow({
                 <div className="number-value">{kof1?.toFixed(2)}</div>
             </div>
 
-            <div 
-            onClick={() => {
-                setLeftActiveBackground(false);
-                setMiddleActiveBackground((prev) => !prev);
-                setRightActiveBackground(false);
-                setActiveCard(id)
-            }}
-            className="middle">
+            <div
+                onClick={() => {
+                    setLeftActiveBackground(false);
+                    setMiddleActiveBackground((prev) => !prev);
+                    setRightActiveBackground(false);
+                    setActiveCard(id);
+                }}
+                className="middle"
+            >
                 <div className="left"></div>
-                <div className={`middle-content ${middleActiveBackground ? "active" : ""}`}>{tieKof.toFixed(2)}</div>
+                <div
+                    className={`middle-content ${
+                        middleActiveBackground ? "active" : ""
+                    }`}
+                >
+                    {tieKof.toFixed(2)}
+                </div>
                 <div className="right"></div>
             </div>
             <div className={`number2 ${isRowActive ? "blue-arrow" : ""}`}>
                 {isRowActive && <img src={downBlueArrow} alt="" />}
                 <div className="number-value">{kof2?.toFixed(2)}</div>
             </div>
-            <div 
-             onClick={() => {
-                setLeftActiveBackground(false);
-                setMiddleActiveBackground(false);
-                setRightActiveBackground((prev) => !prev);
-                setActiveCard(id)
-            }}
-            className={`right ${rightActiveBackground ? "active" : ""}`}>
+            <div
+                onClick={() => {
+                    setLeftActiveBackground(false);
+                    setMiddleActiveBackground(false);
+                    setRightActiveBackground((prev) => !prev);
+                    setActiveCard(id);
+                }}
+                className={`right ${rightActiveBackground ? "active" : ""}`}
+            >
                 <p className="text">{option2}</p>
             </div>
             <div
@@ -297,16 +305,37 @@ function ResultsContent({ isEmpty = false }) {
 }
 
 function MultiViewMatchResults({ index, id, isEmpty = false }) {
-    const resultsCardsList = useStore(
+    const selectedNav = useStore((state) => state.selectedNav);
+    const multiViewLiveMatchResultsCards = useStore(
         (state) => state.multiViewLiveMatchResultsCards
     );
+    let resultsCardsList = multiViewLiveMatchResultsCards;
+
+    const favoriteMultiViewLiveMatchResultsCards = useStore(
+        (state) => state.favoriteMultiViewLiveMatchResultsCards
+    );
+
     const removeMatchFromMultiViewMatches = useStore(
         (state) => state.removeMatchFromMultiViewMatches
+    );
+    const removeFavoriteMatchFromMultiViewMatches = useStore(
+        (state) => state.removeFavoriteMatchFromMultiViewMatches
     );
     const updateMultiViewMatchesResults = useStore(
         (state) => state.updateMultiViewMatchesResults
     );
+    const updateFavoriteMultiViewMatchesResults = useStore(
+        (state) => state.updateFavoriteMultiViewMatchesResults
+    );
     const addNewMatchResult = useStore((state) => state.addNewMatchResult);
+    const addFavoriteNewMatchResult = useStore(
+        (state) => state.addFavoriteNewMatchResult
+    );
+
+    useEffect(() => {
+        window.activeNav = selectedNav;
+        window.emptyCards = document.querySelectorAll(".empty-card").length;
+    }, [selectedNav]);
 
     const [{ isOver }, drop] = useDrop(() => ({
         accept: "card",
@@ -317,30 +346,39 @@ function MultiViewMatchResults({ index, id, isEmpty = false }) {
     }));
 
     const addCard = (cardId) => {
-        console.log('cardIdcardId', cardId)
-        console.log('cardIdcardId data', resultsCardsList)
-
-        
-        let data = resultsCardsList;
-        if (window.cardsData) {
-            data = window.cardsData;
+        if (window.activeNav === 0) {
+            resultsCardsList = favoriteMultiViewLiveMatchResultsCards;
         }
-        removeMatchFromMultiViewMatches(cardId);
-        const newData = data.map((match) => {
-            console.log('match.id === id', match.id)
-            console.log('match.id id', id)
-            console.log('match.id id', match.id === id)
+        let data = resultsCardsList;
+        if (window.cardsData && window.activeNav !== 0) {
+            data = window.cardsData || [];
+        }
 
+        if (window.favoriteCardsData && window.activeNav === 0) {
+            data = window.favoriteCardsData || [];
+        }
+
+        if (window.activeNav === 0) {
+            removeFavoriteMatchFromMultiViewMatches(cardId);
+        } else {
+            removeMatchFromMultiViewMatches(cardId);
+        }
+        const newData = data.map((match) => {
             if (match.id === id) {
                 return { ...match, isEmpty: false };
             }
             return match;
         });
-        console.log('cardIdcardId newData', newData)
+        console.log("cardIdcardId newData", newData);
 
-        window.cardsData = newData;
-        updateMultiViewMatchesResults(newData);
-        if (document.querySelectorAll(".empty-card")?.length === 0) {
+        if (window.activeNav === 0) {
+            window.favoriteCardsData = newData;
+            updateFavoriteMultiViewMatchesResults(newData);
+        } else {
+            window.cardsData = newData;
+            updateMultiViewMatchesResults(newData);
+        }
+        if (window.emptyCards === 0) {
             const newData = [
                 {
                     id: _.uniqueId(),
@@ -361,8 +399,22 @@ function MultiViewMatchResults({ index, id, isEmpty = false }) {
                     isEmpty: true,
                 },
             ];
-            newData.forEach((card) => addNewMatchResult(card));
-            window.cardsData = [...window.cardsData, ...newData];
+
+            newData.forEach((card) => {
+                if (window.activeNav === 0) {
+                    addFavoriteNewMatchResult(card);
+                } else {
+                    addNewMatchResult(card);
+                }
+            });
+            if (window.activeNav === 0) {
+                window.favoriteCardsData = [
+                    ...window.favoriteCardsData,
+                    ...newData,
+                ];
+            } else {
+                window.cardsData = [...window.cardsData, ...newData];
+            }
         }
     };
 
@@ -370,9 +422,11 @@ function MultiViewMatchResults({ index, id, isEmpty = false }) {
         <>
             {isEmpty ? (
                 <div
-                    style={{ opacity: isOver ? "0.5" : ""}}
+                    style={{ opacity: isOver ? "0.5" : "" }}
                     ref={drop}
-                    className="empty-card"
+                    className={`empty-card ${
+                        selectedNav === 0 ? "favorite-empty-card" : ""
+                    }`}
                 >
                     <div className="content">
                         <p>상단에 있는 경기를 더블클릭하거나</p>
@@ -387,11 +441,14 @@ function MultiViewMatchResults({ index, id, isEmpty = false }) {
                         <Info />
                         <div className="scroll-wrapper">
                             {/* <div className="internal-scroll-wrapper hide-scrollbar"> */}
-                                <div className="background-image" style={{background: '', marginTop: '40px'}} >
-                                    <ResultsContent />
-                                    <ResultsContent isEmpty={true} />
-                                </div>
-                                {/* <div className="background-image-1" >
+                            <div
+                                className="background-image"
+                                style={{ background: "", marginTop: "40px" }}
+                            >
+                                <ResultsContent />
+                                <ResultsContent isEmpty={true} />
+                            </div>
+                            {/* <div className="background-image-1" >
                                     <ResultsContent />
                                     <ResultsContent isEmpty={true} />
                                 </div> */}
@@ -411,20 +468,43 @@ function MultiViewMatchResults({ index, id, isEmpty = false }) {
 }
 
 export default function MultiViewMatchCards() {
-    const resultsCardsList = useStore(
+    const selectedNav = useStore((state) => state.selectedNav);
+    const multiViewLiveMatchResultsCards = useStore(
         (state) => state.multiViewLiveMatchResultsCards
+    );
+    let resultsCardsList = multiViewLiveMatchResultsCards;
+    const favoriteMultiViewLiveMatchResultsCards = useStore(
+        (state) => state.favoriteMultiViewLiveMatchResultsCards
     );
 
     // const sortedData = [...resultsCardsList].sort(function (x, y) {
     //     return   Number(x.isEmpty) - Number(y.isEmpty);
     // });
 
-    console.log('>>>>>>>>>>> resultsCardsList',resultsCardsList)
+    if (selectedNav === 0) {
+        resultsCardsList = favoriteMultiViewLiveMatchResultsCards;
+    }
+
+    useEffect(() => {
+        console.log("resultsCardsLiresultsCardsListst", resultsCardsList);
+    });
+
+    console.log("resultsCardsLists", resultsCardsList);
+    console.log(
+        "resultsCardsLists fav",
+        favoriteMultiViewLiveMatchResultsCards
+    );
 
     return (
         <div className="multi-view-match-results-wrapper">
             {resultsCardsList.map(({ id, isEmpty }, index) => {
-                return <MultiViewMatchResults index={index} id={id} isEmpty={isEmpty} />;
+                return (
+                    <MultiViewMatchResults
+                        index={index}
+                        id={id}
+                        isEmpty={isEmpty}
+                    />
+                );
             })}
         </div>
     );
