@@ -76,6 +76,8 @@ export default function LiveMatchCard({
                     setIsActive={setIsActive}
                     matchCard={matchCard}
                     onClickHandler={activeCardHandler}
+                    setData={setData}
+                    data={data}
                 />
                 {isRed && (
                     <CardFooter

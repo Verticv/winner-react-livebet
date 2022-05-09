@@ -37,7 +37,9 @@ export const createLiveCardSlice = (set, get) => ({
             type:matchTypes.live,
             active: false,
             withHeader: true,
+            isPlayButtonActive: true,
             marginBottom: '10px',
+            isActiveStar: true,
         },
         {
             id: 1,
@@ -59,7 +61,9 @@ export const createLiveCardSlice = (set, get) => ({
             type: matchTypes.live,
             active: false,
             withHeader: true,
+            isPlayButtonActive: true,
             marginBottom: '10px',
+            isActiveStar: true,
         },
         {
             id: 2,
@@ -82,6 +86,7 @@ export const createLiveCardSlice = (set, get) => ({
             active: false,
             withHeader: true,
             marginBottom: '10px',
+            isActiveStar: true,
         },
         {
             id: 3,
@@ -104,6 +109,7 @@ export const createLiveCardSlice = (set, get) => ({
             active: false,
             withHeader: true,
             marginBottom: '10px',
+            isActiveStar: true,
         },
 
         {
@@ -120,6 +126,7 @@ export const createLiveCardSlice = (set, get) => ({
             active: false,
             withHeader: true,
             marginBottom: '10px',
+            isActiveStar: true,
         },
         {
             id: 5,
@@ -135,6 +142,7 @@ export const createLiveCardSlice = (set, get) => ({
             active: false,
             withHeader: true,
             marginBottom: '10px',
+            isActiveStar: true,
         },
         {
             id: 6,
@@ -150,6 +158,7 @@ export const createLiveCardSlice = (set, get) => ({
             active: false,
             withHeader: true,
             marginBottom: '10px',
+            isActiveStar: true,
         },
     ],
     addMatchToFavorites: (match) => {
@@ -167,11 +176,13 @@ export const createLiveCardSlice = (set, get) => ({
         );
     },
     removeMatchFromFavorites: (matchId) => {
+        console.log('matchImatchIdmatchIdmatchIdd', matchId)
         set(
             produce((draft) => {
                 const matchIndex = draft.favoriteMatches.findIndex(
                     (el) => el.id === matchId
                 );
+                console.log('matchIndexmatchIndex', matchIndex)
                 draft.favoriteMatches.splice(matchIndex, 1);
             })
         );

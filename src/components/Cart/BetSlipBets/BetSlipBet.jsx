@@ -1,6 +1,5 @@
 import React from "react";
 import useStore from "store/useStore";
-import { singleOrMultiOptions } from "helpers/constants";
 import closeIco from "../../../imagesHold/x.png";
 import downIco from "../../../imagesHold/arr.png";
 import upIco from "../../../imagesHold/arr-up.png";
@@ -8,15 +7,12 @@ import upIco from "../../../imagesHold/arr-up.png";
 
 
 export default function BetSlipBet({ bet, index }) {
-    const singleOrMulti = useStore((state) => state.singleOrMulti);
-    const isSingleView = singleOrMulti === singleOrMultiOptions.single;
     const removeBetSlipBet = useStore((s) => s.removeBetSlipBet);
-    const removeMultiViewBetSlipBet = useStore((s) => s.removeMultiViewBetSlipBet);
 
     console.log('bet', bet)
     return (
         <div className="cart-card-wrapper">
-            <button className="close" onClick={() => isSingleView ? removeBetSlipBet(bet.id) : removeMultiViewBetSlipBet(bet.id)}>
+            <button className="close" onClick={() => removeBetSlipBet(bet.id)}>
                 <img src={closeIco} alt="" width="14" height="14" />
             </button>
             <div className="title">

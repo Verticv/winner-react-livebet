@@ -3,7 +3,7 @@ import useStore from "store/useStore";
 import SideButton from "./SideButton";
 
 
-export default function FavoriteButton({ matchCard, isSelected }) {
+export default function FavoriteButton({ matchCard, isSelected, data, setData }) {
     const [isActive, setIsActive] = useState(false);
     const favoriteMatches = useStore((state) => state.favoriteMatches);
     const addMatchToFavorites = useStore((state) => state.addMatchToFavorites);
@@ -27,6 +27,8 @@ export default function FavoriteButton({ matchCard, isSelected }) {
 
     return (
         <SideButton
+            data={data}
+            setData={setData}
             onClick={buttonHandler}
             onMouseEnter={mouseEnterHandler}
             onMouseLeave={mouseLeaveHandler}

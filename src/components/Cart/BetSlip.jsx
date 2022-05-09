@@ -1,19 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
+import { format } from 'date-fns'
+import { ko } from "date-fns/locale"
 import useStore from "store/useStore";
-
 import { singleOrMultiOptions } from "helpers/constants";
 
 import BetAmount from "./BetAmount/BetAmount";
 import BetSlipBets from "./BetSlipBets/BetSlipBets";
-import MultiViewBetSlipBets from "./BetSlipBets/MultiViewBetSlipBets";
 import BetSlipLayout from "./BetSlipLayout/BetSlipLayout";
 import checksIcon from "../../imagesHold/checks.png";
 import cartIcon from "../../imagesHold/ico_3.png";
 import refresh from "../../imagesHold/checks-refresh.png";
 import seeAllIcon from "../../imagesHold/see-all-ico.png";
+import clock from "../../imagesHold/clock.png";
 
-// import MyBets from './MyBets/MyBets';
 import "./Cart.scss";
 
 function MyBetCard({
@@ -66,9 +66,30 @@ function AmountDetails({
 }
 
 export default function BetSlip() {
-    const singleOrMulti = useStore((state) => state.singleOrMulti);
-    const isSingleView = singleOrMulti === singleOrMultiOptions.single;
     const selectedNav = useStore((state) => state.selectedNav);
+
+    const changeSingleOrMultiBet = useStore((state) => state.changeSingleOrMultiBet);
+        const betSlipBets = useStore((state) => state.betSlipBets);
+
+    useEffect(() =>  {
+        console.log('betSlipBets.length', betSlipBets.length)
+        if (betSlipBets.length > 1) {
+            changeSingleOrMultiBet(singleOrMultiOptions.multi)
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [betSlipBets])
+
+    const dateFormat = "yyyy-MM-dd"
+    const dateFormat1 = "H:mm:ss"
+
+    const [time, setTime] = useState(Date.now());
+
+    useEffect(() => {
+        const interval = setInterval(() => setTime(Date.now()), 1000);
+        return () => {
+            clearInterval(interval);
+        };
+    }, []);
 
     return (
         <div className="cart hide-scrollbar">
@@ -77,16 +98,31 @@ export default function BetSlip() {
                     <div className="cart-header-content">
                         <div className="line"></div>
                         <div className="content">
-                            <img src={cartIcon} alt="" width="24" height="23" />
-                            <p className="text">betslip</p>
-                            <div className="circle">
-                                <p>2</p>
+                            <div>
+                                <img className="cart-icon" src={cartIcon} alt="" width="24" height="23" />
+                                <p className="text">betslip</p>
+                                <div className="circle">
+                                    <p>2</p>
+                                </div>
+                            </div>
+                            <div className="clock">
+                                <p className="date">{format(time, dateFormat, { locale : ko })}</p>
+                                <p className="time">
+                                    <div>
+                                    <img
+                                    src={clock}
+                                    alt=""
+                                    width="11"
+                                    height="11"
+                                />
+                                    </div>
+                                    {format(time, dateFormat1, { locale : ko })}</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <BetSlipLayout />
-                {isSingleView ? <BetSlipBets /> : <MultiViewBetSlipBets />}
+                <BetSlipBets />
                 <BetAmount />
                 <div className="my-bets-wrapper">
                     <div className="bets-content">

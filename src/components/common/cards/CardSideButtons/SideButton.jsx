@@ -40,9 +40,9 @@ export default function SideButton({
 
 
     const favoriteMatches = data
-    // const updateFavoritesMatches = useStore(
-    //     (state) => state.updateFavoritesMatches
-    // );
+    const updateFavoritesMatches = useStore(
+        (state) => state.updateFavoritesMatches
+    );
 
     const changeOrderHandler = (type, id) => {
         console.log('!!!!!!!!')
@@ -59,9 +59,10 @@ export default function SideButton({
                     oldIndex = index;
                 }
             });
+            
             if (oldIndex !== 0) {
+                updateFavoritesMatches([...live, ...upcoming]);
                 moveArrayItemToNewIndex(live, oldIndex, oldIndex - 1);
-                // updateFavoritesMatches([...live, ...upcoming]);
                 const newArr = [...live, ...upcoming].map((card, index) => {
                     const newCard = {...card}
                     newCard.id = index
@@ -78,7 +79,7 @@ export default function SideButton({
             });
             if (oldIndex !== 0) {
                 moveArrayItemToNewIndex(upcoming, oldIndex, oldIndex - 1);
-                // updateFavoritesMatches([...live, ...upcoming]);
+                updateFavoritesMatches([...live, ...upcoming]);
                 const newArr = [...live, ...upcoming].map((card, index) => {
                     const newCard = {...card}
                     newCard.id = index
@@ -120,9 +121,10 @@ export default function SideButton({
                 {isFavoriteCard && (
                     <>
                         <div
-                            onClick={() =>
+                            onClick={() => {
+                                console.log('ssssssssssssssssssssssssssasss')
                                 changeOrderHandler(matchCard.type, matchCard.id)
-                            }
+                            }}
                             onMouseEnter={() => {
                                 if (isFavoriteCard && !(isSelected || isActive)) {
                                     setArrowImg(whiteArrow);
@@ -137,7 +139,7 @@ export default function SideButton({
                                     }
                                 }
                             }}
-                            className={`up-arrow-wrapper ${isSelected || isActive ? "active" : ""}`}
+                            className={`up-arrow-wrapper ssssssssssssssssssssss ${isSelected || isActive ? "active" : ""}`}
                         >
                             <div className="up-arrow">
                                 <div>

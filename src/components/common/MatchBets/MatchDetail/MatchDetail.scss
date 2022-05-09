@@ -105,6 +105,9 @@
         &:hover {
           background: linear-gradient(to right, #9b2f30, #9b2f30 25%, #9a2f30 50%, #872d2f 63%, #722a2e 75%, #5d282e);
         }
+        &.active {
+          background: linear-gradient(to right, #9b2f30, #9b2f30 25%, #9a2f30 50%, #872d2f 63%, #722a2e 75%, #5d282e);
+        }
       }
 
       .number1 {
@@ -154,6 +157,9 @@
           font-family: NotoSansCJKkr-Regular;
         }
         &:hover {
+          background: linear-gradient(to left, #9b2f30, #9b2f30 25%, #9a2f30 50%, #872d2f 63%, #722a2e 75%, #5d282e);
+        }
+        &.active {
           background: linear-gradient(to left, #9b2f30, #9b2f30 25%, #9a2f30 50%, #872d2f 63%, #722a2e 75%, #5d282e);
         }
       }
@@ -239,6 +245,9 @@
           font-family: robotoMedium;
           font-size: 14px;
           &:hover {
+            background-color: #9b2f30;
+          }
+          &.active {
             background-color: #9b2f30;
           }
         }
