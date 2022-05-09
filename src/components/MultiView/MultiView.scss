@@ -15,7 +15,6 @@
 
   .multi-view-card-wrapper {
     cursor: move;
-    padding: 0 9px;
     padding-right: 1px;
     min-width: 381px;
     height: 111px;
@@ -24,6 +23,7 @@
     background-repeat: round;
 
     .card-header {
+      padding-left: 9px;
       height: 40px;
       display: flex;
       justify-content: space-between;
@@ -43,6 +43,7 @@
           font-family: RobotoMedium;
           font-size: 18px;
           margin-right: 17px;
+
           &:nth-child(2) {
             margin-right: 17px;
           }
@@ -63,15 +64,25 @@
         // padding: 14px 0;
         .left {
           display: flex;
-          flex-direction: column;
-          align-items: flex-start;
+          // flex-direction: column;
+          // align-items: flex-start;
           padding-top: 3px;
           height: 71px;
+
+          .star {
+            width: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+          }
+
           .team-1 {
             margin-left: 3px;
             height: 50%;
             display: flex;
             align-items: center;
+
             .text-54 {
               color: #d1cecf;
             }
@@ -83,9 +94,11 @@
             align-items: center;
             margin-top: -5px;
             margin-left: 4px;
+
             .text-55 {
               color: #d1cecf;
             }
+
             .shirt,
             .bg-holder-26 {
               margin-left: 1px;
@@ -119,27 +132,33 @@
               }
             }
           }
+
           .team-1 {
             .shirt {
               margin-right: 7px;
+
               img {
                 margin-left: 1px;
               }
             }
           }
+
           .team-2 {
             .shirt {
               margin-bottom: 0px;
               margin-right: 7px;
+
               img {
                 margin-left: 1px;
               }
             }
+
             .bg-holder-26 {
               margin-bottom: 0px;
             }
           }
         }
+
         .right {
           display: flex;
           flex-direction: column;
@@ -148,22 +167,29 @@
           height: 71px;
           font-family: RobotoMedium;
           font-size: 18px;
-          .first-row, .second-row {
+
+          .first-row,
+          .second-row {
             width: 93px;
             display: flex;
           }
+
           .first-row {
             margin-top: 4px;
           }
+
           .second-row {
             margin-top: 2px;
           }
+
           .results-number {
             margin-right: 18px;
+
             &:nth-child(2) {
               margin-right: 26px;
             }
           }
+
           .result {
             color: #ffcc66;
           }
@@ -175,10 +201,12 @@
   &::-webkit-scrollbar {
     height: 5px;
   }
+
   &::-webkit-scrollbar-thumb {
     background: #666666;
     border-radius: 5px;
   }
+
   &::-webkit-scrollbar-track {
     background: #333333;
     border-radius: 5px;
@@ -188,16 +216,20 @@
 .multi-view-container {
   position: relative;
   padding-right: 14px;
+
   .multi-view-scroll {
     height: 1080px;
     overflow-y: scroll;
+
     &::-webkit-scrollbar {
       width: 5px;
     }
+
     &::-webkit-scrollbar-thumb {
       background: #666666;
       border-radius: 5px;
     }
+
     &::-webkit-scrollbar-track {
       background: #333333;
       border-radius: 5px;

@@ -10,43 +10,75 @@ import activeStadium from "../../../imagesHold/m-card-stadium-active.png";
 import activePlay from "../../../imagesHold/m-card-play-active.png";
 
 export default function CardHeader({ index, id, league = "라리가" }) {
-    const resultsCardsList = useStore(
+    const selectedNav = useStore((state) => state.selectedNav);
+    const multiViewLiveMatchResultsCards = useStore(
         (state) => state.multiViewLiveMatchResultsCards
     );
+    const favoriteMultiViewLiveMatchResultsCards = useStore(
+        (state) => state.favoriteMultiViewLiveMatchResultsCards
+    );
+
+    let resultsCardsList = multiViewLiveMatchResultsCards
+
     const removeMatchFromMultiViewMatchesResults = useStore(
         (state) => state.removeMatchFromMultiViewMatchesResults
     );
+    const removeFavoriteMatchFromMultiViewMatchesResults = useStore(
+        (state) => state.removeFavoriteMatchFromMultiViewMatchesResults
+    );
+
     const addNewMatch = useStore((state) => state.addNewMatch);
+    const addNewFavoriteMatch = useStore((state) => state.addNewFavoriteMatch);
+
     const [playActive, setIsPlayActive] = useState(false);
     const [stadiumActive, setIsStadiumActive] = useState(false);
 
+    if (selectedNav === 0 ) {
+        resultsCardsList = favoriteMultiViewLiveMatchResultsCards
+    }
+
     useEffect(() => {
         if (index === 0) {
-            setIsStadiumActive(true)
+            setIsStadiumActive(true);
         } else if (index === 1) {
             setIsPlayActive(true);
             setIsStadiumActive(true);
         }
-    }, [index])
-
+    }, [index]);
 
     const closeHandler = (cardId) => {
-        removeMatchFromMultiViewMatchesResults(cardId);
+        if (selectedNav === 0) {
+            removeFavoriteMatchFromMultiViewMatchesResults(cardId);
+        } else {
+            removeMatchFromMultiViewMatchesResults(cardId);
+        }
+
         const newCard = { ...resultsCardsList[resultsCardsList?.length - 1] };
-        const newData = window.cardsData.map((card) => {
+
+        let data = window.cardsData || [];
+
+        if (selectedNav === 0) {
+            data = window.favoriteCardsData || [];
+        }
+
+        const newData = data.map((card) => {
             if (card.id === cardId) {
-                const cardCopy = {...card}
-                cardCopy.isEmpty = true
-                return cardCopy
+                const cardCopy = { ...card };
+                cardCopy.isEmpty = true;
+                return cardCopy;
             }
-            return card
-        })
+            return card;
+        });
         newCard.id = Math.random();
         newCard.isEmpty = true;
-        window.cardsData = newData
-        addNewMatch(newCard);
+        if (selectedNav === 0) {
+            window.favoriteCardsData = newData;
+            addNewFavoriteMatch(newCard)
+        } else {
+            window.cardsData = newData;
+            addNewMatch(newCard);
+        }
     };
-    console.log('playActiveplayActiveplayActive', playActive)
 
     return (
         <div className="multi-card-header-content">
@@ -63,9 +95,7 @@ export default function CardHeader({ index, id, league = "라리가" }) {
             </div>
 
             <div className="right">
-                <button
-                    className={`watch ${playActive ? "active" : ""}`}
-                >
+                <button className={`watch ${playActive ? "active" : ""}`}>
                     <div>
                         <img
                             className="ball"
@@ -78,9 +108,7 @@ export default function CardHeader({ index, id, league = "라리가" }) {
                     {playActive && <div className="line"></div>}
                     {playActive && <div className="fade"></div>}
                 </button>
-                <button
-                    className={`ground ${stadiumActive ? "active" : ""}`}
-                >
+                <button className={`ground ${stadiumActive ? "active" : ""}`}>
                     <div>
                         <img
                             className="ball"
@@ -102,11 +130,7 @@ export default function CardHeader({ index, id, league = "라리가" }) {
                     }}
                 >
                     <div>
-                        <img
-                            className="ball"
-                            src={close}
-                            alt=""
-                        />
+                        <img className="ball" src={close} alt="" />
                     </div>
                     <div className="left-line-1"></div>
                     <div className="left-line-2"></div>

@@ -92,12 +92,13 @@
 
             &.close {
               margin-right: 1px;
+
               &:hover {
                 filter: brightness(140%);
               }
             }
 
-            
+
             &.active {
               // 7f2c30
               background: linear-gradient(to left, #7f2c30, #812c2f);
@@ -116,6 +117,7 @@
                 background: linear-gradient(to right, #ab615a, #9b5651 50%, #8b4c49);
               }
             }
+
             &:hover {
               filter: brightness(130%);
             }
@@ -196,14 +198,15 @@
         .left {
           height: 100%;
           display: flex;
-          margin-left: 11px;
+          margin-left: 0;
           margin-top: 3px;
 
           .star {
+            width: 30px;
             display: flex;
             align-items: center;
-            margin-left: 10px;
-            margin-right: 13px;
+            justify-content: center;
+            cursor: pointer;
           }
 
           .teams-wrapper {
@@ -223,6 +226,7 @@
               align-items: center;
               margin-top: -6px;
               margin-left: 1px;
+
               .shirt,
               .bg-holder-26 {
                 margin-left: 1px;
@@ -234,7 +238,7 @@
               .shirt {
                 margin-right: 8px;
               }
-            
+
 
               .bg-holder-26 {
                 // height: 12px;
@@ -261,18 +265,22 @@
                 }
               }
             }
+
             .team-1 {
               .shirt {
                 margin-right: 7px;
+
                 img {
                   margin-left: 1px;
                   margin-bottom: 1px;
                 }
               }
+
               .bg-holder-26 {
                 margin-bottom: 1px;
               }
             }
+
             .team-2 {
               .shirt {
                 margin-right: 7px;
@@ -333,6 +341,7 @@
             .gold {
               color: #e9ca4e;
             }
+
             &:nth-child(2) {
               margin-top: 2px;
             }
@@ -345,16 +354,19 @@
     .scroll-wrapper {
       height: 248px;
       overflow-y: scroll;
+
       .background-image {
         height: 248px;
         // background: url('../../imagesHold/match-bet--small-card.png');
       }
+
       .background-image-1 {
         height: 250px;
         background: url('../../imagesHold/cards/new/new-bet-card.png');
       }
+
       // padding-top: 40px;
-  
+
       // .internal-scroll-wrapper {
       //   background: url('../../imagesHold/match-bet--small-card.png');
       //   height: 248px;
@@ -363,6 +375,7 @@
 
       .results-content {
         background: transparent;
+
         // &:nth-child(2) {
         //   .match-bets-content {
         //     .match-bet-card-wrapper {
@@ -371,8 +384,8 @@
         //   }
         // }
         .match-bets-content {
-            background: transparent;
-  
+          background: transparent;
+
           .match-bet-card-wrapper {
             position: relative;
             height: auto;
@@ -386,7 +399,7 @@
             // &:nth-child(1) {
             //   background: url('../../imagesHold/match-bet--small-card.png');
             // }
-  
+
             .line {
               position: absolute;
               top: -1px;
@@ -395,32 +408,32 @@
               height: 1px;
               background: linear-gradient(to right, #1d1922 0, #5e2830 30%, #581717 50%, #5f2830 70%, #1d1922 100%);
             }
-  
+
             .match-details-wrapper {
-  
+
               .match-details-header {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
                 padding-left: 10px;
                 height: 50px;
-  
+
                 .left {
                   display: flex;
                   align-items: center;
-  
+
                   .square {
                     width: 4px;
                     height: 4px;
                     margin-right: 10px;
                   }
-  
+
                   .text {
                     color: #d1cecf;
                     font-size: 14px;
                   }
                 }
-  
+
                 button {
                   display: flex;
                   justify-content: center;
@@ -432,23 +445,23 @@
                   // background-color: rgb(255, 255, 255);
                   background: url("../../imagesHold/new-button-bg1.png");
                   // opacity: 0.2;
-  
+
                   .rotate {
                     transform: rotate(180deg);
                   }
                 }
               }
-  
+
               .match-details-content {
                 display: flex;
                 flex-wrap: wrap;
-  
+
                 .result-row {
                   display: flex;
                   width: 100%;
                   height: 36px;
                 }
-  
+
                 .match-results-wrapper {
                   position: relative;
                   display: flex;
@@ -456,7 +469,7 @@
                   height: 35px;
                   background-color: rgb(255, 255, 255, 0.102);
                   color: #d1cecf;
-  
+
                   .left {
                     height: 35px;
                     width: 347px;
@@ -464,24 +477,25 @@
                     justify-content: space-between;
                     clip-path: polygon(0 0, 94% 0, 99% 100%, 0% 100%);
                     align-items: center;
-  
+
                     .text {
                       margin-left: 10px;
                       font-size: 14px;
                       font-family: NotoSansCJKkr-Regular;
                     }
-  
+
                     &:hover {
                       background: linear-gradient(to right, #9b2f30, #9b2f30 25%, #9a2f30 50%, #872d2f 63%, #722a2e 75%, #5d282e);
                     }
                   }
-  
+
                   .number1 {
                     font-family: RobotoMedium;
                     font-size: 14px;
                     padding-right: 21px;
                     position: absolute;
                     left: 174px;
+
                     &.red-arrow {
                       .number-value {
                         position: absolute;
@@ -490,7 +504,7 @@
                       }
                     }
                   }
-  
+
                   .red-arrow {
                     background: url("../../imagesHold/cards/red-up-arrow.png");
                     background-repeat: round;
@@ -500,7 +514,7 @@
                     left: 152px;
                     top: -11px;
                   }
-  
+
                   .right {
                     height: 35px;
                     width: 343px;
@@ -509,18 +523,18 @@
                     align-items: center;
                     clip-path: polygon(5% 0%, 100% 0, 100% 100%, 0% 100%);
                     margin-left: -14px;
-  
+
                     .text {
                       margin-right: 7.5px;
                       font-size: 14px;
                       font-family: NotoSansCJKkr-Regular;
                     }
-  
+
                     &:hover {
                       background: linear-gradient(to left, #9b2f30, #9b2f30 25%, #9a2f30 50%, #872d2f 63%, #722a2e 75%, #5d282e);
                     }
                   }
-  
+
                   .blue-arrow {
                     background: url("../../imagesHold/cards/blue-down-arrow.png");
                     background-repeat: round;
@@ -530,7 +544,7 @@
                     top: -11px;
                     margin-right: 2px;
                   }
-  
+
                   .number2 {
                     font-family: RobotoMedium;
                     font-size: 14px;
@@ -538,9 +552,10 @@
                     padding-left: 15px;
                     position: absolute;
                     left: 279px;
+
                     &.blue-arrow {
                       margin-left: -1px;
-  
+
                       .number-value {
                         position: absolute;
                         top: 19px;
@@ -548,8 +563,8 @@
                       }
                     }
                   }
-  
-  
+
+
                   .middle {
                     position: relative;
                     width: 124px;
@@ -558,7 +573,7 @@
                     margin-left: -13px;
                     clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%);
                     z-index: 2;
-  
+
                     .left {
                       background: linear-gradient(to top, rgb(255 255 255 / 22%), rgb(255 255 255 / 9%) 50%, rgba(255, 255, 255, 0));
                       width: 1.5px;
@@ -569,7 +584,7 @@
                       transform: rotate(-16.5deg);
                       z-index: 10;
                     }
-  
+
                     .right {
                       background: linear-gradient(to top, rgb(255 255 255 / 22%), rgb(255 255 255 / 9%) 50%, rgba(255, 255, 255, 0));
                       width: 1.5px;
@@ -580,7 +595,7 @@
                       transform: rotate(16.5deg);
                       z-index: 10;
                     }
-  
+
                     .middle-content {
                       display: flex;
                       justify-content: center;
@@ -591,7 +606,7 @@
                       clip-path: polygon(0 0, 100% 0, 86% 100%, 14% 100%);
                       font-family: RobotoMedium;
                       font-size: 14px;
-  
+
                       &:hover {
                         background-color: #9b2f30;
                       }
@@ -630,7 +645,7 @@
         height: 40px;
         display: flex;
         align-items: center;
-  
+
         .info-image {
           height: 15px;
           width: 15px;
@@ -639,7 +654,7 @@
           display: flex;
           justify-content: center;
           align-items: center;
-  
+
           p {
             color: #2a2a34;
             font-family: RobotoBold, sans-serif;
@@ -648,22 +663,22 @@
             text-align: center;
           }
         }
-  
+
         .info-content {
           display: flex;
           align-items: center;
           color: #999999;
           font-size: 15px;
           margin-left: 11px;
-  
+
           .number {
             font-family: Roboto-Regular, sans-serif;
-  
+
             span {
               color: #ffcc66;
             }
           }
-  
+
           .text {
             margin-left: 3px;
           }
@@ -672,13 +687,16 @@
 
       .scroll-wrapper {
         height: 288px;
+
         &::-webkit-scrollbar {
           width: 5px;
         }
+
         &::-webkit-scrollbar-thumb {
           background: #666666;
           border-radius: 5px;
         }
+
         &::-webkit-scrollbar-track {
           background: #333333;
           border-radius: 5px;
@@ -717,6 +735,7 @@
   height: 490px;
   margin-right: 5px;
   margin-bottom: 5px;
+
   .content {
     position: absolute;
     width: 100%;
@@ -726,16 +745,18 @@
     justify-content: center;
     align-content: center;
     padding-top: 77px;
-      p {
-        font-size: 13px;
-        width: 100%;
-        text-align: center;
-        color: #717172;
+
+    p {
+      font-size: 13px;
+      width: 100%;
+      text-align: center;
+      color: #717172;
+      margin-right: 2px;
+
+      &:nth-child(2) {
+        margin-top: -3px;
         margin-right: 2px;
-        &:nth-child(2) {
-          margin-top: -3px;
-          margin-right: 2px;
-        }
       }
+    }
   }
 }

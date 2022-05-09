@@ -185,7 +185,7 @@ export default function BetSlip() {
                         />
                     </>
                 ) : (
-                    <div className="my-bet-card-multi">보류 중인 베팅이 없습니다.</div>
+                    <div className="my-bet-card-multi">베팅내역이 없습니다.</div>
                 )}
 
                 <div className="see-all-button">

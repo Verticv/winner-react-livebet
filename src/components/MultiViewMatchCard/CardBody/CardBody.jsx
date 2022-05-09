@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
-import redShirt from "../../../imagesHold/image_66.png";
-import blueShirt from "../../../imagesHold/image_64.png";
-
+import goldStar from "imagesHold/cards/gold-star.png";
+import whiteStar from "imagesHold/cards/white-star.png";
+import redShirt from "imagesHold/image_66.png";
+import blueShirt from "imagesHold/image_64.png";
 
 export default function CardBody({
     team1 = "FC바로셀로나",
@@ -12,9 +13,25 @@ export default function CardBody({
     team2stats = 5000,
     team2Goals = 0,
 }) {
+    const [activeStar, setActiveStar] = useState(false);
+
+    const starHandler = (event) => {
+        event.stopPropagation();
+        setActiveStar((prev) => !prev);
+    };
+
     return (
         <div className="multi-card-body-wrapper">
             <div className="left">
+                <div className="star">
+                    <img
+                        onClick={starHandler}
+                        src={activeStar ? goldStar : whiteStar}
+                        alt=""
+                        width="18"
+                        height="18"
+                    />
+                </div>
                 <div className="teams-wrapper">
                     <div className="team-1">
                         <div className="shirt">
@@ -30,7 +47,11 @@ export default function CardBody({
                             <p className="h-3">h</p>
                         </div>
                         <p
-                            style={{ fontSize: "14px", whiteSpace: "nowrap", color: "#d1cecf" }}
+                            style={{
+                                fontSize: "14px",
+                                whiteSpace: "nowrap",
+                                color: "#d1cecf",
+                            }}
                             className="text-54"
                         >
                             {team1}
@@ -63,7 +84,11 @@ export default function CardBody({
                             />
                         </div> */}
                         <p
-                            style={{ fontSize: "14px", whiteSpace: "nowrap", color: "#d1cecf" }}
+                            style={{
+                                fontSize: "14px",
+                                whiteSpace: "nowrap",
+                                color: "#d1cecf",
+                            }}
                             className="text-55"
                         >
                             {team2}
