@@ -11,9 +11,15 @@ import activePlay from "../../../imagesHold/m-card-play-active.png";
 
 export default function CardHeader({ index, id, league = "라리가" }) {
     const selectedNav = useStore((state) => state.selectedNav);
-    const resultsCardsList = useStore(
+    const multiViewLiveMatchResultsCards = useStore(
         (state) => state.multiViewLiveMatchResultsCards
     );
+    const favoriteMultiViewLiveMatchResultsCards = useStore(
+        (state) => state.favoriteMultiViewLiveMatchResultsCards
+    );
+
+    let resultsCardsList = multiViewLiveMatchResultsCards
+
     const removeMatchFromMultiViewMatchesResults = useStore(
         (state) => state.removeMatchFromMultiViewMatchesResults
     );
@@ -22,8 +28,14 @@ export default function CardHeader({ index, id, league = "라리가" }) {
     );
 
     const addNewMatch = useStore((state) => state.addNewMatch);
+    const addNewFavoriteMatch = useStore((state) => state.addNewFavoriteMatch);
+
     const [playActive, setIsPlayActive] = useState(false);
     const [stadiumActive, setIsStadiumActive] = useState(false);
+
+    if (selectedNav === 0 ) {
+        resultsCardsList = favoriteMultiViewLiveMatchResultsCards
+    }
 
     useEffect(() => {
         if (index === 0) {
@@ -61,10 +73,11 @@ export default function CardHeader({ index, id, league = "라리가" }) {
         newCard.isEmpty = true;
         if (selectedNav === 0) {
             window.favoriteCardsData = newData;
+            addNewFavoriteMatch(newCard)
         } else {
             window.cardsData = newData;
+            addNewMatch(newCard);
         }
-        addNewMatch(newCard);
     };
 
     return (
