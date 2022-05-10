@@ -86,25 +86,22 @@ function ResultsRow({
         addBetSlipBet(bet);
     };
 
+    const selectedNav = useStore((state) => state.selectedNav);
     const [leftActiveBackground, setLeftActiveBackground] = useState(false);
     const [middleActiveBackground, setMiddleActiveBackground] = useState(false);
     const [rightActiveBackground, setRightActiveBackground] = useState(false);
 
     useEffect(() => {
-        if (activeCard !== id) {
-            setLeftActiveBackground(false);
-            setMiddleActiveBackground(false);
-            setRightActiveBackground(false);
-        }
-    }, [id, activeCard]);
+        setLeftActiveBackground(false);
+        setMiddleActiveBackground(false);
+        setRightActiveBackground(false);
+    }, [selectedNav]);
 
     return (
         <div onClick={handleClick} className="match-results-wrapper">
             <div
                 onClick={() => {
                     setLeftActiveBackground((prev) => !prev);
-                    setMiddleActiveBackground(false);
-                    setRightActiveBackground(false);
                     setActiveCard(id);
                 }}
                 className={`left ${leftActiveBackground ? "active" : ""}`}
@@ -118,9 +115,7 @@ function ResultsRow({
 
             <div
                 onClick={() => {
-                    setLeftActiveBackground(false);
                     setMiddleActiveBackground((prev) => !prev);
-                    setRightActiveBackground(false);
                     setActiveCard(id);
                 }}
                 className="middle"
@@ -141,8 +136,6 @@ function ResultsRow({
             </div>
             <div
                 onClick={() => {
-                    setLeftActiveBackground(false);
-                    setMiddleActiveBackground(false);
                     setRightActiveBackground((prev) => !prev);
                     setActiveCard(id);
                 }}
