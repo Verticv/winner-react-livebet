@@ -70,11 +70,13 @@
           height: 71px;
 
           .star {
-            width: 30px;
+            width: 39px;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
+            padding-right: 1px;
+            padding-bottom: 2px;
           }
 
           .team-1 {
