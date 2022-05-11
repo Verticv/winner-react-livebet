@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import checkIcon from "imagesHold/check.png";
 
-import "./style.css";
+import "./style.scss";
 
 export default function SelectBox({ items }) {
     const [showItems, setShowItems] = useState(false);
