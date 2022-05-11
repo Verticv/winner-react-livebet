@@ -46,7 +46,7 @@ export default function SelectBox({ items }) {
                                 selectedItem === item ? "active" : ""
                             } select-box--item`}
                         >
-                            {item.value}
+                            <p>{item.value}</p>
                         </div>
                     ))}
                 </div>
