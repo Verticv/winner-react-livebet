@@ -1,9 +1,11 @@
 import { viewTypes } from "helpers/constants";
-import React from "react";
+import React, { useState } from "react";
 import ViewSelectButton from "../common/ViewSelectButton/ViewSelectButton";
 import SelectBox from './DropDown'
 
 export default function SingleViewSelectButtons() {
+    const [activeButton, setActiveButton] = useState('시간순보기')
+
     const views = [
         {
             id: 0,
@@ -25,11 +27,15 @@ export default function SingleViewSelectButtons() {
             icon: require("../../imagesHold/ico_18.png").default,
         },
     ];
+
+    
     return (
         <div className="view-select-button">
             {views.map((view) => {
                 return (
                     <ViewSelectButton
+                        setActiveButton={setActiveButton}
+                        activeButton={activeButton}
                         key={view.id}
                         viewName={view.name}
                         viewType={view.type}
@@ -40,9 +46,9 @@ export default function SingleViewSelectButtons() {
             <div>
             <SelectBox
                 items={[
-                    { value: "리그순보기", id: 1 },
-                    { value: "리그순보기", id: 2 },
-                    { value: "리그순보기", id: 3 },
+                    { value: "전체경기", id: 1 },
+                    { value: "진행중", id: 2 },
+                    { value: "예정중", id: 3 },
                 ]}
         />
             </div>

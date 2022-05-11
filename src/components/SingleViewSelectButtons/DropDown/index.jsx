@@ -1,62 +1,56 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import checkIcon from "imagesHold/check.png";
+
 import "./style.css";
 
-class SelectBox extends React.Component {
-  state = {
-    items: this.props.items || [],
-    showItems: false,
-    selectedItem: this.props.items && this.props.items[0]
-  };
+export default function SelectBox({ items }) {
+    const [showItems, setShowItems] = useState(false);
+    const [selectedItem, setSelectedItem] = useState(items[0]);
 
-  dropDown = () => {
-    this.setState(prevState => ({
-      showItems: !prevState.showItems
-    }));
-  };
+    const dropDown = () => {
+        setShowItems((prevState) => !prevState);
+    };
 
-  selectItem = item => {
-    this.setState({
-      selectedItem: item,
-      showItems: false
-    });
-  };
-  
-  render() {
+    const selectItem = (event, item) => {
+        event.stopPropagation();
+        setSelectedItem(item);
+        setShowItems(false);
+    };
+
     return (
-      <div className="select-box--box">
-        <div className="select-box--container">
-          <div className="select-box--selected-item" onClick={this.dropDown} >
-          <img src='../../../imagesHold/ico_16.png' alt="" />
-            <span className="text">{this.state.selectedItem.value}</span>
-          <div className="select-box--arrow">
-            <span
-              className={`${
-                this.state.showItems
-                  ? "select-box--arrow-up"
-                  : "select-box--arrow-down"
-              }`}
-            />
-          </div>
-          </div>
-          <div
-            style={{ display: this.state.showItems ? "block" : "none" }}
-            className={"select-box--items"}
-          >
-            <img src="../../../imagesHold/ico_16.png" alt="" />
-            {this.state.items.map(item => (
-              <div
-                key={item.id}
-                onClick={() => this.selectItem(item)}
-                className={this.state.selectedItem === item ? "selected" : ""}
-              >
-                {item.value}
-              </div>
-            ))}
-          </div>
+        <div className="select-box--box">
+            <div onClick={dropDown} className="select-box--container">
+                <div className="select-box--selected-item">
+                    <img src={checkIcon} alt="check" />
+                    <span className="text">{selectedItem.value}</span>
+                    <div
+                        className={`select-box--arrow ${
+                            showItems ? "select-box--arrow-up" : ""
+                        }`}
+                    >
+                        <span className="select-box--arrow-down" />
+                    </div>
+                </div>
+                <div
+                    style={{ display: showItems ? "block" : "none" }}
+                    className={`select-box--items`}
+                >
+                    <img src="../../../imagesHold/ico_16.png" alt="" />
+                    {items.map((item) => (
+                        <div
+                            key={item.id}
+                            onClick={(event) => selectItem(event, item)}
+                            className={`${
+                                selectedItem === item ? "selected" : ""
+                            } ${
+                                selectedItem === item ? "active" : ""
+                            } select-box--item`}
+                        >
+                            {item.value}
+                        </div>
+                    ))}
+                </div>
+            </div>
         </div>
-      </div>
     );
-  }
 }
-
-export default SelectBox;
