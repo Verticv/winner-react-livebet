@@ -43,6 +43,7 @@
 .select-box--selected-item .text{
   width: 136px;
   text-align: left;
+  margin-top: -3px;
 }
 
 .select-box--items {
