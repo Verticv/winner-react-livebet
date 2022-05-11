@@ -1,6 +1,7 @@
 import { viewTypes } from "helpers/constants";
 import React from "react";
 import ViewSelectButton from "../common/ViewSelectButton/ViewSelectButton";
+import SelectBox from './DropDown'
 
 export default function SingleViewSelectButtons() {
     const views = [
@@ -36,6 +37,15 @@ export default function SingleViewSelectButtons() {
                     />
                 );
             })}
+            <div>
+            <SelectBox
+                items={[
+                    { value: "리그순보기", id: 1 },
+                    { value: "리그순보기", id: 2 },
+                    { value: "리그순보기", id: 3 },
+                ]}
+        />
+            </div>
         </div>
     );
 }
