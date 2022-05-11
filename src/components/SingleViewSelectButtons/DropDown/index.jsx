@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import checkIcon from "imagesHold/check.png";
 
 import "./style.scss";
@@ -6,6 +6,15 @@ import "./style.scss";
 export default function SelectBox({ items }) {
     const [showItems, setShowItems] = useState(false);
     const [selectedItem, setSelectedItem] = useState(items[0]);
+    useEffect(() => {
+        const closeDropdown = (e) => {
+            if (e.path[0].tagName !== 'SPAN'){
+                setShowItems(false);
+            };
+        };
+        document.body.addEventListener('click', closeDropdown);
+        return () => document.body.addEventListener('click', closeDropdown);
+    }, []);
 
     const dropDown = () => {
         setShowItems((prevState) => !prevState);

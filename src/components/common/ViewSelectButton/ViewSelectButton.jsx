@@ -17,6 +17,7 @@ export default function ViewSelectButton({
     return (
         <button
             onClick={(e) => {
+                if(viewName !== '리그선택')
                 setActiveButton(viewName)
                 if (isMultiViewButton) {
                     setActiveButton(id)

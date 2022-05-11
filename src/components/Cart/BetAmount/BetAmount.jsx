@@ -176,7 +176,7 @@ export default function BetAmount() {
                 </button>
                 <button>
                     <div className="img-wrapper">
-                        <img src={increase} alt="" width="16" height="16" />
+                        <img src={increase} alt="" width="20" height="20" />
                     </div>
                     <p>베팅하기</p>
                 </button>
