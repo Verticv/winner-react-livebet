@@ -11,12 +11,13 @@ export default function ViewSelectButton({
     activeButton,
     setActiveButton,
     onclick,
-    id
+    id,
 }) {
     const changeView = useStore((state) => state.changeView);
     return (
         <button
             onClick={(e) => {
+                setActiveButton(viewName)
                 if (isMultiViewButton) {
                     setActiveButton(id)
                     if (onclick) {
@@ -26,7 +27,7 @@ export default function ViewSelectButton({
                     changeView(viewType)
                 }
             }}
-            className={`nav-view-button ${isMultiViewButton ? "multi" :""}`}
+            className={`nav-view-button ${activeButton === viewName ? 'active' : ''} ${isMultiViewButton ? "multi" :""}`}
         >
             {!isMultiViewButton && <img src={icon} alt="" />}
             <p>{viewName}</p>
