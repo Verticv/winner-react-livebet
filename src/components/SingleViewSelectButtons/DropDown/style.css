@@ -33,17 +33,16 @@
   height: 100%;
   width: 100%;
   padding-right: 0;
-  padding-left: 2px;
   vertical-align: middle;
   text-align: center;
-  /* justify-content: space-around; */
   align-items: center;
+  justify-content: center;
 }
 
 .select-box--selected-item .text{
-  width: 136px;
   text-align: left;
   margin-top: -3px;
+  margin-right: 3px;
 }
 
 .select-box--items {
@@ -53,40 +52,39 @@
   margin-right: 0;
   border: 2px solid #b89c5e;
   border-radius: 6px;
-  background: black;
+  background: linear-gradient(to top, #292929, #0f0f0f);
 }
 
 .select-box--items .select-box--item:nth-of-type(1) {
-  border-top-right-radius: 6px;
-  border-top-left-radius: 6px;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
 }
 
 .select-box--items .select-box--item:nth-of-type(3) {
-  border-bottom-right-radius: 6px;
-  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
 }
 
 
 .select-box--items div {
   padding: 6px;
   display: flex;
-  justify-content: center;
   align-items: center;
   color: white;
-  background: linear-gradient(to top, #282828, #1c1c1c 50%, #0f0f0f);
   width: 132px;
   height: 32px;
-  /* background-color: blueviolet; */
+  padding-left: 39px;
 }
 
 .select-box--items div:hover, .select-box--items div.active {
-  background: linear-gradient(to top, #36363f, #1c1c1c 50%, #36363f)
+  background-color: #36363f;
 }
 
 .select-box--arrow {
-  width: 30px;
+  width: 11px;
   height: 0px;
   margin-top: 10px;
+  margin-right: 6px;
   padding: 0;
   display: inline-block;
 }
@@ -102,10 +100,5 @@
 .select-box--arrow-up {
   transform: rotate(180deg);
   margin-top: -9px;
-  /* width: 0;
-  height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-bottom: 10px solid #fff;
-  background-color: white; */
+  width: 11px;
 }
