@@ -33,16 +33,16 @@
   height: 100%;
   width: 100%;
   padding-right: 0;
-  padding-left: 11px;
   vertical-align: middle;
   text-align: center;
   align-items: center;
+  justify-content: center;
 }
 
 .select-box--selected-item .text{
-  width: 136px;
   text-align: left;
   margin-top: -3px;
+  margin-right: 3px;
 }
 
 .select-box--items {
@@ -73,7 +73,7 @@
   color: white;
   width: 132px;
   height: 32px;
-  padding-left: 36px;
+  padding-left: 39px;
 }
 
 .select-box--items div:hover, .select-box--items div.active {
@@ -81,10 +81,10 @@
 }
 
 .select-box--arrow {
-  width: 30px;
+  width: 11px;
   height: 0px;
   margin-top: 10px;
-  margin-right: 10px;
+  margin-right: 6px;
   padding: 0;
   display: inline-block;
 }
@@ -100,10 +100,5 @@
 .select-box--arrow-up {
   transform: rotate(180deg);
   margin-top: -9px;
-  /* width: 0;
-  height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-bottom: 10px solid #fff;
-  background-color: white; */
+  width: 11px;
 }
