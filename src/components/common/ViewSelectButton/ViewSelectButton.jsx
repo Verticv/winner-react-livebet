@@ -12,12 +12,16 @@ export default function ViewSelectButton({
     setActiveButton,
     onclick,
     id,
+    key,
 }) {
     const changeView = useStore((state) => state.changeView);
+    const { selectedView } = useStore((state) => state);
     return (
         <button
             onClick={(e) => {
-                if(viewName !== '리그선택')
+                if (selectedView === 'chronological') {
+                    // setActiveButton()
+                }
                 setActiveButton(viewName)
                 if (isMultiViewButton) {
                     setActiveButton(id)
@@ -28,7 +32,7 @@ export default function ViewSelectButton({
                     changeView(viewType)
                 }
             }}
-            className={`nav-view-button ${activeButton === viewName ? 'active' : ''} ${isMultiViewButton ? "multi" :""}`}
+            className={`nav-view-button ${activeButton === viewName ? 'active' : '' } ${isMultiViewButton ? "multi" :""}`}
         >
             {!isMultiViewButton && <img src={icon} alt="" />}
             <p>{viewName}</p>

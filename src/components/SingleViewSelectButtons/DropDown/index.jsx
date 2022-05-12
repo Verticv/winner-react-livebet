@@ -29,7 +29,7 @@ export default function SelectBox({ items }) {
     return (
         <div className="select-box--box">
             <div onClick={dropDown} className="select-box--container">
-                <div className="select-box--selected-item">
+                <div className="select-box--selected-item">                    
                     <img src={checkIcon} alt="check" />
                     <span className="text">{selectedItem.value}</span>
                     <div
@@ -44,7 +44,6 @@ export default function SelectBox({ items }) {
                     style={{ display: showItems ? "block" : "none" }}
                     className={`select-box--items`}
                 >
-                    <img src="../../../imagesHold/ico_16.png" alt="" />
                     {items.map((item) => (
                         <div
                             key={item.id}
@@ -54,7 +53,7 @@ export default function SelectBox({ items }) {
                             } ${
                                 selectedItem === item ? "active" : ""
                             } select-box--item`}
-                        >
+                        >                
                             <p>{item.value}</p>
                         </div>
                     ))}
