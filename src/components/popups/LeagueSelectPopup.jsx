@@ -57,6 +57,7 @@ export default function LeagueSelectPopup(props) {
     const { selectedView, changeView, selectedLeagues, changeLeagues } =
         useStore((state) => state);
     const [leaguesToAdd, setLeaguesToAdd] = useState(selectedLeagues);
+
     const handleLeaguesToAdd = (leaguesToAdd) => {
         setLeaguesToAdd(leaguesToAdd);
     };

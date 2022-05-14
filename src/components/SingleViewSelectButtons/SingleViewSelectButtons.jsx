@@ -5,34 +5,40 @@ import SelectBox from './DropDown'
 
 export default function SingleViewSelectButtons() {
     const [activeButton, setActiveButton] = useState('시간순보기')
-    const [activeFirstButton, setFirstActiveButton] = useState('')
+    // const [activeFirstButton, setFirstActiveButton] = useState('')
     const views = [
-        {
-            id: 0,
-            name: "시간순보기",
-            type: viewTypes.chronological,
-            icon: require("../../imagesHold/ico_17.png").default,
-        },
-        {
-            id: 1,
-            name: "리그순보기",
-            type: viewTypes.viewLeague,
-
-            icon: require("../../imagesHold/ico_18.png").default,
-        },
-    ];
-    const view = [
         {
             id: 0,
             name: "리그선택",
             type: viewTypes.selectLeague,
             icon: require("../../imagesHold/ico_16.png").default,
         },
-    ]
+        {
+            id: 1,
+            name: "시간순보기",
+            type: viewTypes.chronological,
+            icon: require("../../imagesHold/ico_17.png").default,
+        },
+        {
+            id: 2,
+            name: "리그순보기",
+            type: viewTypes.viewLeague,
+
+            icon: require("../../imagesHold/ico_18.png").default,
+        },
+    ];
+    // const view = [
+    //     {
+    //         id: 0,
+    //         name: "리그선택",
+    //         type: viewTypes.selectLeague,
+    //         icon: require("../../imagesHold/ico_16.png").default,
+    //     },
+    // ]
 
     return (
         <div className="view-select-button">
-            {view.map((view) => {
+            {/* {view.map((view) => {
                 return (
                     <>
                     <ViewSelectButton
@@ -45,7 +51,7 @@ export default function SingleViewSelectButtons() {
                     />
                     </>
                 );
-            })}
+            })} */}
             {views.map((view) => {
                 return (
                     <>
@@ -60,7 +66,6 @@ export default function SingleViewSelectButtons() {
                     </>
                 );
             })}
-            {/* <div> */}
             <SelectBox
                 items={[
                     { value: "전체경기", id: 1 },
@@ -68,7 +73,6 @@ export default function SingleViewSelectButtons() {
                     { value: "예정중", id: 3 },
                 ]}
         />
-            {/* </div> */}
         </div>
     );
 }
