@@ -14,7 +14,6 @@ export default function ViewSelectButton({
     key,
 }) {
     const changeView = useStore((state) => state.changeView);
-    const { selectedView } = useStore((state) => state);
     const leaguesToAdd = useStore((state) => state.selectedLeagues);
     return (
         <button
