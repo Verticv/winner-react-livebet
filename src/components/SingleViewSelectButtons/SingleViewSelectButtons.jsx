@@ -5,7 +5,6 @@ import SelectBox from './DropDown'
 
 export default function SingleViewSelectButtons() {
     const [activeButton, setActiveButton] = useState('시간순보기')
-    // const [activeFirstButton, setFirstActiveButton] = useState('')
     const views = [
         {
             id: 0,
@@ -27,31 +26,9 @@ export default function SingleViewSelectButtons() {
             icon: require("../../imagesHold/ico_18.png").default,
         },
     ];
-    // const view = [
-    //     {
-    //         id: 0,
-    //         name: "리그선택",
-    //         type: viewTypes.selectLeague,
-    //         icon: require("../../imagesHold/ico_16.png").default,
-    //     },
-    // ]
 
     return (
         <div className="view-select-button">
-            {/* {view.map((view) => {
-                return (
-                    <>
-                    <ViewSelectButton
-                        setActiveButton={setFirstActiveButton}
-                        activeButton={activeFirstButton}
-                        key={view.id}
-                        viewName={view.name}
-                        viewType={view.type}
-                        icon={view.icon}
-                    />
-                    </>
-                );
-            })} */}
             {views.map((view) => {
                 return (
                     <>
