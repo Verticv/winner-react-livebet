@@ -27,6 +27,17 @@ function ResultsRow({
     const handleClick = (event) => {
         event.stopPropagation();
         addBetSlipBet(bet);
+        event.target.closest("#red");
+        setLeftActiveBackground((prev) => !prev);
+        setActiveCard(id);
+    };
+
+    const handleRightClick = (event) => {
+        event.stopPropagation();
+        addBetSlipBet(bet);
+        event.target.closest("#blue");
+        setRightActiveBackground((prev) => !prev);
+        setActiveCard(id);
     };
 
     useEffect(() => {
@@ -36,19 +47,15 @@ function ResultsRow({
     }, [selectedNav]);
 
     return (
-        <div onClick={handleClick} className="match-results-wrapper">
-            <div
-                onClick={() => {
-                    setLeftActiveBackground((prev) => !prev);
-                    setActiveCard(id);
-                }}
-                className={`left ${leftActiveBackground ? "active" : ""}`}
-            >
-                <p className="text">{option1}</p>
-            </div>
-            <div className={`number1 ${isRowActive ? "red-arrow" : ""}`}>
-                {isRowActive && <img src={upRedArrow} alt="" />}
-                <div className="number-value">{kof1.toFixed(2)}</div>
+        <div className="match-results-wrapper">
+            <div onClick={handleClick} id="red">
+                <div className={`left ${leftActiveBackground ? "active" : ""}`}>
+                    <p className="text">{option1}</p>
+                </div>
+                <div className={`number1 ${isRowActive ? "red-arrow" : ""}`}>
+                    {isRowActive && <img src={upRedArrow} alt="" />}
+                    <div className="number-value">{kof1.toFixed(2)}</div>
+                </div>
             </div>
             <div
                 onClick={() => {
@@ -67,18 +74,16 @@ function ResultsRow({
                 </div>
                 <div className="right"></div>
             </div>
-            <div className={`number2 ${isRowActive ? "blue-arrow" : ""}`}>
-                {isRowActive && <img src={downBlueArrow} alt="" />}
-                <div className="number-value">{kof2.toFixed(2)}</div>
-            </div>
-            <div
-                onClick={() => {
-                    setRightActiveBackground((prev) => !prev);
-                    setActiveCard(id);
-                }}
-                className={`right ${rightActiveBackground ? "active" : ""}`}
-            >
-                <p className="text">{option2}</p>
+            <div onClick={handleRightClick} id="blue">
+                <div className={`number2 ${isRowActive ? "blue-arrow" : ""}`}>
+                    {isRowActive && <img src={downBlueArrow} alt="" />}
+                    <div className="number-value">{kof2.toFixed(2)}</div>
+                </div>
+                <div
+                    className={`right ${rightActiveBackground ? "active" : ""}`}
+                >
+                    <p className="text">{option2}</p>
+                </div>
             </div>
             <div
                 style={{
