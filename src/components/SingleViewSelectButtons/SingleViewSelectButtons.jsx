@@ -5,7 +5,6 @@ import SelectBox from './DropDown'
 
 export default function SingleViewSelectButtons() {
     const [activeButton, setActiveButton] = useState('시간순보기')
-
     const views = [
         {
             id: 0,
@@ -28,11 +27,11 @@ export default function SingleViewSelectButtons() {
         },
     ];
 
-    
     return (
         <div className="view-select-button">
             {views.map((view) => {
                 return (
+                    <>
                     <ViewSelectButton
                         setActiveButton={setActiveButton}
                         activeButton={activeButton}
@@ -41,9 +40,9 @@ export default function SingleViewSelectButtons() {
                         viewType={view.type}
                         icon={view.icon}
                     />
+                    </>
                 );
             })}
-            <div>
             <SelectBox
                 items={[
                     { value: "전체경기", id: 1 },
@@ -51,7 +50,6 @@ export default function SingleViewSelectButtons() {
                     { value: "예정중", id: 3 },
                 ]}
         />
-            </div>
         </div>
     );
 }

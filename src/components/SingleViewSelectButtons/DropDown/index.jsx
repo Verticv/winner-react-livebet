@@ -8,7 +8,9 @@ export default function SelectBox({ items }) {
     const [selectedItem, setSelectedItem] = useState(items[0]);
     useEffect(() => {
         const closeDropdown = (e) => {
-            if (e.path[0].tagName !== 'SPAN'){
+            if (( e.path[0].className !== 'select-box--selected-item')
+                && e.path[0].tagName !== 'IMG'
+                && e.path[0].tagName !== 'SPAN'){
                 setShowItems(false);
             };
         };
@@ -28,9 +30,9 @@ export default function SelectBox({ items }) {
 
     return (
         <div className="select-box--box">
-            <div onClick={dropDown} className="select-box--container">
-                <div className="select-box--selected-item">
-                    <img src={checkIcon} alt="check" />
+            <div className="select-box--container">
+                <div onClick={dropDown}  className="select-box--selected-item">                    
+                    <img className="icon" src={checkIcon} alt="check" />
                     <span className="text">{selectedItem.value}</span>
                     <div
                         className={`select-box--arrow ${
@@ -44,7 +46,6 @@ export default function SelectBox({ items }) {
                     style={{ display: showItems ? "block" : "none" }}
                     className={`select-box--items`}
                 >
-                    <img src="../../../imagesHold/ico_16.png" alt="" />
                     {items.map((item) => (
                         <div
                             key={item.id}
@@ -54,7 +55,7 @@ export default function SelectBox({ items }) {
                             } ${
                                 selectedItem === item ? "active" : ""
                             } select-box--item`}
-                        >
+                        >                
                             <p>{item.value}</p>
                         </div>
                     ))}
