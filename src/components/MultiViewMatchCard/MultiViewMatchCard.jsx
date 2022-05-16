@@ -84,12 +84,25 @@ function ResultsRow({
     const handleClick = (event) => {
         event.stopPropagation();
         addBetSlipBet(bet);
+        event.target.closest("#red");
+        setLeftActiveBackground((prev) => !prev);
+        setActiveCard(id);
     };
+    const handleRightClick = (event) => {
+        event.stopPropagation();
+        addBetSlipBet(bet);
+        event.target.closest("#blue");
+        setRightActiveBackground((prev) => !prev);
+        setActiveCard(id);
+    };
+
 
     const selectedNav = useStore((state) => state.selectedNav);
     const [leftActiveBackground, setLeftActiveBackground] = useState(false);
     const [middleActiveBackground, setMiddleActiveBackground] = useState(false);
     const [rightActiveBackground, setRightActiveBackground] = useState(false);
+    const [onHoverLeft, setOnHoverLeft] = useState(false);
+    const [onHoverRight, setOnHoverRight] = useState(false);
 
     useEffect(() => {
         setLeftActiveBackground(false);
@@ -98,21 +111,19 @@ function ResultsRow({
     }, [selectedNav]);
 
     return (
-        <div onClick={handleClick} className="match-results-wrapper">
-            <div
-                onClick={() => {
-                    setLeftActiveBackground((prev) => !prev);
-                    setActiveCard(id);
-                }}
-                className={`left ${leftActiveBackground ? "active" : ""}`}
-            >
-                <p className="text">{option1}</p>
+        <div className="match-results-wrapper">
+            <div onClick={handleClick} id="red" style={{width: '45%'}}>
+                <div className={`left ${leftActiveBackground || onHoverLeft ? "active" : ""}`}>
+                    <p className="text">{option1}</p>
+                </div>
+                <div 
+                onMouseOver={() => setOnHoverLeft(true)} 
+                onMouseOut={() => setOnHoverLeft(false)}
+                className={`number1 ${isRowActive ? "red-arrow" : ""}`}>
+                    {isRowActive && <img src={upRedArrow} alt="" />}
+                    <div className="number-value">{kof1.toFixed(2)}</div>
+                </div>
             </div>
-            <div className={`number1 ${isRowActive ? "red-arrow" : ""}`}>
-                {isRowActive && <img src={upRedArrow} alt="" />}
-                <div className="number-value">{kof1?.toFixed(2)}</div>
-            </div>
-
             <div
                 onClick={() => {
                     setMiddleActiveBackground((prev) => !prev);
@@ -130,18 +141,19 @@ function ResultsRow({
                 </div>
                 <div className="right"></div>
             </div>
-            <div className={`number2 ${isRowActive ? "blue-arrow" : ""}`}>
-                {isRowActive && <img src={downBlueArrow} alt="" />}
-                <div className="number-value">{kof2?.toFixed(2)}</div>
-            </div>
-            <div
-                onClick={() => {
-                    setRightActiveBackground((prev) => !prev);
-                    setActiveCard(id);
-                }}
-                className={`right ${rightActiveBackground ? "active" : ""}`}
-            >
-                <p className="text">{option2}</p>
+            <div onClick={handleRightClick} id="blue">
+                <div 
+                onMouseOver={() => setOnHoverRight(true)} 
+                onMouseOut={() => setOnHoverRight(false)}
+                className={`number2 ${isRowActive ? "blue-arrow" : ""}`}>
+                    {isRowActive && <img src={downBlueArrow} alt="" />}
+                    <div className="number-value">{kof2.toFixed(2)}</div>
+                </div>
+                <div
+                    className={`right ${rightActiveBackground || onHoverRight ? "active" : ""}`}
+                >
+                    <p className="text">{option2}</p>
+                </div>
             </div>
             <div
                 style={{
