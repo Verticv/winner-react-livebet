@@ -22,6 +22,8 @@ function ResultsRow({
     const [leftActiveBackground, setLeftActiveBackground] = useState(false);
     const [middleActiveBackground, setMiddleActiveBackground] = useState(false);
     const [rightActiveBackground, setRightActiveBackground] = useState(false);
+    const [onHoverLeft, setOnHoverLeft] = useState(false);
+    const [onHoverRight, setOnHoverRight] = useState(false);
 
     const addBetSlipBet = useStore((s) => s.addBetSlipBet);
     const handleClick = (event) => {
@@ -45,14 +47,16 @@ function ResultsRow({
         setMiddleActiveBackground(false);
         setRightActiveBackground(false);
     }, [selectedNav]);
-
     return (
         <div className="match-results-wrapper">
             <div onClick={handleClick} id="red">
-                <div className={`left ${leftActiveBackground ? "active" : ""}`}>
+                <div className={`left ${leftActiveBackground || onHoverLeft ? "active" : ""}`}>
                     <p className="text">{option1}</p>
                 </div>
-                <div className={`number1 ${isRowActive ? "red-arrow" : ""}`}>
+                <div 
+                onMouseOver={() => setOnHoverLeft(true)} 
+                onMouseOut={() => setOnHoverLeft(false)}
+                className={`number1 ${isRowActive ? "red-arrow" : ""}`}>
                     {isRowActive && <img src={upRedArrow} alt="" />}
                     <div className="number-value">{kof1.toFixed(2)}</div>
                 </div>
@@ -75,12 +79,15 @@ function ResultsRow({
                 <div className="right"></div>
             </div>
             <div onClick={handleRightClick} id="blue">
-                <div className={`number2 ${isRowActive ? "blue-arrow" : ""}`}>
+                <div 
+                onMouseOver={() => setOnHoverRight(true)} 
+                onMouseOut={() => setOnHoverRight(false)}
+                className={`number2 ${isRowActive ? "blue-arrow" : ""}`}>
                     {isRowActive && <img src={downBlueArrow} alt="" />}
                     <div className="number-value">{kof2.toFixed(2)}</div>
                 </div>
                 <div
-                    className={`right ${rightActiveBackground ? "active" : ""}`}
+                    className={`right ${rightActiveBackground || onHoverRight ? "active" : ""}`}
                 >
                     <p className="text">{option2}</p>
                 </div>
