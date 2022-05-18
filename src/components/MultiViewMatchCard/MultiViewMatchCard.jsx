@@ -126,6 +126,7 @@ function ResultsRow({
             </div>
             <div
                 onClick={() => {
+                    addBetSlipBet(bet);
                     setMiddleActiveBackground((prev) => !prev);
                     setActiveCard(id);
                 }}
