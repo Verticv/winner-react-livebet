@@ -92,10 +92,13 @@ export default function CardBody({
                                 fontSize: "14px",
                                 whiteSpace: "nowrap",
                                 color: "#d1cecf",
+                                width: '10rem',
+                                overflow: 'hidden',
+                                textOverflow: 'ellipsis',
                             }}
                             className="text-54"
                         >
-                            {team1}
+                            {team1.length > 12 ? `${team1.slice(0, 12)}...` : team1}
                         </p>
                     </div>
                     <div className="team-2">
@@ -116,10 +119,13 @@ export default function CardBody({
                                 fontSize: "14px",
                                 whiteSpace: "nowrap",
                                 color: "#d1cecf",
+                                width: '10rem',
+                                overflow: 'hidden',
+                                textOverflow: 'ellipsis',
                             }}
                             className="text-55"
                         >
-                            {team2}
+                            {team2.length > 12 ? `${team2.slice(0, 12)}...` : team2}
                         </p>
                     </div>
                 </div>

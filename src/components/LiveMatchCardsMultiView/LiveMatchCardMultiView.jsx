@@ -195,10 +195,13 @@ export default function LiveMatchCardMultiView({
                                     style={{
                                         fontSize: "14px",
                                         whiteSpace: "nowrap",
+                                        width: '13rem',
+                                        overflow: 'hidden',
+                                        textOverflow: 'ellipsis',
                                     }}
                                     className="text-54"
                                 >
-                                    {team1}
+                                    {team1.length > 12 ? `${team1.slice(0, 12)}...` : team1}
                                 </p>
                             </div>
                             <div className="team-2">
@@ -218,10 +221,13 @@ export default function LiveMatchCardMultiView({
                                     style={{
                                         fontSize: "14px",
                                         whiteSpace: "nowrap",
+                                        width: '13rem',
+                                        overflow: 'hidden',
+                                        textOverflow: 'ellipsis',
                                     }}
                                     className="text-55"
                                 >
-                                    {team2}
+                                    {team2.length > 12 ? `${team2.slice(0, 12)}...` : team2}
                                 </p>
                             </div>
                         </div>

@@ -51,6 +51,9 @@ export default function CardBody({
                                 fontSize: "14px",
                                 whiteSpace: "nowrap",
                                 color: "#d1cecf",
+                                width: '18rem',
+                                overflow: 'hidden',
+                                textOverflow: 'ellipsis',
                             }}
                             className="text-54"
                         >
@@ -88,6 +91,9 @@ export default function CardBody({
                                 fontSize: "14px",
                                 whiteSpace: "nowrap",
                                 color: "#d1cecf",
+                                width: '18rem',
+                                overflow: 'hidden',
+                                textOverflow: 'ellipsis',
                             }}
                             className="text-55"
                         >
