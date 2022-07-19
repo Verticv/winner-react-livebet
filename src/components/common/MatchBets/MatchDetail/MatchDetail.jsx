@@ -52,7 +52,7 @@ function ResultsRow({
             <div onClick={handleClick} id="red">
                 <div className={`left ${leftActiveBackground || onHoverLeft ? "active" : ""}`}>
                     <p className="text" style={{
-                        width: '16rem',
+                        width: '16.5rem',
                         overflow: 'hidden',
                         textOverflow: 'ellipsis',
                         whiteSpace: 'nowrap',
@@ -96,7 +96,7 @@ function ResultsRow({
                     className={`right ${rightActiveBackground || onHoverRight ? "active" : ""}`}
                 >
                     <p className="text" style={{
-                        width: '16rem',
+                        width: '16.5rem',
                         overflow: 'hidden',
                         textOverflow: 'ellipsis',
                         whiteSpace: 'nowrap',

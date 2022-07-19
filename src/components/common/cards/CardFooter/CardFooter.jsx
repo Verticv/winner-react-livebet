@@ -61,7 +61,7 @@ export default function CardFooter({ matchCard, isActive, setIsActive }) {
                 }`}
             >
                 <p className="text" style={{
-                    width: '12rem',
+                    width: id !== 0 ? '13rem' : '12rem',
                     overflow: 'hidden',
                     textOverflow: 'ellipsis',
                     whiteSpace: 'nowrap',
