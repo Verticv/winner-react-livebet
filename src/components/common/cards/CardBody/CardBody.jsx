@@ -75,14 +75,18 @@ export default function CardBody({
                         onClick={starHandler}
                         src={activeStar || isActiveStar ? goldStar : whiteStar}
                         alt=""
-                        width="18"
+                        
                         height="18"
+                        style={{
+                            width: "18px",
+                            maxWidth: "18px",
+                        }}
                     />
                 </div>
                 <div className="teams-wrapper">
                     <div className="team-1">
                         <div className="shirt">
-                            <img src={redShirt} alt="" width="15" height="10" />
+                            <img src={redShirt} alt="" style={{ width: "15px", maxWidth: '15px' }}  height="10" />
                         </div>
                         <div className="bg-holder-26">
                             <p className="h-3">h</p>
@@ -92,10 +96,13 @@ export default function CardBody({
                                 fontSize: "14px",
                                 whiteSpace: "nowrap",
                                 color: "#d1cecf",
+                                width: '10.8rem',
+                                overflow: 'hidden',
+                                textOverflow: 'ellipsis',
                             }}
                             className="text-54"
                         >
-                            {team1}
+                            {team1.length > 12 ? `${team1.slice(0, 12)}...` : team1}
                         </p>
                     </div>
                     <div className="team-2">
@@ -116,10 +123,13 @@ export default function CardBody({
                                 fontSize: "14px",
                                 whiteSpace: "nowrap",
                                 color: "#d1cecf",
+                                width: '10.8rem',
+                                overflow: 'hidden',
+                                textOverflow: 'ellipsis',
                             }}
                             className="text-55"
                         >
-                            {team2}
+                            {team2.length > 12 ? `${team2.slice(0, 12)}...` : team2}
                         </p>
                     </div>
                 </div>

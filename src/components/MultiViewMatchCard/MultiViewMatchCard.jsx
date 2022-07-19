@@ -114,7 +114,12 @@ function ResultsRow({
         <div className="match-results-wrapper">
             <div onClick={handleClick} id="red" style={{width: '45%'}}>
                 <div className={`left ${leftActiveBackground || onHoverLeft ? "active" : ""}`}>
-                    <p className="text">{option1}</p>
+                    <p className="text" style={{
+                        width: '10rem',
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis',
+                        whiteSpace: 'nowrap',
+                    }}>{option1}</p>
                 </div>
                 <div 
                 onMouseOver={() => setOnHoverLeft(true)} 
@@ -153,7 +158,13 @@ function ResultsRow({
                 <div
                     className={`right ${rightActiveBackground || onHoverRight ? "active" : ""}`}
                 >
-                    <p className="text">{option2}</p>
+                    <p className="text" style={{
+                        width:'10rem',
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis',
+                        whiteSpace: 'nowrap',
+                        textAlign: 'right',
+                    }}>{option2}</p>
                 </div>
             </div>
             <div

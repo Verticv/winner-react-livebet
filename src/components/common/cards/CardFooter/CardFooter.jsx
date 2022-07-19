@@ -60,7 +60,12 @@ export default function CardFooter({ matchCard, isActive, setIsActive }) {
                     leftActiveBackground ? "active-background" : ""
                 }`}
             >
-                <p className="text">{team1}</p>
+                <p className="text" style={{
+                    width: id !== 0 ? '13rem' : '12rem',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    whiteSpace: 'nowrap',
+                }}>{team1.length > 12 ? `${team1.slice(0, 12)}...` : team1}</p>
                 <div className={`number ${leftActive ? "red-arrow" : ""}`}>
                     {leftActive && <img src={upRedArrow} alt="" />}
                     <div className="number-value">{team1WinKof.toFixed(2)}</div>
@@ -94,7 +99,13 @@ export default function CardFooter({ matchCard, isActive, setIsActive }) {
                     {rightActive && <img src={downBlueArrow} alt="" />}
                     <div className="number-value">{team2WinKof.toFixed(2)}</div>
                 </div>
-                <p className="text">{team2}</p>
+                <p className="text" style={{
+                    width: '12rem',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    whiteSpace: 'nowrap',
+                    textAlign: 'right',
+                }}>{team2.length > 12 ? `${team2.slice(0, 12)}...` : team2}</p>
             </div>
         </div>
     );
