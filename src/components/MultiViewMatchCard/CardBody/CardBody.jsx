@@ -109,7 +109,7 @@ export default function CardBody({
                             display: "flex",
                             width: "122px",
                             justifyContent: "space-between",
-                            marginRight: "10.5px",
+                            marginRight: "12.5px",
                         }}
                     >
                         <p>{team1stats.toString()[0]}</p>
@@ -125,7 +125,7 @@ export default function CardBody({
                             display: "flex",
                             width: "122px",
                             justifyContent: "space-between",
-                            marginRight: "10.5px",
+                            marginRight: "12.5px",
                         }}
                     >
                         <p>{team2stats.toString()[0]}</p>
