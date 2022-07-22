@@ -340,9 +340,15 @@
             letter-spacing: -2px;
             text-align: end;
 
+            p{
+              width: 16px;
+            }
+
             .gold {
               color: #e9ca4e;
               min-width: 15px;
+              // width: 17px;
+              width: 24px;
               text-align: center;
             }
 
