@@ -187,7 +187,7 @@ export default function CardBody({
                         <div
                             style={{
                                 display: "flex",
-                                width: "127px",
+                                width: "129px",
                                 justifyContent: "space-between",
                                 marginRight: "11px",
                                 textAlign: "center",
@@ -204,7 +204,7 @@ export default function CardBody({
                         <div
                             style={{
                                 display: "flex",
-                                width: "127px",
+                                width: "129px",
                                 justifyContent: "space-between",
                                 marginRight: "11px",
                                 textAlign: "center",
