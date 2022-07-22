@@ -185,15 +185,17 @@
           }
 
           .results-number {
-            margin-right: 18px;
+            // margin-right: 18px;
 
             &:nth-child(2) {
-              margin-right: 26px;
+              // margin-right: 26px;
             }
           }
 
           .result {
             color: #ffcc66;
+            min-width: 28px;
+            text-align: center;
           }
         }
       }

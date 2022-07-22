@@ -195,13 +195,15 @@ export default function LiveMatchCardMultiView({
                                     style={{
                                         fontSize: "14px",
                                         whiteSpace: "nowrap",
-                                        width: '13rem',
-                                        overflow: 'hidden',
-                                        textOverflow: 'ellipsis',
+                                        width: "13rem",
+                                        overflow: "hidden",
+                                        textOverflow: "ellipsis",
                                     }}
                                     className="text-54"
                                 >
-                                    {team1.length > 12 ? `${team1.slice(0, 12)}...` : team1}
+                                    {team1.length > 12
+                                        ? `${team1.slice(0, 12)}...`
+                                        : team1}
                                 </p>
                             </div>
                             <div className="team-2">
@@ -221,35 +223,55 @@ export default function LiveMatchCardMultiView({
                                     style={{
                                         fontSize: "14px",
                                         whiteSpace: "nowrap",
-                                        width: '13rem',
-                                        overflow: 'hidden',
-                                        textOverflow: 'ellipsis',
+                                        width: "13rem",
+                                        overflow: "hidden",
+                                        textOverflow: "ellipsis",
                                     }}
                                     className="text-55"
                                 >
-                                    {team2.length > 12 ? `${team2.slice(0, 12)}...` : team2}
+                                    {team2.length > 12
+                                        ? `${team2.slice(0, 12)}...`
+                                        : team2}
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div className="right">
                         <div className="first-row">
-                            <span className="results-number">
-                                {team1Result1}
-                            </span>
-                            <span className="results-number">
-                                {team1Result2}
-                            </span>
-                            <span className="result">{team1Goal}</span>
+                            <div
+                                style={{
+                                    display: "flex",
+                                    width: "85px",
+                                    justifyContent: "space-between",
+                                    marginRight: "11.5px",
+                                }}
+                            >
+                                <span className="results-number">
+                                    {team1Result1}
+                                </span>
+                                <span className="results-number">
+                                    {team1Result2}
+                                </span>
+                                <span className="result">{team1Goal}</span>
+                            </div>
                         </div>
                         <div className="second-row">
-                            <span className="results-number">
-                                {team2Result1}
-                            </span>
-                            <span className="results-number">
-                                {team2Result2}
-                            </span>
-                            <span className="result">{team2Goal}</span>
+                            <div
+                                style={{
+                                    display: "flex",
+                                    width: "85px",
+                                    justifyContent: "space-between",
+                                    marginRight: "11.5px",
+                                }}
+                            >
+                                <span className="results-number">
+                                    {team2Result1}
+                                </span>
+                                <span className="results-number">
+                                    {team2Result2}
+                                </span>
+                                <span className="result">{team2Goal}</span>
+                            </div>
                         </div>
                     </div>
                 </div>

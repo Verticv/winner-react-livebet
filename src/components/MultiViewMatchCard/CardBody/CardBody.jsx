@@ -51,9 +51,9 @@ export default function CardBody({
                                 fontSize: "14px",
                                 whiteSpace: "nowrap",
                                 color: "#d1cecf",
-                                width: '18rem',
-                                overflow: 'hidden',
-                                textOverflow: 'ellipsis',
+                                width: "18rem",
+                                overflow: "hidden",
+                                textOverflow: "ellipsis",
                             }}
                             className="text-54"
                         >
@@ -91,9 +91,9 @@ export default function CardBody({
                                 fontSize: "14px",
                                 whiteSpace: "nowrap",
                                 color: "#d1cecf",
-                                width: '18rem',
-                                overflow: 'hidden',
-                                textOverflow: 'ellipsis',
+                                width: "18rem",
+                                overflow: "hidden",
+                                textOverflow: "ellipsis",
                             }}
                             className="text-55"
                         >
@@ -104,18 +104,36 @@ export default function CardBody({
             </div>
             <div className="right">
                 <p className="line">
-                    <p>{team1stats.toString()[0]}</p>
-                    <p className="second">{team1stats.toString()[1]}</p>
-                    <p className="third">{team1stats.toString()[2]}</p>
-                    <p className="forth">{team1stats.toString()[3]}</p>
-                    <span className="gold">{team1Goals}</span>
+                    <div
+                        style={{
+                            display: "flex",
+                            width: "122px",
+                            justifyContent: "space-between",
+                            marginRight: "10.5px",
+                        }}
+                    >
+                        <p>{team1stats.toString()[0]}</p>
+                        <p className="second">{team1stats.toString()[1]}</p>
+                        <p className="third">{team1stats.toString()[2]}</p>
+                        <p className="forth">{team1stats.toString()[3]}</p>
+                        <span className="gold">{team1Goals}</span>
+                    </div>
                 </p>
                 <p className="line">
-                    <p>{team2stats.toString()[0]}</p>
-                    <p className="second">{team2stats.toString()[1]}</p>
-                    <p className="third">{team2stats.toString()[2]}</p>
-                    <p className="forth">{team2stats.toString()[3]}</p>
-                    <span className="gold">{team2Goals}</span>
+                    <div
+                        style={{
+                            display: "flex",
+                            width: "122px",
+                            justifyContent: "space-between",
+                            marginRight: "10.5px",
+                        }}
+                    >
+                        <p>{team2stats.toString()[0]}</p>
+                        <p className="second">{team2stats.toString()[1]}</p>
+                        <p className="third">{team2stats.toString()[2]}</p>
+                        <p className="forth">{team2stats.toString()[3]}</p>
+                        <span className="gold">{team2Goals}</span>
+                    </div>
                 </p>
             </div>
         </div>
