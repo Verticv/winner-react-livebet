@@ -116,7 +116,7 @@ export default function CardBody({
                         <p style={{ marginRight: '-5px'}}>{team1stats.toString()[0]}</p>
                         <p style={{ marginRight: '-5px'}} className="second">{team1stats.toString()[1]}</p>
                         <p style={{ marginRight: '-5px'}} className="third">{team1stats.toString()[2]}</p>
-                        <p style={{ marginRight: '-5px'}} className="forth">{team1stats.toString()[3]}</p>
+                        <p style={{ marginRight: '-8px'}} className="forth">{team1stats.toString()[3]}</p>
                         <span className="gold">{team1Goals}</span>
                     </div>
                 </p>
@@ -124,7 +124,7 @@ export default function CardBody({
                     <div
                         style={{
                             display: "flex",
-                            width: "127px",
+                            width: "128px",
                             justifyContent: "space-between",
                             marginRight: "11px",
                             textAlign: 'center',
@@ -133,7 +133,7 @@ export default function CardBody({
                         <p style={{ marginRight: '-5px'}}>{team2stats.toString()[0]}</p>
                         <p style={{ marginRight: '-5px'}} className="second">{team2stats.toString()[1]}</p>
                         <p style={{ marginRight: '-5px'}} className="third">{team2stats.toString()[2]}</p>
-                        <p style={{ marginRight: '-5px'}} className="forth">{team2stats.toString()[3]}</p>
+                        <p style={{ marginRight: '-8px'}} className="forth">{team2stats.toString()[3]}</p>
                         <span className="gold">{team2Goals}</span>
                     </div>
                 </p>
