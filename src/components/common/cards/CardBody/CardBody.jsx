@@ -97,7 +97,7 @@ export default function CardBody({
                         </div>
                         <p
                             style={{
-                                fontSize: "10px",
+                                fontSize: "14px",
                                 whiteSpace: "nowrap",
                                 color: "#d1cecf",
                                 width: "10.8rem",
@@ -193,14 +193,16 @@ export default function CardBody({
                                 textAlign: "center",
                             }}
                         >
-                            <p>{team1stats.toString()[0]}</p>
+                            <p style={{ marginLeft: "-4px" }}>
+                                {team1stats.toString()[0]}
+                            </p>
                             <p className="second">{team1stats.toString()[1]}</p>
                             <p className="third">{team1stats.toString()[2]}</p>
                             <p className="forth">{team1stats.toString()[3]}</p>
                             <span className="gold ball">{team1Goals}</span>
                         </div>
                     </p>
-                    <p className="line">
+                    <p className="line" style={{ marginTop: "2px" }}>
                         <div
                             style={{
                                 display: "flex",
@@ -210,7 +212,9 @@ export default function CardBody({
                                 textAlign: "center",
                             }}
                         >
-                            <p>{team2stats.toString()[0]}</p>
+                            <p style={{ marginLeft: "-4px" }}>
+                                {team2stats.toString()[0]}
+                            </p>
                             <p className="second">{team2stats.toString()[1]}</p>
                             <p className="third">{team2stats.toString()[2]}</p>
                             <p className="forth">{team2stats.toString()[3]}</p>
