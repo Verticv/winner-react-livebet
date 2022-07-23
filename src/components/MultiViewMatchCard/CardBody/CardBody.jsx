@@ -107,15 +107,16 @@ export default function CardBody({
                     <div
                         style={{
                             display: "flex",
-                            width: "122px",
+                            width: "128px",
                             justifyContent: "space-between",
-                            marginRight: "12.5px",
+                            marginRight: "11px",
+                            textAlign: 'center',
                         }}
                     >
-                        <p>{team1stats.toString()[0]}</p>
-                        <p className="second">{team1stats.toString()[1]}</p>
-                        <p className="third">{team1stats.toString()[2]}</p>
-                        <p className="forth">{team1stats.toString()[3]}</p>
+                        <p style={{ marginRight: '-5px'}}>{team1stats.toString()[0]}</p>
+                        <p style={{ marginRight: '-5px'}} className="second">{team1stats.toString()[1]}</p>
+                        <p style={{ marginRight: '-5px'}} className="third">{team1stats.toString()[2]}</p>
+                        <p style={{ marginRight: '-8px'}} className="forth">{team1stats.toString()[3]}</p>
                         <span className="gold">{team1Goals}</span>
                     </div>
                 </p>
@@ -123,15 +124,16 @@ export default function CardBody({
                     <div
                         style={{
                             display: "flex",
-                            width: "122px",
+                            width: "128px",
                             justifyContent: "space-between",
-                            marginRight: "12.5px",
+                            marginRight: "11px",
+                            textAlign: 'center',
                         }}
                     >
-                        <p>{team2stats.toString()[0]}</p>
-                        <p className="second">{team2stats.toString()[1]}</p>
-                        <p className="third">{team2stats.toString()[2]}</p>
-                        <p className="forth">{team2stats.toString()[3]}</p>
+                        <p style={{ marginRight: '-5px'}}>{team2stats.toString()[0]}</p>
+                        <p style={{ marginRight: '-5px'}} className="second">{team2stats.toString()[1]}</p>
+                        <p style={{ marginRight: '-5px'}} className="third">{team2stats.toString()[2]}</p>
+                        <p style={{ marginRight: '-8px'}} className="forth">{team2stats.toString()[3]}</p>
                         <span className="gold">{team2Goals}</span>
                     </div>
                 </p>

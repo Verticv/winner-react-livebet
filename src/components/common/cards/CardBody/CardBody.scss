@@ -162,7 +162,10 @@
             font-size: 18px;
             font-weight: 500;
             text-align: end;
-            letter-spacing: -2px;
+
+            p {
+              width: 20px;
+            }
 
             &:nth-of-type(2) {
                 // margin-top: 2px;
@@ -177,25 +180,30 @@
                 // margin-left: 13px;
                 // margin-right: 10px;
                 // margin-right: 6px;
+                margin-left: 2px;
             }
 
             .third {
                 // height: 18px;
                 // width: 18px;
                 // margin-right: 13px;
+                margin-left: 1px;
             }
 
             .forth {
                 // margin-right: 9.5px;
+                margin-right: 1px
             }
 
             .ball {
                 // margin-left: 8px;
                 // margin-right: 15px;
-                // width: 20px;
+                width: 24px;
                 letter-spacing: -2px;
                 text-align: center;
-                min-width: 18px;
+                // min-width: 18px;
+                // max-width: 17px;
+
             }
         }
     }

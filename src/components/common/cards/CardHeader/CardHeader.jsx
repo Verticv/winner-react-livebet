@@ -63,7 +63,7 @@ export default function CardHeader({
                         <img src={corner} alt="" width="18" height="18" />
                         <div className="yellow-box"></div>
                         <div className="red-box"></div>
-                        <img src={p} alt="" />
+                        <img style={{marginLeft: '1px'}} src={p} alt="" />
                         <img
                             className="ball"
                             src={ball}

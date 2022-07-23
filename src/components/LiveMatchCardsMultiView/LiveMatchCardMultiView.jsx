@@ -243,13 +243,13 @@ export default function LiveMatchCardMultiView({
                                     display: "flex",
                                     width: "85px",
                                     justifyContent: "space-between",
-                                    marginRight: "11.5px",
+                                    marginRight: "8.5px",
                                 }}
                             >
-                                <span className="results-number">
+                                <span className="results-number" style={{marginLeft: '-5px'}}>
                                     {team1Result1}
                                 </span>
-                                <span className="results-number">
+                                <span className="results-number" style={{ marginRight: '5px'}}>
                                     {team1Result2}
                                 </span>
                                 <span className="result">{team1Goal}</span>
@@ -261,13 +261,13 @@ export default function LiveMatchCardMultiView({
                                     display: "flex",
                                     width: "85px",
                                     justifyContent: "space-between",
-                                    marginRight: "11.5px",
+                                    marginRight: "8.5px",
                                 }}
                             >
-                                <span className="results-number">
+                                <span className="results-number" style={{marginLeft: '-5px'}}>
                                     {team2Result1}
                                 </span>
-                                <span className="results-number">
+                                <span className="results-number" style={{ marginRight: '5px'}}>
                                     {team2Result2}
                                 </span>
                                 <span className="result">{team2Goal}</span>
