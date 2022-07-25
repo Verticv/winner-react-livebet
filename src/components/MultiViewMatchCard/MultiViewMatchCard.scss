@@ -24,7 +24,7 @@
 
         .left {
           display: flex;
-          width: 50%;
+          width: 66%;
           height: 100%;
           align-items: center;
 
@@ -41,12 +41,14 @@
             text-transform: uppercase;
             white-space: nowrap;
             font-family: NotoSansCJKkr-Regular;
+            overflow: hidden;
+            text-overflow: ellipsis;
           }
         }
 
         .right {
           display: flex;
-          width: 50%;
+          width: 44%;
           height: 100%;
           align-items: center;
           justify-content: flex-end;
