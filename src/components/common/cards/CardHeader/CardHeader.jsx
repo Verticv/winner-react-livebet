@@ -56,7 +56,7 @@ export default function CardHeader({
                         height="18"
                     />
                     <img src={flagPath} alt="" width="29" height="18" />
-                    <p className="text">{league}</p>
+                    <p className="text">{league.length > 27 ? `${league.slice(0,27)}...` : league}</p>
                 </div>
                 {isRed && (
                     <div className="right">
