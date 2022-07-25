@@ -47,7 +47,7 @@ export default function CardHeader({
         >
             <div className="line"></div>
             <div className="card-header-content">
-                <div className="left" style={{width:isRed ? '75%' : '95%'}}>
+                <div className="left" style={{width:isRed ? '75%' : '99%'}}>
                     <img
                         className="ball"
                         src={ball}
