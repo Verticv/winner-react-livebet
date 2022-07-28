@@ -25,7 +25,7 @@ export default function BetNavListItem({
                         <div className="button-content-wrapper">
                             <img src={icon} alt="" />
                             <p className={lastElementClasses}>{text}</p>
-                            <div className={`${lastElementClasses} number`}>
+                            <div className={`${lastElementClasses} number`} style={{width: 'fit-content', margin: 'auto'}}>
                                 <span>{number}</span>
                             </div>
                         </div>

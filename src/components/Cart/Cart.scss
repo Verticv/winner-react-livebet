@@ -186,11 +186,13 @@
       flex-direction: column;
       justify-content: center;
       padding-left: 9px;
-      height: 60px;
+      padding-right: 9px;
+      min-height: 60px;
       margin-bottom: 1px;
       font-size: 14px;
-      background: url('../../imagesHold/mybet-card.png');
+      background: url('../../imagesHold/mybet-card.png'); 
       background-repeat: round;
+      background-size: cover;
       .title {
         margin-bottom: 3px;
         span {
