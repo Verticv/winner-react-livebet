@@ -4,15 +4,15 @@
   width: 1539px;
   display: flex;
   overflow-x: scroll;
-  overflow-y: hidden;
+  // overflow-y: hidden;
   padding-bottom: 5px;
   margin-bottom: 5px;
-  position: sticky;
-  top: 0;
+  // position: sticky;
+  top: 126px;
   z-index: 3;
   background: #222226;
   height: 121px;
-  // position: sticky;
+  position: fixed;
 
   .multi-view-card-wrapper {
     cursor: move;
