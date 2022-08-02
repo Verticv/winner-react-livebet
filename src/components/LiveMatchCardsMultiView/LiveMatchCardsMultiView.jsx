@@ -43,7 +43,7 @@ export default function LiveMatchCardsMultiView() {
                         display: "flex",
                         justifyContent: "center",
                         alignItems: "center",
-                        position: "relative",
+                        // position: "relative",
                     }}
                     className="multi-view-cards-wrapper"
                 >
