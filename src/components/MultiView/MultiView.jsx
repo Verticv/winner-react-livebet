@@ -10,8 +10,8 @@ export default function MultiView() {
         <div>
             <div className="main-multi-group-2">
                 <div className="multi-view-container">
+                    <LiveMatchCardsMultiView />
                     <div className="multi-view-scroll">
-                        <LiveMatchCardsMultiView />
                         <MultiViewMatchCards />
                     </div>
                 </div>

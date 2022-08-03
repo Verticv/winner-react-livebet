@@ -227,9 +227,9 @@
   padding-right: 14px;
 
   .multi-view-scroll {
-    height: 1110px;
+    // height: 1080px;
     overflow-y: scroll;
-
+    margin-top: 121px;
     &::-webkit-scrollbar {
       width: 5px;
     }
