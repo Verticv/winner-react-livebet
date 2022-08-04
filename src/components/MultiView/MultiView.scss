@@ -1,7 +1,7 @@
 @import 'variables.scss';
 
 .multi-view-cards-wrapper {
-  width: 1539px;
+  width: 1550px;
   display: flex;
   overflow-x: scroll;
   // overflow-y: hidden;
@@ -9,7 +9,7 @@
   margin-bottom: 5px;
   // position: sticky;
   top: 126px;
-  z-index: 28;
+  z-index: 27;
   background: #222226;
   height: 121px;
   position: fixed;
@@ -17,7 +17,7 @@
   .multi-view-card-wrapper {
     cursor: move;
     padding-right: 1px;
-    min-width: 381px;
+    min-width: 384px;
     height: 111px;
     margin-right: 5px;
     background: url('../../imagesHold/multi/multi-view-card.png');
@@ -229,7 +229,7 @@
   .multi-view-scroll {
     // height: 1080px;
     overflow-y: scroll;
-    margin-top: 121px;
+    margin-top: 126px;
     &::-webkit-scrollbar {
       width: 5px;
     }

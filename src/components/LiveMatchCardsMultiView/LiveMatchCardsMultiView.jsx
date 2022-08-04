@@ -28,7 +28,7 @@ export default function LiveMatchCardsMultiView() {
                             position: "absolute",
                             bottom: 0,
                             left: 0,
-                            width: "100%",
+                            width: "176%",
                             background: "black",
                             height: "5px",
                         }}
