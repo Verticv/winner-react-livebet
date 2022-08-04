@@ -27,7 +27,7 @@ export default function BetPage() {
                 {isSingleView && <SingleView />}
                 {isMultiView && <MultiView />}
             </div>
-            <div style={{marginLeft: '-4px'}} className={`bet-page-cart ${selectedView === viewTypes.selectLeague ? 'popup-open' : ''}`}>
+            <div style={{marginLeft: '-4px', position: 'fixed'}} className={`bet-page-cart ${selectedView === viewTypes.selectLeague ? 'popup-open' : ''}`}>
                 <BetSlip />
             </div>
             {/* <img src={testing} style={{position: 'fixed', top: "688.4px", left: "700px", zIndex: 100}} /> */}
