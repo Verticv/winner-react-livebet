@@ -195,7 +195,7 @@ export default function LiveMatchCardMultiView({
                                     style={{
                                         fontSize: "14px",
                                         whiteSpace: "nowrap",
-                                        width: "13rem",
+                                        width: "12.5rem",
                                         overflow: "hidden",
                                         textOverflow: "ellipsis",
                                     }}
@@ -223,7 +223,7 @@ export default function LiveMatchCardMultiView({
                                     style={{
                                         fontSize: "14px",
                                         whiteSpace: "nowrap",
-                                        width: "13rem",
+                                        width: "12.5rem",
                                         overflow: "hidden",
                                         textOverflow: "ellipsis",
                                     }}
