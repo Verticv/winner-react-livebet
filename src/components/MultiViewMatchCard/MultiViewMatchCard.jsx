@@ -514,7 +514,7 @@ export default function MultiViewMatchCards() {
 
     return (
         <div className="multi-view-match-results-wrapper" 
-        style={{height : `${(window.innerHeight - 260)}px`}}
+        style={{height : `${(window.innerHeight - 252)}px`}}
         >
             {console.log('window.innerHeight', window.innerHeight)}
             {resultsCardsList.map(({ id, isEmpty }, index) => {
