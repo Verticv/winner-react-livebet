@@ -90,7 +90,7 @@ export default function BetNav() {
     const selectedNav = useStore((state) => state.selectedNav);
 
     return (
-        <div style={{width: '1560px'}} className="navbar-wrapper">
+        <div style={{width: '1560px', background: '#000'}} className="navbar-wrapper">
             <div style={{width: '100%', display: 'flex'}}>
                 <div className="navbar-list-wrapper">
                     {navListItems.map((item, index) => {

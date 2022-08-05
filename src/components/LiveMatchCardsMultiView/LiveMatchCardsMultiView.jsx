@@ -28,7 +28,7 @@ export default function LiveMatchCardsMultiView() {
                             position: "absolute",
                             bottom: 0,
                             left: 0,
-                            width: "100%",
+                            width: "176%",
                             background: "black",
                             height: "5px",
                         }}
@@ -43,7 +43,7 @@ export default function LiveMatchCardsMultiView() {
                         display: "flex",
                         justifyContent: "center",
                         alignItems: "center",
-                        position: "relative",
+                        // position: "relative",
                     }}
                     className="multi-view-cards-wrapper"
                 >
@@ -57,7 +57,7 @@ export default function LiveMatchCardsMultiView() {
                             height: "5px",
                         }}
                     />
-                    경기정보가 없습니다
+                    경기정보가 없습니다.
                 </div>
             )}
         </>
