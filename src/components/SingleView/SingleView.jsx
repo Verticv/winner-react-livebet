@@ -454,8 +454,6 @@ export default function SingleView() {
                     justifyContent: "flex-start",
                     width: "681px",
                     height : `${(window.innerHeight - 252)}px`,
-                    // overflowY: 'scroll',
-                    // overflowX: 'hidden'
                 }}
             >
                 {selectedNav === 0 ? (
