@@ -453,7 +453,7 @@ export default function SingleView() {
                     flexDirection: "column",
                     justifyContent: "flex-start",
                     width: "681px",
-                    height : `${(window.innerHeight - 252)}px`,
+                    height : `${(window.innerHeight - 126)}px`,
                 }}
             >
                 {selectedNav === 0 ? (
@@ -494,7 +494,7 @@ export default function SingleView() {
                 )}
             </div>
             <div className="match-scroll" style={{
-                height : `${(window.innerHeight - 252)}px`
+                height : `${(window.innerHeight - 126)}px`
             }}>
                 <div className="match-img" />
                 {selectedNav !== 3 && !hideMiddleComponent && (
