@@ -126,7 +126,7 @@ function ResultsRow({
                 onMouseOut={() => setOnHoverLeft(false)}
                 className={`number1 ${isRowActive ? "red-arrow" : ""}`}>
                     {isRowActive && <img src={upRedArrow} alt="" />}
-                    <div className="number-value">{kof1.toFixed(2)}</div>
+                    <div className="number-value" style={{marginLeft:'-10px'}}>{kof1.toFixed(2)}</div>
                 </div>
             </div>
             <div
@@ -153,7 +153,7 @@ function ResultsRow({
                 onMouseOut={() => setOnHoverRight(false)}
                 className={`number2 ${isRowActive ? "blue-arrow" : ""}`}>
                     {isRowActive && <img src={downBlueArrow} alt="" />}
-                    <div className="number-value">{kof2.toFixed(2)}</div>
+                    <div className="number-value" style={{marginLeft:'-10px'}}>{kof2.toFixed(2)}</div>
                 </div>
                 <div
                     className={`right ${rightActiveBackground || onHoverRight ? "active" : ""}`}
