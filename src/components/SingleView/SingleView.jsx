@@ -447,11 +447,13 @@ export default function SingleView() {
             }}
         >
             <div
+                className="aa-scroll"
                 style={{
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "flex-start",
                     width: "681px",
+                    height : `${(window.innerHeight - 252)}px`,
                 }}
             >
                 {selectedNav === 0 ? (
@@ -491,7 +493,9 @@ export default function SingleView() {
                     </>
                 )}
             </div>
-            <div>
+            <div className="match-scroll" style={{
+                height : `${(window.innerHeight - 252)}px`
+            }}>
                 <div className="match-img" />
                 {selectedNav !== 3 && !hideMiddleComponent && (
                     <div className="match-bets-wrapper">

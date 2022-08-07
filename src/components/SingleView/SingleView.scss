@@ -3,6 +3,22 @@
 .match-img-wrapper {
   display: flex;
 
+  .aa-scroll {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+      width: 5px;
+      display: none;
+    }
+}
+.match-scroll {
+  overflow-y: scroll;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+      width: 5px;
+      display: none;
+    }
+}
   .match-img {
     margin: 0 10px;
     width: 863px;
