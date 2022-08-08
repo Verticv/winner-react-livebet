@@ -494,7 +494,8 @@ export default function SingleView() {
                 )}
             </div>
             <div className="match-scroll" style={{
-                height : `${(window.innerHeight - 252)}px`
+                height : `${(window.innerHeight - 252)}px`,
+                maxWidth: '880px',
             }}>
                 <div className="match-img" />
                 {selectedNav !== 3 && !hideMiddleComponent && (
