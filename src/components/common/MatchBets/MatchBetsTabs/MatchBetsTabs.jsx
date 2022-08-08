@@ -58,7 +58,7 @@ export default function MatchBetsTabs({ handleChangeSelectedTab }) {
     };
 
     return (
-        <div className="taps-wrapper">
+        <div className="taps-wrapper hide-scrollbar">
             {stateTabs.map((tab) => {
                 return (
                     <MatchBetTab
