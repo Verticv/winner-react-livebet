@@ -47,7 +47,7 @@ export default function CardHeader({
         >
             <div className="line"></div>
             <div className="card-header-content">
-                <div className="left">
+                <div className="left" style={{width:isRed ? '75%' : '99%'}}>
                     <img
                         className="ball"
                         src={ball}
@@ -56,14 +56,14 @@ export default function CardHeader({
                         height="18"
                     />
                     <img src={flagPath} alt="" width="29" height="18" />
-                    <p className="text">{league}</p>
+                    <p className="text">{isRed ? (league.length > 27 ? `${league.slice(0,27)}...` : league) : (league.length > 37 ? `${league.slice(0,37)}...` : league)}</p>
                 </div>
                 {isRed && (
                     <div className="right">
                         <img src={corner} alt="" width="18" height="18" />
                         <div className="yellow-box"></div>
                         <div className="red-box"></div>
-                        <img style={{marginLeft: '1px'}} src={p} alt="" />
+                        <img src={p} alt="" />
                         <img
                             className="ball"
                             src={ball}

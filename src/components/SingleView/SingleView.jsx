@@ -453,7 +453,7 @@ export default function SingleView() {
                     flexDirection: "column",
                     justifyContent: "flex-start",
                     width: "681px",
-                    height : `${(window.innerHeight - 252)}px`,
+                    height : `${(window.innerHeight - 126)}px`,
                 }}
             >
                 {selectedNav === 0 ? (

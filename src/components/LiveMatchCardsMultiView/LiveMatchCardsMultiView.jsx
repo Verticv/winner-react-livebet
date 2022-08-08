@@ -57,7 +57,7 @@ export default function LiveMatchCardsMultiView() {
                             height: "5px",
                         }}
                     />
-                    경기정보가 없습니다
+                    경기정보가 없습니다.
                 </div>
             )}
         </>
